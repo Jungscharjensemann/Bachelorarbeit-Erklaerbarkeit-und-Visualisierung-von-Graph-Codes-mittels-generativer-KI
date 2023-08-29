@@ -1,0 +1,44 @@
+\begin{figure}[htb]
+    \centering
+    \resizebox{0.9\textwidth}{!}{
+        \begin{tikzpicture}
+            \tikzset{
+                exstyle/.style={{Triangle[angle=90:4pt,length=2mm,fill=black]}-{Triangle[angle=90:4pt,length=2mm,fill=black]}}
+            }
+            \node[draw, rounded corners, rectangle, text width=6cm] (gmaf-core) {
+                \shortstack[l]{
+                    \textbf{GMAF Core} \\[1mm] Generic Multimedia \\ Analysis Framework
+                }
+            };
+
+            \node[anchor=north west, draw, rounded corners, rectangle, text width=6cm] (gmaf-plugins) at ([xshift=2cm]gmaf-core.north east) {
+                \begin{varwidth}{6cm}
+                    \textbf{Plugins}
+
+                    \begin{itemize}
+                        \item Google Vision
+                        \item Microsoft AI
+                        \item Open AI
+                        \item ...
+                        \item EXIF
+                        \item MPEG7
+                    \end{itemize}
+                \end{varwidth}
+            };
+
+            \node[draw, rounded corners, rectangle, text width=6cm, below=2cm of gmaf-core] (gmaf-mmfg) {
+                \begin{center}
+                    \textbf{Multimedia Feature Graph}
+                    \newline
+                    \textbf{(MMFG)}
+                \end{center}
+            };
+
+            \draw[exstyle] (gmaf-core.south) -- node [fill=white] {\shortstack[c]{MMIR \\ Verarbeitung}} (gmaf-mmfg.north);
+
+            \draw[exstyle] (gmaf-core.east) -- ++(2cm,0);
+        \end{tikzpicture}
+    }
+    \caption{Vereinfachte Übersicht des GMAFs (ohne UI / API) nach \cite{jour-smmir}.}
+    \label{sec2:sota:subsec:fz-explainability:fig:gmaf-overview}
+\end{figure}

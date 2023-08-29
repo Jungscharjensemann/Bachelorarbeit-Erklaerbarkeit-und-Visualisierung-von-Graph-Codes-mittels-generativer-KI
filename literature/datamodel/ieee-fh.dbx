@@ -1,0 +1,7 @@
+\DeclareDatamodelEntrytypes{dissertation}
+\DeclareDatamodelFields[type=list,datatype=literal]{
+    faculty,
+}
+\DeclareDatamodelEntryfields[dissertation]{
+    faculty,
+}

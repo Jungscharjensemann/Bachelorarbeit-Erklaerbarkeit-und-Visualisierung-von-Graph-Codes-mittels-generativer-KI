@@ -1,0 +1,98 @@
+\begin{figure}[htb]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tikzpicture}[font=\fontsize{9}{0pt}\selectfont]
+
+            \definecolor{e4draw}{RGB}{224,155,254}
+            \definecolor{n5fill}{RGB}{84,224,163}
+            \definecolor{node}{RGB}{51, 175, 255}
+            \definecolor{compr}{RGB}{224, 155, 254}
+            \definecolor{sr}{RGB}{84, 224, 163}
+
+            \tikzset{
+                e1/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=black]}},
+                e2/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=e4draw]}},
+                e3/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=n5fill]}},
+                comprstyle/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=compr]}},
+                srstyle/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=sr]}},
+                thick/.style={line width=1.1pt},
+                every node/.append style={thick}
+            }
+
+            \node[draw, minimum width=\textwidth, minimum height=4.8cm] (f) {};
+
+            \node[anchor=south east, rectangle, draw, line width=0.4pt] at (f.south east) {%
+                \shortstack[l]{Formales Schema der Darstellung \\des $MMFG_{ex}$}
+            };
+
+            \node[rectangle, draw, anchor=north west, fill=orange] (smmfg) at ([xshift=1cm, yshift=-1.1cm]f.north west) {$S_{MMFG}$};
+
+            \node[rectangle, draw, fill=node, right=2.3cm of smmfg] (person) {\textit{\textbf{n: Person}}};
+            \node[rectangle, draw, fill=node, below=0.7cm of person] (body) {\textit{\textbf{n: Body}}};
+            \node[rectangle, draw, fill=node, right=1cm of body] (arm) {\textit{\textbf{n: Arm}}};
+            \node[rectangle, draw, fill=compr, above=0.7cm of arm] (att) {\textit{\textbf{attached to}}};
+            \node[rectangle, draw, fill=node, right=1cm of arm] (watch) {\textit{\textbf{n: Watch}}};
+            \node[rectangle, draw, fill=sr, right=1cm of watch] (clock) {\textit{\textbf{s: Clock}}};
+            
+
+            \draw[e1, name path=smmfg-person-path] (smmfg.east) -- node[above] {\textit{\textbf{cn}}} (person.west);
+            \draw[e1, name path=person-body-path] (person.south) -- node[right] {\textit{\textbf{cn}}} (body.north);
+            \draw[e1, name path=body-arm-path] (body.east) -- node[above] {\textit{\textbf{cn}}} (arm.west);
+            \draw[comprstyle, draw=compr] (att.south) -- node[left] {\textit{\textbf{cr}}} (arm.north);
+            \draw[comprstyle, draw=compr] (watch.north) |- node[right] {\textit{\textbf{cr}}} (att.east);
+            \draw[e1, name path=arm-watch-path] (arm.east) -- node[above] {\textit{\textbf{cn}}} (watch.west);
+            \draw[srstyle, draw=sr, name path=watch-clock-path] (watch.east) -- node[above] {\textit{\textbf{sr}}} (clock.west);
+
+            \node[anchor=south east, draw, rectangle] (aa-smmfg) at ([yshift=3mm]smmfg.north east) {$aa$};
+            \draw[e1] ([xshift=-5mm]smmfg.north) |- node[left] {$ar$} (aa-smmfg.west);
+
+            \node[anchor=west, draw, rectangle] (aa-person) at ([xshift=5mm]aa-smmfg) {$Annot.~Anker~(aa)$};
+            \draw[e1] ([xshift=-2mm]person.north east) |- node[right] {$ar$} (aa-person.east);
+
+            \node[anchor=south east, draw, rectangle] (aa-att) at ([yshift=3mm]att.north east) {$aa$};
+            \draw[e1] ([xshift=-5mm]att.north) |- node[left] {$ar$} (aa-att.west);
+
+            \node[anchor=north west, draw, rectangle] (aa-body) at ([yshift=-3mm]body.south west) {$aa$};
+            \draw[e1] ([xshift=-2mm]body.south east) |- node[below] {$ar$} (aa-body.east);
+
+            \node[anchor=north west, draw, rectangle] (aa-arm) at ([yshift=-3mm]arm.south west) {$aa$};
+            \draw[e1] ([xshift=-2mm]arm.south east) |- node[below] {$ar$} (aa-arm.east);
+
+            \node[anchor=north west, draw, rectangle] (aa-watch) at ([yshift=-3mm]watch.south west) {$aa$};
+            \draw[e1] ([xshift=-2mm]watch.south east) |- node[below] {$ar$} (aa-watch.east);
+
+            \node[anchor=north west, draw, rectangle] (aa-clock) at ([yshift=-3mm]clock.south west) {$aa$};
+            \draw[e1] ([xshift=-2mm]clock.south east) |- node[below] {$ar$} (aa-clock.east);
+
+            
+
+            \node[anchor=north west, draw, rectangle] (smmfg-body-aa) at ([xshift=3mm, yshift=-4mm]smmfg.south east) {$aa$};
+            \path[name path=p1] (smmfg-body-aa.north) -- ++(0,1cm);
+            \path[name intersections={of=p1 and smmfg-person-path, by=i1}];
+            \draw[e1] (i1) -- node[right] {$ar$} (smmfg-body-aa.north);
+
+            \node[anchor=north east, draw, rectangle] (person-body-aa) at ([yshift=-1.5mm]person.south west) {$aa$};
+            \path[name path=p2] (person-body-aa.east) -- ++(1cm,0);
+            \path[name intersections={of=p2 and person-body-path, by=i2}];
+            \draw[e1] (i2) -- node[above, yshift=-1pt] {$ar$} (person-body-aa);
+
+            \node[anchor=north west, draw, rectangle] (body-arm-aa) at ([xshift=1mm, yshift=-4mm]body.south east) {$aa$};
+            \path[name path=p3] (body-arm-aa) -- ++(0cm,1cm);
+            \path[name intersections={of=p3 and body-arm-path, by=body-arm-i}];
+            \draw[e1] (body-arm-i) -- node[right] {$ar$} (body-arm-aa.north);
+
+            \node[anchor=north west, draw, rectangle] (arm-watch-aa) at ([xshift=1mm, yshift=-4mm]arm.south east) {$aa$};
+            \path[name path=p4] (arm-watch-aa) -- ++(0cm,1cm);
+            \path[name intersections={of=p4 and arm-watch-path, by=arm-watch-i}];
+            \draw[e1] (arm-watch-i) -- node[right] {$ar$} (arm-watch-aa.north);
+
+            \node[anchor=north west, draw, rectangle] (watch-clock-aa) at ([xshift=1mm, yshift=-4mm]watch.south east) {$aa$};
+            \path[name path=p5] (watch-clock-aa) -- ++(0cm,1cm);
+            \path[name intersections={of=p5 and watch-clock-path, by=watch-clock-i}];
+            \draw[e1] (watch-clock-i) -- node[right] {$ar$} (watch-clock-aa.north);
+
+        \end{tikzpicture}
+    }
+    \caption{(\textbf{a}) Erweiterung des $MMFG_{ex}$ um ein Startsymbol $S_{MMFG}$, (\textbf{b}) Formales Schema der Darstellung des $MMFG_{ex}$.}
+    \label{sec2:sota:subsec:fz-explainablity:fig:mmfg-add-start}
+\end{figure}

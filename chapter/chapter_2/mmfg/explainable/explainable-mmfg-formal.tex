@@ -1,0 +1,211 @@
+\begin{figure}[htb]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tikzpicture}[font=\fontsize{9}{0pt}\selectfont]
+
+            \definecolor{e4draw}{RGB}{224,155,254}
+            \definecolor{n5fill}{RGB}{84,224,163}
+            \definecolor{node}{RGB}{51, 175, 255}
+            \definecolor{compr}{RGB}{224, 155, 254}
+            \definecolor{sr}{RGB}{84, 224, 163}
+
+            \pgfdeclarelayer{bg}
+            \pgfsetlayers{bg,main}
+
+            \tikzset{
+                e1/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=black]}},
+                e2/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=e4draw]}},
+                e3/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=n5fill]}},
+                comprstyle/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=compr]}},
+                srstyle/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=sr]}},
+                thick/.style={line width=1.1pt},
+                every node/.append style={thick}
+            }
+
+            \node[text width=2.5cm] (formal-model) at (0,0) {
+                \shortstack{Formale \\Modellierung \\der Darstellung \\eines MMFG}
+            };
+
+            \node[anchor=south west, text width=2.5cm] (anchor-annot) at (formal-model.north west) {
+                \shortstack{Anker von \\Annotierungen}
+            };
+
+            \tikzmath{
+                coordinate \p;
+                \p = (formal-model.south west) - (anchor-annot.north west);
+                \len = veclen(\p);
+            }
+
+            \node[anchor=south east, minimum height=\len] (mmfg) at (formal-model.south west) {
+                \hspace*{1mm}
+                \begin{turn}{90}
+                    \fontsize{12}{0}\fontseries{bx}\selectfont
+                    MMFG
+                \end{turn}
+                \hspace*{1mm}
+            };
+
+            \tikzmath{
+                coordinate \mmfg;
+                \mmfg = (mmfg.south west) - (mmfg.south east);
+                \mmfglen = veclen(\mmfg) * 0.0352778;
+            }
+
+            \node[rectangle, fit={(mmfg)($(mmfg.south east)+(\textwidth,0)$)}, style={inner sep=0pt}] (f) {};
+
+            \tikzmath{
+                coordinate \f;
+                \f = (f.south east) - (formal-model.south east);
+                \flen = veclen(\f) * 0.0352778;
+            }
+
+            \draw[line width=1.1pt] (mmfg.north east) -- (mmfg.south east);
+            \draw[] ([yshift=1pt]anchor-annot.north east) -- (formal-model.south east);
+            \draw[] (formal-model.north west) -- (formal-model.north east); 
+
+            \path[name path=f-eastl] (f.north east) -- (f.south east);
+            \path[name path=div1] (formal-model.north east) -- ++(\flen,0);
+            \path[name intersections={of=div1 and f-eastl, by=div-f}];
+
+            \draw[] (formal-model.north east) -- (div-f);
+
+
+
+
+
+            \node[rectangle, draw, fill=node, right=1.5cm of formal-model.east, text width=2cm, align=center] (fvt1) {$S_{MMFG}$};
+            \node[rectangle, draw, fill=node, right=1cm of fvt1, text width=2cm, align=center] (fvt2) {$fvt$};
+            \node[rectangle, draw, fill=node, right=1cm of fvt2, text width=2cm, align=center] (fvt3) {$fvt$};
+
+            \draw[e1] (fvt1.east) -- node[below] {$frt$} (fvt2.west);
+            \draw[e1] (fvt2.east) -- node[below] {$frt$} (fvt3.west);
+
+            \foreach \x in {0,...,4} {
+                \node[rectangle, draw, right=1cm + 2.33cm * \x of anchor-annot.east, line width=0.4pt] (aa-\x) {$aa$};
+            }
+
+            \draw[e1] (fvt1.north) -- (aa-0.south);
+            \draw[e1] (fvt1.east) ++(5mm,0cm) -- (aa-1.south);
+            \draw[e1] (fvt2.north) -- (aa-2.south);
+            \draw[e1] (fvt2.east) ++(5mm,0cm) -- (aa-3.south);
+            \draw[e1] (fvt3.north) -- (aa-4.south);
+
+            \node[anchor=south west, text width=2.5cm] (1st-level-sem) at (anchor-annot.north west) {
+                \shortstack[c]{Semantische \\Annotierung\\der ersten \\Ebene}
+            };
+
+            \node[anchor=south west, text width=2.5cm] (2nd-level-sem) at (1st-level-sem.north west) {
+                \shortstack[c]{Semantische \\Annotierung\\der zweiten \\Ebene}
+            };
+
+            \tikzmath{
+                coordinate \d;
+                \d = (1st-level-sem.south west) - (2nd-level-sem.north west);
+                \lend = veclen(\d);
+            }
+
+            \node[anchor=south east, minimum height=\lend] (smmfg) at (1st-level-sem.south west) {
+                \hspace*{1mm}
+                \begin{turn}{90}
+                    \fontsize{12}{0}\fontseries{bx}\selectfont
+                    SMMFG
+                \end{turn}
+                \hspace*{1mm}
+            };
+
+            \draw[line width=1.1pt] (mmfg.north west) -- (mmfg.north east) -- ++(\textwidth,0);
+            \draw[line width=1.1pt] (smmfg.north east) -- (smmfg.south east);
+
+            \draw[] (1st-level-sem.north west) -- ++(\textwidth,0);
+            \draw[] ([yshift=1pt]2nd-level-sem.north east) -- (1st-level-sem.south east);
+
+            \tikzmath{
+                \tw = 2.5cm + \mmfglen cm - 0.05mm;
+            }
+
+            \node[draw, rectangle, right=0.3cm of 1st-level-sem.east] (snr-0) {$snr$};
+            \node[draw, rectangle, right=1.9cm of snr-0.east] (srr-0) {$srr$};
+            \node[draw, rectangle, right=1.8cm of srr-0.east] (snr-1) {$snr$};
+            \node[draw, rectangle, right=1.8cm of snr-1.east] (srr-1) {$srr$};
+            \node[draw, rectangle, right=1.8cm of srr-1.east] (snr-2) {$snr$};
+
+            \draw[e1] (snr-0.south) -- node[right, yshift=3pt] {$describes$} (aa-0.north);
+            \draw[e1] (srr-0.south) -- node[right, yshift=3pt] {$describes$} (aa-1.north);
+            \draw[e1] (snr-1.south) -- node[right, yshift=3pt] {$describes$} (aa-2.north);
+            \draw[e1] (srr-1.south) -- node[right, yshift=3pt] {$describes$} (aa-3.north);
+            \draw[e1] (snr-2.south) -- node[left, xshift=-7pt,yshift=-7pt] {$describes$} (aa-4.north);
+
+            \draw[e1, line width=1.1pt] (srr-0.west) -- node[above, yshift=-12pt] {\textit{\shortstack{has\\Domain\\Node}}} (snr-0.east);
+            \draw[e1, line width=1.1pt] (srr-0.east) -- node[above, yshift=-12pt] {\textit{\shortstack{has\\Range\\Node}}} (snr-1.west);
+            \draw[e1, line width=1.1pt] (srr-1.west) -- node[above, yshift=-12pt] {\textit{\shortstack{has\\Domain\\Node}}} (snr-1.east);
+            \draw[e1, line width=1.1pt] (srr-1.east) -- node[above, yshift=-12pt] {\textit{\shortstack{has\\Range\\Node}}} (snr-2.west);
+
+
+            \node[above left=2.3cm and 3.4cm of snr-1] (np-1) {NP};
+            \node[above left=0.1cm and -0.1cm of np-1] (det-1) {DET};
+            \node[above right=0.1cm and 0.1cm of np-1] (n-1) {N};
+            \node[draw, rectangle, above =0.5cm of det-1] (lbl-det-1) {$LBL:the$};
+            \node[draw, rectangle, above =0.5cm of n-1] (lbl-n-1) {$LBL$};
+
+            \draw[e1] (sfvt-0.north) -- (np-1.south);
+            \draw[e1] (np-1.north) -- (det-1.south);
+            \draw[e1] (np-1.north) -- (n-1.south);
+            \draw[e1] (det-1.north) -- (lbl-det-1.south);
+            \draw[e1] (n-1.north) -- (lbl-n-1.south);
+
+            \node[above left=2.3cm and 0cm of snr-1] (vp-1) {VP};
+            \draw[e1] (snr-1.north) -- (vp-1.south);
+            \node[draw, rectangle, above left=2cm and -1.4cm of vp-1] (lbl-vp-1) {$LBL:describes~the~annotation~anchor$};
+            \draw[e1] (vp-1.north) -- (lbl-vp-1.south);
+            
+            
+
+            \node[draw, rectangle, right=1cm of 2nd-level-sem.east] (sfvt-0) {$sfvt:SMMFG$};
+            \node[draw, rectangle, right=0.5cm of sfvt-0.east] (srvt-0) {$srvt$};
+            \node[draw, rectangle, right=0.8cm of srvt-0.east] (sfvt-1) {$sfvt$};
+            \node[draw, rectangle, right=1.9cm of sfvt-1.east] (srvt-1) {$srvt$};
+            \node[draw, rectangle, right=0.7cm of srvt-1.east] (sfvt-2) {$sfvt$};
+
+            \draw[e1] (snr-0.north) -- node[above, sloped, xshift=-2mm] {$hasName$} ([xshift=4mm]sfvt-0.south);
+            \draw[e1] (srr-0.north) -- (srvt-0.south);
+            \draw[e1] (snr-1.north) -- (sfvt-1.south);
+            \draw[e1] (srr-1.north) -- node[left, xshift=5pt, yshift=9pt] {$hasName$} (srvt-1.south);
+            \draw[e1] (snr-2.north) -- node[left, xshift=-3pt, yshift=9pt] {$hasName$} (sfvt-2.south);
+
+
+            \node[anchor=south west, minimum height=1.5cm, text width=2.5cm] (ps-grammar) at (2nd-level-sem.north west) {
+                \shortstack[c]{PS-Grammatik}
+            };
+
+            \node[anchor=south west, text width=2.5cm, minimum height=2cm] (text-expl) at (ps-grammar.north west) {
+                \shortstack[c]{Textuelle \\ Erklärung}
+            };
+
+            \tikzmath{
+                coordinate \u;
+                \u = (ps-grammar.south west) - (text-expl.north west);
+                \lenu = veclen(\u);
+            }
+
+            \node[anchor=south east, minimum height=\lenu] (esmmfg) at (ps-grammar.south west) {
+                \hspace*{1mm}
+                \begin{turn}{90}
+                    \fontsize{12}{0}\fontseries{bx}\selectfont
+                    ESMMFG
+                \end{turn}
+                \hspace*{1mm}
+            };
+
+            \node[draw, rectangle, fit={(mmfg)($(esmmfg.north east)+(\textwidth,0)$)}, style={inner sep=0pt}] (f) {};
+
+            \draw[line width=1.1pt] (smmfg.north west) -- (smmfg.north east) -- ++(\textwidth,0);
+            \draw[line width=1.1pt] (esmmfg.north east) -- (esmmfg.south east);
+
+            \draw[] (ps-grammar.north west) -- ++(\textwidth,0);
+            \draw[] ([yshift=1pt]text-expl.north east) -- (ps-grammar.south east);
+
+        \end{tikzpicture}
+    }
+    \caption{Formale Modellierung der Darstellung eines MMFGs.}
+    \label{sec2:sota:subsec:fz-explainablity:fig:mmfg-formal-model}
+\end{figure}

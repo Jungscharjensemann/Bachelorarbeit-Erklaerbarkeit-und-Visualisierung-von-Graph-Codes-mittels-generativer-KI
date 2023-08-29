@@ -1,0 +1,41 @@
+\begin{figure}[htb]
+    \centering
+    \resizebox{0.8\textwidth}{!}{
+        \begin{tikzpicture}
+
+            \definecolor{nodeblue}{RGB}{76, 174, 234}
+            \definecolor{syngreen}{RGB}{100, 216, 112}
+            \definecolor{comprel}{RGB}{224, 155, 254}
+            
+            \node (tabl) {
+                \begin{tabular}{rcccccc}
+                     &  \begin{turn}{90}Person\end{turn}& \begin{turn}{90}Body\end{turn} & \begin{turn}{90}Arm\end{turn} & \begin{turn}{90}Watch\end{turn} & \begin{turn}{90}Clock\end{turn} & \begin{turn}{90}attached to $~$\end{turn} \\ \hline
+                    Person      & \cellcolor{nodeblue}1 & \cellcolor{nodeblue}3 & 0 & 0 & 0 & 0 \\ 
+                    Body        & 0 & \cellcolor{nodeblue}1 & \cellcolor{nodeblue}3 & 0 & 0 & 0 \\
+                    Arm         & 0 & 0 & \cellcolor{nodeblue}1 & \cellcolor{nodeblue}3 & 0 & 0 \\ 
+                    Watch       & 0 & 0 & 0 & \cellcolor{nodeblue}2 & \cellcolor{syngreen}4 & \cellcolor{comprel}5 \\ 
+                    Clock       & 0 & 0 & 0 & 0 & \cellcolor{syngreen}7 & 0 \\ 
+                    attached to & 0 & 0 & \cellcolor{comprel}5 & 0 & 0 & \cellcolor{comprel}6
+                \end{tabular}
+            };
+
+            \node[anchor=south west, right=1cm of tabl.east] (wm) {
+                \shortstack[l]{
+                    $GC_{ex} = $ \\
+                    $WM_{enc}(MMFG_{ex}) = $\\
+                    \vspace*{1.5mm} \\
+                    $\begin{pmatrix}
+                    1 & 3 & 0 & 0 & 0 & 0  \\
+                    0 & 1 & 3 & 0 & 0 & 0  \\
+                    0 & 0 & 1 & 3 & 0 & 0  \\
+                    0 & 0 & 0 & 2 & 4 & 5  \\
+                    0 & 0 & 0 & 0 & 7 & 0  \\
+                    0 & 0 & 5 & 0 & 0 & 6  \\
+                    \end{pmatrix}$
+                }
+            };
+        \end{tikzpicture}
+    }
+    \caption{Codierte Wertungsmatrix bzw. Graph Code $GC_{ex}$ zum entsprechenden Beispiel $MMFG_{ex}$.}
+    \label{sec2:sota:subsec:fz-explainablity:fig:mmfg-valuation-matrix-enc}
+\end{figure}

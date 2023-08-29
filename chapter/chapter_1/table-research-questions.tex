@@ -1,0 +1,136 @@
+{
+    \def\arraystretch{1.1}%
+    \begin{xltabular}{\linewidth}{
+            @{}
+            >{
+                \hsize=0.15\linewidth
+                \raggedright\arraybackslash
+            }X
+            >{
+                \hsize=0.75\linewidth
+                \raggedright\arraybackslash
+            }X
+            >{
+                \hsize=0.1\linewidth
+                \centering\arraybackslash
+            }X
+            @{}
+    }
+
+    % First Header
+
+    \caption{Aufschlüsselung der Forschungsfragen auf Forschungsziele} 
+    \label{sec1:intro:table:research-questions} \\
+        
+    \toprule
+    \multicolumn{3}{
+        >{
+            \hsize=\linewidth\centering\arraybackslash
+        }X
+    }
+    {
+        \textbf{Forschungsfragen}
+    } \\ 
+    \midrule
+         
+    \textbf{FZ} & \multicolumn{1}{c}{\textbf{Beschreibung}} & \textbf{PB} \\ 
+    \midrule
+    
+    \endfirsthead
+
+    % Normal Head
+
+    \toprule
+    \multicolumn{3}{
+        >{
+            \hsize=\linewidth\centering\arraybackslash
+        }X
+    }
+    {
+        \textbf{Forschungsfragen}
+    } \\ 
+    \midrule
+         
+    \textbf{FZ} & \multicolumn{1}{c}{\textbf{Beschreibung}} & \textbf{PB} \\ 
+    \midrule
+    
+    \endhead
+        
+    % Lower Rows
+
+    \multicolumn{3}{
+        >{
+            \hsize=\linewidth\centering\arraybackslash
+        }X
+    }
+    {
+        \textbf{Erklärbarkeit von MMIR mittels generativer KI}
+    } \\ \midrule
+
+    FZ 1.1/O 
+    & 
+    Recherche zur Erklärbarkeit von MMIR mittels generativer KI
+    & PB1 \\
+
+    \midrule
+
+    FZ 1.2/TB 
+    & 
+    Modellierung zur Erklärbarkeit von MMIR mittels generativer KI
+    & PB1 \\
+
+    \midrule
+
+    FZ 1.3/I
+    & 
+    Implementierung zur Erklärbarkeit von MMIR mittels generativer KI
+    & PB1 \\
+
+    \midrule
+
+    FZ 1.4/E 
+    & 
+    Experiment zur Erklärbarkeit von MMIR mittels generativer KI
+    & PB1 \\
+
+    \midrule
+
+    \multicolumn{3}{
+        >{
+            \hsize=\linewidth\centering\arraybackslash
+        }X
+    }
+    {
+        \textbf{Integration generativer KI in das GMAF}
+    } \\ \midrule
+
+    FZ 2.1/O 
+    & 
+    Recherche zur Integration generativer KI in das GMAF
+    & PB2 \\
+
+    \midrule
+
+    FZ 2.2/TB 
+    & 
+    Modellierung zur Integration generativer KI in das GMAF
+    & PB2 \\
+
+    \midrule
+
+    FZ 2.3/I
+    & 
+    Implementierung zur Integration generativer KI in das GMAF
+    & PB2 \\
+
+    \midrule
+
+    FZ 2.4/E 
+    & 
+    Experiment zur Integration generativer KI in das GMAF
+    & PB2 \\
+        
+    \bottomrule 
+
+    \end{xltabular}
+}

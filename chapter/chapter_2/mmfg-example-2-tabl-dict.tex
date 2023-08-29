@@ -1,0 +1,31 @@
+\begin{figure}[htb]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tikzpicture}
+
+            \definecolor{nodeblue}{RGB}{76, 174, 234}
+            \definecolor{syngreen}{RGB}{100, 216, 112}
+            \definecolor{comprel}{RGB}{224, 155, 254}
+            
+            \node (tabl) {
+                \begin{tabular}{rcccccc}
+                     &  \begin{turn}{90}attached to\end{turn}& \begin{turn}{90}Person\end{turn} & \begin{turn}{90}Body\end{turn} & \begin{turn}{90}Foot\end{turn} & \begin{turn}{90}Shoe\end{turn} \\ \hline
+                    attached to      & \cellcolor{comprel}6 & 0 & 0 & \cellcolor{comprel}5 & 0  \\ 
+                    Person           & 0 & \cellcolor{nodeblue}1 & \cellcolor{nodeblue}3 & 0 & 0  \\
+                    Body             & 0 & 0 & \cellcolor{nodeblue}1 & \cellcolor{nodeblue}3 & 0  \\ 
+                    Foot             & 0 & 0 & 0 & \cellcolor{nodeblue}1 & \cellcolor{nodeblue}3  \\ 
+                    Shoe             & \cellcolor{comprel}5 & 0 & 0 & 0 & \cellcolor{nodeblue}1 
+                \end{tabular}
+            };
+
+            \node[anchor=south west] (wm) at ([xshift=5mm]tabl.south east){
+                \begin{tabular}{c|c|c|c|c|c}
+                     Index $i$ & 1 & 2 & 3 & 4 & 5 \\ \hline
+                     $fvt_i$ & attached to & Person & Body & Foot & Shoe
+                \end{tabular}
+            };
+        \end{tikzpicture}
+    }
+    \caption{T}
+    \label{sec2:sota:subsec:fz-explainablity:fig:mmfg-example-2-tabl-dict}
+\end{figure}

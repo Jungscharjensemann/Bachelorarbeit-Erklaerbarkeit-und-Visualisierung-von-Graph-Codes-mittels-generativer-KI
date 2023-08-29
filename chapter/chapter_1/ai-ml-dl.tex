@@ -1,0 +1,24 @@
+\begin{figure}[htb]
+    \centering
+    \resizebox*{0.36\textwidth}{!}{
+        \begin{tikzpicture}
+            \node[rectangle, draw, rounded corners, minimum width=0.5\textwidth, minimum height=2.5cm] (ai) {};
+            \node[anchor=south east, rectangle, draw, rounded corners] (ml) at (ai.south east) {
+                {
+                    \Large
+                        \begin{varwidth}{0.7\textwidth}
+                            Maschinelles Lernen
+                            \vspace{-0.4cm}
+                            \begin{itemize}
+                                \item Generative KI
+                            \end{itemize}
+                        \end{varwidth}
+                }
+            };
+
+            \node[anchor=north west] at ([xshift=2mm, yshift=-2mm]ai.north west) {\Large Künstliche Intelligenz};
+        \end{tikzpicture}
+    }
+    \caption{Künstliche Intelligenz (KI) und maschinelles Lernen (ML).}
+    \label{fig:my_label}
+\end{figure}

@@ -1,0 +1,209 @@
+It also simplifies the employment of Machine Learning algorithms (s. 147, Swa Diss.)
+
+
+
+
+\bgroup
+\def\arraystretch{1.5}%
+\begin{table}[h!]
+    \fontsize{10pt}{12pt}\selectfont
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{|ccl|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{Forschungsfragen}} \\
+    \hline
+    
+    \multicolumn{1}{|c|}{\textbf{FZ}} 
+    & \multicolumn{1}{c|}{\textbf{Beschreibung}} 
+    & \textbf{PB} \\ 
+    \hline
+    
+    \multicolumn{3}{|c|}{\textbf{Erklärbarkeit und Visualisierung von Graph Codes}} \\
+    \hline
+    
+    \multicolumn{1}{|l|}{FZ 1.1/O}
+    & \multicolumn{1}{c|}{
+        \makecell[l]{Recherche zur Erklärbarkeit und Visualisierung \\ von Graph Codes}
+    }
+    & PB1 \\
+    \hline
+
+    \multicolumn{1}{|l|}{FZ 1.2/TB}
+    & \multicolumn{1}{c|}{
+        \makecell[l]{Modellierung zur Erklärbarkeit und Visualisierung \\ von Graph Codes}
+    }
+    & PB1 \\
+    \hline
+
+    \multicolumn{1}{|l|}{FZ 1.3/I}
+    & \multicolumn{1}{c|}{
+        \makecell[l]{Implementierung zur Erklärbarkeit und Visualisierung \\ von Graph Codes}
+    }
+    & PB1 \\
+    \hline
+
+    \multicolumn{1}{|l|}{FZ 1.4/E}
+    & \multicolumn{1}{c|}{
+        \makecell[l]{Experiment zur Erklärbarkeit und Visualisierung \\ von Graph Codes}
+    }
+    & PB1 \\
+    \hline
+
+    \multicolumn{3}{|c|}{\textbf{Integration generativer KI anhand Graph Codes}} \\
+    \hline
+
+    \multicolumn{1}{|l|}{FZ 2.1/O}
+    & \multicolumn{1}{c|}{
+        \makecell[l]{Recherche zur Integration generativer KI \\ anhand Graph Codes}
+    }
+    & PB2 \\
+    \hline
+
+    \multicolumn{1}{|l|}{FZ 2.2/TB}
+    & \multicolumn{1}{c|}{
+        \makecell[l]{Modellierung zur Integration generativer KI \\ anhand Graph Codes}
+    }
+    & PB2 \\
+    \hline
+
+    \multicolumn{1}{|l|}{FZ 2.3/I}
+    & \multicolumn{1}{c|}{
+        \makecell[l]{Implementierung zur Integration generativer KI \\ anhand Graph Codes}
+    }
+    & PB2 \\
+    \hline
+
+    \multicolumn{1}{|l|}{FZ 2.4/E}
+    & \multicolumn{1}{c|}{
+        \makecell[l]{Experiment zur Integration generativer KI \\ anhand Graph Codes}
+    }
+    & PB2 \\
+    \hline
+    
+    \end{tabular}%
+    }
+\end{table}
+\egroup
+
+
+
+FZ 1: Erklärbarkeit und Visualisuerung von Graph Codes
+-> Erklärbarkeit ist hierbei ein interaktives, technisches Element bzw. Aspekt von Graph Codes der im Rahmen der Visualisierung angepasst werden kann.
+
+FZ 2: Integration generativer KI anhand Graph Codes
+
+
+
+
+
+
+Dieses Konzept umfasst \textit{Explainable Semantic Multimedia Feature Graphs}, kurz ESSMFG und die Indexstruktur der \textit{Graph Codes}. 
+Mittels dieses Konzept wird auf Basis einer kontextfreien Phrasenstruktur-Grammatiken $G_{ESSMFG}$ Text generiert. 
+Jeder Ausdruck, der anhand dieser Grammatik generiert wurde, ist in Bezug auf seinen Inhalt wahr bzw. korrekt, da dieser rein die ursprünglichen Merkmale in einer formalen, aber dennoch in für Menschen lesbarer Form repräsentiert.
+Dennoch ist der generierte Text in höchstem Maße abhängig vom Aufbau der Phrasen aus der Grammatik, sowie abhängig von der Art des verarbeiteten Dokuments.
+So ist die Reihenfolge von generierten Sätzen abhängig von der Reihenfolge der verarbeiteten Merkmale.
+Dies führt bei auf Text basierenden Dokumenten zu guten Ergebnissen, da die Reihenfolge der Sätze in der generierten Erklärung der Struktur des Dokuments folgt.
+Für andere Multimedia-Dateien, wie z.B. Bildern, ist die Reihenfolge der generierten Sätze zufällig, da die Reihenfolge der identifizierter Merkmale zufällig ist.
+
+Wie bereits erwähnt, konnte mit generativer KI ein Durchbruch in der künstlichen Intelligenz erzielt werden, welcher es nun ermöglicht Inhalte und Daten eigenständig zu erzeugen \cite{mckinsey-generative-ai}.
+Dies wird durch Datenmodelle ermöglicht, die mit enormen Datenmengen trainiert werden.
+So wurde nach Schätzungen ChatGPT auf bis zu 45 Terrabyte Daten an Text trainiert.
+Aufgrund dieser enormen Datenmengen können Ausgaben auf Anfragen kreativ und täuschend echt wirken.
+Des Weiteren ist generative KI dynamisch, was daran liegt, dass es für gewöhnlich zufällige Elemente einbindet.
+Das hat zur Folge, dass die generierten Ausgaben auf eine einzige Anfrage unterschiedlich ausfallen können.
+Dies hat auch einen potentiellen Mehrwert für Benutzer, da mittels gezielter Anfragen das Wissen, welches in diesen enormen Datenmengen gebunden ist, genutzt werden kann, um so neues Wissen zu generieren.
+
+Soziale Medien sind allerdings nicht der einzige Anwendungsbereich, in welchem gewaltige Datenmengen anfallen.
+Ein anderer Anwendungsbereich ist z.B. die Medizin bzw. das Gesundheitswesen \cite{digital-health-dossier}.
+Ein konkretes und aktuelles Beispiel liegt z.B. in den angefallen Daten von sogenannten \textit{Smart Wearables}. 
+\textit{Smart Wearables} sind kleine elektronische Systeme, die u.a. in Alltagsgegenständen oder am oder gar im Körper getragen werden können.
+Konkretere Beispiele sind Smartwatches, Fitnesstracker, Blutdruckmessgeräte oder Biosensoren (siehe \cref{sec1:intro:fig:smart-watch}).
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=5cm]{resources/images/smartwatch.jpg}
+    \caption{Smartwatch mit Herzschläge pro Minute.}
+    \label{sec1:intro:fig:smart-watch}
+\end{figure}
+\noindent
+Diese Systeme können für medizinische Zwecke eingesetzt werden und sammeln kontinuierlich Daten vom Anwender \cite{insider-intelligence-wearables}.
+\med
+
+%\input{chapter/chapter_1/ai-ml-dl}
+%\noindent
+
+
+
+
+\med
+Zusammenfassend lässt sich sagen, dass diese Ansätze bereits in der Lage sind natürliche Sprache in für Menschen verständlicher Form zu generieren. 
+Diese Ansätze generieren jedoch nur textuelle Beschreibungen.
+Noch dazu sind diese Beschreibungen statisch.
+Zudem können mit diesen Ansätzen keine visuellen Beschreibungen generiert werden.
+Es ist also bestrebenswert nach einer Lösung zu suchen, mit welchem man sich von diesen statischen Ansätzen lösen kann.
+Sich von diesen statischen Ansätzen zu lösen, stellt somit eine noch offene Forschungslücke dar.
+Diese Forschungslücke kann mit der Frage \enquote{Wie kann man sich von diesen statischen Ansätzen lösen, wenn man generative KI einsetzt?} adressiert werden. 
+
+
+
+
+
+\node[anchor=north west, text width=0.98\textwidth] at (ai.north west) {
+                \textbf{Künstliche Intelligenz (KI)}\med\footnotesize Künstliche Intelligenz ist ein Überbegriff und bezeichnet den Ansatz, mit Maschinen intelligentes menschliches Verhalten nachzuahmen, um dadurch Probleme zu lösen.
+            };
+
+\node[anchor=north west, text width=0.88\textwidth] at (ml.north west) {
+                \textbf{Maschinelles Lernen (ML)}\med\footnotesize Maschinelles Lernen ist ein Überbegriff für die Technologien, die eingesetzt werden, um künstliche Intelligenz zu erreichen.
+            };
+
+\node[anchor=north west, text width=0.79\textwidth] at (dl.north west) {
+                \textbf{Deep Learning (DL)}\med\footnotesize Deep Learning ist eine Weiterentwicklung des maschinellen Lernens und macht Gebrauch von neuronalen Netzwerken, welche dem menschlichen Gehirn nachempfunden sind.
+            };
+
+\node[anchor=north west, text width=0.68\textwidth] at (genai.north west) {
+                \textbf{Generative KI}\med\footnotesize Generative KI ist ein Sammelbegriff für auf künstlicher Intelligenz basierender Systeme, mit welcher neue und originelle Inhalte erstellt werden können.
+            };
+
+
+
+
+
+
+\begin{adjustbox}{
+        angle=0,
+        center,
+        caption={Bauanleitung für ein Lego-Set.},
+        label={sec1:intro:subsec:problems:fig:lego-instructions},
+        nofloat=figure
+    }
+    \copyrightbox[b]{
+            \includegraphics[width=\linewidth]{resources/images/lego-instructions.png}
+        }
+        {%
+        \textcolor{black}{%
+            %Haftungsausschluss: \copyright{} 2023 Lego Gruppe - Diese Arbeit ist unabhängig und wurde von der LEGO Gruppe weder genehmigt noch gesponsert.
+            Haftungsausschluss: LEGO \textsuperscript{\textregistered{}} und das LEGO Logo sind Marken der LEGO Unternehmensgruppe. 
+            \newline
+            \copyright{} 2023 Lego Gruppe. Diese Arbeit ist unabhängig und wurde von der LEGO Gruppe weder genehmigt, noch gesponsort.
+        }
+    }
+\end{adjustbox}
+
+
+
+
+\newline
+Um nun die in den vorigen Abschnitten identifizierten Probleme zu adressieren, werden folgende Problemstellungen definiert:
+\begin{itemize}
+    \item \problemstmt{} Generative KI ist aktuell nicht für die Erklärbarkeit von \mmir{}-Prozessen nutzbar.
+    %Mangel an Erklärbarkeit. Erklärungen können bislang nur in Form von Text generiert werden und sind noch sehr statisch.
+    \item \problemstmt{} Das \gmaf{} bietet keine Integration generativer KI. 
+    %Mangel an Integration. Es gibt keine Modellierung, die es ermöglicht identifizierte Merkmale als Eingabedaten in generative Systeme zu überführen.
+\end{itemize}
+
+
+Basierend auf den in \cref{sec1:intro:subsec:research-questions} definierten Forschungsfragen können folgende Forschungsziele formuliert werden:
+\begin{itemize}
+    \item Forschungsziel für die Frage nach der Erklärbarkeit von MMIR mittels generativer KI (FF1).
+    \item Forschungsziel für die Frage nach der Integration generativer KI in das GMAF (FF2).
+\end{itemize}
+\noindent

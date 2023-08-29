@@ -1,0 +1,155 @@
+\subsubsection{GMAF}
+Das Generic Multimedia Analysis Framework (GMAF) ist ein Framework, welches ausgewählte Technologien zum Verarbeiten verschiedener multimedialer Inhalte, wie Bilder, Videos oder Text nutzt und miteinander kombiniert.
+Beispiele für solche Technologien sind Verarbeitungssysteme zur Merkmalserkennung in Bildern (z.B zur Objekterkennung oder Erkennung von räumlichen Beziehungen mittels maschinellen Lernens).
+Das GMAF bietet eine flexible und erweiterbare Architektur, mit welcher auf einfache Art und Weise neue Algorithmen oder Schnittstellen zur Merkmalserkennung im Form von Plugins in das GMAF integriert werden können.
+Die von den Plugins extrahierten Merkmalen werden vom GMAF in einer zentralen Datenstrukturen zusammengefasst und vereint. \cref{sec2:sota:subsec:fz-explainability:fig:gmaf-overview} zeigt eine vereinfachte Übersicht der Architektur des GMAFs und die grundlegenden Komponenten. 
+
+\input{chapter/chapter_2/gmaf-overview}
+
+Die Plugins im GMAF können als ein Zusammenschluss aus Anbietern von semantischen Informationen betrachtet werden.
+Dieser Zusammenschluss produziert alle Daten, die notwendig sind, um ein Verzeichnis bzw. einen Index aus den semantischen Informationen zu generieren. 
+Allgemein kann jedes durch ein Plugin identifizierte Merkmal als ein Indizierungsbegriff gelten und somit Teil des Indexes werden.
+Da für gewöhnlich diese Begriffe strukturelle und semantische Beziehungen zueinander aufweisen, bietet sich zur Darstellung dieser Merkmale und ihren Beziehungen zueinander eine auf Graphen basierende Struktur an.
+Diese Struktur wird durch den Multimedia Feature Graphen (MMFG) realisiert.
+Durch den MMFG werden die in ihm gespeicherten semantischen Informationen in ein einheitlichen Modell repräsentiert.
+
+
+Um Erklärbarkeit von MMFGs zu erreichen, muss die technische Darstellung der Merkmale in eine für Menschen verständliche Bedeutung überführt werden.
+Damit diese Lücke überbrückt werden kann, muss in einem ersten Zwischenschritt die Lücke zwischen der technischen Darstellung der Merkmale und ihrer semantischen Darstellung überbrückt werden.
+Hierzu wird ein formaler und für Maschinen lesbarer Ansatz zur Erweiterung von MMFGs benötigt.
+Eine semantische Erweiterung von MMFGs kann durch das Anwenden des Semantic Webs erreicht werden.
+Zusätzlich können durch das Definieren und Anwenden einer formalen kontextfreien Phrasenstruktur-Grammatik Menschen verständliche, sowie lesbare und auf natürlicher Sprache basierende Ausdrücke generiert werden.
+Diese Erweiterungen ermöglichen formale semantische Darstellungen und schaffen die Grundlage für auf natürlicher Sprache basierenden Erklärungen.
+Die Erweiterungen von MMFGs zu formalen semantischen Darstellungen führen zu Semantic Multimedia Feature Graphen (SMMFGs), sowie zu Explainable Semantic Multimedia Feature Graphen (ESMMFGs).
+In den nachfolgenden Abschnitten werden die Erweiterungen des MMFGs beschrieben und die Voraussetzungen für diese Erweiterungen erläutert.
+Die Struktur dieser Abschnitte folgt dabei dem Aufbau der Erweiterungen von einfachen MMFGs zu SMMFGs und schlussendlich zu ESMMFGs.
+
+\begin{figure}[htb]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tikzpicture}[font=\fontsize{9}{0pt}\selectfont]
+
+            \definecolor{e4draw}{RGB}{224,155,254}
+            \definecolor{n5fill}{RGB}{84,224,163}
+            \definecolor{node}{RGB}{51, 175, 255}
+            \definecolor{compr}{RGB}{224, 155, 254}
+            \definecolor{sr}{RGB}{84, 224, 163}
+
+            \tikzset{
+                e1/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=black]}},
+                e2/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=e4draw]}},
+                e3/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=n5fill]}},
+                comprstyle/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=compr]}},
+                srstyle/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=sr]}},
+                thick/.style={line width=1.1pt},
+                every node/.append style={thick}
+            }
+
+            \node[draw, minimum width=\textwidth, minimum height=3cm] (f) {};
+
+            %\node[anchor=south east] at (f.south east) {(c)};
+
+            \node[rectangle, draw, anchor=west, minimum height=3cm] (mmfg) at (f.west) {
+                \hspace*{1mm}
+                \begin{turn}{90}
+                    \fontsize{12}{0}\fontseries{bx}\selectfont
+                    MMFG
+                \end{turn}
+                \hspace*{1mm}
+            };
+
+            \node[anchor=north west, minimum height=1cm, text width=2.5cm] (a1) at (mmfg.north east) {
+                \shortstack{Initiale textuelle \\Annotierung}
+            };
+
+            \node[anchor=north west, minimum height=2cm, text width=2.5cm] (a2) at ([yshift=5mm]mmfg.east) {
+                \shortstack{Formale \\Modellierung \\der Darstellung \\eines MMFG}
+            };
+
+            \node[rectangle, draw, fill=node, right=1cm of a2.east, text width=2cm, align=center] (fvt1) {$S_{MMFG}$};
+            \node[rectangle, draw, fill=node, right=1cm of fvt1, text width=2cm, align=center] (fvt2) {$fvt$};
+            \node[rectangle, draw, fill=node, right=1cm of fvt2, text width=2cm, align=center] (fvt3) {$fvt$};
+
+            \foreach \x in {0,...,4} {
+                \node[rectangle, draw, right=0.5cm + 2.2cm * \x of a1.east, line width=0.4pt] (lbl-\x) {$LBL$};
+            }
+
+            \draw[] (a1.south west) -- ++(\textwidth-1cm,0);
+            \draw[] (a1.north east) -- ++(0,-3cm);
+
+            \draw[e1] (fvt1.east) -- node[below] {$frt$} (fvt2.west);
+            \draw[e1] (fvt2.east) -- node[below] {$frt$} (fvt3.west);
+
+            \draw[e1, dashed] (fvt1.north) -- (lbl-0.south);
+            \draw[e1, dashed] (fvt1.east) ++(5mm,0cm) -- (lbl-1.south);
+            \draw[e1, dashed] (fvt2.north) -- (lbl-2.south);
+            \draw[e1, dashed] (fvt2.east) ++(5mm,0cm) -- (lbl-3.south);
+            \draw[e1, dashed] (fvt3.north) -- (lbl-4.south);
+
+        \end{tikzpicture}
+    }
+    \caption{Formale Modellierung der Darstellung eines MMFGs.}
+    \label{sec2:sota:subsec:fz-explainablity:fig:mmfg-formal-model}
+\end{figure}
+
+
+
+\subsubsection{Umwandlung eines Graph Codes}
+\label{sec2:sota:subsubsec:gc-transformation}
+Sollen die in einem Graph Code gespeicherten Informationen in einem System generativer KI verwendet werden können, müssen diese Informationen ausgelesen und in die Eingabeform eines Systems generariver KI transformiert werden.
+% Ausgangspunkt bzw. Ziel ist es somit die Datenstruktur der Graph Codes in Eingabeform für generative KI zu transformieren.
+Wie aber sieht die Eingabe in ein System generativer KI aus?
+Die meisten Systeme generativer KI arbeiten mit einer sogenannten \textbf{Prompt} als Eingabe.
+Im Rahmen der Verarbeitung natürlicher Sprache und des maschinellen Lernens bezeichnet ein Prompt ein Stück Text, das als eine Anweisung an ein System verstanden werden kann und welches den Kontext und alle dazugehörigen und notwendigen Informationen enthält, damit ein Modell relevante Ausgaben erzeugen kann.
+Anwendungsbeispiele für Prompts können Erklärungen, Fragen oder anderweitige Texteingaben sein.
+Das Modell eines Systems verarbeitet die Eingabe und produziert in Abhängigkeit der Eingabe und der Fähigkeiten des jeweiligen Modells entsprechende Ausgaben, wie z.B. Vervollständigungen von Text, Erklärungen, Übersetzungen, Zusammenfassungen oder Bilder.
+Beim Dirigieren des Verhaltens eines Systems spielen Prompts daher eine entscheidende Rolle.
+Grundlegende Elemente oder Inhalte einer Prompt können Anweisungen, Kontext, Eingabedaten oder Angaben zur gewünschten Ausgabe umfassen.
+Bereits durch einfache Prompts können viele Aufgaben ausgeführt werden, jedoch hängt die Qualität der Ausganr von der Qualität der Eingabe ab.
+Durch das Bereitstellen von mehr Informationen, sowie durch detaillierte Anpassungen einer Prompt können die Wahrscheinlichkeiten zum Generieren gewünschter Ausgaben erhöht werden.
+Dieser Ansatz, Prompts anzupassen, um optimale Ergebnisse zu erzielen, heißt \textbf{Prompt Engineering}.
+Prompt Engineering ist, in Essenz, ein iterativer, experimenteller Prozess.
+Begonnen wird zumeist mit einfachen Prompts, die iterativ und inkrementell weiterentwickelt werden.
+Einfache Anpassungsmöglichkeiten sind Prompts schlicht, kurz und knapp zu halten und eine möglichst präzise Formulierung zu verwenden.
+% Prompt Engineering ist ein iterativer Prozess.
+% Experimentieren und einfach beginnen...
+% Es gibt mehrere Techniken zur Umsetzung von Prompt Engineering.
+% Zero-Shot, Few-Shot
+
+Ausgehend von diesen Grundlagen kann bestimmt werden, welche Informationen für eine Prompt notwendig sind und wie diese in eine Prompt eingebunden werden müssen, um ein gewünschte Ausgabe hervorzurufen.
+
+% Ausgangspunkt: Graph Code -> Endpunkt: Eingabe für KI
+% Wie sieht Eingabe von KI Systemen aus? -> Prompts.
+% Grundlagen von Prompts anmerken.
+% Sobald Grundlagen und Aufbau von Prompts bekannt, kann bestimmt werden, was für Informationen für eine Prompt notwendig sind und wie diese in die Prompt eingebunden werden müssen.
+% Prompt Engineering: Definition (Entwickeln von Prompts heißt Prompt Engineering)
+% Im Rahmen von Prompt Engineering gibt es einige Techniken. Noch dazu gibt es Techniken zur Optimierung dieser Entwicklung, um die Wahrscheinlichkeit von Ausgaben zu erhöhen und gewünschte Ausgaben eher zu erhalten. Dies ist insbesondere auch für die Erklärbarkeit von Graph Codes interessant.
+% Optimierung von Prompts, auch in Bezug auf verbesserte Erklärbarkeit... -> Techniken 
+% Spezifisch für die Erklärung von Graph Codes 
+
+% Endpunkt ist die Eingabe in das System. Dies kann durch Prompts erreicht werden... Was sind Prompts? Wie können Prompts effektiv genutzt werden? Grundlagen von Prompts. Anpassung und Optimierung von Prompts. Sobald diese Grundlagen bekannt sind, kann bestimmt werden, was überhaupt notwendig ist und wie vorgegangen werden muss, um von einer Datenstruktur zu einer Prompt zu gelangen bzw. wie eine Prompt transformiert werden muss, um dieses Ziel (Eingabe für ein System) zu erreichen... 
+% Ziel ist ja schließlich zu einer Eingabe zu gelangen. Hier vor allem auch hervorheben, dass dieses Ziel spezifisch Erklärbarkeit im Sinn hat. Diese Anmerkung als mögliche Vorlage zur Optimierung nutzen...
+
+You can achieve a lot with simple prompts, but the quality of results depends on how much information you provide it and how well-crafted it is. A prompt can contain information like the instruction or question you are passing to the model and include other details such as context, inputs, or examples. You can use these elements to instruct the model better and as a result get better results.
+
+This approach of designing optimal prompts to instruct the model to perform a task is what's referred to as prompt engineering.
+
+
+
+Prompts are crucial for guiding the language model's behavior and tailoring its responses to specific tasks or contexts. The more detailed and explicit the prompt, the more likely the language model will generate the desired output. Prompts can vary in length and complexity, depending on the requirements and capabilities of the AI system being used.
+
+% 1. Grundlegende Formatierung (Grundlage Input: String) Graph Code wird in Json gespeichertt und kann somit unmittelbar gelesen weerden. (Json ist ein interchangable format und sehr weit verbreitet.)
+
+% Damit eine effektive Unwandlung und Verarbeitung erfolgen kann, muss die Eingabe modular genug sein. Je modularer die Eingabe und präziser die Eingabe in die gen. KI desto präziser die Ausgabe. Für GPTs bzw. PaLM 2 ist es sinnvoll die Informationen aus der Datebstruktur so heraus zu schreiben, dass diese einem geregelten Syntax folgt. 
+% So ein Syntax kann concept - relationship - concept sein und die Wörter bzw. Konzepte mit einer Beziehung verbinden und so möglichst tokensparend sein. Aufgrund der Modularität der Eingabe hätte das LlM auch bessere Chancen ein 'Verständnis' des Textes aufzubauen. Dies kann potentiell die Qualität der Ausgabe beeinträchtigen. Diese Modularität, sowie weitere gezielte Strukturierungen des Textes sind wichtige Aspekte des sogenannten Prompt Engineerings.
+
+\subsubsection{Schnittstellen von Systemen generativer KI}
+\label{sec2:sota:subsubsec:genai-apis}
+% Hier einen Überblick über die Schnittstellen der in Frage stehenden Systeme generativer KI und die dazu notwendigen Technologien (HTTP, REST)
+% Auswahl von möglichen Bibliotheken zur Umsetzung dieser Technologien...
+
+% Für SD OpenAPI ansprechen
+
+%Hier eventuell die Systeme genauer beschreiben vor allem in Bezug auf ihre technischen Eigenschaften (wie z.B Skalierbarkeit?) Vor allem aber auch genauer auf die Schnittstellen der jeweiligen Systeme eingehen und die für deren Umsetzung notwendigen Technologien (HTTP, REST) und eine Auswahl von möglichen Bibliotheken zur Umsetzung dieser Technologien (REST z.B. Jersey, bzw. Generierung durch Spezifikation von OpenAPI (SD))
+
+% Am Anfang dieses Forschungsziels sollte also der Übergang bzw. die Überführung der in einem Graph Code gespeicherten Informationen in ein System generativer KI stehen, um dann von diesem eine Erklärung in Text oder Bildform zu erhalten.

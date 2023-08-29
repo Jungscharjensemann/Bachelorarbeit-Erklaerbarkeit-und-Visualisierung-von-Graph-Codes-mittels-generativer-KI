@@ -1,0 +1,37 @@
+\begin{figure}[htb]
+    \centering
+    \resizebox{0.8\textwidth}{!}{
+        \begin{tikzpicture}
+            \node (tabl) {
+                \begin{tabular}{rcccccc}
+                     &  \begin{turn}{90}Person\end{turn}& \begin{turn}{90}Body\end{turn} & \begin{turn}{90}Arm\end{turn} & \begin{turn}{90}Watch\end{turn} & \begin{turn}{90}Clock\end{turn} & \begin{turn}{90}attached to $~$\end{turn} \\ \hline
+                    Person      & 1 & 1 & 0 & 0 & 0 & 0 \\ 
+                    Body        & 0 & 1 & 1 & 0 & 0 & 0 \\
+                    Arm         & 0 & 0 & 1 & 1 & 0 & 0 \\ 
+                    Watch       & 0 & 0 & 0 & 1 & 1 & 1 \\ 
+                    Clock       & 0 & 0 & 0 & 0 & 1 & 0 \\ 
+                    attached to & 0 & 0 & 1 & 0 & 0 & 1
+                \end{tabular}
+            };
+
+            \node[anchor=south west] (wm) at([xshift=5mm]tabl.south east) {
+                \shortstack[c]{
+                    $WM(MMFG_{ex}) = $\\
+                    \vspace*{1.5mm} \\
+                    $\begin{pmatrix}
+                    1 & 1 & 0 & 0 & 0 & 0  \\
+                    0 & 1 & 1 & 0 & 0 & 0  \\
+                    0 & 0 & 1 & 1 & 0 & 0  \\
+                    0 & 0 & 0 & 1 & 1 & 1  \\
+                    0 & 0 & 0 & 0 & 1 & 0  \\
+                    0 & 0 & 1 & 0 & 0 & 1  \\
+                    \end{pmatrix}$
+                }
+            };
+
+            %\node[draw, fit=(tabl)(wm)] {};
+        \end{tikzpicture}
+    }
+    \caption{Wertungsmatrix des Beispiels $MMFG_{ex}$.}
+    \label{sec2:sota:subsec:fz-explainablity:fig:mmfg-valuation-matrix}
+\end{figure}

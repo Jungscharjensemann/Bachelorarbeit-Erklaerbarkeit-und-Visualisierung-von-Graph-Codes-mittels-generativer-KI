@@ -1,0 +1,53 @@
+{
+    \def\arraystretch{1.1}%
+    \begin{xltabular}{\linewidth}{
+            @{}
+            >{
+                \hsize=0.25\linewidth
+                \raggedright\arraybackslash
+            }X
+            >{
+                \hsize=0.55\linewidth
+                \raggedright\arraybackslash
+            }X
+            >{
+                \hsize=0.2\linewidth
+                \centering\arraybackslash
+            }X
+            @{}
+    }
+
+    % First Header
+
+    \caption{Struktur dieses Kapitels.} 
+    \label{sec3:model:table:structure} \\
+        
+    \toprule
+
+    \textbf{FZ} & \textbf{Kurze Beschreibung} & \textbf{Abschnitt} \\
+    
+    \midrule
+    
+    \endfirsthead
+
+    % Normal Head
+
+    \toprule
+
+    \textbf{FZ} & \textbf{Kurze Beschreibung} & \textbf{Abschnitt} \\
+    
+    \midrule
+    
+    \endhead
+        
+    % Lower Rows
+
+    Konzeptions- und Modellierungsmethodik & Konzeptuelle Gestaltung Modellierung & \cref{sec3:model:subsec:concept-modeling-methodology} \\
+    FZ 1.2/TB & Modellierung: Erklärbarkeit \& gen. KI & \cref{sec3:model:subsec:fz-explainability} \\
+    FZ 2.2/TB & Modellierung: Integration generativer KI & \cref{sec3:model:subsec:fz-integration} \\
+    Zusammenfassung & Ergebnisse / Erkenntnisse & \cref{sec3:model:subsec:summary} \\
+        
+    \bottomrule 
+
+    \end{xltabular}
+}

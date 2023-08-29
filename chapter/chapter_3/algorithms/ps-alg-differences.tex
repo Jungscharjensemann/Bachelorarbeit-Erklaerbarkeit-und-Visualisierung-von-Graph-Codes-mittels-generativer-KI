@@ -1,0 +1,31 @@
+\begin{algorithm}[htb]
+\caption{Berechne Unterschiede}
+\label{sec3:model:par:mechanism-use-cases:alg:dif}
+\begin{algorithmic}[1]
+\Function{GetDifferences}{$\text{gcs}$}
+    %\State Graph Code für Gemeinsamkeiten (sim) $\gets$ new GraphCode
+    %\State Vereinigung von Graph Codes (union) $\gets$ getUnion(gcs)
+    %\State Vokabular von union (unionDic) $\gets$ new Vector(Vokabular von union)
+    \State diff $\gets$ new GraphCode
+    \State union $\gets$ getUnion(gcs)
+    \State unionDic $\gets$ new Vector(union.getDictionary())
+    \For{gc in gcs}
+        \State \shortstack[l]{Entferne alle Elemente aus unionDic, \\die nicht im Vokabular von gc enthalten sind}
+    \EndFor
+    
+    \State \shortstack[l]{Alle Merkmale bestimmen, die im Vokabular der Vereinigung union,\\ aber nicht im Vokabular unionDic enthalten sind.}
+    \State dictionary $\gets$ new Vector(unionDic)
+    \State diff.setDictionary(dictionary)
+    
+    \For{gci in gcs}
+        \For{s in dictionary}
+            \For{t in dictionary}
+                \State $\text{i} \gets \text{gci.getEdgeValueForTerms}(\text{s}, \text{t})$
+                \State $\text{diff.setValueForTerms}(\text{s}, \text{t}, \text{i})$
+            \EndFor
+        \EndFor
+    \EndFor
+    \State \textbf{return} $\text{diff}$
+\EndFunction
+\end{algorithmic}
+\end{algorithm}

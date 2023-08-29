@@ -1,0 +1,177 @@
+\begin{usecase}{UC-1.1 Graph Code(s) importieren}
+\label{sec3:model:uc-1.1}
+    \desc{
+        Benutzer klicken in der Arbeitsfläche einen Knopf \enquote{Select Graph Code(s)}.
+        Daraufhin öffnet sich ein Filechooser, in welchem Benutzer eine Auswahl von einem oder mehrerer Graph Code Datei(en) treffen können.
+        Die ausgewählten Graph Code Datei(en) werden einer Liste in der Arbeitsfläche hinzugefügt und angezeigt.
+    }
+    \tcbline
+    \actors{Benutzer, System}
+    \tcbline
+    \pre{Keine.}
+    \tcbline
+    \mainflow{
+        \item System zeigt eine Liste in der Arbeitsfläche an.
+        \item Benutzer klickt Knopf \enquote{Select Graph Code(s).}
+        \item System zeigt Filechooser an.
+        \item Benutzer wählt ein oder mehrere Graph Code Datei(en) aus.
+        \item System fügt Graph Code Datei(en) der Liste in der Arbeitsfläche zu.
+    }
+    \tcbline
+    \post{Graph Code Datei(en) sind der Liste in der Arbeitsfläche hinzugefügt worden.}
+\end{usecase}
+
+\begin{usecase}{UC-1.2 Graph Code(s) entfernen}
+\label{sec3:model:uc-1.2}
+    \desc{
+        Benutzer wählen aus der Liste in der Arbeitsfläche ein oder mehrere Graph Code Datei(en) aus und können über einen Knopf \enquote{Remove selected Graph Code(s)} diese Graph Codes aus der Liste und somit der Arbeitsfläche entfernen.
+    }
+    \tcbline
+    \actors{Benutzer, System}
+    \tcbline
+    \pre{
+        \begin{itemize}
+            \item Liste enthält ein oder mehrere Graph Code(s).
+            \item Benutzer haben ein oder mehrere Graph Code(s) ausgewählt.
+        \end{itemize}
+    }
+    \tcbline
+    \mainflow{
+        \item System zeigt eine Liste an Graph Codes in der Arbeitsfläche an.
+        \item Benutzer wählt ein oder mehrere Graph Code(s) aus.
+        \item Benutzer klickt auf Knopf \enquote{Remove selected Graph Code(s).}
+        \item System entfernt ausgewählte Graph Codes aus der Liste in der Arbeitsfläche.
+    }
+    \tcbline
+    \post{Ausgewählte Graph Code Datei(en) sind aus der Liste in der Arbeitsfläche entfernt worden.}
+\end{usecase}
+
+\begin{usecase}{UC-1.3 Graph Code(s) auswählen}
+\label{sec3:model:uc-1.3}
+    \desc{
+        Benutzer wählen aus der Liste in der Arbeitsfläche ein oder mehrere Graph Code Datei(en) aus.
+        Die Auswahl von Graph Code Dateien dient als Grundlage für Anwendungsfälle, wie \hyperref[sec3:model:uc-1.2]{UC-1.2}, \hyperref[sec3:model:uc-1.5]{UC-1.5} oder \hyperref[sec3:model:uc-1.8]{UC-1.8}.
+    }
+    \tcbline
+    \actors{Benutzer, System}
+    \tcbline
+    \pre{
+        Liste enthält ein oder mehrere Graph Code(s) zum Auswählen.
+    }
+    \tcbline
+    \mainflow{
+        \item System zeigt eine Liste an Graph Code(s) in der Arbeitsfläche an.
+        \item Benutzer wählen ein oder mehrere Graph Code(s) an.
+    }
+    \tcbline
+    \post{Keine.}
+\end{usecase}
+
+\begin{usecase}{UC-1.4 Operation auswählen}
+\label{sec3:model:uc-1.4}
+    \desc{
+        Benutzer wählen aus einem Feld eine auszuführende Operation aus.
+        Verfügbare Optionen sind: Vereinigung, Subtraktion, Gemeinsamkeiten, Unterschiede.
+        Das Auswählen einer Operation ist die Vorbedingung für den Anwendungsfall \hyperref[sec3:model:uc-1.5]{UC-1.5}, dem Ausführen einer Operation.
+    }
+    \tcbline
+    \actors{Benutzer, System}
+    \tcbline
+    \pre{Keine.}
+    \tcbline
+    \mainflow{
+        \item System bietet in einem Feld eine Reihe an auszuwählenden Operationen.
+        \item Benutzer wählt eine Operation aus.
+    }
+    \tcbline
+    \post{Keine.}
+\end{usecase}
+
+\begin{usecase}{UC-1.5 Operation ausführen}
+\label{sec3:model:uc-1.5}
+    \desc{
+        Benutzer klicken auf den Knopf \enquote{Execute}, um die vorher ausgewählte Operation auf den in der Arbeitsfläche ausgewählten Graph Code Datei(en) auszuführen.
+        Die vorher ausgewählte Operation wird daraufhin auf den ausgewählten Graph Code Datei(en) ausgeführt.
+    }
+    \tcbline
+    \actors{Benutzer, System}
+    \tcbline
+    \pre{
+        \begin{itemize}
+            \item Operation in der Arbeitsfläche ausgewählt.
+            \item In der Arbeitsfläche wurden Graph Code Datei(en) ausgewählt.
+        \end{itemize}
+    }
+    \tcbline
+    \mainflow{
+        \item Benutzer klickt auf Knopf \enquote{Execute}.
+        \item System führt vorher ausgewählte Operation auf den ausgewählten Graph Code Datei(en) aus.
+    }
+    \tcbline
+    \post{Erfolgreich ausgeführte Operation auf ausgewählten Graph Code(s).}
+\end{usecase}
+
+\begin{usecase}{UC-1.6 Erklärungstyp umschalten}
+\label{sec3:model:uc-1.6}
+    \desc{
+        Benutzer wählen in der Arbeitsfläche über Knöpfe \enquote{Image} oder \enquote{Text} den Typ der Erklärung aus.
+        Anhand der ausgewählten Erklärung wird die Benutzerschnittstelle in der Arbeitsfläche für den jeweiligen Erklärungstyp umgeschaltet.
+    }
+    \tcbline
+    \actors{Benutzer, System}
+    \tcbline
+    \pre{Keine.}
+    \tcbline
+    \mainflow{
+        \item Benutzer wählen über die Knöpfe \enquote{Image} oder \enquote{Text} den Typ der Erklärung aus.
+        \item System schaltet auf für Typ spezifische Benutzerschnittstelle um.
+    }
+    \tcbline
+    \post{Benutzerschnittstelle für spezifischen Erklärungstyp umgeschaltet.}
+\end{usecase}
+
+\begin{usecase}{UC-1.7 Erweiterte Optionen anpassen}
+\label{sec3:model:uc-1.7}
+    \desc{
+        Benutzer passen in einem dafür vorgesehenen Feld erweiterte Optionen für den Endpunkt, der für die zu generierende Erklärung zuständig ist, an.
+        Die anpassbaren Optionen sind abhängig vom jeweiligen Endpunkt bzw. Erklärungstypen.
+    }
+    \tcbline
+    \actors{Benutzer, System}
+    \tcbline
+    \pre{Keine.}
+    \tcbline
+    \mainflow{
+        \item System bietet, abhängig vom Endpunkt bzw. Erklärungstypen, eine Reihe an anpassbaren Optionen an.
+        \item Benutzer passen Optionen nach eigenen Bedürfnissen an.
+    }
+    \tcbline
+    \post{Keine.}
+\end{usecase}
+
+\begin{usecase}{UC-1.8 Erklärung generieren}
+\label{sec3:model:uc-1.8}
+    \desc{
+        Benutzer klicken auf einen Knopf \enquote{Generate ...}, um eine Erklärung für eine zuvor ausgewählte Graph Code Datei zu generieren.
+        Die generierte Erklärung ist abhängig vom zuvor gewählten Endpunkt bzw. Erklärungstypen.
+    }
+    \tcbline
+    \actors{Benutzer, System}
+    \tcbline
+    \pre{Graph Code Datei wurde ausgewählt.}
+    \tcbline
+    \mainflow{
+        \item Benutzer klickt auf Knopf \enquote{Generate ...}
+        \item System lässt durch Endpunkt Erklärung generieren.
+        \item System zeigt Erklärung in einem dafür vorgesehenen Bereich der Benuzterschnittstelle an.
+    }
+    \tcbline
+    \post{Keine.}
+    \tcbline
+    % Hier im Branchflow zwischen Image und Text differenzieren.
+    \branchflow{
+        \setcounter{enumi}{2}
+        \item[\number\value{enumi}.a] Endpunkt für \enquote{Image} generiert eine visuelle Erklärung bzw. ein Bild.
+        \item[\number\value{enumi}.b] Endpunkt für \enquote{Text} generiert eine textuelle Erklärung.
+    }
+\end{usecase}

@@ -1,0 +1,70 @@
+\begin{figure}[htb]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tikzpicture}[font=\fontsize{9}{0pt}\selectfont]
+
+            \definecolor{e4draw}{RGB}{224,155,254}
+            \definecolor{n5fill}{RGB}{84,224,163}
+            \definecolor{node}{RGB}{51, 175, 255}
+            \definecolor{compr}{RGB}{224, 155, 254}
+            \definecolor{sr}{RGB}{84, 224, 163}
+
+            \tikzset{
+                e1/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=black]}},
+                e2/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=e4draw]}},
+                e3/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=n5fill]}},
+                comprstyle/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=compr]}},
+                srstyle/.style={-{Triangle[angle=90:3pt,length=1.5mm,fill=sr]}},
+                thick/.style={line width=1.1pt},
+                every node/.append style={thick}
+            }
+
+            \node[draw, minimum width=\textwidth, minimum height=9cm] (f) {};
+
+            \node[anchor=north west, minimum height=1cm, text width=2.5cm] (a1) at (f.north west) {
+                \shortstack{Initiale textuelle \\Annotierung}
+            };
+
+            \node[anchor=north west, minimum height=3cm] (smmfg) at (a1.south west) {
+                \hspace*{1mm}
+                \begin{turn}{90}
+                    \fontsize{12}{0}\fontseries{bx}\selectfont
+                    SMMFG
+                \end{turn}
+                \hspace*{1mm}
+            };
+
+            \node[anchor=south west, minimum height=3cm] (mmfg) at (f.south west) {
+                \hspace*{1mm}
+                \begin{turn}{90}
+                    \fontsize{12}{0}\fontseries{bx}\selectfont
+                    MMFG
+                \end{turn}
+                \hspace*{1mm}
+            };
+
+
+            \node[anchor=south west, text width=2.5cm] (formal-model) at (mmfg.south east) {
+                \shortstack{Formale \\Modellierung \\der Darstellung \\eines MMFG}
+            };
+
+            \node[anchor=south west, text width=2.5cm] (anchor-annot) at (formal-model.north west) {
+                \shortstack{Anker von \\Annotierungen}
+            };
+
+            \path[name path=mmfg-eastl] (mmfg.north east) -- (mmfg.south east);
+            \path[name path=p1] (f.south west) -- ++(\textwidth, 0);
+            \path[name intersections={of=p1 and mmfg-eastl, by=f-p1}];
+            \draw[line width=1.1pt] (mmfg.north east) -- (f-p1);
+
+            \draw[] (formal-model.north west) -- ++(\textwidth-1cm,0);
+
+            %\node[rectangle, draw, fill=node, right=1cm of a2.east, text width=2cm, align=center] (fvt1) {$S_{MMFG}$};
+            %\node[rectangle, draw, fill=node, right=1cm of fvt1, text width=2cm, align=center] (fvt2) {$fvt$};
+            %\node[rectangle, draw, fill=node, right=1cm of fvt2, text width=2cm, align=center] (fvt3) {$fvt$};
+
+        \end{tikzpicture}
+    }
+    \caption{Formale Modellierung der Darstellung eines MMFGs.}
+    \label{sec2:sota:subsec:fz-explainablity:fig:mmfg-formal-model}
+\end{figure}

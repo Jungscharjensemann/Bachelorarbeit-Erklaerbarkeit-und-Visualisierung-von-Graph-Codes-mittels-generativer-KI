@@ -1,0 +1,29 @@
+\begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}
+            \begin{umlseqdiag}
+                % Actors
+                \umlactor[fill=white, scale=0.7]{Benutzer}
+                
+                % Objects
+                \umlobject[x=0, fill=white]{Benutzer}
+                \umlmlobject[x=3.3, fill=white]{rsgc}{\shortstack[c]{Remove\\Selected\\GraphCodes\\Controller}}
+                \umlmlobject[x=6, fill=white]{egc}{\shortstack[c]{Editor\\GraphCode}}
+                \umlobject[x=8, fill=white]{JList}
+
+                % Calls
+                \begin{umlcall}[padding=-2,dt=6.5,op={\shortstack[c]{Remove Selected \\ Graph Codes}}]{Benutzer}{rsgc}
+                    \begin{umlcall}[dt=4,op={Gib Liste}, return={Liste}]{rsgc}{egc}
+                    \end{umlcall}
+                    \begin{umlcall}[dt=6,op={\shortstack[c]{Ausgewählte \\Elemente}}, return={Indizes i der Elemente}]{rsgc}{JList}
+                    \end{umlcall}
+                    \begin{umlfragment}[type=for(ind : i)]
+                        \begin{umlcall}[dt=5,op={\shortstack[c]{Entferne Element \\ an Pos. ind}}]{rsgc}{JList}
+                        \end{umlcall}
+                    \end{umlfragment}
+                \end{umlcall}
+            \end{umlseqdiag}
+        \end{tikzpicture}
+    \caption{Sequenzdiagramm für den Anwendungsfall \hyperref[sec3:model:uc-1.2]{UC-1.2}.}
+    \label{sec3:model:par:seq-use-cases:fig:seq-diag-uc-1.2}
+\end{figure}

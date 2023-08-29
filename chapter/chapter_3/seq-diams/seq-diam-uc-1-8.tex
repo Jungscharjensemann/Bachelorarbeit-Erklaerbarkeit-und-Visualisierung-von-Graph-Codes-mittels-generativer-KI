@@ -1,0 +1,33 @@
+\begin{figure}[htb]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tikzpicture}
+            \begin{umlseqdiag}
+                % Actors
+                \umlactor[fill=white, scale=0.7]{Benutzer}
+                
+                % Objects
+                \umlobject[x=0, fill=white]{Benutzer}
+                \umlmlobject[x=3.3, fill=white]{tip}{\shortstack[c]{(Text/Image)Panel}}
+                \umlmlobject[x=7, fill=white]{rq}{(...)Request}
+                \umlmlobject[x=10, fill=white]{bld}{\shortstack[c]{(...)Request\\Builder}}
+                \umlmlobject[x=13, fill=white]{oas}{OpenAiService}
+                
+
+                % Calls
+                \begin{umlcall}[padding=0,dt=7,op={\shortstack[c]{Erklärung \\ generieren}}]{Benutzer}{tip}
+                    \begin{umlcall}[padding=2.5,op={Erzeuge Anfrage},return={Anfrage}]{tip}{rq}
+                    \end{umlcall}
+                    \begin{umlcall}[padding=2.5,dt=4,op={Parameter der Anfrage anpassen}, return={Modifizierte Anfrage}]{tip}{bld}
+                    \end{umlcall}
+                    \begin{umlcall}[padding=2.5,dt=4,op={Anfrage an Endpunkt senden}, return={Ergebnis in Form von (Text/Bild)}]{tip}{oas}
+                    \end{umlcall}
+                    \begin{umlcallself}[dt=4,op={\shortstack[c]{Ergebnis\\verarbeiten\\/ anzeigen}}]{tip}
+                    \end{umlcallself}
+                \end{umlcall}
+            \end{umlseqdiag}
+        \end{tikzpicture}
+    }
+    \caption{Sequenzdiagramm für den Anwendungsfall \hyperref[sec3:model:uc-1.8]{UC-1.8}.}
+    \label{sec3:model:par:seq-use-cases:fig:seq-diag-uc-1.8}
+\end{figure}

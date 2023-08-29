@@ -1,0 +1,280 @@
+%% Einleitung
+\section{Einleitung}
+\label{sec1:intro}
+Die Digitalisierung der Welt schreitet immer rasanter voran. Nicht zuletzt wird im Kontext der Digitialisierung auch von dem \enquote{Informationszeitalter} und \enquote{Computerisierung} gesprochen \cite{gabler-digitalisierung}.
+In einer zunehmend digitaleren Welt nimmt die Anzahl internetfähiger, digitaler Geräte, den sogenannten \textit{Internet Of Things} (IoT)-Geräten und Anwendern derselben immer mehr zu \cite{statista-iot-devices}.
+Laut Statistiken belief sich die Zahl der Internetnutzer, den sogenannten Onlinern, im Jahr 2022 auf rund 5.3 Milliarden. 
+Im Vergleich zum letzten Jahrzehnt ist somit die Anzahl der Internetanwender innerhalb eines Jahrzehnts um rund 2.9 Milliarden auf beinahe das Doppelte angestiegen \cite{statista-onliner-2022}.
+Auch die weltweite \textit{Covid-19}-Pandemie hatte keinen hindernden Effekt auf diese Entwicklung. 
+So fand eine neue Studie, dass die weltweiten Reaktionen auf die Pandemie die Umstellung auf digitale Technologien um mehrere Jahre beschleunigt hat \cite{mckinsey-digitalization-covid}. 
+Aufgrund der Pandemie waren viele Menschen dazu gezwungen mehr Zeit zu Hause zu verbringen, oder von zu Hause aus zu arbeiten.
+Dies hatte zur Folge, dass mehr Menschen sich digitalen Technologien und Lösungen zuwandten, um mittels Videokonferenzsystemen von zu Hause aus zu arbeiten, oder mittels sozialer Medien mit Freunden und Bekannten in Kontakt zu bleiben \cite{mckinsey-digitalization-covid, statista-covid-social-media-use}.
+So führt die Verwendung dieser Technologien, wie z.B. den sozialen Medien, wie Instagram \cite{instagram}, Facebook \cite{facebook}, Snapchat \cite{snapchat} und weiteren zu enormen Datenmengen, die ohne Hilfsmittel für Menschen nicht mehr greifbar und überschaubar sind.
+So betrug die Datennutzung im Jahr 2022 schätzungsweise 100 000 Petabytes, von welchem Mobiltelefone einen Großteil ausmachten \cite{global-mobile-data-usage}.
+%\med
+\newline
+Sollen, unabhängig vom Anwendungsbereich, diese enormen Datenmengen und die daraus extrahierten Merkmale effektiv verarbeitet und gewonnene Erkenntnisse effektiv kommuniziert werden, so gilt es die Semantik, also die Beziehungen zwischen den identifizierten Merkmalen und einer geeigneten semantischen Darstellung zu berücksichtigen. 
+Semantik bezeichnet hierbei ein Teilgebiet der Sprachtheorie und ihr Gegenstand sind die Beziehungen zwischen (sprachlichen) Zeichen und Bezeichnetem \cite{gabler-semantik}.
+Ein Beispiel hierfür ist der vorangegangene Satz: \enquote{Semantik bezeichnet ein Teilgebiet der Sprachtheorie}. In diesem Satz ist Semantik ein sprachliches Zeichen und das Bezeichnete ist das Teilgebiet der Sprachtheorie.
+Zwischen den identifizierten Merkmalen und einer geeigneten semantischen Darstellung besteht eine semantische Lücke, die es zu überbrücken gilt.
+Eine geeignete semantische Darstellung bezeichnet hierbei eine für Menschen lesbare und verständliche Erklärung.
+\newline
+Eine semantische Lücke bezeichnet den Unterschied in der Bedeutung zwischen den in unterschiedlichen Repräsentationssystemen gebildeten Konstrukten \cite{semantic-gap-def}.
+\newline
+Plastischer formuliert, sind im Rahmen dieser Arbeit die Repräsentationssysteme und die jeweils darin gebildeten Konstrukte, 1. die maschinelle Repräsentation der identifizierten Merkmale und 2. die in z.B natürlicher Sprache formulierte semantische Darstellung.
+Zwischen diesen Repräsentationsystemen besteht eine semantische Lücke, dessen Überbrückung in dieser Arbeit untersucht werden soll.
+\newline
+Das Überbrücken dieser semantischen Lücke ist eine große Herausforderung und wird seit Jahren intensiv erforscht und ist, aufgrund immer breiterer Anwendung, Gegenstand zahlreicher Untersuchungen im Bereich des \mmiri{} \cite{bridging-semantic-gap}.
+\med
+Das Thema dieser Arbeit ist im Bereich \mmir{} und künstlicher Intelligenz verortet.
+Das Themengebiet der künstlichen Intelligenz ist nicht neu und schon seit Jahrzehnten Gegenstand der Forschung und zahlreicher Untersuchungen \cite{harvard-history-ai-research}.
+Die Anwendungsmöglichkeiten von künstlicher Intelligenz sind weitreichend und haben zunehmend Einfluss auf unseren Alltag. 
+Viele Aufgaben, die früher von Menschen erledigt wurden, oder nicht zu erledigen waren, werden bereits durch künstliche Intelligenz übernommen und automatisiert. 
+Weiterhin stellt künstliche Intelligenz für viele Unternehmen und Organisationen schon heute effektiv einen wirtschaftlichen Mehrwert dar \cite{ai-anwendungsbereiche}.
+\newline
+Ein besonderer Bereich der künstlichen Intelligenz ist generative künstliche Intelligenz (KI).
+Generative künstliche Intelligenz fällt unter die Kategorie des maschinellen Lernens, welches ihrerseits eine Unterdisziplin der künstlichen Intelligenz ist.
+Maschinelles Lernen beschreibt das Entwickeln von künstlicher Intelligenz anhand von Modellen, die ohne menschliche Anleitung aus bestehenden Datenmustern \enquote{lernen} können.
+\par
+\input{chapter/chapter_1/ai-ml-dl-genai-diagram}
+\noindent
+Die enormen und komplexen Datenmengen, die mittlerweile im Internet generiert werden \cite{global-mobile-data-usage}, verstärken das Potenzial von maschinellem Lernen, sowie aber auch ihre Notwendigkeit, um mit den immer wachsenden Datenmengen zurechtzukommen \cite{mckinsey-generative-ai}.
+Noch bis vor Kurzem war maschinelles Lernen auf vorausschauende Modelle beschränkt, die nur in der Lage waren Beobachtungen vorzunehmen und Muster zu erkennen.
+Durch generative künstliche Intelligenz, wie ChatGPT-3.5 oder Dall-E, konnte ein Durchbruch erzielt werden, welcher ermöglicht neue Inhalte zu erzeugen \cite{mckinsey-generative-ai}.
+%Ein anderes Beispiel wäre ein Vorschaubild für die Vereinigung aus einer Kollektion an Bildern. 
+%Hier könnte generative KI ein Vorschaubild für die als Gemeinsamkeiten identifizierten Merkmale generieren.
+\med
+In dieser Arbeit wird untersucht, ob und inwiefern generative KI verwendet werden kann, um die semantische Lücke zu schließen und inwieweit generative KI geeignet ist, präzise Erklärungen bzw. geeignete semantische Darstellungen aus identifizierten Merkmalen zu generieren.
+
+\subsection{Motivation}
+\label{sec1:intro:subsec:motivation}
+Bei dieser Arbeit handelt es sich um eine Bachelorarbeit am Lehrgebiet Multimedia und Internetanwendungen (MMIA) von Prof. Dr-Ing. Matthias Hemmje.
+\\[\baselineskip]
+Schon vor der Bachelorarbeit bin ich über das von diesem Lehrgebiet angebotene Fachpraktikum Multimedia Information Retrieval mit dem Bereich \mmir{} in Kontakt gekommen. 
+Da mich das Fachpraktikum und das Themengebiet des \mmir{} sehr interessiert und begeistert hat, schreibe ich nun in diesem Lehrgebiet meine Bachelorarbeit, um meine Fähigkeiten auszubauen und mein Wissen zu vertiefen.
+\med
+Das Lehrgebiet MMIA hat zum Zwecke der Forschung im Bereich des \mmir{} das Forschungsprojekt \gmafi{} ins Leben gerufen. 
+Dieses Forschungsprojekt wurde entwickelt, um aktuelle Missstände und Probleme des einfachen \mmir{} auf intelligente Art und Weise zu adressieren. 
+Das \gmaf{} hat dabei zum Ziel durch eine intelligente Erweiterung von \mmir{} semantische, erklärbare, für Menschen verständliche, effektive, effiziente, kompatible und integrierte Lösungen anzubieten \cite[S.~20]{swa_diss}.
+Diese Erweiterung wird \smmiri{} genannt.
+\smmir{} führt eine Reihe von Konzepten ein, die über klassisches \mmir{} hinaus gehen.
+Hierzu gehören erweiterte Metriken für die Berechnung von Ähnlichkeit oder Empfehlungen, Möglichkeiten der Merkmalsintegration und -fusion, sowie die Erklärbarkeit von Prozessen des \mmir{} und deren Inhalte.
+Unter Erklärbarkeit versteht man in diesem Zusammenhang für Menschen verständliche Antworten auf Fragestellungen, wie z.B. die Frage \enquote{Was ist die wichtigste Eigenschaft des Elements?} oder \enquote{Was ist der Unterschied zwischen diesen zwei Bildern?}.
+Sollen Antworten auf diese Fragen auf für Menschen verständliche Art und Weise ausgedrückt werden, so müssen diese Antworten auf natürlicher Sprache aufbauen, oder prägnant visuell dargestellt werden.
+Ein Beispiel für so eine generierte textuelle Erklärung, die auf natürlicher Sprache aufbaut, ist in \cref{sec1:intro:subsec:motivation:fig:gmaf-explain-ui-dog-man-example} zu sehen. 
+\begin{figure}[htb]
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=0.769\textwidth]{resources/images/dog_woman.png}
+    \end{minipage}%
+    \fbox{
+            \begin{minipage}{.45\textwidth}
+                The picture shows two primary objects. 
+                  The first object is a dog, the second object is a woman.
+                  The dog is white and has black eyes.
+                  The woman is smiling and has blonde hair.
+                  The woman is wearing shoes, shorts, a top, and a watch.
+                  The shoes are blue.
+                  The sorts are blue.
+                  The top is black.
+                  The watch is an Apple Watch.
+                  In the background there is grass.
+            \end{minipage}
+    }
+    \caption[Beispiel für eine generierte Erklärung]{Beispiel für eine generierte textuelle Beschreibung eines Bildes im GMAF.}
+    \label{sec1:intro:subsec:motivation:fig:gmaf-explain-ui-dog-man-example}
+\end{figure}
+\noindent
+\newline
+Das \gmaf{} bietet hierfür ein umfangreiches Konzept zur Generierung von textuellen Beschreibungen von \mmir{}-Inhalten in für Menschen lesbarer und verständlicher Form.
+Es ist allerdings wichtig anzumerken, dass dieses Konzept statistisch und rein mathematische Ansätze zur Generierung von natürlicher Sprache verfolgt, ohne dabei Methoden maschinellen Lernens zu verwenden.
+Diese Ansätze generieren jedoch nur textuelle Beschreibungen auf eine statische Art und Weise.
+Zudem können mit diesen Ansätzen keine anderen Formen, wie z.B visuelle Beschreibungen, außer Text generiert werden.
+\newline
+Es ist also erstrebenswert nach einer Lösung zu suchen, mit welcher man sich von diesen statischen Ansätzen lösen kann.
+Ein anderer Ansatz, der in den letzten Monaten stark an Popularität gewonnen hat, ist die generative KI.
+Generative KI scheint eine vielversprechende Alternative zu einem statischen, statistischen und rein mathematischen Ansatz zu sein. 
+\newline
+Ließen sich mittels generativer KI tatsächlich \mmir{}-Prozesse erklären, so kann dies einen echten Mehrwert für Benutzer darstellen, da diese von präzisen Erklärungen oder visuellen Darstellungen profitieren würden.
+
+\FloatBarrier
+
+\subsection{Problembeschreibung}
+\label{sec1:intro:subsec:problems}
+Das \gmaf{} bietet bereits ein umfangreiches Konzept zur Erklärbarkeit von \mmir{}-Prozessen. 
+Die Ansätze, die in diesem Konzept verfolgt werden, sind statisch, in ihrer Anwendung begrenzt und ihre Erklärbarkeit vergleichsweise rudimentär. 
+In diesem Abschnitt werden diese Probleme angesprochen, umrissen und subsequent Problemstellungen definiert.
+
+\subsubsection{Probleme in Bezug auf die Erklärbarkeit}
+\label{sec1:intro:subsec:problems:pb:explain}
+Das \gmaf{} bietet bereits Verfahren zur Erklärbarkeit von \mmir{}-Prozessen. 
+Die Ansätze, die mit diesen Verfahren umgesetzt werden, sind allerdings sehr statisch und basieren wiederum auf statistischen und rein mathematischen Ansätzen.
+Noch dazu bieten diese Verfahren nur die Erklärbarkeit von \mmir{}-Prozessen anhand von Text.
+Es ist allerdings wichtig anzumerken, dass Text nicht die einzige Form der Erklärbarkeit ist.
+Eine andere Form der Erklärbarkeit kann mittels Bilder erzielt werden.
+So lautet ein bekanntes Sprichwort: \enquote{\textit{Ein Bild sagt mehr als 1000 Worte}}.
+Dieses Sprichwort will zum Ausdruck bringen, dass Bilder, im Vergleich zu Text, ebenfalls komplexe Sachverhalte und Wissen prägnant und in für Menschen verständlicher Form zum Ausdruck bringen können.
+Ein Beispiel hierfür wäre eine Bauanleitung zu einem Lego-Set.
+Ein konkretes Anwendungsbeispiel für die Erklärbarkeit in Form von Bildern wäre im Rahmen des \mmir{} ein Vorschaubild für eine Textdatei (siehe \cref{sec1:intro:subsec:problems:fig:mmir-example-1}).
+Anhand der in der Textdatei identifizierten Merkmale könnte eine generative KI, wie z.B Dall-E, ein Vorschaubild generieren, um somit den Inhalt des Textes visuell zu erklären.
+\par
+\input{chapter/chapter_1/gen_ai_mmir_example1}
+\noindent
+Ein Vorschaubild kann sich dann als sinnvoll erweisen, wenn viele Dateien zu verwalten sind und Benutzer nicht die Zeit haben diese einzeln zu durchforsten.
+Durch einen kurzen Blick auf das Vorschaubild könnte ein Benutzer die Datei einordnen und sich besser zurechtfinden.
+\newline
+Hierbei ist wichtig anzumerken, dass Dall-E die Textdatei nicht als Eingabe nimmt. 
+Stattdessen wird das Bild in einem ersten Schritt im \gmaf{} verarbeitet und Merkmale extrahiert. 
+Diese extrahierten Merkmale werden dann in eine Form überführt, die dann von Dall-E als Eingabe verwendet wird.
+\newline
+Ein weiteres Anwendungsbeispiel wäre die Gemeinsamkeit/Differenz aus einer Kollektion an Bildern.
+Die als Gemeinsamkeit/Differenz identifizierten Merkmale könnten in diesem Beispiel ebenfalls konkret mittels eines Bildes kurz und prägnant visuell dargestellt werden.
+Diese Art der visuellen Erklärung kann sich dann als sinnvoll erweisen, wenn viele Bilder auf ihre Merkmale untersucht werden sollen. 
+Ein Benutzer kann hier schnell den Überblick verlieren.
+\newline
+Statistische und rein mathematische Ansätze reichen für diese Beispiele nicht mehr aus.
+Ein anderer, vielversprechender Ansatz, um die Erklärbarkeit von Prozessen des \mmir{} zu erreichen, liegt in generativer KI.
+\newline
+Mittels generativer KI könnten anhand identifizierter Merkmale eigenständig neuartige Multimedia-Inhalte, wie Texte oder Bilder, erzeugt werden, die zur Erklärbarkeit von \mmir{}-Prozessen dienen könnten.
+\newline
+Je nach Anwendungsbereich, variieren die Anforderungen an Erklärungen allerdings erheblich.
+Somit ist ein weiterer wichtiger Aspekt die Anpassungsmöglichkeiten von Erklärungen in Abhängigkeit ihrer Anwendungsfälle. 
+So wird \smmir{} für die Erkennung sicherheitsrelevanter Zustände im Bereich Automotive eingesetzt. 
+Hier werden kurze, präzise Erklärungen benötigt. 
+Im Gegensatz dazu steht der Bereich des Wissensmanagements, in welchem \smmir{} ebenfalls Anwendung für Fragestellungen findet.
+In diesem Bereich werden ausführliche Erklärungen benötigt.
+Es ist also in Bezug auf die Erklärbarkeit notwendig Eigenschaften, wie z.B. die Länge der Erklärung, anpassen zu können.
+\newline
+Das \gmaf{} bietet bereits in einer Benutzerschnittstelle Möglichkeiten zur Anpassung von textuellen Erklärungen (siehe \cref{explain-ui}).
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{resources/images/explain-ui.png}
+    \caption{Benutzerschnittstelle im \gmaf{} zum Anpassen von Erklärungen.}
+    \label{explain-ui}
+\end{figure}
+\noindent
+Diese Benutzerschnittstelle bietet allerdings nur grobe Möglichkeiten zur Anpassung von textuellen Erlärungen, wie die Anpassung der Komplexität der textuellen Beschreibung.
+Möglichkeiten zur Anpassungen der Länge der textuellen Beschreibungen ermöglicht diese Schnittstelle jedoch nicht.
+
+\subsubsection{Probleme in Bezug auf die Integration}
+\label{sec1:intro:subsec:problems:pb:integration}
+Damit generative KI-Systeme aus identifizierten Merkmalen präzise und für Menschen verständliche Erklärungen generieren können, müssen die identifizierten Merkmale als Eingabedaten in die jeweiligen Systeme überführt werden.
+\newline
+Das \gmaf{} bietet keine Möglichkeiten zur Anbindung von Systemen, die generative KI anbieten, sowie kein Modell zur Übersetzung von identifizierten Merkmalen in Eingabedaten für entsprechende Systeme.
+Folglich gibt es auch keine Modellierung, die die Anpassung der Eingabedaten ermöglicht, um die in \cref{sec1:intro:subsec:problems:pb:explain} benannten Modifikationen von Erklärungen zu ermöglichen.
+\newline
+Gelingt eine Integration von generativen KI-Systemen, so kann dies einen echten Mehrwert für Benutzer darstellen, sofern dadurch verbesserte und originellere Erklärungen von \mmir{}-Prozessen generiert werden.
+Besonders die Möglichkeit, je nach Anforderung die Eingabedaten anzupassen, kann für Benutzer von Nutzen sein.
+
+\subsubsection{Problemstellungen und allgemeine Herausforderung}
+Aus den in \cref{sec1:intro:subsec:problems:pb:explain} und \cref{sec1:intro:subsec:problems:pb:integration} beschriebenen Problembereichen lassen sich zwei direkte Probleme erfassen:
+Die im \gmaf{} implementierten Konzepte zur Erklärung von \mmir{}-Prozessen sind noch sehr statisch und bieten nur Erklärungen in Form von Text, sowie die Integration besserer Lösungen zur Erklärbarkeit von \mmir{}-Prozessen.
+Die Motivation dieser Arbeit besteht darin, dass die bereits implementierten Konzepte im \gmaf{} in Bezug auf die Erklärbarkeit von \mmir{}-Prozessen noch großen Raum für Verbesserung aufweisen.
+Vebesserung wird sich durch das Anbinden von generativer KI versprochen, da generative KI in der Lage zu sein scheint auf kreative Weise neuartige Inhalte zu generieren.
+\newline
+Um nun die in den vorigen Abschnitten identifizierten Probleme zu adressieren, werden folgende Problemstellungen definiert:
+\begin{itemize}
+    \item \problemstmt{} Mangel an Erklärbarkeit. Erklärungen können bislang nur in Form von Text generiert werden und sind noch sehr statisch.
+    \item \problemstmt{} Mangel an Integration. Es gibt keine Modellierung, die es ermöglicht identifizierte Merkmale als Eingabedaten in generative Systeme zu überführen.
+\end{itemize}
+
+\subsubsection*{Zusammenfassung des allgemeinen Ziels}
+Werden nun die Problemstellungen zusammengefasst, so wird das überordnete Ziel sichtbar:
+\med
+\par
+\textit{Die im \gmaf{} implementierten Konzepte zur Erklärungen von \mmir{}-Prozessen sollen durch \textbf{generative KI} abgelöst werden, um \textbf{bessere Erklärungen}, sowie \textbf{andere Formen von Erklärungen} zu ermöglichen.}
+\med
+Anhand der in diesem Abschnitt beschriebenen Problemstellungen und des allgemeinen Ziels können nun im nächsten \cref{sec1:intro:subsec:research-questions} folgende Forschungsfragen formuliert werden. Im darauffolgenden \cref{sec1:intro:subsec:methodology-goals} wird genauer auf die Methodik dieser Arbeit, sowie die konkreteren Ziele eingegangen.
+
+\subsection{Forschungsfragen}
+\label{sec1:intro:subsec:research-questions}
+Um die im vorigen Abschnitt definierten Problembeschreibungen zu adressieren, werden folgende Forschungsfragen definiert:
+\begin{itemize}
+    \item \researchquestion{} Kann generative KI für die Erklärbarkeit von \mmir{}-Prozessen genutzt werden?
+    \item \researchquestion{} Wie lässt sich generative KI in ein bestehendes \mmir{}-System integrieren?
+\end{itemize}
+
+\subsection{Methodik und Ziele}
+\label{sec1:intro:subsec:methodology-goals}
+Um die in \cref{sec1:intro:subsec:problems} identifizierten Probleme und subsequent die im vorigen \cref{sec1:intro:subsec:research-questions} formulierten Forschungsfragen strukturiert beantworten zu können, wird diese Arbeit auf der vielfach bewährten Methodik von Nunamaker \cite{nunamaker} aufbauen. 
+Die Methodik nach Nunamaker teilt ein zu lösendes Problem anhand von Recherche und Entwicklung in vier Phasen der Problemlösung auf.
+\newline
+Diese vier Phasen lauten:
+\begin{enumerate}
+    \setlength{\itemsep}{0pt}
+    \item Beobachtungsphase
+    \item Theoriebildungsphase
+    \item Systementwicklungs - bzw. Implementierungsphase
+    \item Experimentphase
+\end{enumerate}
+\input{chapter/chapter_1/nunamaker}
+In der Beobachtungsphase werden im Rahmen einer Recherche Informationen gesammelt. 
+In der Theoriebildungsphase werden Konzepte für Lösungen konzipiert und modelliert. 
+Die Systementwicklungs bzw. Implementierungsphase beschäftigt sich mit der Entwicklung von Lösungen basierend auf den Theorien aus der Theoriebildungphase bzw. Beobachtungen aus der Beobachtungsphase, und welche in der letzten Phase, der Experimentphase evaluiert werden können. 
+Diese Phasen sind eng miteinander verwoben und jede Phase mündet mit seinem Ergebnis in den anderen Phasen und trägt zu diesen bei. 
+Durch die Methodik von Nunamaker wird sichergestellt, dass jedes Forschungsziel eindeutig einer Problembeschreibung zugeordnet werden kann.
+Basierend auf den in \cref{sec1:intro:subsec:research-questions} definierten Forschungsfragen können folgende Forschungsziele formuliert werden:
+\begin{itemize}
+    \item Forschungsziel für die Frage nach der Erklärbarkeit von MMIR mittels generativer KI (FF1).
+    \item Forschungsziel für die Frage nach der Integration generativer KI in das GMAF (FF2).
+\end{itemize}
+\noindent
+Die Anwendung der Methodik nach Nunamaker führt für jedes Forschungsziel zu jeweils vier Forschungsaufgaben, die in jeweils einem Unterkapitel behandelt werden.
+Dies führrt insgesamt zu 8 Forschungsaufgaben, die mit dieser Arbeit behandelt werden.
+Die anfängliche Planung der Forschungsziele ist in \cref{sec1:intro:table:research-questions} einsehbar.
+Die Benennung der Forschungsaufgaben folgt einem einheitlichen Schema und ergeben sich aus dem Namen des jeweiligen Forschungsziels, erweitert durch einen Buchstaben als Anhängsel, z.B. \enquote{O}
+ für \textit{Observation}/Beobachtung, \enquote{TB} für \textit{Theory Building}/Theoriebildung, \enquote{I} für \textit{Implementation}/Implementierung und \enquote{E} für \textit{Experiment}.
+\input{chapter/chapter_1/table-research-questions}
+\noindent
+Um sicherzustellen, dass alle Forschungsziele durch den Inhalt dieser Arbeit abgedeckt werden, entspricht die Struktur dieses Dokuments direkt dem Ansatz nach Nunamaker.
+Der Ansatz und Aufbau der Arbeit wird im nächsten Abschnitt behandelt.
+
+\subsection{Ansatz und Aufbau der Arbeit}
+\label{sec1:intro:subsec:approach-structure}
+Die Struktur dieser Arbeit ergibt sich 1:1 aus der Methodik von Nunamaker \cite{nunamaker} und folgt seiner Modellierung.
+Ein Überblick auf die Struktur dieser Arbeit und Nunamakers Ansatz ist in \cref{sec1:intro:subsec:approach-structure:fig:outline-nunamaker}.
+Die entsprechenden Forschungsziele werden, je nach Phase der Modellierung nach Nunamaker, umgeordnet und in die jeweiligen Kapitel dieser Arbeit umgruppiert.
+
+\input{chapter/chapter_1/thesis-structure-nunamaker}
+\noindent
+Im Nachfolgenden werden die Kapitel jeweils einzelnen kurz beschrieben. Es wird genannt, welche Forschungsziele von welchem Typ abgearbeitet werden, und welche Aufgaben das entsprechende Kapitel jeweils übernimmt.
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \item \textbf{\enquote{Kapitel 2 - Stand der Wissenschaft und Technik}} deckt alle Forschungsziele vom Typ \textit{Beobachtung} ab, und wird der Reihenfolge nach den aktuellen Stand der Wissenschaft und Technik zusammenfassen, einführen und darstellen.
+    \item \textbf{\enquote{Kapitel 3 - Modellierung}} deckt alle Forschungsziele vom Typ \textit{Theoriebildung} ab und beschreibt die Modellierung und das Design von Konzepten und Algorithmen zu vorgeschlagenen Problemlösungen.
+    \item \textbf{\enquote{Kapitel 4 - Implementierung}} beschreibt die Implementierung von Modellen und Konzepten und deckt alle Forschungsziele vom Typ \textit{Systementwicklung bzw. Implementierung} ab.
+    \item \textbf{\enquote{Kapitel 5 - Experiment}} deckt alle Forschungsziele vom Typ \textit{Experiment} ab und gibt eine detaillierte Beschreibung aller Ergebnisse.
+\end{itemize}
+\noindent
+Um in dieser Arbeit einen wissenschaftlich formalen und korrekten Prozess zur Problemlösung anzuwenden, wurde die Modellierung nach Nunamaker eingeführt.
+Dieser Modellierung folgend, wird eine klare Beziehung zwischen den Forschungszielen und den Forschungsfragen etabliert.
+Dadurch wird sichergestellt, dass jedes Ergebnis, das in dieser Arbeit dargestellt wird, in direktem Bezug zu einer entsprechenden Forschungsfrage und einer Problembeschreibung steht und umgekehrt.
+\newline
+Des Weiteren folgt das Kapitel 3 \enquote{Modellierung} dieser Arbeit dem Ansatz \textit{User Centered System Design} nach Draper \cite{norman-draper-user-centered-system-design}, welches den Benutzer in den Mittelpunkt sämtlicher Modellierung und Planung stellt.
+Die Modellierung und Planung wird auf der \textit{Unified Modeling Language} $(UML)$ \cite{uml} aufbauen.
+
+\subsection{Arbeits- und Zeitplan}
+\label{sec1:intro:subsec:work-time-plan}
+Der Arbeitsplan ist dem Ansatz der Arbeit nach strukturiert, sodass sich ebenfalls eine 1:1 Korrespondenz zwischen dem Ansatz der Arbeit, der Gliederung der Arbeit und dem Arbeitsplan ergibt.
+
+\input{chapter/chapter_1/gantt-chart-timeline}
+
+\clearpage
+
+\subsection{Zusammenfassung}
+\label{sec1:intro:subsec:summary}
+Das erste Kapitel dieser Arbeit hat allgemein in die Motivation des Themas eingeführt. 
+Eine kurze Beschreibung der aktuellen Entwicklung im Bereich Multimedia hat gezeigt, dass \mmir{} eine zunehmend wichtige Rolle spielt.
+In diesem Zuge spielt auch die Erklärbarkeit von \mmir{}-Prozessen eine immer wichtigere Rolle.
+\newline
+Zwei Problembereiche konnten identifiziert werden, die mit dieser Arbeit adressiert werden.
+Im Bereich der Erklärbarkeit bietet das \gmaf{} bereits umfangreiche Konzepte zur Erklärbarkeit von \mmir{}-Prozessen.
+Diese Konzepte sind aber sehr statisch und in ihrer Anwendung stark eingeschränkt.
+Hier gibt es allgemein großes Potenzial für Verbesserungen, die sich durch das Anbinden generativer KI versprochen wird.
+Im Bereich der Integration konnte festgestellt werden, dass das \gmaf{} noch keine Anbindung für generative KI-Systeme bietet und hierfür eine geeignete Modellierung entwickelt werden muss.
+\newline
+Das Definieren von Problemstellungen, Forschungsfragen und Forschungszielen dient als formelle Grundlage für die Strukturierung dieser Arbeit. 
+Basierend auf der Modellierung nach Nunamaker folgt diese Arbeit einem wissentschaftlich anerkannten Ansatz bei der Darstellung der Forschungsergebnisse.
+\newline
+Um ein starkes Fundament für die Arbeit zu legen, wird im nächsten Kapitel ein detaillierter Überblick zum aktuellen Stand der Wissenschaft und Technik gegeben, in welchem die Ergebnisse der Forschungsziele vom Typ Beobachtung behandelt werden.
+
+\clearpage

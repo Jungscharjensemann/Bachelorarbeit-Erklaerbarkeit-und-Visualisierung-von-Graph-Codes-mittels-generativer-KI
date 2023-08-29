@@ -1,0 +1,48 @@
+\begin{figure}[htb]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tikzpicture}
+            \begin{umlseqdiag}
+                % Actors
+                \umlactor[fill=white, scale=0.7]{Benutzer}
+                
+                % Objects
+                \umlobject[x=0, fill=white]{Benutzer}
+                \umlmlobject[x=3.3, fill=white]{gcs}{\shortstack[c]{Graph Code \\ Calculation \\ Controller}}
+                \umlmlobject[x=8, fill=white]{egc}{\shortstack[c]{Editor\\GraphCode}}
+                \umlobject[x=10, fill=white]{JList}
+                \umlmlobject[x=12, fill=white]{gc}{\shortstack[c]{GraphCode\\Collection}}
+                \umlmlobject[x=15, fill=white]{gcle}{\shortstack[c]{GraphCode\\ListElement}}
+
+                % Calls
+                \begin{umlcall}[padding=0,dt=4,op={\shortstack[c]{Execute}}]{Benutzer}{gcs}
+                    \begin{umlcall}[op={Gib Liste}, return={Liste}]{gcs}{egc}
+                    \end{umlcall}
+                    \begin{umlcall}[padding=2.5,dt=4,op={\shortstack[c]{Gib ausgewählte Elemente}}, return={\shortstack[c]{GraphCodeListElement(e) (gcle)}}]{gcs}{JList}
+                    \end{umlcall}
+                    \begin{umlcall}[op={Gib Aktion}, return={Aktion}]{gcs}{egc}
+                    \end{umlcall}
+                    \begin{umlfragment}[inner xsep=5,type=switch, label={union}]
+                        \begin{umlcall}[padding=2.5,op={Berechne Vereinigung von gcle's}, return={Graph Code}]{gcs}{gc}
+                        \end{umlcall}
+                        \umlfpart[subtract]
+                        \begin{umlcall}[padding=2.5,op={Berechne Subtraktion von gcle's}, return={Graph Code}]{gcs}{gc}
+                        \end{umlcall}
+                        \umlfpart[similarity]
+                        \begin{umlcall}[padding=2.5,op={Berechne Gemeinsamkeiten von gcle's}, return={Graph Code}]{gcs}{gc}
+                        \end{umlcall}
+                        \umlfpart[differences]
+                        \begin{umlcall}[padding=2.5,op={Berechne Unterschiede von gcle's}, return={Graph Code}]{gcs}{gc}
+                        \end{umlcall}
+                    \end{umlfragment}
+                    \begin{umlcall}[padding=2.5, dt=-1,op={Erzeuge aus Graph Code}, return={GraphCodeListElement (glce)}]{gcs}{gcle}
+                    \end{umlcall}
+                    \begin{umlcall}[dt=1,op={Füge gcle Liste hinzu}]{gcs}{JList}
+                    \end{umlcall}
+                \end{umlcall}
+            \end{umlseqdiag}
+        \end{tikzpicture}
+    }
+    \caption{Sequenzdiagramm für den Anwendungsfall \hyperref[sec3:model:uc-1.5]{UC-1.5}.}
+    \label{sec3:model:par:seq-use-cases:fig:seq-diag-uc-1.5}
+\end{figure}

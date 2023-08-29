@@ -1,0 +1,60 @@
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}{.25\textwidth}
+        \centering
+        \tikz{
+            \begin{umlseqdiag}
+                \umlobject[x=0,fill=white]{A}
+                \umlobject[x=1,fill=white]{B}
+
+                \begin{umlcall}{A}{B}
+                \end{umlcall}
+            \end{umlseqdiag}
+        }
+        \caption{}
+        \label{sec3:model:par:seq-use-cases:subfig:sync-message}
+    \end{subfigure}%
+    \begin{subfigure}{.25\textwidth}
+        \centering
+        \tikz{
+            \begin{umlseqdiag}
+                \umlobject[x=0,fill=white]{A}
+                \umlobject[x=1,fill=white]{B}
+
+                \begin{umlcall}[type=asynchron]{A}{B}
+                \end{umlcall}
+            \end{umlseqdiag}
+        }
+        \caption{}
+        \label{sec3:model:par:seq-use-cases:subfig:async-message}
+    \end{subfigure}%
+    \begin{subfigure}{.25\textwidth}
+        \centering
+        \tikz{
+            \begin{umlseqdiag}
+                \umlobject[x=0,fill=white]{A}
+                \umlobject[x=3,fill=white]{B}
+
+                \begin{umlcall}[op={Nachricht},return={Antwort}]{A}{B}
+                \end{umlcall}
+            \end{umlseqdiag}
+        }
+        \caption{}
+        \label{sec3:model:par:seq-use-cases:subfig:return-message}
+    \end{subfigure}%
+    \begin{subfigure}{.25\textwidth}
+        \centering
+        \tikz{
+            \begin{umlseqdiag}
+                \umlobject[fill=white]{A}
+
+                \begin{umlcallself}{A}
+                \end{umlcallself}
+            \end{umlseqdiag}
+        }
+        \caption{}
+        \label{sec3:model:par:seq-use-cases:subfig:selfcall}
+    \end{subfigure}
+    \caption{(i) Synchrone Nachricht, (ii) Asynchrone Nachricht, (iii) Antwort auf Nachricht, (iv) Selbstdelegation / Selbstaufruf.}
+    \label{fig:test}
+\end{figure}

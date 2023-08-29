@@ -1,0 +1,120 @@
+\section{Einleitung}
+\label{sec1:intro}
+Das \gmafi{} \cite{gmaf_github, gmaf_website}, ist ein Forschungsprojekt am Lehrgebiet Multimedia und Internetanwendung (MMIA) und wurde entwickelt, um aktuelle Missstände und Probleme des einfachen \mmiri{}, auf intelligente Art und Weise zu adressieren. 
+Das \gmaf{} hat dabei zum Ziel durch eine intelligente Erweiterung von \mmir{} semantische, erklärbare, für Menschen verständliche, effektive, effiziente, kompatible und integrierte Lösungen anzubieten \cite[S.~20]{swa_diss}. 
+Diese Erweiterung wird \smmiri{} genannt. 
+\smmir{} führt eine Reihe von Konzepten ein, die über klassisches \mmir{} hinaus gehen. 
+Hierzu gehören erweiterte Metriken für die Berechnung von Ähnlichkeit oder Empfehlungen, Möglichkeiten der Merkmalsintegration und -fusion, sowie die Erklärbarkeit von \mmir{}-Prozessen und deren Inhalte. 
+Diese Arbeit wird sich hierbei besonders mit Metriken zur Erklärbarkeit von \mmir{}-Prozessen und deren Inhalten beschäftigen.
+\med
+Unter Erklärbarkeit versteht man in diesem Zusammenhang für Menschen verständliche Antworten auf Fragestellungen, wie z.B. die Frage \enquote{Was ist die wichtigste Eigenschaft des Elements?} oder \enquote{Was ist der Unterschied zwischen diesen zwei Bildern?}.
+Sollen Antworten auf diese Fragen auf für Menschen verständliche Art und Weise ausgedrückt werden, so müssen diese Antworten auf natürlicher Sprache aufbauen, oder prägnant visuell dargestellt werden.
+Die Berechnung der Antworten auf derartige Fragen werden durch den Einsatz diverser Metriken auf Basis von \mmir{}-Merkmalen möglich und in Form von Indexstrukturen repräsentiert. 
+Das \gmaf{} stellt im Rahmen von \smmir{} eine solche Indexstruktur, durch die sogenannten \gcs{} \cite{fast-effec-retr-large-collec}, bereit.
+Ein Graph Code ist dabei im Wesentlichen die Adjazenzmatrix eines Merkmalsgraphen. 
+Auf Basis von \gcs{} können eine Vielzahl von Berechnungen, wie in \cite{towards_auto_sem_expl_mmfg} beschrieben, durchgeführt werden. 
+Auf diese Weise können durch die Berechnungen bereits Antworten auf die oben genannten Fragen ermittelt werden.
+Das \gmaf{} bietet für diese Berechnungen bereits diverse Implementierungen zur Generierung von für Menschen verständliche, textuelle Beschreibungen für \mmir{}-Inhalte.
+Diese Berechnungen basieren auf \textit{Semantic Graph Codes} und \textit{Explainable Semantic Graph Codes} und basieren auf rein statistischen und mathematischen Ansätzen zur Generierung von Sprache.
+\med
+Zentraler Aspekt dieser Abschlussarbeit sind die \gcs{} und gegebenenfalls \textit{Semantic Graph Codes} und es wird untersucht, in wie weit generative KI in der Lage ist, aus diesen Indexstrukturen sinnvolle und für Menschen verständliche Texte, sowie Visualisierungen zu erzeugen.
+
+\subsection{Forschungsthema}
+\label{sec1:intro:subsec:res-topic}
+Das \gmaf{} bietet mit der Datenstruktur \gcs{} bereits eine Indexstruktur zur Repräsentation von \mmir{}-Merkmalen an. 
+In dieser Arbeit wird die Fragestellung thematisiert, wie die Informationen, die mittels \gcs{} dargestellt werden und subsequent den dazugehörigen Berechnungen, für Menschen verständlich dargestellt werden können.
+Das Ziel ist es, eine Antwort auf oben genannte Fragestellungen, in möglichst präziser textueller, sowie prägnanter visueller Repräsentation zu erzeugen, die für den Benutzer einfach zu verstehen sind. 
+Die Relevanz dieses Themas liegt in den stetig wachsenden Anwendungsbereichen, Anwendungsfällen und den damit einhergehenden, ebenfalls stetig wachsenden Anforderungen an \smmir{} begründet. 
+Anhand dieser vielfältigen und u.a. variierenden Anforderungen, ist es notwending die Eigenschaften, wie z.B. die Länge der Erklärung anzupassen. 
+So muss z.B. in (zivilen) Realzeitsystemen mit sicherheitsrelevanten Zuständen eine kurze, präzise Erklärung angezeigt werden. 
+Ein Beispiel für so ein ziviles Realzeitsystem liegt im Bereich Automotive. 
+Wird hier ein Problem festgestellt, so muss dem Fahrer des Kraftfahrzeugs unmittelbar eine kurze und präzise Meldung angezeigt werden.
+Des Weiteren ist in solchen Realzeitsystemen zu berücksichtigen, dass die generierten Erklärungen ugs. \enquote{on the fly}, also zeitnah dem Benutzer zur Verfügung stehen.
+Es gilt also auch die Laufzeit zur Generierung von Erklärungen je nach Anwendungsfall zu berücksichtigen. 
+Auch im Rahmen der Barrierefreiheit findet \smmir{} Anwendung.
+Ein Beispiel hierfür wäre eine Person mit Sehschädigung, die bei Abruf eines Bildes eine Zusammenfassung des Bildes mittels digitaler Audioausgabe erhält. 
+Konträr zu einer kurzen Erklärung findet sich ein Beispiel für eine längere Erklärung im Bereich des Wissensmanagement, in welchem mit unter in komplexen Sachverhältnissen ausführlichere, komplexere und längere Erklärungen benötigt werden.
+Durch immer bessere Technik steigt, wie in \cite{towards_auto_sem_expl_mmfg} beschrieben, das sog. \textit{\enquote{Level-Of-Detail}}, kurz \textit{LOD} und beeinflusst die Qualität, sowie Länge von Erklärungen. 
+Viele Merkmale könnten zu längeren Texten führen, zu wenig Merkmale und die Aussagekraft der generierten Erklärung leidet.
+\med
+Zusammenfassend wird somit im Rahmen dieser Arbeit untersucht, wie die in \gcs{} verfügbaren Informationen als Eingabedaten für Systeme generativer KI genutzt werden können, um möglichst präzise textuelle, oder prägnante Visualisierungen erzeugen zu lassen.
+Hierfür wird zuerst analysiert, welche aktuell verfügbaren Systeme derzeit überhaupt in der Lage sind für Menschen verständliche, textuelle Beschreibungen oder Visualisierungen zu generieren, welche Lizenzmodelle zu berücksichtigen sind, worin sich diese Systeme letztendlich unterscheiden, und/oder ob und wie sich diese Systeme eventuell kombinieren lassen.
+
+\subsection{Motivation und Problembeschreibung}
+\label{sec1:intro:subsec:motiv-problems}
+Aufbauend auf \gcs{} als Indexstruktur bietet das \gmaf{} bereits diverse Implementierungen zur Generierung von textuellen Beschreibungen von \mmir{}-Inhalten in für Menschen verständlicher Form.
+Diese Implementierungen basieren auf \textit{Semantic Graph Codes} und \textit{Explainable Semantic Graph Codes}, welche ihrerseits auf \gcs{} aufbauen und Spezialisierungen solcher sind. 
+Diese Implementierungen verfolgen einen statistischen und rein mathematischen Ansatz zur Generierung von Sprache. 
+Durch diesen Ansatz können bereits, wie in \cite{towards_auto_sem_expl_mmfg} beschrieben, Erklärungen in für Menschen lesbare und für Menschen verständliche Form generiert werden. 
+\med
+Im Folgenden werden Probleme identifiziert und zu diesen Problemen Problembeschreibungen, kurz PB,
+formuliert.
+\med
+\textbf{Problem:}
+Die Erklärbarkeit eines Graph Codes ergibt sich, je nach Anwendungsfall, aus den spezifischen Anforderungen an seine Erklärung. Je nach Anwendungsfall müssen daher generierte Erklärungen, ob textuell oder visuell, an ihre spezifischen Anforderungen anpassbar sein. 
+Zum Zeitpunkt des Verfassens dieser Arbeit bietet das \gmaf{} nur eine minimale Schnittstelle, um Anpassungen einer textuellen Erklärung vorzunehmen. 
+In dieser Schnittstelle können bislang nur das LOD und die Komplexität einer textuellen Erklärung angepasst werden. 
+Bei der Komplexität kann einen simpel, normal und komplex gewählt werden.  
+Diese Schnittstelle bietet zudem keine Möglichkeit zur Visualisierung einer visuellen Erklärung.
+\med
+\problemstmt{} 
+Erklärungen müssen den Benutzern geeignet visualisiert werden und für diese nach ihren Bedürfnissen anpassbar sein.
+\med
+\textbf{Problem:} 
+Die Implementierungen für \textit{Semantic Graph Codes} und \textit{Explainable Semantic Graph Codes} ermöglichen zwar bereits die Generierung von für Menschen lesbare und Menschen verständliche Erklärungen. 
+Um eine Erklärung zu generieren, transformiert ein \textit{Semantic Graph Code} das \textit{Dictionary} eines normalen \gcs{} mittels einer semantischen Erweiterung. 
+So eine semantische Erweiterung wird in der Konfigurationsdatei des \gmaf{} eingestellt und kann durch das Interface \textit{Semantic Extension} implementiert werden und durch eine \textit{SemanticExtensionFactory} bei der Transformation angewandt werden. 
+Anders transformiert ein \textit{Explainable Semantic Graph Code} das \textit{Dictionary} eines normalen \gcs{} mittels einer kontextfreien Phrasenstruktur-Grammatik und produziert auf Basis eines Sprachmodells eine Erklärung.
+\med
+Nachteilig an diesen Ansätzen ist, dass sie auf statistischen und rein mathematischen Ansätzen zur Generierung von Sprache basieren. Mittels rein mathematischer Ansätze kommen diese Implementierungen dem Ziel, präzise textuelle Beschreibungen zu generieren, nicht nach. Zudem sind diese Implementierungen auf rein textuelle Beschreibungen begrenzt und bieten keine Möglichkeit visuelle Beschreibungen bzw. Erklärungen zu generieren.
+\med
+\problemstmt{} Das Generieren von textuellen oder visuellen Erklärungen soll mittels generativer KI in das GMAF integriert werden.
+
+\subsection{Forschungsfragen}
+\label{sec1:intro:subsec:res-ques}
+Die im vorigen \cref{sec1:intro:subsec:motiv-problems} identifizierten Probleme werden mit folgenden Forschungsfragen adressiert:
+\med
+\researchquestion{} Wie können Erklärungen geeignet dargestellt werden und wie können Benutzer Erklärungen nach ihren Bedürfnissen anpassen?
+\med
+\textbf{Erklärung:}
+Erklärungen können textuell, visuell oder unter Umständen auch in anderen Formen dargestellt werden. Hieraus ergibt sich die Notwendigkeit den Benutzern eine geeignete Schnittstelle anzubieten, die die Erklärung geeignet darstellt. Diese Schnittstelle muss den Benutzern, je nach Anwendungsfall oder Bedürfnissen, die Möglichkeit eröffnen Anpassungen an der Erklärung vorzunehmen.
+\med
+\researchquestion{} Wie kann generative KI zum Generieren von Erklärungen in das \gmaf{} integriert werden?
+\med
+\textbf{Erklärung:} Beim Integrieren generativer KI in das \gmaf{} gilt es mehrere Herausforderungen zu berücksichtigen. Die Informationen eines \gcs{} müssen so transformiert werden, dass sie als Eingabe für generative KI genutzt werden kann. Des Weiteren muss die Ausgabe generativer KI so verarbeitet werden, dass sie Benutzern als Erklärung angezeigt werden kann.
+
+\subsection{Methodik und Ziele}
+\label{sec1:intro:subsec:method-goals}
+Um die im vorigen \cref{sec1:intro:subsec:res-ques} formulierten Forschungsfragen strukturiert beantworten zu können, wird diese Arbeit auf der vielfach bewährten Methodik von Nunamaker \cite{nunamaker} aufbauen. Die Methodik nach Nunamaker teilt ein zu lösendes Problem anhand von Recherche und Entwicklung in vier Phasen der Problemlösung auf. Diese vier Phasen lauten:
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \item Beobachtungsphase
+    \item Theoriebildungsphase
+    \item Systementwicklungs - bzw. Implementierungsphase
+    \item Experimentphase
+\end{itemize}
+In der Beobachtungsphase werden im Rahmen einer Recherche Informationen gesammelt. 
+In der Theoriebildungsphase werden Konzepte für Lösungen konzipiert und modelliert. 
+Die Systementwicklungs bzw. Implementierungsphase beschäftigt sich mit der Entwicklung von Lösungen basierend auf den Theorien aus der Theoriebildungphase bzw. Beobachtungen aus der Beobachtungsphase, und welche in der letzten Phase, der Experimentphase evaluiert werden können. 
+Diese Phasen sind eng miteinander verwoben und jede Phase mündet mit seinem Ergebnis in den anderen Phasen und trägt zu diesen bei. 
+Durch die Methodik von Nunamaker wird sichergestellt, dass jedes Forschungsziel eindeutig einer Problembeschreibung zugeordnet werden kann.
+
+\input{chapter/chapter_1/table-research-questions}
+
+\subsection{Ansatz und Aufbau der Arbeit}
+\label{sec1:intro:subsec:appr-struct}
+Die Struktur dieser Arbeit ergibt sich 1:1 aus der Methodik von Nunamaker. Dadurch wird sichergestellt, dass jede Forschungsfrage in dieser Arbeit abgearbeitet wird. Im Folgenden werden die einzelnen Forschunsziele ihren Phasen nach in die jeweiligen Kapitel umgruppiert.
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \item \textbf{\enquote{Kapitel 2 - Stand der Wissenschaft und Technik}} deckt alle Forschungsziele vom Typ \textit{Beobachtung} ab, und wird der Reihenfolge nach den aktuellen Stand der Wissenschaft und Technik zusammenfassen, einführen und darstellen.
+    \item \textbf{\enquote{Kapitel 3 - Modellierung}} deckt alle Forschungsziele vom Typ \textit{Theoriebildung} ab und beschreibt die Modellierung und das Design von Konzepten und Algorithmen zu vorgeschlagenen Problemlösungen.
+    \item \textbf{\enquote{Kapitel 4 - Implementierung}} beschreibt die Implementierung von Modellen und Konzepten und deckt alle Forschungsziele vom Typ \textit{Systementwicklung bzw. Implementierung}.
+    \item \textbf{\enquote{Kapitel 5 - Experiment}} deckt alle Forschungsziele vom Typ \textit{Experiment} ab und gibt eine detaillierte Beschreibung aller Ergebnisse.
+\end{itemize}
+Daraus ergibt sich, dass die Unterkapitel in einer 1:1 Korrespondenz zu jeweiligen Forschungszielen stehen. Eine vorläufige Gliederung des späteren Dokuments ergibt sich folglich automatisch.
+
+\subsection{Arbeits- und Zeitplan}
+\label{sec1:intro:subsec:work-time-plan}
+Der Arbeitsplan ist dem Ansatz der Arbeit nach strukturiert, sodass sich ebenfalls eine 1:1 Korrespondenz zwischen dem Ansatz der Arbeit, der Gliederung der Arbeit und dem Arbeitsplan ergibt. Ein Gantt-Diagramm, das den Arbeitsplan darstellt, kann im Anhang in \cref{sec1:intro:fig:gantt-chart-timeline} gefunden werden.
+
+%\input{chapter/chapter_1/gantt-chart-timeline}

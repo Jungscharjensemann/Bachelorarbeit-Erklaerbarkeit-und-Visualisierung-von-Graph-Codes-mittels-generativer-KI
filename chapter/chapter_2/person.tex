@@ -1,0 +1,54 @@
+\begin{tikzpicture}[rotate=0,scale=10,font=\sffamily]
+
+\definecolor{def_node_fill}{RGB}{51,175,255}
+\definecolor{def_node_text}{RGB}{0,0,0}
+\definecolor{def_node_draw}{RGB}{0,0,0}
+\tikzstyle{default_node_style}=[draw=def_node_draw,fill=def_node_fill,text=def_node_text,line width = 0.4pt]
+
+\definecolor{def_edge_draw}{RGB}{0,0,0}
+\definecolor{def_edge_text}{RGB}{0,0,0}
+\tikzstyle{default_edge_style}=[draw=def_edge_draw,text=def_edge_text, line width = 0.4pt]
+
+\node(Root-Image) at (0.98,-0.1) [rectangle,default_node_style] {Root-Image};
+
+\node(Person) at (0.78,-0.1) [rectangle,default_node_style] {Person};
+
+\node(Body) at (0.18,-0.26) [rectangle,default_node_style] {Body};
+
+\node(Head) at (0.18,-0.1) [rectangle,default_node_style] {Head};
+
+\node(Hat) at (-0.02,-0.1) [rectangle,default_node_style] {Hat};
+
+\node(Arm) at (0.18,-0.38) [rectangle,default_node_style] {Arm};
+
+\node(Watch) at (0.38,-0.38) [rectangle,default_node_style] {Watch};
+
+\node(part of-1) at (0.58,-0.18) [rectangle,default_node_style] {part of};
+
+\node(part of-2) at (0.78,--0.02) [rectangle,default_node_style] {part of};
+
+\node(part of-3) at (0.38,-0.18) [rectangle,default_node_style] {part of};
+
+\node(part of-4) at (-0.02,-0.26) [rectangle,default_node_style] {part of};
+
+\node(attached to) at (0.18,-0.5) [rectangle,default_node_style] {attached to};
+
+\draw[->,default_edge_style](Root-Image) edge node[above] {child} (Person);
+\draw[->,default_edge_style](Person) |- (Body) node[above] {child};
+\draw[->,default_edge_style](Person) edge node[above] {child} (Head);
+\draw[->,default_edge_style](Body) -- (0.64,-0.27)-- (part of-1) node[above] {cr};
+\draw[->,default_edge_style](part of-1) -- (0.8,-0.2)-- (Person) node[above] {cr};
+\draw[->,default_edge_style](Body) edge node[above] {child} (Head);
+\draw[->,default_edge_style](Body) edge node[above] {child} (Arm);
+\draw[->,default_edge_style](Head) -- (0.24,-0.0)-- (part of-2) node[above] {cr};
+\draw[->,default_edge_style](part of-2) edge node[above] {cr} (Person);
+\draw[->,default_edge_style](Head) -- (0.44,-0.13)-- (part of-3) node[above] {cr};
+\draw[->,default_edge_style](part of-3) -- (0.28,-0.2)-- (Body) node[above] {cr};
+\draw[->,default_edge_style](Head) edge node[above] {child} (Hat);
+\draw[->,default_edge_style](Arm) -- (0.04,-0.4)-- (part of-4) node[above] {cr};
+\draw[->,default_edge_style](part of-4) edge node[above] {cr} (Body);
+\draw[->,default_edge_style](Arm) edge node[above] {child} (Watch);
+\draw[->,default_edge_style](Watch) -- (0.44,-0.52)-- (attached to) node[above] {cr};
+\draw[->,default_edge_style](attached to) edge node[above] {cr} (Arm);
+
+\end{tikzpicture}

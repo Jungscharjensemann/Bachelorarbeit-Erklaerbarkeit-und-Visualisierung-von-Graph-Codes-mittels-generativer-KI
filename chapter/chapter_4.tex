@@ -1,0 +1,47 @@
+\section{Implementierung}
+\label{sec4:impl}
+Dieses Kapitel widmet sich der Implementierung und es werden, entsprechend der Methodik von Nunamaker \cite{nunamaker}, alle Forschungsziele der Implementierungsphase behandelt.
+Ziel der Implementierung ist die Validierung der in \cref{sec3:model} beschriebenen Modellierung, und die Vorbereitung einer detaillierten Evaluierung in der Experimentphase, sowie Untersuchungen weiterer Beobachtungen, die während der Implementierung gemacht wurden.
+Die Struktur dieses Kapitels folgt der logischen Abfolge der Forschungsziele der Implementierungsphase.
+Doch zuvor werden in \cref{sec4:impl:basics} die Grundlagen bzw. Vorbereitungen für die Implementierung getroffen.
+Dies umfasst die Beschreibung der geplanten Struktur und Architektur der Implementierung, sowie weitere technische Voraussetzungen und die in dieser prototypischen Implementierung genutzten Bibliotheken bzw. Abhängigkeiten.
+In \cref{sec4:impl:subsec:fz-explainability} werden ausgewählte Implementierungsdetails der Erklärbarkeit von MMIR mittels generativer KI vorgestellt.
+% Dies umfasst...
+Analog dazu werden in \cref{sec4:impl:subsec:fz-integration} ausgewählte Implementierungsdetails der Integration generativer KI in das GMAF vorgestellt.
+% Dies umfasst...
+
+\subsection{Grundlagen der Implementierung}
+\label{sec4:impl:basics}
+In diesem Abschnitt werden die Grundlagen für die in diesem Kapitel beschriebene prototypische Proof-of-Concept Implementierung festgehalten.
+Dies umfasst die allgemeine Architektur, ihr zugrunde liegendes Prinzip, ihr hierarchischer Aufbau, sowie die Abhängigkeiten zu Drittanbieter-Bibliotheken.
+
+\paragraph{Architekturmuster}
+Die Implementierung der Software folgt dem Muster des \textit{Model-View-Controller}-Prinzips und teilt die Architektur der Software in drei seperate Bereiche: \textit{Model} für die Datenstrukturen, \textit{View} für das Frontend bzw. die Benutzerschnittstellen und \textit{Controller} zum Handhaben von Ereignissen und Interaktionen zwischen den Bereichen \textit{Model} und \textit{View}.
+Ziel dieser Architektur ist durch das gezielte Trennen dieser Bereiche die Eigenschaften wie Wiederverwendbarkeit, Wartbarkeit und Robustheit der Software zu erhöhen und zu stärken.
+
+Das erste Forschungsziel \hyperref[sec4:impl:subsec:fz-explainability]{FZ 1.3/I} widmet sich ... und deckt somit die Bereiche \textit{View, Controller} ab.
+Das zweite Forschungsziel \hyperref[sec4:impl:subsec:fz-integration]{FZ 2.3/I} widmet sich ... und deckt somit den Bereich \textit{Model} ab.
+
+\cref{sec4:impl:subsec:basiscs:fig:hierarchy} zeigt die Hierarchie des Quellcodes der in diesem Kapitel beschriebenen prototypischen Proof-of-Concept Implementierung.
+
+\input{chapter/chapter_4/arch-struct}
+
+\paragraph{Abhängigkeiten (Maven)}
+Für die prototypische Proof-of-Concept Implementierung der in \cref{sec3:model} vorgestellten konzeptuellen Modellierung wird die Programmiersprache Java \cite{java} ausgewählt.
+Der in diesem Kapitel vorgestellte Quellcode ist auf GitHub verfügbar.
+Die Implementierung in Java baut hierbei auf Maven \cite{maven}, einem Build-Tool der Apache Software Foundation für die Projektverwaltung und Management von Abhängigkeiten, auf.
+
+\clearpage
+
+\subsection[FZ 1.3/I Erklärbarkeit von MMIR mittels generativer KI]{\texorpdfstring{FZ 1.2/TB Erklärbarkeit von MMIR mittels \\ generativer KI}{FZ 1.3/I Erklärbarkeit von MMIR mittels generativer KI}}
+\label{sec4:impl:subsec:fz-explainability}
+
+\clearpage
+
+\subsection{FZ 2.3/I Integration generativer KI in das GMAF}
+\label{sec4:impl:subsec:fz-integration}
+
+\clearpage
+
+\subsection{Zusammenfassung}
+\label{sec4:impl:subsec:summary}

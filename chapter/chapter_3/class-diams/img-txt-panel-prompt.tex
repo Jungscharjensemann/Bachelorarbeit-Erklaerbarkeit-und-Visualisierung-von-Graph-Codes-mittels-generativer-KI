@@ -1,0 +1,18 @@
+\begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}[assocstyle/.style={-{Straight Barb[angle'=60,scale=4]}}]
+        \umlsimpleclass{ExplanationPanel}
+
+        \umlclass[below left=4mm and -3mm of ExplanationPanel]{ImagePanel}{}{
+            - setUpPrompt() : String \\
+        }
+        \umlclass[below right=4mm and -3mm of ExplanationPanel]{TextPanel}{}{
+            - setUpPrompt() : String \\
+        }
+
+        \umluniassoc[assocstyle]{ImagePanel}{ExplanationPanel}
+        \umluniassoc[assocstyle]{TextPanel}{ExplanationPanel}
+    \end{tikzpicture}
+    \caption{Einfaches Klassendiagramm für die Erklärungspaneele.}
+    \label{sec3:model:subsubsec:gc-transformation:fig:set-up-prompt}
+\end{figure}

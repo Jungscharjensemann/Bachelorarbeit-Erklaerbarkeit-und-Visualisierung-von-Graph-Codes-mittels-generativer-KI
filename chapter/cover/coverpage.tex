@@ -1,0 +1,74 @@
+\begin{tikzpicture}[remember picture, overlay]
+    \node (b) [anchor=north west, fill=hagentitle, minimum width=\paperwidth, minimum height=0.75\paperheight] at (current page.north west) {};
+
+    \node (t) [] at ([yshift=1cm]b.center) \bgroup
+        \begin{varwidth}{\textwidth}
+            \centering
+            %\linespread{1.25}
+            \setstackgap{S}{9pt}
+            {
+                \@title
+            }
+            \\[3\baselineskip]
+            \Large
+            {   
+                \Shortstack{Bachelorarbeit\\ im Studiengang B.Sc. Informatik}
+            }
+            \m
+            {
+                \Shortstack{eingereicht von
+                    \\
+                    {
+                        \bfseries
+                        \@author
+                    }
+                    \\
+                    (Matrikelnummer 9763180)
+                }
+            }
+            \m
+            {
+                \Shortstack{angefertigt am
+                    \\
+                    {
+                        \bfseries
+                        Lehrgebiet Multimedia
+                    }
+                    \\ 
+                    {
+                        \bfseries
+                        und Internetanwendungen
+                    }
+                }
+            }
+            \m
+            {
+                \Shortstack{Betreuer:
+                    \\
+                    {
+                        \bfseries
+                        Dr.-Ing. Stefan Wagenpfeil
+                    }
+                }
+            }
+            \m
+            \@date
+        \end{varwidth}
+    \egroup;
+
+    \node (fac) [anchor=south, minimum width=7cm, minimum height=6cm] at ([xshift=5cm,yshift=-1.5cm]b.south west) {       
+        \large\bfseries
+    };
+
+    \path[fill=hagencorner, line join=round] ([yshift=1.5cm]fac.south east) -- (fac.north east) -- (fac.north west) -- (fac.south west) -- ([xshift=-1.5cm]fac.south east) .. controls +(right: 1.5cm) and +(up: 2mm) .. ([yshift=1.5cm]fac.south east);
+
+    \node[] at ([yshift=1.5cm]fac.center) {
+        \LARGE
+        \textcolor{white}{\shortstack[l]{Fakultät für\\\bfseries Mathematik und\\\bfseries Informatik}}
+    };
+        
+    \node[anchor=south east] at ([yshift=-0cm]current page.south east) {\includegraphics[width=7cm]{resources/images/hagen.png}};
+\end{tikzpicture}
+
+\thispagestyle{empty}
+\pagenumbering{gobble}

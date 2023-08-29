@@ -1,0 +1,37 @@
+\begin{figure}[htb]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tikzpicture}
+            \begin{umlseqdiag}
+                % Actors
+                \umlactor[fill=white, scale=0.7]{Benutzer}
+                
+                % Objects
+                \umlobject[x=0, fill=white]{Benutzer}
+                \umlmlobject[x=3.3, fill=white]{gcs}{\shortstack[c]{Graph Code \\ SelectionListener}}
+                \umlmlobject[x=8, fill=white]{egc}{\shortstack[c]{Editor\\GraphCode}}
+                \umlobject[x=10, fill=white]{JList}
+                \umlmlobject[x=12, fill=white]{gct}{\shortstack[c]{GraphCode \\ Table}}
+                \umlmlobject[x=14.5, fill=white]{ep}{\shortstack[c]{Explanation \\ Panel}}
+
+                % Calls
+                \begin{umlcall}[padding=0,dt=6.5,op={\shortstack[c]{Graph Code \\ Selection}}]{Benutzer}{gcs}
+                    \begin{umlcall}[op={Gib Liste}, return={Liste}]{gcs}{egc}
+                    \end{umlcall}
+                    \begin{umlcall}[padding=2.5,dt=4,op={\shortstack[c]{Gib ausgewähltes Element}}, return={\shortstack[c]{GraphCodeListElement (gcle)}}]{gcs}{JList}
+                    \end{umlcall}
+                    \begin{umlcall}[padding=2.5,dt=5,op={\shortstack[c]{Gib \\GraphCodeTable}}, return={\shortstack[c]{GraphCodeTable}}]{gcs}{egc}
+                    \end{umlcall}
+                    \begin{umlcall}[dt=4,op={Setze Graph Code}]{gcs}{gct}
+                    \end{umlcall}
+                    \begin{umlcall}[padding=2.5,op={\shortstack[c]{Gib \\ ExplanationPanel}}, return={ExplanationPanel}]{gcs}{egc}
+                    \end{umlcall}
+                    \begin{umlcall}[dt=4,op={Setze Graph Code}]{gcs}{ep}
+                    \end{umlcall}
+                \end{umlcall}
+            \end{umlseqdiag}
+        \end{tikzpicture}
+    }
+    \caption{Sequenzdiagramm für den Anwendungsfall \hyperref[sec3:model:uc-1.3]{UC-1.3}.}
+    \label{sec3:model:par:seq-use-cases:fig:seq-diag-uc-1.3}
+\end{figure}

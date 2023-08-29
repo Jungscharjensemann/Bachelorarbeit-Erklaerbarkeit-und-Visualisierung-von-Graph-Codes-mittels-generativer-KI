@@ -1,0 +1,53 @@
+{
+    \def\arraystretch{1.1}%
+    \begin{xltabular}{\linewidth}{
+            @{}
+            >{
+                \hsize=0.25\linewidth
+                \raggedright\arraybackslash
+            }X
+            >{
+                \hsize=0.55\linewidth
+                \raggedright\arraybackslash
+            }X
+            >{
+                \hsize=0.2\linewidth
+                \centering\arraybackslash
+            }X
+            @{}
+    }
+
+    % First Header
+
+    \caption{Struktur dieses Kapitels.} 
+    \label{sec2:sota:table:structure} \\
+        
+    \toprule
+
+    \textbf{FZ} & \textbf{Kurze Beschreibung} & \textbf{Abschnitt} \\
+    
+    \midrule
+    
+    \endfirsthead
+
+    % Normal Head
+
+    \toprule
+
+    \textbf{FZ} & \textbf{Kurze Beschreibung} & \textbf{Abschnitt} \\
+    
+    \midrule
+    
+    \endhead
+        
+    % Lower Rows
+
+    FZ 1.1/O & Recherche: Erklärbarkeit \& generativer KI & \cref{sec2:sota:subsec:fz-explainability} \\
+    FZ 2.1/O & Recherche: Integration generativer KI & \cref{sec2:sota:subsec:fz-integration} \\ \midrule
+    Evaluierungsmeth. & Methodiken zur Evaluierung von Software & \cref{sec2:sota:subsec:eval-methodology} \\
+    Zusammenfassung & Ergebnisse / Erkenntnisse & \cref{sec2:sota:subsec:summary} \\
+        
+    \bottomrule 
+
+    \end{xltabular}
+}

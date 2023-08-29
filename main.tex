@@ -1,0 +1,409 @@
+\documentclass[
+    12pt,
+    a4paper,
+    %onecolumn
+    %draft % Anzeigen von Boxen.
+]{article}
+
+%% Packages
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+%\usepackage[utf8]{inputenc}
+\usepackage{graphicx} % Einbinden von Bildern.
+\usepackage{wrapfig}
+\usepackage[table]{xcolor}
+\usepackage{epstopdf}
+\usepackage[ngerman]{babel} % ngerman - Deutsche Sprache.
+\usepackage{ragged2e} % Alignment.
+\usepackage{parskip}
+\usepackage[singlespacing]{setspace}
+%\usepackage{mathptmx}
+\usepackage{scripts/tikz-uml-gpt}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{pifont}
+\usepackage{physics}
+\usepackage{copyrightbox}
+\usepackage{enumitem}
+\usepackage[section]{placeins}
+\usepackage{listings}
+\usepackage{forest}
+\usepackage{pgfcalendar}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{pgf}
+\usepackage{tocbibind}
+\usepackage{titlesec}
+\usepackage{lscape}
+%\usepackage{fontspec}
+%\usepackage{newtxtext,newtxmath} %Viel zu eng (To narrow)
+\usepackage{floatrow}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage[noend]{algpseudocode}
+\usepackage[
+    %showframe, % Anzeigen von Grenzen.
+    a4paper,
+    left = 4.0cm,
+    right = 2.0cm,
+    top = 3.0cm,
+    bottom = 3.0cm,
+    footskip = 1.25cm,
+    includehead,
+    includefoot,
+    includeheadfoot
+]{geometry}
+\usepackage{soul}
+\usepackage{fancyhdr}
+\usepackage{framed}
+\usepackage{makecell}
+\usepackage{shapepar}
+\usepackage[figuresleft]{rotating}
+\usepackage{varwidth} % Variable Mini-Page.
+\usepackage[export]{adjustbox}
+\usepackage{booktabs}
+\usepackage[tableposition=top, figurename=Abb.]{caption}
+\usepackage[nogroupskip, toc, acronym, nonumberlist]{glossaries-extra}
+\usepackage{subcaption}
+\usepackage{xltabular}
+\usepackage{pgfgantt}
+\usepackage[skins, many, most, hooks, breakable]{tcolorbox} % Farbkasten.
+\usepackage{tikz} % TikZ ist kein Zeichenprogramm.
+\usepackage{calc}
+%\usepackage{showkeys} % Zum Anzeigen von Labeln.
+\usepackage[usestackEOL]{stackengine}
+\usepackage{csquotes}
+\usepackage[
+    sorting=none, % NYT - Name, Jahr (Year), Titel
+    citestyle=numeric, % Numerische Zahlen.
+    bibstyle=literature/styles/ieee-fh, % Numerische Zahlen.
+    datamodel=literature/datamodel/ieee-fh,
+    %style=ieee,
+    backend=biber % Backend zum Sortieren.
+]{biblatex}
+%\usepackage[table]{xcolor}
+%\usepackage{url}
+\usepackage{hyperref} % Hyperref als (letztes) Paket, aber cleveref baut auf hyperref auf.
+\usepackage[german]{cleveref}
+
+%\setromanfont{Times New Roman}
+
+\graphicspath{{./chapter_2/}}
+
+%% Angaben (Titel, Autor, Datum)
+
+\title{
+    \LARGE\bfseries
+    \shortstack{Erklärbarkeit und Visualisierung von\\Graph Codes mittels generativer KI}
+}
+\author{Jens Nathan Andreß}
+\date{\today}
+
+\makeatletter
+
+%% Fancy HDR
+\pagestyle{fancyplain}% <- use fancyplain instead fancy
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+%% Biblatex - Optionen
+
+% Url-Entry manipulieren, um Unterstriche im
+% Url-Feld zu ermöglichen.
+\DeclareSourcemap{
+    \maps[datatype=bibtex]{
+        \map{
+            % Url-Entry manipulieren, um Unterstriche im
+            % Url-Feld zu ermöglichen.
+            \step[
+                fieldsource=url,
+                match=\regexp{\\_},
+                replace=\regexp{_}
+            ]
+        }
+        \map{
+            \step[fieldsource=faculty]
+            \step[fieldset=faculty, origfieldval]
+        }
+        \map[overwrite=true]{
+            % Definieren für welche Typen das Feld
+            % überschrieben werden soll.
+            \pertype{article}
+            \pertype{book}
+            \pertype{online}
+            \pertype{dissertation}
+            % Datum überschreiben.
+            \step[
+                fieldset=urldate,
+                fieldvalue={\the\year-\ifnumcomp{\month}{<}{10}{0\the\month}{\the\month}-\ifnumcomp{\day}{<}{10}{0\the\day}{\the\day}}
+            ]
+        }
+    }
+}
+
+\addbibresource{literature/literature.bib}
+\addbibresource{literature/online.bib}
+\addbibresource{literature/book.bib}
+\addbibresource{literature/article.bib}
+\addbibresource{literature/inproceedings.bib}
+\addbibresource{literature/misc.bib}
+
+\setlength\bibitemsep{4pt}
+
+%% Algorithms
+\algrenewcommand\algorithmicrequire{\textbf{Eingabe:}}
+\algrenewcommand\algorithmicensure{\textbf{Ausgabe:}}
+
+\makeatletter
+\newenvironment{breakablealgorithm}
+  {% \begin{breakablealgorithm}
+   \begin{center}
+     \refstepcounter{algorithm}% New algorithm
+     \hrule height.8pt depth0pt \kern2pt% \@fs@pre for \@fs@ruled
+     \renewcommand{\caption}[2][\relax]{% Make a new \caption
+       {\raggedright\textbf{\ALG@name~\thealgorithm} ##2}%
+       \ifx\relax##1\relax % #1 is \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+       \else % #1 is not \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+       \fi
+       \kern2pt\hrule\kern2pt
+     }
+  }{% \end{breakablealgorithm}
+     \kern2pt\hrule\relax% \@fs@post for \@fs@ruled
+   \end{center}
+}
+
+%% TColorBox
+\tcbuselibrary{skins, many, hooks, breakable}
+
+%% Tikz
+\usetikzlibrary{babel, pgfplots.dateplot, positioning, shapes.misc, intersections, backgrounds, angles, arrows.meta, shapes.geometric, fit, math, spy}
+
+%% PGF Plots
+\pgfplotsset{compat=1.18}
+
+%% TitleSec
+\titleformat{\section}{\normalfont\fontsize{16}{19.2}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\fontsize{14}{16.8}\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\fontsize{12}{14.4}\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}{\normalfont\fontsize{12}{14.4}\itshape\bfseries}{\upshape\bfseries\title}{0em}{}
+\titleformat{\subparagraph}{\normalfont\fontsize{12}{14.4}\bfseries}{\upshape\bfseries\title}{0em}{}
+
+\titlespacing*{\subsection}{0pt}{2\baselineskip}{\baselineskip}
+
+%% Counter
+\newcounter{problemcount}
+\newcounter{resquescount}
+\newcounter{openissue}
+\newcounter{useCaseCounter}
+
+\setcounter{secnumdepth}{5}
+
+%% Commands
+\newcommand{\med}{\medbreak\noindent}
+\newcommand{\m}{\\[\baselineskip]}
+
+\newcommand{\problemstmt}{%
+    \stepcounter{problemcount}\textbf{PB\theproblemcount:}%
+}
+\newcommand{\researchquestion}{%
+    \stepcounter{resquescount}\textbf{FF\theresquescount:}%
+}
+\newcommand{\thefontsize}{%
+    Aktuelle Schriftgröße: \f@size pt%
+}
+\newcommand{\openissue}[2]{\refstepcounter{openissue}\label{#1}\textbf{#2}}
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}}%
+\newcommand{\todo}{\rlap{$\square$}}%
+
+\newcommand{\circitem}[2][white]{\tikz[baseline=(char.base)]{%
+    \node[shape=circle,fill={#1},draw,inner sep=2pt] (char) {#2};}}
+
+\newcommand{\tikzitem}[1]{\tikz[baseline={([yshift=-1em] current bounding box.north)}]{%
+    \node[fill={white},inner sep=2pt] (char) {#1};}}
+
+%\newcommand{\tikzumlObjectContent}{}
+
+% Fake TabItem.
+\newcommand{\tabitem}{%
+    \par\hangindent7mm\hangafter0
+    \noindent\llap{\textbullet\enspace}%
+    \ignorespaces
+}
+
+\renewcommand{\thesubfigure}{\roman{subfigure}}
+
+%% Listings
+\lstdefinestyle{grammar}{basicstyle=\itshape,literate={->}{$\rightarrow$}{2}}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{white},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+% Begriffe
+\newcommand{\gcs}{\textit{Graph Codes}}
+\newcommand{\gmaf}{\textit{GMAF}}
+\newcommand{\gmafi}{\textit{Generic Multimedia Analysis Framework}, kurz \gmaf{}}
+\newcommand{\mmir}{\textit{MMIR}}
+\newcommand{\mmiri}{\textit{Multimedia Information Retrieval}, kurz \mmir{}}
+\newcommand{\smmir}{\textit{Smart MMIR}}
+\newcommand{\smmiri}{\textit{Smart Multimedia Information Retrieval}, kurz \smmir{}}
+
+%% Environments
+
+\newenvironment{usecase}[1]{
+    \refstepcounter{useCaseCounter}
+    \begin{tcolorbox}[enhanced,
+         colback=white,
+         colbacktitle=white,
+         coltitle=black,
+         title={\textbf{#1}},
+         toptitle=1.5mm,
+         bottomtitle=1.5mm,
+         center title,
+         breakable,
+         segmentation style={solid}
+     ]
+        \newcommand{\desc}[1]{\textbf{Beschreibung:} ##1}
+        \newcommand{\actors}[1]{\textbf{Akteure:} ##1}
+        \newcommand{\pre}[1]{\textbf{Vorbedingung:} ##1}
+        \newcommand{\mainflow}[1]{\textbf{Ablauf:}
+        \begin{enumerate}[labelindent=5mm, topsep=0pt, itemsep=-1mm, partopsep=1ex, parsep=1ex]
+        ##1
+        \end{enumerate}}
+        \newcommand{\post}[1]{\textbf{Nachbedingung:} ##1}
+        \newcommand{\branchflow}[1]{\textbf{Zweiglauf:}
+        \begin{enumerate}[labelindent=5mm, topsep=0pt, itemsep=-1mm, partopsep=1ex, parsep=1ex]
+        ##1
+        \end{enumerate}}
+}
+{
+    \end{tcolorbox}
+    \par
+}
+
+%% Soul
+
+\def\SOUL@hlpreamble{%
+ \setul{}{3ex}%         !!!change this value!!! default is 2.5ex
+ \let\SOUL@stcolor\SOUL@hlcolor
+ \SOUL@stpreamble
+ }
+
+%% Colors
+\definecolor{hagentitle}{rgb}{0.878, 0.925, 0.925}
+\definecolor{hagencorner}{rgb}{0, 0.3, 0.352}
+\definecolor{nodeblue}{RGB}{76, 174, 234}
+\definecolor{syngreen}{RGB}{100, 216, 112}
+\definecolor{comprel}{RGB}{224, 155, 254}
+
+\definecolor{folderbg}{RGB}{124,166,198}
+\definecolor{folderborder}{RGB}{110,144,169}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\definecolor{tok1}{RGB}{204, 191, 238}
+\definecolor{tok2}{RGB}{190, 237, 198}
+\definecolor{tok3}{RGB}{246, 217, 171}
+\definecolor{tok4}{RGB}{244, 174, 177}
+\definecolor{tok5}{RGB}{164, 220, 243}
+
+%% Cleveref
+\crefname{section}{Kapitel}{Kapitel}
+\crefname{subsection}{Abschnitt}{Abschnitte}
+\crefname{paragraph}{Abschnitt}{Abschnitte}
+\crefname{figure}{Abb.}{Abbldg.}
+\crefname{table}{Tab.}{Tabln.}
+
+%% Globale Variablen
+\setitemize{itemsep=0pt}
+
+\input{chapter/glossary/glossary}
+
+\begin{document}
+%\singlespacing
+
+% Titelblatt.
+\include{chapter/cover/coverpage}
+
+% Von hier an wird die Seitenzahl gezählt.
+\pagenumbering{roman}
+
+%% Abb/Listings nach Kap. nummerieren.
+\counterwithin{figure}{section}
+\counterwithin{lstlisting}{section}
+\counterwithin{table}{section}
+\counterwithin{algorithm}{section}
+%\counterwithin{equation}{subsection}
+
+% Inhaltsverzeichnis
+\tableofcontents
+
+\clearpage
+
+\listoffigures
+
+\listoftables
+
+%\printglossaries
+
+\clearpage
+
+\pagenumbering{arabic}
+
+\include{chapter/chapter_1_v5}
+
+\include{chapter/chapter_2}
+
+\include{chapter/chapter_3}
+
+\include{chapter/chapter_4}
+
+\include{chapter/chapter_5}
+
+%\include{chapter/chapter_6}
+
+\appendix
+
+\include{chapter/appendix/appendix}
+
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+\emergencystretch=3em
+{
+    \RaggedRight
+    \printbibliography
+}
+
+\end{document}

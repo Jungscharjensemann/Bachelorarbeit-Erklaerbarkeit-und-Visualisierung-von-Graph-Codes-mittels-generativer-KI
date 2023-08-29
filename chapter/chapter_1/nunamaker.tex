@@ -1,0 +1,102 @@
+\begin{figure}[htb]
+    \centering
+    \resizebox*{0.75\textwidth}{!}{
+        \begin{minipage}{\textwidth}
+            \begin{tcolorbox}[
+                enhanced, width=\textwidth, height=\textwidth, colback=white, colframe=black,
+                overlay={
+                    \tikzset{
+                        exstyle/.style={-{Triangle[angle=90:6pt,length=3mm,fill=black]}}
+                    }
+                    \def\rad{\textwidth-2.5cm}
+                    \node [circle, minimum size=\rad] (c) at ([yshift=-0.8cm]frame.center) {};
+                    \def\labellist{
+                          \shortstack{
+                            \Large \textbf{Beobachtung} \\
+                            \rule{3cm}{1pt} \\
+                            \footnotesize
+                            Umfragestudien, \\ 
+                            \footnotesize
+                            Fallstudien, \\
+                            \footnotesize
+                            Feldforschung
+                          }, 
+                          \shortstack{
+                            \Large \textbf{Experiment} \\
+                            \rule{3cm}{1pt} \\
+                            \footnotesize
+                            Computersimulationen,\\ 
+                            \footnotesize
+                            Feldexperimente, \\
+                            \footnotesize
+                            Laborexperimente
+                          },
+                          \shortstack{
+                            \Large \textbf{Theorie} \\ \Large \textbf{Bildung} \\
+                            \rule{3cm}{1pt} \\
+                            \footnotesize
+                            konzept. Rahmen-\\ 
+                            \footnotesize
+                            bedingungen, mathe\\
+                            \footnotesize
+                            matische Modelle\\
+                            \footnotesize 
+                            Methoden
+                          }
+                    }
+                    
+                    \foreach [count=\i] \x in \labellist {
+                        
+                        \node (n\i) [draw, fill=white, minimum size=0cm, inner sep=0mm, circle] at (c.\i*360/3+90) {
+                            \scalebox{0.8}{
+                                \x
+                            }
+                        };
+                    }
+                    \node (nm) [draw, fill=white, minimum size=0cm, inner sep=0mm, circle] at (c.center) {
+                        \scalebox{0.8}{
+                            \shortstack{
+                                \Large \textbf{System} \\ \Large \textbf{Entwicklung} \\
+                                \rule{3cm}{1pt} \\
+                                \footnotesize
+                                Produktentwicklung,\\ 
+                                \footnotesize
+                                Technologietransfer, \\
+                                \footnotesize
+                                Prototyping
+                            }
+                        }
+                    };
+                    \node [anchor=south east, rectangle, minimum width=4cm, rounded corners, text=white, fill=black, inner sep=1.7mm] at (frame.south east) {
+                        \textbf{nach J. Nunamaker}
+                    };
+
+                    \draw[exstyle] (nm.200) -- (n1.40);
+                    \draw[exstyle] (n1.25) -- (nm.215);
+
+                    \draw[exstyle] (nm.340) -- (n2.140);
+                    \draw[exstyle] (n2.155) -- (nm.325);
+
+                    \draw[exstyle] (nm.{83}) -- (n3.{277});
+                    \draw[exstyle] (n3.{263}) -- (nm.{97});
+
+                    \draw[exstyle, bend left=41.5](n3.0) to (n2.60);
+                    \draw[exstyle, bend left=41.5](n2.240) to (n1.300);
+                    \draw[exstyle, bend left=41.5](n1.120) to (n3.180);
+
+                    \draw[exstyle, bend right=41.5](n2.78) to (n3.342);
+                    \draw[exstyle, bend right=41.5](n1.318) to (n2.222);
+                    \draw[exstyle, bend right=41.5](n3.198) to (n1.102);
+
+                    \node[circle, fill=white, draw, minimum size=1cm] at (n1.71) {1};
+                    \node[circle, fill=white, draw, minimum size=1cm] at (n3.25) {2};
+                    \node[circle, fill=white, draw, minimum size=1cm] at (nm.45) {3};
+                    \node[circle, fill=white, draw, minimum size=1cm] at (n2.110) {4};
+                }
+            ]
+            \end{tcolorbox}
+        \end{minipage}
+    }
+    \caption{Phasen der Problemlösung nach Nunamaker \cite{nunamaker}.}
+    \label{sec1:intro:subsec:methodology-goals:fig:nunamaker}
+\end{figure}

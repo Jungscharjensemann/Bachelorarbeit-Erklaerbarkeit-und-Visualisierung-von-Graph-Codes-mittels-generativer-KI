@@ -1,0 +1,51 @@
+\begin{figure}[!htb]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tikzpicture}
+            \def\corner{5mm};
+             \def\cornerradius{0.2mm};
+             \def\lwidth{0.3mm};
+             \def\h{3.5cm};
+             \def\w{4.5cm};
+             \def\nline{10};
+             \def\iconmargin{1mm};
+             \def\topmargin{2mm};
+             \foreach[count=\i] \filename in {\textbf{Schmetterling}}
+             {
+             \coordinate (nw) at ($(0,0)$);
+             \coordinate (ne0) at ($(nw) + (\w, 0)$);
+             \coordinate (ne1) at ($(ne0) - (\corner, 0)$);
+             \coordinate (ne2) at ($(ne0) - (0, \corner)$);
+             \coordinate (se) at ($(ne0) + (0, -\h)$); 
+             \filldraw [-, line width = \lwidth, fill=white] (nw) -- (ne1) -- (ne2)
+              [rounded corners=\cornerradius]--(se) -- (nw|-se) -- cycle;
+             \draw [-, line width = \lwidth] (ne1) [rounded corners=\cornerradius]-- (ne1|-ne2) -- (ne2);
+             \node [anchor=north west] at (nw) {\fontsize{10}{7}\selectfont \filename};
+             \node [anchor=north west, text width=4.5cm] at ([yshift=-0.6cm]nw) {%
+                \begin{varwidth}{4.5cm}
+                    \fontsize{6}{7.2}\selectfont
+                    Fliege kleiner Schmetterling \newline
+                    mach dir die Welt zu Eigen \newline
+                    du kannst mit deiner Leichtigkeit \newline
+                    uns noch so vieles zeigen \newline
+                    zum Beispiel das es weiter geht \newline
+                    auch wenn man lang im Dunkel steht \newline
+                    am Lebensanfang nur gekrochen \newline
+                    hast du die Freiheit nun gerochen \newline
+                    du zeigst den Wandel uns im Leben \newline
+                    so ist das Leben, Wandel eben. \newline
+                    \vspace{\fill}
+                \end{varwidth}
+             };
+             
+             }
+             \draw[-latex, line width=0.7mm] (4.8, -1.7) -- node[above] {Dall-E 2} (7,-1.7);
+
+             \node[] at (10, -1.75) {
+                \includegraphics[width=4.5cm]{resources/images/DALL·E 2023-04-19.png}
+             };
+        \end{tikzpicture}
+    }
+    \caption[Beispiel für ein generiertes Vorschaubild]{Ein von Dall-E 2 generiertes Vorschaubild.}
+    \label{sec1:intro:subsec:problems:fig:mmir-example-1}
+\end{figure}

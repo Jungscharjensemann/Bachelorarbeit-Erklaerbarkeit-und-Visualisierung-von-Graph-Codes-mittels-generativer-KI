@@ -1,0 +1,58 @@
+{
+    \def\arraystretch{1.1}%
+    \begin{xltabular}{\linewidth}{
+            @{}
+            >{
+                \hsize=0.2\linewidth
+                \centering\arraybackslash
+            }X
+            >{
+                \hsize=0.27\linewidth
+                \raggedright\arraybackslash
+            }X
+            >{
+                \hsize=0.27\linewidth
+                \raggedright\arraybackslash
+            }X
+            >{
+                \hsize=0.27\linewidth
+                \raggedright\arraybackslash
+            }X
+            @{}
+    }
+
+    % First Header
+
+    \caption{Peer-Review-Verfahren.} 
+    \label{sec2:sota:table:peer-reviews} \\
+        
+    \toprule
+
+    \textbf{Verfahren} & \textbf{Verwendung} & \textbf{Ablauf} & \textbf{Vorteile} \\
+    
+    \midrule
+    
+    \endfirsthead
+
+    % Normal Head
+
+    \toprule
+
+    \textbf{Verfahren} & \textbf{Verwendung} & \textbf{Ablauf} & \textbf{Vorteile} \\
+    
+    \midrule
+    
+    \endhead
+        
+    % Lower Rows
+
+    Informal Review 
+    & Der informale Review ist ein einfaches und flexibles Verfahren, um in erster Instanz nach Defekten zu suchen und Rückmeldungen zu Software-Artifakten zu erhalten, ohne dabei Code auszuführen. 
+    In informellen Reviews wird keine Dokumentation angefertigt.
+    & 
+    & \\
+        
+    \bottomrule 
+
+    \end{xltabular}
+}

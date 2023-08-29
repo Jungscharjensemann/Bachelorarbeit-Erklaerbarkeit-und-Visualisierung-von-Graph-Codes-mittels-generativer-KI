@@ -1,0 +1,435 @@
+\subsection{Notizen}
+
+Das Generic Multimedia Analysis Framework (GMAF) ist ein Framework, welches ausgewählte vorhandene Technologien zum Verarbeiten multimedialer Inhalte, wie z.B. Bilder, Videos oder Text nutzt und miteinander kombiniert.
+Beispiele für diese Technologien sind Verarbeitungssysteme zum Erkennen von Merkmalen aus verschiedenen 
+
+Das Generic Multimedia Analysis Framework (GMAF) ist ein Framework, welches ausgewählte vorhandene Technologien zum Verarbeiten multimedialer Inhalte, wie z.B. Bilder, Videos oder Text nutzt und miteinander kombiniert.
+Das GMAF bietet zum Integrieren dieser Technologien eine flexible und erweiterbare Architektur 
+Das GMAF bietet eine flexible und erweiterbare Architektur zum Integrieren dieser Technologien in Form von Plugins.
+Mittels dieser Architektur können neue Algorithmen oder Schnittstellen zum Erkennen von Merkmalen auf einfache Art und Weise in Form von Plugins in das GMAF integriert werden.
+
+
+Das Generic Multimedia Analysis Framework (GMAF) ist ein Framework, das in der Lage ist Merkmale aus verschiedenen multimedialen Inhalten, wie z.B Bilder, Videos oder Text in einer einzigen Datenstruktur zu vereinen.
+Hierfür nutzt das GMAF ausgewählte vorhandene Technologien zum Vearbeiten multimedialer Inhalte, wie z.B 
+
+Das Generic Multimedia Analysis Framework (GMAF) ist ein Framework, das in der Lage ist multimediale Merkmale aus versc
+
+
+
+Das GMAF ist ein Framework, welches existierende Verarbeitungssysteme für multimediale Inhalte, wie z.B. Bilder, Videos oder Text nutzt und miteinander kombiniert. 
+Das GMAF kann als ein Zusammenschluss aus Anbietern von semantischen Metadaten / Inhalten betrachtet werden, welches alle Daten produziert, die notwendig sind, um ein Verzeichnis bzw. einen Index aus den semantischen Inhalten zu generieren.
+
+1. Das Erstellen eines semantischen Indexes wird als semantische Indexierung bezeichnet.
+Durch diese semantische Indexierung werden verschiedene semantische Inhalte in einem einheitlichen Modell und einer zentralen Datenstruktur, dem Multimedia Feature Graphen (MMFG) vereint.
+
+2. Das Erstellen eines semantischen Indexes wird als semantisches Indizieren bezeichnet.
+Semantische Indizierung vereint verschiedene semantische Inhalte in einem einheitlichen Modell, welches durch den Multimedia Feature Graphen (MMFG) repräsentiert wird.
+
+Due to the plugin architecture nature of GMAF, additional feature extraction APIs can easily be integrated.
+
+Whilst the GMAF is based on standard technologies (Java, SOAP, REST, XML and HTTP) and an optimal means of combining and utilizing them
+
+New algorithms can be easily attached as plugins and a recursive feature enrichment is also part of the GMAF and basis for the MMFVG.
+
+Current results of GMAF processing demonstrate that the level of detail increases significantly due to algorithm recursion.
+
+====================== 1
+======================
+
+The GMAF utilizes selected existing technologies as plugins to support various
+multimedia feature detection algorithms for text (e.g., social media posts, descriptions, tag
+lines) [19–21], images (especially object detection and spatial relationships including the use of
+machine learning) [18–20,22,23], audio (transcribed to text) [22,24], and video, including
+metadata [25] and detected features [26,27]
+
+The GMAF provides a flexible and extendable plugin architecture for the processing of
+various multimedia asset types. Such a plugin is based on a simple API and can be written to
+extract features from a special image, video, text, or audio format. These plugins contribute
+their extracted features to the MMFG, where they can be further processed. When the LOD
+of the given assets increases, the number of MMFG elements (i.e., nodes and edges) also
+increases. To provide a fast and effective indexing solution for this, we introduced Graph
+Codes (see Section 2.3). Further extensions of MMFGs lead to a semantic annotation (and
+to Semantic Multimedia Feature Graphs (SMMFGs)) and even to Explainable SMMFGs
+(ESMMFGs), which are outlined in Section 3. However, even with these extensions and
+annotations, the pure graph-based structure of an MMFG remains. As we showed in [2],
+this graph-based structure leads to exponential processing time of some MMIR algorithms
+
+====================== 2
+======================
+
+The higher an image’s resolution, the more recursions were possible and the higher the LOD of the detected features.
+
+====================== 3
+======================
+
+Generic Multimedia Analysis Framework (GMAF) [5], [6], [7], [8] as an unifying framework, that is able to fuse various Multimedia features into a single data structure. 
+The GMAF utilizes selected existing technologies as plugins to support various Multimedia feature detection algorithms for text (e.g. social media posts, descriptions, tag lines) [9], [10], [11], images (especially object detection and spatial relationships including the use of machine learning) [12], [13], [9], [14], [9], audio (transcribed to text) [15], [16], [13], and video including metadata [17] and detected features [18], [19], [16]. 
+In general, every detected feature can be regarded as a Multimedia indexing term. 
+The indexing term of any relevant feature thus becomes part of the vocabulary of the overall retrieval index. 
+In Multimedia Indexing and Retrieval (MMIR), these terms typically have structural and/or semantic relationships to each other. 
+Thus, graph-based structures are appropriate candidates to represent Multimedia features including their structural and semantic relationships. 
+The GMAF provides an extendable representation schema and processing architecture for fusing detected Multimedia features and generating Multimedia Feature Graph (MMFG) data structures.
+
+GMAF framework [6], which provides options to determine the number of recursions used for object detection.
+Recursions in GMAF mean, that a detected object’s bounding box is processed again and the identified sub-objects are fused into the resulting MMFG. 
+After some recursions, the bounding boxes become too small to represent any useful detected object and the GMAF processing terminates for this object. 
+The higher an image’s resolution, the more recursions are possible and the higher the LOD of the detected features.
+
+====================== 4
+======================
+
+we introduced a generic multimedia analysis framework (GMAF), which provides a flexible plugin architecture for the integration of plugins for the extraction of MM features of different MM content objects
+
+The GMAF provides a flexible, extendable API for the integration of plugins, which encapsulate the extraction of MM features of a certain MM content object type. All plugins contribute to the detected MM features to a generic data structure, the multimedia feature graph (MMFG)
+
+%Due to the increasing level of detail of many MM content objects, the number of nodes and edges in the corresponding MMFGs increases rapidly. 
+%To mitigate this resourceconstraint, as a first step, the GMAF is designed to be horizontally scalable, i.e., multiple GMAF nodes can be arranged for distributed processing (see Figure 3). 
+%However, many graph-based operations have polynomial or even exponential time complexity [10]. 
+%As horizontal scaling does not reduce the complexity as such, further optimizations in terms of scalability must be made. 
+%Hence, in [7], we introduce the concept of graph codes.
+
+GMAF framework provides facilities and existing MM Feature extraction mechanisms to integrate MM content objects of different types and to store their MM features in a MMFG
+
+====================== 5
+======================
+
+we already introduced the Generic Multimedia Analysis Framework (GMAF) [7–10] as a unifying framework that can integrate various multimedia features into a single data structure.
+The GMAF utilizes selected existing technologies as plugins to support various multimedia feature detection algorithms for text (e.g., social media posts, descriptions, tag lines) [11–13], images (especially object detection and spatial relationships including the use of machine learning) [11,14–16], audio (transcribed to text) [15,17,18], and video including metadata [19] and detected features [18,20,21].
+The GMAF produces a Multimedia Feature Graph (MMFG), which is defined in [7] and represents various integrated multimedia features.
+
+====================== 6
+======================
+
+\clearpage
+
+\subsubsection{MMFG}
+The Multimedia Feature Graph (MMFG) is a weighted and directed graph [23] representing
+the features of multimedia assets and is defined as MMFGAsset = (N, E), where
+N is the set of nodes and E the set of edges between these nodes. Both N and E are
+employed to represent special multimedia features and their relationship, that have been
+detected within an asset (e.g., instances of object, region, colour, or relationship features).
+The MMFG also fuses the detected information into a single model. A complete description
+of the MMFG is given in [22], a reference implementation is available on GitHub [20], and a
+visualization of a small section of a MMFG is shown in Figure 1, which illustrates several
+feature types in different colours (e.g., detected objects in blue, detected landmarks in
+yellow, synonyms in green, spacial relationships in red). (3)
+
+The MMFVG has not been designed to be human-readable or -viewable, but to provide
+optimum AI processing support. The basic concepts are closely aligned to graph theory, so
+visualizations can be provided of parts of the MMFVG, but in general, an MMFVG for a
+given multimedia asset will be too cumbersome to be visualized in a sensible manner. We
+define the MMFVG as a directed, weighted graph with attributed vertices and edges. It
+can be applied to a single multimedia asset to represent semantic, technical and contentbased
+metadata. In addition, each asset’s MMFVG has edges to parts of other assets’
+MMFVGs, which lead to a recursive MMFVG graph structure, supporting loops and
+subgraphs. (1)
+
+The Multimedia Feature Graph (MMFG) as such is a supportive and flexible data structure. (2)
+
+the MMFVG is a directed graph with subclasses of directed cographs defined as:
+MMFVGAsset = (V, E) (1)
+where V is the set of vertices and E is the set of Edges. Both vertices and edges are
+detailed by attributed subclasses, which represent the corresponding multimedia features.
+Vertices V in the context of the MMFVG use the following attributed subclasses V 2
+fn, r, e,w, cn, t,m, s, l, pg (1)
+
+• Nodes n1, ..., nn represent objects, activities or regions of relevance that have been
+detected within an asset. The root node r is the dominating node of the MMFVG for a
+given multimedia asset and is also represented by the node class. External nodes e
+represent external information structures such as [14,15] or parts of other MMFVGs
+and are also represented by the node class.
+• Weights w1, ...,wn represent the relevance of a node according to a special context.
+The context is an important description to refine the search and query scope. It is
+created by the related metadata of an MMFVG stucture and helps to determine the
+correct usage of homonyms. The context can also represent different aspects of the
+same object, such as in the timeline of a movie, where the same object can be used
+differently during the story of the movie. A weight represents the importance of the
+node in the overall image or video and the deviation from “normal” content compared
+to other assets of a similar kind (c.f. the “new watch” example). It is calculated initially
+by the GMAF, but constantly refined by AI4MMRA.
+• Childnodes cn1, ..., cnn are subobjects that have been detected by recursive application
+of the GMAF, e.g., Person ! Body ! Arm ! Left Hand ! Fourth Finger !
+Ring. So, one of the Person’s child nodes would be the “Body”, one of the Body’s child
+nodes would be “Arm”, and so on. Child relationships in the MMFVG are transitive.
+• TechnicalAttributes t1, ..., tn represent nonsemantic features of a node. These can be
+the color footprint of this node (c), its bounding box (b) within the image (defined by x,
+y, width, height), the DPI resolution of the section, information about, e.g., sharpness
+or blurring, etc.
+• GeneralMetadata m represent the asset’s general metadata object, which is extracted
+by EXIF or MPEG7 [12,13] and contains information such as, e.g., Date, Time, GEOcoding,
+Aperture, Exposure, Lens, Focal Length, Height, Width and Resolution. In m,
+a unique identifier for the multimedia asset is also stored.
+• Location Nodes l1, ..., ln represent locations where the original multimedia asset or
+copies of the asset in original or different resolutions or segments are placed.
+• SynonymInformation s1, ..., sn point to a normalized synonym graph, where the “is
+a” relationship is modeled. So, for a “Person”, we would find also, e.g., “individual”,
+“being”, “human”, “creature” and “human being”.
+• Security and Privacy p define the asset’s privacy and security settings, such as for an
+access control List. This ensures that users will only process and receive their own
+content and content that has been shared with them by other users. (1)
+
+Edges E in the context of the MMFVG are also represented by attributed subclasses
+and hence can be defined as E 2 fcr, sr, sn,mm, alg with:
+• CompositionRelationships cr1, ...crn providing a relationship between a multimedia
+asset’s objects. It contains information such as, e.g., “next to”, “in front of”, “behind”,
+“attached to”, and is calculated by recursively applying the object bounding boxes and
+measuring the distances between them.
+• Semantic Relationships sr1, ..., srn connect each node to a position within external
+semantic knowledge graphs such as [14].
+• SynonymLinks sn1,..., snn reference synonym information.
+• MMFVGLinks mm1, ...,mmn represent the connection to other MMFVGs as standard
+references in the node class.
+• AssetLinks al1, ..., aln point to location nodes.
+The MMFVG itself does not provide any functionality. It is a data structure for
+general use to recursively describe multimedia assets and their semantic relationships
+and to provide a generic structure to which the standards of existing specifications can
+be mapped. (1)
+
+Further extensions of MMFGs lead to a semantic annotation (and
+to Semantic Multimedia Feature Graphs (SMMFGs)) and even to Explainable SMMFGs
+(ESMMFGs), which are outlined in Section 3. However, even with these extensions and
+annotations, the pure graph-based structure of an MMFG remains. (2)
+
+
+A complex MMFG contains feature representations for example from text (e.g., metadata
+or Social Media), images (e.g., objects, colours, spacial attributes), video, and audio
+information (if applicable) and Figure 1 shows an exemplary MMFG snippet, where the
+following feature categories are visible: object detection, dominant colours, spacial relationships,
+landmark detection. In general, the MMFG is a typical graph based data-structure for
+representing multimedia features. (3)
+
+
+
+\subsubsection{MMFG}
+Here, we introduce a generic
+framework to fuse existing image and video analysis tools and algorithms into a unified semantic
+annotation, indexing and retrieval model resulting in a multimedia feature vector graph representing
+various levels of media content, media structures and media features.
+
+we introduce a multimedia feature vector graph framework (MMFVGF) that can integrate
+the various metadata features of multimedia assets into a unified semantic data structure.
+
+Hence, our approach combines and fuses these
+various levels into a unified semantic graph structure, the multimedia feature vector
+graph (MMFVG).
+
+Hence, our approach
+integrates and fuses detected features of these independent searches by attaching them as
+plugins to the GMAF and publishing their results as semantic features into the MMFVG of
+related multimedia assets.
+
+Semantic indexing
+fuses the various metadata into a unified model represented by the MMFVG.
+
+Multimedia feature vector graph framework (MMFVGF): a framework that fuses all
+the semantic metadata into a large semantic feature vector graph and assigns it to
+each media asset. Weights, nodes and references are structured in a way such that the
+relevance of features within a multimedia asset can be determined accurately.
+
+A central shared resource of this approach is the multimedia feature vector graph
+(MMFVG), which fuses existing ML-based semantic indexing methods into a single representation
+for multimedia query and retrieval. The MMFVG is the result of the generic
+multimedia analysis framework (GMAF)
+
+The MMFVG has not been designed to be human-readable or -viewable, but to provide
+optimum AI processing support. The basic concepts are closely aligned to graph theory, so
+visualizations can be provided of parts of the MMFVG, but in general, an MMFVG for a
+given multimedia asset will be too cumbersome to be visualized in a sensible manner. We
+define the MMFVG as a directed, weighted graph with attributed vertices and edges. It
+can be applied to a single multimedia asset to represent semantic, technical and contentbased
+metadata. In addition, each asset’s MMFVG has edges to parts of other assets’
+MMFVGs, which lead to a recursive MMFVG graph structure, supporting loops and
+subgraphs.
+
+the MMFVG is a directed graph with subclasses of directed cographs defined as:
+MMFVGAsset = (V, E) (1)
+where V is the set of vertices and E is the set of Edges. Both vertices and edges are
+detailed by attributed subclasses, which represent the corresponding multimedia features.
+Vertices V in the context of the MMFVG use the following attributed subclasses $V \in
+\{n, r, e,w, cn, t,m, s, l, p\}$
+\begin{itemize}
+    \item Nodes n1, ..., nn represent objects, activities or regions of relevance that have been
+detected within an asset. The root node r is the dominating node of the MMFVG for a
+given multimedia asset and is also represented by the node class. External nodes e
+represent external information structures such as [14,15] or parts of other MMFVGs
+and are also represented by the node class.
+Weights w1, ...,wn represent the relevance of a node according to a special context.
+The context is an important description to refine the search and query scope. It is
+created by the related metadata of an MMFVG stucture and helps to determine the
+correct usage of homonyms. The context can also represent different aspects of the
+same object, such as in the timeline of a movie, where the same object can be used
+differently during the story of the movie. A weight represents the importance of the
+node in the overall image or video and the deviation from “normal” content compared
+to other assets of a similar kind (c.f. the “new watch” example). It is calculated initially
+by the GMAF, but constantly refined by AI4MMRA.
+\item Childnodes cn1, ..., cnn are subobjects that have been detected by recursive application
+of the GMAF, e.g., Person ! Body ! Arm ! Left Hand ! Fourth Finger !
+Ring. So, one of the Person’s child nodes would be the “Body”, one of the Body’s child
+nodes would be “Arm”, and so on. Child relationships in the MMFVG are transitive.
+\item TechnicalAttributes t1, ..., tn represent nonsemantic features of a node. These can be
+the color footprint of this node (c), its bounding box (b) within the image (defined by x,
+y, width, height), the DPI resolution of the section, information about, e.g., sharpness
+or blurring, etc.
+\item GeneralMetadata m represent the asset’s general metadata object, which is extracted
+by EXIF or MPEG7 [12,13] and contains information such as, e.g., Date, Time, GEOcoding,
+Aperture, Exposure, Lens, Focal Length, Height, Width and Resolution. In m,
+a unique identifier for the multimedia asset is also stored.
+\item Location Nodes l1, ..., ln represent locations where the original multimedia asset or
+copies of the asset in original or different resolutions or segments are placed.
+\item SynonymInformation s1, ..., sn point to a normalized synonym graph, where the “is
+a” relationship is modeled. So, for a “Person”, we would find also, e.g., “individual”,
+“being”, “human”, “creature” and “human being”.
+\item Security and Privacy p define the asset’s privacy and security settings, such as for an
+access control List. This ensures that users will only process and receive their own
+content and content that has been shared with them by other users.
+\end{itemize}
+
+Edges E in the context of the MMFVG are also represented by attributed subclasses
+and hence can be defined as E 2 fcr, sr, sn,mm, alg with:
+\begin{itemize}
+\item CompositionRelationships cr1, ...crn providing a relationship between a multimedia
+asset’s objects. It contains information such as, e.g., “next to”, “in front of”, “behind”,
+“attached to”, and is calculated by recursively applying the object bounding boxes and
+measuring the distances between them.
+\item Semantic Relationships sr1, ..., srn connect each node to a position within external
+semantic knowledge graphs such as [14].
+\item SynonymLinks sn1,..., snn reference synonym information.
+\item MMFVGLinks mm1, ...,mmn represent the connection to other MMFVGs as standard
+references in the node class.
+\item AssetLinks al1, ..., aln point to location nodes.
+The MMFVG itself does not provide any functionality. It is a data structure for
+general use to recursively describe multimedia assets and their semantic relationships
+and to provide a generic structure to which the standards of existing specifications can
+be mapped.
+\end{itemize}
+
+Due to the graph-based nature of the MMFVG and the expected number of nodes
+and edges, it is clear that current graph-based indexing algorithms will require substancial
+processing time for indexing and retrieval.
+
+Based on these
+layers, additional feature representations are introduced as dimensions within the MMFVG:
+\begin{itemize}
+    \item Features within a single multimedia asset, such as object detection, technical metadata
+and basic semantic metadata;
+\item Features on higher semantic levels, such as people or face recognition, mood detection
+and ontology links;
+\item Recursive features, which result from applying the GMAF recursively to subsets of
+the multimedia asset;
+\item Indirect features, which result from linked assets and refine the features of the current
+asset (other scenes in a video, corresponding social media posts);
+\item Intra-asset features, which use information from assets of the same series, location or
+timestamp or data from generally similar assets to refine an asset’s features.
+\end{itemize}
+
+The MMFVGF calculates the multidimensional feature vector (MMFVG) and provides
+structures to organize and maintain this data structure. MMFVGF is also implemented
+in Java and includes importers and exporters to various formats (e.g., JSON, GraphML,
+XML) and APIs to employ the MMFVGF and access the MMFVG via SOAP and REST.
+
+Implementation of the various objects of the MMFVG is based on current multimedia
+standards such as those in [12–14,24,72,84].
+
+===================== 1 / 2
+=====================
+
+and data structure — the Multimedia Feature Graph (MMFG)
+
+In [1], we showed that MMFGs can be explained in a human-understandable natural
+language manner by introducing semantic annotation anchors, which not only represent
+the vocabulary terms of an MMFG, but also the syntactic structures, with which they are
+connected to each other (see Figure 4). This fully automated explainability is achieved by
+formally modeling the syntactic representation of MMFG elements and annotating them
+with semantic concepts, which can then be transferred by production rules into a PS-Tree
+for natural language processing.
+
+The Multimedia Feature Graph (MMFG) as such is a supportive and flexible data structure.
+
+The indexing and retrieval of multimedia content is generally implemented by employing
+feature graphs. These graphs typically contain a significant number of nodes and edges to reflect the
+level of detail in feature detection. A higher level of detail increases the effectiveness of the results,
+but also leads to more complex graph structures.
+
+The Multimedia Feature Graph (MMFG) is a weighted and directed graph [23] representing
+the features of multimedia assets and is defined as MMFGAsset = (N, E), where
+N is the set of nodes and E the set of edges between these nodes. Both N and E are
+employed to represent special multimedia features and their relationship, that have been
+detected within an asset (e.g., instances of object, region, colour, or relationship features).
+The MMFG also fuses the detected information into a single model.
+
+A complex MMFG contains feature representations for example from text (e.g., metadata
+or Social Media), images (e.g., objects, colours, spacial attributes), video, and audio
+information (if applicable) and Figure 1 shows an exemplary MMFG snippet, where the
+following feature categories are visible: object detection, dominant colours, spacial relationships,
+landmark detection. In general, the MMFG is a typical graph based data-structure for
+representing multimedia features.
+
+Integrating
+data structures as e.g., the MMFG can fuse these information and combine them into a
+large feature graph structure. However, the need to fuse many features into graphs to
+increase effectiveness contradicts the demand of higher performance for retrieval, as graph
+traversal algorithms become less efficient with an increasing number of nodes and edges.
+
+When features of various
+multimedia types are fused into a single MMFG, this would lead to an increase of the
+LOD in the MMFGs.
+
+====================== 3
+======================
+
+The GMAF provides an extendable
+representation schema and processing architecture for fusing
+detected Multimedia features and generating Multimedia
+Feature Graph (MMFG) data structures. The Multimedia
+Feature Graph (MMFG) is a graph structure for representing
+semantic and technical features of Multimedia Assets and is
+defined as MMFGAsset = (N,E), where N is the set of
+nodes and E the set of edges between these nodes. Both N
+and E are employed to represent special Multimedia Features
+and their relationship, that have been detected within an
+asset (e.g. instances of object, region, colour, or relationship
+features). Elements of N and E are represented by types.
+The MMFG is a weighted and directed graph and fuses
+technical and semantic information into a single model [20].
+
+A complex
+MMFG contains feature representations e.g. from text (e.g.
+metadata or Social Media), images (e.g. objects, colours,
+spatial attributes), video, and audio information (if applicable)
+
+Integrating data
+structures as, e.g. the MMFG can fuse this information and
+compile it into a large semantic graph structure. However,
+the need to fuse many features into graphs to increase effectiveness
+contradicts the demand of higher performance for
+retrieval, as graph-traversal algorithms become less efficient
+with an increasing number of nodes and edges.
+
+====================== 4
+======================
+
+The GMAF provides a flexible, extendable API for the integration of plugins, which
+encapsulate the extraction of MM features of a certain MM content object type. All plugins
+contribute to the detected MM features to a generic data structure, the multimedia feature
+graph (MMFG) [2].
+
+the GMAF framework provides facilities
+and existing MM Feature extraction mechanisms to integrate MM content objects of
+different types and to store their MM features in a MMFG.
+
+It may be noted that a typical
+MMFG can contain tens of thousands of nodes and even more relationships.
+
+====================== 5
+======================
+
+The GMAF produces a Multimedia Feature Graph (MMFG), which is defined in [7] and
+represents various integrated multimedia features. Within an application, these MMFGs
+are typically represented as a collection.
+
+As the integration of multimedia features within MMFGs produce a much higher
+level-of-detail (LOD), effective and efficient algorithms are required to process these feature
+graphs.
+
+====================== 6
+======================

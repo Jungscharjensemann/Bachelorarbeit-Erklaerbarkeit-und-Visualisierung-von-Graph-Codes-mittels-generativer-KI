@@ -1,0 +1,23 @@
+\resizebox{\textwidth}{!}{
+
+    \begin{tikzpicture}
+        \begin{axis}[
+            date coordinates in=x,
+            %xtick=data,
+            xticklabel style={rotate=90,anchor=north east},
+            xticklabel=\month.\year,
+            title={Foo},
+            xlabel={Date},
+            grid=major, 
+            %y tick label style={/pgf/number format/1000 sep=},
+            %extra y tick style={grid=major, tick label style={xshift=-1cm}},
+            ylabel={Interesse},
+            yticklabel style={rotate=90},
+            date ZERO=2009-08-18,% <- improves precision!
+        ]
+            %\addplot table[x=Woche,y=chatgpt, col sep=comma] {resources/files/search_results.csv};
+            \addplot+ [only marks] table [x=date,y=chatgpt] {\data};
+            %\addplot table[x=Woche,y=ai, col sep=comma] {resources/files/search_results.csv};
+        \end{axis}
+    \end{tikzpicture}
+}
