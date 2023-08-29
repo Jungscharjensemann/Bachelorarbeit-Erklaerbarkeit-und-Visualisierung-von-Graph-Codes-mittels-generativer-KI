@@ -1,0 +1,90 @@
+\textbf{Machine Learning} (z.Dt. maschinelles Lernen) ist ein Teilbereich der KI und hat zum Ziel die Art und Weise, wie Menschen lernen zu imitieren.
+Maschinelles Lernen ermöglicht es Systemen, Muster und Zusammenhänge automatisch und selbstständig aus Daten und Erfahrungen zu erlernen und zu verbessern, ohne dabei explizit programmiert zu sein.
+Damit Machine Learning funktioniert und Muster und Zusammenhänge erlernt werden können, muss ein Datensatz zum Training vorhanden sein.
+In einem Lernprozess nutzt ein Algorithmus diesen Datensatz und trainiert ein Modell, mit welchem später Vorhersagen getroffen werden können.
+Maschinelles Lernen kann in folgende Formen unterteilt werden: Supervised Learning, Unsupervised Learning, Semi-Supervised Learning, Reinforcement Learning.
+
+\textbf{Supervised Learning} (z.Dt. überwachtes Lernen) ist ein Verfahren des maschinellen Lernens.
+Der Lernprozess dieses Verfahrens zeichnet sich dadurch aus, dass die Daten im Trainingsdatensatz manuell mit einer Bezeichnung versehen werden.
+Diese Bezeichnung kann auch als Zielvariable bezeichnet werden.
+Durch den Algorithmus wird das Modell so trainiert, dass es Muster, Zusammenhänge und Abhängigkeiten in den Daten, die mit den Zielvariablen in Verbindung stehen, erlernt und erkennen kann.
+Überwachtes Lernen zeichnet sich durch einen relativ hohen menschlichen Aufwand aus.
+Weit verbreitete Problemstellungen bzw. Aufgaben, in denen überwachtes Lernen eingesetzt werden, sind die Klassifikation und Regression.
+
+\textbf{Unsupervised Learning} (z.Dt. unüberwachtes Lernen) ist ebenfalls ein Verfahren des maschinellen Lernens.
+Im Vergleich zum überwachten Lernen wird beim unüberwachten Lernen kein vorbearbeiteter Datensatz verwendet.
+Durch den Algorithmus wird ein Modell so trainiert, dass es ohne die Einflussnahme von Menschen Gemeinsamkeiten, Unterschiede, Gruppen und Muster in Daten erkennen kann.
+Schlussendlich müssen allerdings doch durch einen Menschen, einem Experten, die Ergebnisse bewertet werden.
+Anwendungen für unüberwachtes Lernen können Bildanalyse, wie Objekterkennung oder die Erkennung von Auffälligkeiten in Daten sein.
+Ähnlich zum unüberwachten Lernen ist das \textbf{Self-Supervised Learning} (z.Dt. selbstüberwachtes Lernen).
+Beides zeichnet sich dadurch aus, dass keine expliziten Bezeichnungen der Eingabedaten vorhanden sind.
+Während unüberwachtes Lernen zum Ziel hat Muster in Daten zu erkennen, nutzt selbstüberwachtes Lernen die Strukturen innerhalb der Daten, um daraus eigene Bezeichnungen zu generieren. 
+Anwendungen für unüberwachtes Lernen können ebenfalls Bildanalyse oder Verarbeitung natürlicher Sprache sein (NLP).
+
+\textbf{Deep Learning} (z.Dt. tiefes Lernen) ist eine besondere Form des maschinellen Lernens.
+Das Rückgrat des tiefenen Lernens bilden künstliche neuronale Netzwerke.
+Das \enquote{tief} in tiefes Lernen bezieht sich auf die Tiefe an Schichten in einem neuoranelen Netzwerk.
+Tiefes Lernen ist in der Lage mit Bezeichnungen versehene Datensätze zu verarbeiten, kann aber auch unstrukturierte Datensätze verarbeiten, die nicht mit Bezeichnungen versehen sind.
+Während klassisches maschinelles Lernen von menschlichen Eingriffen abhängig ist, ist tiefes Lernen unabhängiger von solchen Eingriffen.
+Nutzen für tiefes Lernen in der Praxis sind das Erkennen von Bildern oder das Finden besserer Entscheidungen.
+Tiefes Lernen ist sehr rechenintensiv und es kann Monate dauern, bis Vorhersagen und Entscheidungen gute Ergebnisse liefern.
+
+\textbf{Articial Neural Networks (ANNs)} (z.Dt. künstliche neurale Netzwerke (KNN)) sind ein Teilgebiet des maschinellen Lernens und stehen im Mittelpunkt des tiefen Lernens.
+Dabei sind künstliche neuronale Netzwerke Algorithmen, deren Struktur und Verhalten nach dem biologischen Vorbild des menschlichen Gehirns und seiner Neuronen modelliert ist.
+Künstliche neuronale Netzwerke bestehen aus Schichten von Knoten und können primär in vier Komponenten unterteilt werden: Eingabe, Gewichte, Schwellenwert und Ausgabe.
+Die Schichten umfassen die Eingabeschicht, eine Ausgabeschicht und eine oder mehrere versteckte innere Schichten.
+Jeder Knoten ist mit anderen Knoten verbunden, stellt ein Neuron dar und hat ein Gewicht und einen Schwellenwert.
+Ist die Ausgabe eines Knoten über dem Schwellenwert, wird der Knoten aktiviert und sendet die Daten zur nächsten Schicht im Netzwerk.
+Wird der Schwellenwert eines Knoten nicht überschritten, werden keine Daten übermittelt.
+Für gewöhnlich fließen in den meisten neuronalen Netzwerken die Daten nur in eine Richtung und zwar vom Input zum Output.
+Dies wird auch als Feed-Forward bezeichnet.
+Es gibt aber auch andere Übertragungsformen, wie Rückführung (engl. backpropagation), in welcher die Daten rückwärts vom Output zum Input und somit zu früheren Schichten fließen.
+Das Trainieren von künstlichen neuronalen Netzwerken benötigt viel Zeit und viele Daten.
+Sobald diese aber fein abegstimmt und getrimmt sind, stellen sie ein leistungsstarkes Werkzeug in der Informatik und der KI dar, mit welchen Daten in hoher Geschwindigkeit verarbeitet werden können.
+Ein sehr bekanntes Beispiel für ein neuronales Netzwerk ist der Suchalgorithmus von Google.
+
+Die im Bereich der generativen KI meistgenutzten Modelle sind Generative Adverserial Networks (GANs) und Variational Auto Encoders (VAEs).
+
+\textbf{Generative Adverserial Networks (GANs)} (z.Dt. generative generische Netzwerke) zeichnen sich dadurch aus, dass sie zwei künstliche neurale Netzwerke verwenden.
+Diese zwei Netzwerke sind ein Generator und ein Diskriminator.
+Beide Netzwerke treten in einem Nullsummenspiel gegeneinander an und konkurrieren miteinander.
+Die Rolle des Generators bzw. des generativen Netzwerkes ist es neue Daten ähnlich zu den Trainingsdaten zu generieren.
+Die Rolle des Diskriminators bzw. des diskriminierendes Netzwerkes ist es die vom Generator geschaffenen Daten mit den Originaldaten zu vergleichen und zu unterscheiden.
+Der Diskriminator klassifiziert dabei sowohl die echten Trainingsdaten als auch die generierten bzw. gefälschten Daten vom Generator.
+Das Ergbniss dieser Klassifizierung wird 
+Durch ein enges Zusammenspiel beider Netzwerke und der intelligenten Verwertung dieser Ergebnisse trainieren sich beide Netzwerke gegeneinander. 
+Dieses Vorgehen ist ein iterativer Prozess und mit der Zeit werden beide Netzwerke besser, bis der Generator Daten generiert, die der Diskriminator nicht mehr von den Originaldaten unterscheiden kann.
+Da es das Ziel eines GANs ist die usprünglichen echten Daten nachzuahmen und nicht zu klassifizieren, kann ein GAN als ein Algorithmus zum unüberwachten Lernen verstanden werden.
+
+\textbf{Variational Auto Encoders (VAEs)} bauen auf Auto Encodern auf.
+Ein Auto Encoder ist ein Modell, welches aus zwei künstlichen neuoranelen Netzwerken besteht.
+Diese zwei Netzwerke sind ein Encoder und ein Decoder.
+Der Encoder verringert die Daten der Eingabe, indem diese auf eine kleinere Darstellung abgebildet werden.
+Beim Verringern der Eingabedaten werden nur die wichtigsten Informationen extrahiert und bleiben erhalten.
+Anhand dieser komprimierten Daten kann dann eine neue Ausgabe generiert werden, die der Eingabe ähnelt.
+Der Decoder verhält sich wie der Encoder, nur in umgekehrte Richtung.
+Die beiden Netzwerke Encoder und Decoder sind über einen Flaschenhals (engl. bottle neck) verbunden.
+Dieser Flaschenhals wird auch als latenter Vektor oder Raum bezeichnet und enthält alle durch den Encoder extrahierten Informationen.
+Aufgabe des Decoders ist es, anhand der Informationen aus dem latenten Vektor eine Ausgabe zu generieren, die der Eingabe so gut wie möglich ähnelt.
+Allerdings sind Auto Encoder nicht in der Lage variierende Ausgaben zu erzeugen.
+Dies unterscheidet VAEs von Auto Encodern, die, anstatt mit konkreten Werten zu arbeiten, mit Wahrscheinlichkeitsverteilungen integrieren und so von der ursprünglichen Eingabe abweichende Ausgaben generieren können.
+Da VAE keine im Vorhinein bearbeiteten und mit Bezeichnungen versehenen Datensätze benötigen, können sie als ein Algorithmus zum unüberwachten Lernen verstanden werden.
+
+\textbf{Large Language Models (LLMs)} (z.Dt. großes Sprachmodell) sind große generative Sprachmodelle und stellen ein Teilbereich der KI dar.
+Die Architektur von LLMs basiert auf neuronalen Netzwerken, spezifischer \textbf{Transformern}.
+LLMs sind auf natürlicher Sprache trainiert und sind spezialisiert auf die Verarbeitung von natürlicher Sprache (NLP).
+D.h. LLMs sind in der Lage natürliche Sprache zu verstehen, zu verarbeiten und Ausdrücke natürlicher Sprache zu generieren.
+LLMs werden auf riesigen Textmengen trainiert und weisen in der Praxis Milliarden an Parameter auf.
+Im Vergleich zu einfachen RNNs (rückführenden neuronalen Netzwerken) sind neuronale Netzwerke, deren Architektur auf Transformern basiert, mit Erweiterungen ausgestattet.
+Diese Erweiterungen sind Encoder und Decoder, sowie einem Selbstaufmerksamkeitsmechanismus (engl. self-attention).
+Der Mechanismus der Selbstaufmerksamkeit funktioniert, indem die Bedeutung oder die Beziehung zwischen einem bestimmten Wort und benachbarten Worten in seiner Umgebung hergestellt wird.
+Der Mechanismus der Selbstaufmerksamkeit setzt ein bestimmtes Wort bzw. Token, unabhängig von seiner Position im Text mit weiteren Teilen seiner Umgebung in Bezug.
+Weitere Teile in der Umgebung eines Wortes können Satzzeichen, Worte, Sätze, Absätze, oder größere Textabschnitte sein.
+Prinzipiell erlangt das neuronale Netzwerk durch diesen Mechanismus ein besseres Gesamtverständnis des Textes.
+LLMs arbeiten mit Statistik und Wahrscheinlichkeitsverteilungen und optimieren mit diesen die Genauigkeit ihrer Vorhersage für die wahrscheinlichste Komplementierung des Textes.
+
+\textbf{Explainable AI (xAI)} (z.Dt. erklärbare KI) befasst sich mit der Erklärbarkeit von KI.
+Erklärbare KI beschäftigt sich u.a. mit der Frage \enquote{Wie kommt eine KI zu einem Ergebnis} und versucht die inneren Abläufe in einer KI zu beleuchten.
+Das generelle Problem mit KI ist, dass die Algorithmen wie neuronale Netzwerke und tiefes Lernen sogenannte \enquote{Black-Boxes} sind.
+Zwar ist die Funktionsweise dieser Algorithmen, sowie das finale Ergebnis bekannt, aber es ist nicht erkenntlich wie die KI dieses Ergebnis erreicht hat.
+Ziel von erklärbarer KI soll also sein, dass ein Mensch nachvollziehen kann, wie ein Algorithmus ein Ergebnis erreicht.
