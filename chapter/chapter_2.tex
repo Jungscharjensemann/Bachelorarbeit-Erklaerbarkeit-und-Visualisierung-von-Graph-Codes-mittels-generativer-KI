@@ -1,15 +1,15 @@
 \section{Stand der Wissenschaft und Technik}
 \label{sec2:sota}
-Die voranschreitende Digitalisierung, die Entwicklung des Internets, Mobiltelefone, sowie die sozialen Medien und die damit einhergehenden enormen Datenmengen haben zu einer enormen Zunahme an Wissen, Standards und auch Forschung im Bereich des \mmir{} geführt \cite{swa_diss}. 
+Die voranschreitende Digitalisierung, die Entwicklung des Internets, Mobiltelefone, sowie die sozialen Medien und die damit einhergehenden enormen Datenmengen haben zu einer enormen Zunahme an Wissen, Standards und auch Forschung im Bereich des \mmir{} geführt \cite{swa_diss}.
 Im Bereich der Forschung spielt auch die Erklärbarkeit von \mmir{}-Prozessen eine zunehmend wichtige Rolle.
 In einschlägiger Literatur, wie z.B \cite{swa_diss} wurde die Erklärbarkeit von \mmir{}-Prozessen bereits adressiert und es wurden Lösungsvorschläge und Konzepte entwickelt.
 
 In diesem Kapitel wird, den Forschungszielen der Beobachtungsphase entsprechend, der aktuelle Stand der Wissenschaft und Technik bezogen auf ausgewählte Bereiche der Erklärbarkeit von Prozessen des \mmir{} beschrieben.
 % Wie bin ich zu diesen Informationen gelangt?
 % (Literaturrecherche, Internetrecherche (Publikationen vom Betreuer Wagenpfeil ...?))
-Die in diesem Kapitel dargestellten Informationen wurden im Rahmen einer Literaturrecherche, speziell Publikationen, bezogen auf das GMAF und seine Technologien, sowie durch eine extensive Internetrecherche mit entsprechenden Stichworten zusammengetragen. 
+Die in diesem Kapitel dargestellten Informationen wurden im Rahmen einer Literaturrecherche, speziell Publikationen, bezogen auf das GMAF und seine Technologien, sowie durch eine extensive Internetrecherche mit entsprechenden Stichworten zusammengetragen.
 Das Bezugssystem für diese Arbeit stellt das \gmaf{} dar.
-Die für diese Arbeit relevanten Konzepte werden detailliert beschrieben, um so eine konkrete Vorlage, ein starkes Fundament, sowie eine scharfe Trennung zu den Phasen Modellierung, Implementierung und Experiment zu schaffen, die im weiteren Verlauf dieser Arbeit in den nachfolgenden Kapiteln Modellierung, Implementierung und Evaluierung folgen werden. 
+Die für diese Arbeit relevanten Konzepte werden detailliert beschrieben, um so eine konkrete Vorlage, ein starkes Fundament, sowie eine scharfe Trennung zu den Phasen Modellierung, Implementierung und Experiment zu schaffen, die im weiteren Verlauf dieser Arbeit in den nachfolgenden Kapiteln Modellierung, Implementierung und Evaluierung folgen werden.
 Somit enthält dieses Kapitel alle nötigen Rechercheergebnisse, Beobachtungsergebnisse und damit Erkentnisse, die der Beantwortung der Forschungsfragen laut Ansatz dienlich sein sollen.
 Der Methodik nach Nunamaker \cite{nunamaker} folgend, behandelt dieses Kapitel alle Forschungsziele vom Typ Beobachtung, entsprechend der identifizierten Problembeschreibungen aus dem \cref{sec1:intro:subsec:problems}.
 In \cref{sec2:sota:subsec:fz-explainability} wird auf die Erklärbarkeit von MMIR mittels generativer KI eingegangen, welches vorhandene Technologien im Bereich MMIR, sowie generativer KI beinhaltet.
@@ -24,7 +24,7 @@ Die Struktur dieses Kapitels ist in \cref{sec2:sota:table:structure} abgebildet.
 \label{sec2:sota:subsec:fz-explainability}
 Dieser Abschnitt gibt einen Überblick über ausgewählte Ergebnisse und Erkenntnisse aus der Forschung im Bereich der Erklärbarkeit von MMIR und deckt verschiedene Aspekte ab, die sich auf die erste Problembeschreibung beziehen.
 Die Struktur dieses Abschnittes folgt einer logischen Abfolge.
-Zuerst werden bereits vorhandene Technologien im Bereich der Erklärbarkeit von MMIR vorgestellt und erläutert. 
+Zuerst werden bereits vorhandene Technologien im Bereich der Erklärbarkeit von MMIR vorgestellt und erläutert.
 Dies trifft besonders auf Technologien in Bezug auf das GMAF zu, da das GMAF das Bezugssystem dieser Arbeit darstellt.
 Im weiteren Verlauf wird dann auf generative KI eingegangen, Grundlagen werden erläutert, eine Auswahl an aktuellen Systemen generativer KI vorgestellt, sowie die Einschränkungen von generativer KI hervorgehoben.
 
@@ -33,7 +33,7 @@ Im weiteren Verlauf wird dann auf generative KI eingegangen, Grundlagen werden e
 Das Generic Multimedia Analysis Framework (GMAF) \cite{gmaf_github} ist ein Framework, welches ausgewählte Technologien zum Verarbeiten verschiedener multimedialer Inhalte, wie Bilder, Videos oder Text nutzt und miteinander kombiniert \cite{ai-based-sem-ind-retr-soc, exp-mmfg}.
 Beispiele für solche Technologien sind Verarbeitungssysteme zur Merkmalserkennung in Bildern (z.B zur Objekterkennung oder Erkennung von räumlichen Beziehungen mittels maschinellen Lernens).
 Das GMAF bietet eine flexible und erweiterbare Architektur, mit welcher auf einfache Art und Weise neue Algorithmen oder Schnittstellen zur Merkmalserkennung im Form von Plugins in das GMAF integriert werden können \cite{exp-mmfg}.
-Die von den Plugins extrahierten Merkmalen werden vom GMAF in einer zentralen Datenstrukturen zusammengefasst und vereint \cite{ai-based-sem-ind-retr-soc, jour-smmir}. \cref{sec2:sota:subsec:fz-explainability:fig:gmaf-overview} zeigt eine vereinfachte Übersicht der Architektur des GMAFs und die grundlegenden Komponenten. 
+Die von den Plugins extrahierten Merkmalen werden vom GMAF in einer zentralen Datenstrukturen zusammengefasst und vereint \cite{ai-based-sem-ind-retr-soc, jour-smmir}. \cref{sec2:sota:subsec:fz-explainability:fig:gmaf-overview} zeigt eine vereinfachte Übersicht der Architektur des GMAFs und die grundlegenden Komponenten.
 \input{chapter/chapter_2/gmaf-overview}
 Die Plugins im GMAF können als ein Zusammenschluss aus Anbietern von semantischen Informationen betrachtet werden \cite{ai-based-sem-ind-retr-soc}.
 Dieser Zusammenschluss produziert alle Daten, die notwendig sind, um ein Verzeichnis bzw. einen Index aus den semantischen Informationen zu generieren \cite{ai-based-sem-ind-retr-soc}.
@@ -64,11 +64,11 @@ Die Knotenmenge $V$ besteht aus folgenden Unterklassen: $V \in \{n,r,e,w,cn,t,m,
 %Die Bedeutung dieser Unterklassen wird im Folgenden genauer erläutert \cite{ai-based-sem-ind-retr-soc}:
 Die folgende Aufzählung wurde aus \cite{ai-based-sem-ind-retr-soc} entnommen und erläutert die Bedeutung dieser Unterklassen:
 \begin{itemize}
-    \item \textbf{Nodes} $n_{1},...,n_{n}$ stellt wichtige Objekte, Aktivitäten oder Regionen in einer Datei dar. 
+    \item \textbf{Nodes} $n_{1},...,n_{n}$ stellt wichtige Objekte, Aktivitäten oder Regionen in einer Datei dar.
     $r$ ist die Wurzel des MMFGs und selbst wiederum ein Knoten.
     $e$ bezeichnet externe Knoten, die externe Informationen darstellen.
     Externe Informationen können aus anderen MMFGs oder anderen externen Systemen, wie dem Semantic Web stammen und so in den MMFG eingebunden werden.
-    \item \textbf{Weight} $w_{1},...,w_{n}$ stellt die Gewichtung bzw. Relevanz eines Knoten in einem besonderen Kontext dar. 
+    \item \textbf{Weight} $w_{1},...,w_{n}$ stellt die Gewichtung bzw. Relevanz eines Knoten in einem besonderen Kontext dar.
     So können Objekte, abhängig vom Kontext und Gewichtung, unterschiedliche Bedeutungen in Bezug auf die gesamte Datei besitzen.
     \item \textbf{Childnodes} $cn_{1},...,cn_{n}$ sind Objekte, die in einer untergeordneten hierarchischen Beziehung zu anderen Objekte stehen.
     Diese Objekte entstehen durch wiederholte bzw. rekursive Anwendung des GMAFs auf bereits identifizierte Merkmale.
@@ -76,7 +76,7 @@ Die folgende Aufzählung wurde aus \cite{ai-based-sem-ind-retr-soc} entnommen un
     \item \textbf{TechnicalAttributes} $t_{1},...,t_{n}$ stellen nicht semantische Informationen eines Knoten dar.
     Beispiel für ein technisches Attribut kann die Abgrenzung eines Merkmals in einem Bild sein.
     Diese Abgrenzung wird in Form eines Rechtecks notiert ($x$: 468, $y$: 176, $width$: 28, $height$: 12).
-    \item \textbf{GeneralMetadata} $m$ stellt die Metadaten der Multimedia-Datei dar. 
+    \item \textbf{GeneralMetadata} $m$ stellt die Metadaten der Multimedia-Datei dar.
     Mit Metadaten bezeichnet man Daten, die andere Informationen beschreiben und können durch EXIF oder MPEG7 identifiziert werden.
     Die Metadaten eines Buches könnten so z.B. der Name des Autors, Auflage oder das Erscheinungsjahr sein.
     \item \textbf{Location} $l_{1},...,l_{n}$ stellt Speicherorte dar.
@@ -111,7 +111,7 @@ Das Hauptaugenmerk der MMFGs liegt nicht darauf für Menschen lesbar, darstellba
     \caption{Visualisierung eines MMFGs durch yEd.}
     \label{sec2:sota:subsec:fz-explainability:fig:mmfg-real-example}
 \end{figure}
-\cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-example} zeigt einen simplen $MMFG_{ex}$. 
+\cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-example} zeigt einen simplen $MMFG_{ex}$.
 Die Knoten \textit{Person, Body, Arm, Watch} repräsentieren identifizierte Merkmale, \textit{Clock} ist ein Synonym für \textit{Watch} und \textit{attached to} verweist auf eine Beziehung zwischen \textit{Arm} und \textit{Watch}.
 
 \begin{figure}
@@ -124,7 +124,7 @@ Die Knoten \textit{Person, Body, Arm, Watch} repräsentieren identifizierte Merk
 \paragraph{Erklärbarkeit von MMFGs}
 \label{sec2:sota:par:explainability-of-mmfgs}
 Um Erklärbarkeit von MMFGs zu erreichen, muss die technische Darstellung der Merkmale in eine für Menschen verständliche Bedeutung überführt werden.
-Das Überbrücken dieser Lücke ist nicht in einem einzigen Schritt machbar. 
+Das Überbrücken dieser Lücke ist nicht in einem einzigen Schritt machbar.
 Es benötigt mehrere Schritte um diese Lücke zu schließen.
 In einem ersten Zwischenschritt muss die Lücke zwischen der technischen Darstellung der Merkmale und ihrer semantischen Darstellung überbrückt werden.
 Hierzu wird ein formaler und für Maschinen lesbarer Ansatz zur Erweiterung von MMFGs benötigt \cite{towards_auto_sem_expl_mmfg}.
@@ -141,7 +141,7 @@ Des Weiteren bieten sich anhand der Grammatik und ihrer Produktionsregeln unbegr
 Durch Anpassungen der Produktionsregeln können Applikationen individuell die Konstruktion natürlicher Ausdrücke bestimmen \cite{towards_auto_sem_expl_mmfg}.
 Anhand dieser Techniken können bereits gute Ergebnisse bzw. Erklärungen erzielt werden.
 Besonders textbasierte Dokumente können mit dieser Herangehensweise erklärt werden, da die Struktur des MMFGs der Struktur des Dokuments folgt \cite{towards_auto_sem_expl_mmfg}.
-Dies gilt allerdings nicht für andere Multimedia-Dateien, wie z.B. Bildern. 
+Dies gilt allerdings nicht für andere Multimedia-Dateien, wie z.B. Bildern.
 Für diese Dateitypen bleibt die Reihenfolge der konstruierten Sätze zufällig \cite{towards_auto_sem_expl_mmfg}.
 
 Wichtig anzumerken ist, dass diese Konzepte ohne maschinelles Lernen auskommen und einen rein mathematischen und statistischen Ansatz verfolgen, um Erklärungen anhand identifizierter Merkmale zu generieren \cite{towards_auto_sem_expl_mmfg}.
@@ -208,7 +208,7 @@ Hierzu werden für alle Einträge bzw. Felder in der Wertungsmatrix $WM$, die ni
 Die Funktion $f_{enc}$ zur Codierung dieser Informationen kann von Applikationen je nach ihren jeweiligen Anforderungen angepasst werden \cite{gc-2d-proj-mmfg}.
 Eine beispielhafte Codierung kann wie folgt lauten: Knoten = 1, Blatt = 2, Kindsbeziehung = 3, Synonymbeziehung = 4, Beziehung = 5, Knoten (räumliche Beziehung) = 6, Knoten (Synonym) = 7.
 Angewandt auf das Beispiel $MMFG_{ex}$ führt diese Codierung zu folgender in \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-valuation-matrix-enc} a-b) dargestellten codierten Wertungsmatrix $WM_{enc}$ bzw. Graph Code $GC_{ex}$.
-Die Farben der Einträge in \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-valuation-matrix-enc} entsprechen der Färbung der Knoten aus \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-example}. 
+Die Farben der Einträge in \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-valuation-matrix-enc} entsprechen der Färbung der Knoten aus \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-example}.
 Die dazugehörigen Beziehungen sind ebenfalls entsprechend gefärbt.
 \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-valuation-matrix-enc} c) hingegen zeigt den durch das GMAF generierten Graph Code $GC_{ex}$ des Beispiels $MMFG_{ex}$.
 Es sei angemerkt, dass die Unterschiede zwischen dem Graph Code $GC_{ex}$ aus \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-valuation-matrix-enc} a-b) und \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-valuation-matrix-enc} c) durch die vom GMAF eigens definierte Fuktion $f_{enc}$ zu Stande kommen.
@@ -255,7 +255,7 @@ Anders als $FVT_{ex}$ weist $dict_{ex}$ eine spezifische Reihenfolge auf, die in
     \centering
     \begin{tabular}{c|c|c|c|c|c|c}
          Index $i$ & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
-         $fvt_i$ & Person & Body & Arm & Watch & Clock & attached to 
+         $fvt_i$ & Person & Body & Arm & Watch & Clock & attached to
     \end{tabular}
     \caption{$dict_{ex}$ vom Graph Code $GC_{ex}$.}
     \label{sec2:sota:par:gc-vocabulary-dictionary:tab:dict-ex}
@@ -284,7 +284,7 @@ Wird ein $dict_{\cup}$ aus der vollständigen Sammlung an Graph Codes berechnet,
 Die in diesem Abschnitt beschriebenen Definitionen ermöglichen eine effiziente und effektive Verarbeitung von Informationen eines Graph Codes.
 Ein Beispiel für so eine Verarbeitung ist die Berechnung der Ähnlichkeit zweier Graph Codes, die auf einem Vergleich dieser beiden basiert.
 Wie bereits erwähnt, muss der Vergleich dieser Graph Codes auf einer genaustens definierten Metrik beruhen.
-%Mit Hilfe dieser Metriken können Eigenschaften von Graph Codes quantifiziert werden und 
+%Mit Hilfe dieser Metriken können Eigenschaften von Graph Codes quantifiziert werden und
 Im nächsten Abschnitt werden diese Metriken vorgestellt.
 
 \paragraph{Ähnlichkeit von Graph Codes}
@@ -330,7 +330,7 @@ Die Berechnung dieser Metrik basiert auf den nicht in der Diagonalen vorkommende
 Die Metrik $M_{FR}$ ist definiert als das Verhältnis zwischen der Summe aller nicht in der Diagonalen vorkommenden Einträge und der Kardinalität aller nicht in der Diagonalen vorkommenden Einträge.
 Die Formel für diese Metrik lautet $M_{FR}(GC_i, GC_j) = \frac{\Sigma AM(M_{i~\cap~j}) -n}{\abs{AM(M_{\cap~i})} - n}$.
 Die Metrik $M_{FR}$ stellt somit das Verhältnis zwischen der Zahl der Einträge, die Beziehungen darstellen und der Anzahl der äquivalenten und in der Schnittmenge vorkommenden Einträge, die Beziehungen darstellen, von Graph Codes.
-Somit zählt die Metrik $M_{FR}$ die Anzahl aller Beziehungen zwischen Ausgangs- und Zielknoten. 
+Somit zählt die Metrik $M_{FR}$ die Anzahl aller Beziehungen zwischen Ausgangs- und Zielknoten.
 Die Metrik berücksichtigt jedoch nicht die Äquivalenz der Typen der Beziehungen.
 Die Äquivalenz der Typen von Beziehungen wird von der nächsten Metrik, der Metrik für Beziehungstypen berücksichtigt \cite{gc-2d-proj-mmfg}.
 
@@ -384,7 +384,7 @@ Durch das Training erlernt das diskriminative Modell beide Gruppen zu unterschei
 Die diskriminative Modellierung ist daher gleichbedeutend mit dem überwachten maschinellen Lernen (engl. supervised machine learning) \cite{orlly-deep-gen-learning}.
 In der Tat wird ein Großteil der diskriminativen Modelle für überwachtes maschinelles Lernen verwendet \cite{turing-genai}.
 Diskriminative KI bildet also die Eingabe eines mit Bezeichnungen versehenen Datensatzes auf eine Ausgabe ab.
-Im Vergleich dazu benötigt das Training eines generativen Modells für gewöhnlich keine explizit mit Bezeichnungen versehenen Datensätze und kann somit mit dem nicht überwachten maschinellen Lernen (engl. unsupervised machine learning) gleichgesetzt werden. 
+Im Vergleich dazu benötigt das Training eines generativen Modells für gewöhnlich keine explizit mit Bezeichnungen versehenen Datensätze und kann somit mit dem nicht überwachten maschinellen Lernen (engl. unsupervised machine learning) gleichgesetzt werden.
 Das Training auf einem mit Bezeichnungen versehenen Datensatz ist damit allerdings nicht ausgeschlossen und kann auch Verwendung finden \cite{orlly-deep-gen-learning}.
 
 Es ist wichtig anzumerken, dass generative KI, die auf der Methode des Deep Learnings aufbaut, nicht neu ist und bereits in den 60ern in Form von Chatbots vorgestellt wurde \cite{gen-ai-tech-target}.
@@ -524,7 +524,7 @@ Ein paar der bekanntesten Programme sind:
     \item \textbf{DALL·E 2} \cite{dall-e-2} ist eine von OpenAI \cite{openai} entwickelte KI, die mittels Text To Image realistische Bilder und Kunst schaffen kann.
     \item \textbf{Stable Diffusion} \cite{stable-diffusion} ist eine von StabilityAI \cite{stabilityai} entwickelte KI, die ebenfalls auf Grundlage von Ausdrücken natürlicher Sprache Bilder erzeugen kann.
     Im Vergleich zu DALL·E 2 ist Stable Diffusion eine Open Source Software.
-    \item \textbf{Midjourney} \cite{midjourney} ist eine KI, die auf Grundlage einer Textbeschreibung Bilder und Kunst erstellen kann. 
+    \item \textbf{Midjourney} \cite{midjourney} ist eine KI, die auf Grundlage einer Textbeschreibung Bilder und Kunst erstellen kann.
 \end{itemize}
 
 Die Kategorie \textbf{Text} zählt eine Auswahl an Programmen auf, die auf KI basieren und anhand von Eingaben eines Nutzers, meist einer sogenannten \enquote{Prompt}, die auf Ausdrücken natürlicher Sprache basieren, wiederum Text zu generieren.
@@ -569,7 +569,7 @@ Einige der wichtigsten Einschränkungen von Systemen generativer KI sind:
     \item \textbf{Mangelnde Transparenz und Erklärbarkeit}: Modelle generativer KI sind sog. Black-Boxen und bieten keinen Einblick in ihren Entscheidungsprozess \cite{explainable-ai-kobold}.
     Aufgrund dieser mangelnder Transparenz ist es nicht ersichtlich, wie ein Modell zu einer Entscheidung und zu einem Ergebnis kommt \cite{explainable-ai-kobold}.
     Resultat ist eine eingeschränkte Erklärbarkeit von Modellen.
-    
+
     \item \textbf{Abhängigkeit von Traingsdaten und ethische Bedenken}: Modelle generativer KI sind Produkte ihrer Trainingsdaten und daher stark von ihnen abhängig \cite{klinkhammer-genai}.
     Aufgrund dieser Abhängigkeit können sich Ungenauigkeiten aus den Trainingsdaten in den generierten Ergebnissen wiederspiegeln \cite{klinkhammer-genai}.
     Des Weiteren sind diese Modelle zumeist speziell auf Bereiche angepasst und lassen sich nur schwer auf andere Bereiche anwenden, die nicht von den Trainingsdaten vorgesehen sind \cite{klinkhammer-genai}.
@@ -582,7 +582,7 @@ Einige der wichtigsten Einschränkungen von Systemen generativer KI sind:
     %Generative KI hat Schwierigkeiten, die Mehrdeutigkeiten in einer Aufgabe zu trennen.
     %Dies kann zu ungenauen Ergebnissen mit unbeabsichtigten Bedeutungen führen.
 
-    \item \textbf{Mangelndes Verständnis des Kontextes}: 
+    \item \textbf{Mangelndes Verständnis des Kontextes}:
     Die Länge des Kontextfensters eines Modells begrenzt die Menge an vorausgehendem Text, welches ein Modell bei der Generierung einer Antwort auf eine Eingabeaufforderung berücksichtigt \cite{v7labs-llm-limitations}.
     Informationen, die außerhalb dieses Kontextfensters liegen, werden unter Umständen nicht mehr berücksichtigt und können zu einem unvollständigen Verständnis des Textes oder zu kontextuell verfälschten Antworten führen \cite{v7labs-llm-limitations}.
     In Kombination mit den ausgewählten Trainingsdaten beeinflusst die Länge des Kontextfensters somit maßgeblich die Fähigkeiten des Modells den Kontext zu verstehen, langfristige Abhängigkeiten zu erfassen und kohärnte Texte zu generieren \cite{v7labs-llm-limitations}.
@@ -610,7 +610,7 @@ Wichtige Kritieren zur Auswahl eines Systems sind:
     Bietet das System eine klare Dokumentation, um die Integration der Schnittstelle zu unterstützen?
     \item \textbf{Skalierbarkeit und Leistung}: Ist das System in der Lage größere Datenmengen zu verarbeiten?
     Kann es auf Anfrage zeitnah Ergebnisse generieren?
-    \item \textbf{Kosten und Lizenzierung}: Einige Systeme bieten kostenfreie Nutzung oder berechnen die Kosten abhängig von der Nutzung, wiederum erfordern andere Systeme eine kommerzielle Lizenz zur Nutzung. 
+    \item \textbf{Kosten und Lizenzierung}: Einige Systeme bieten kostenfreie Nutzung oder berechnen die Kosten abhängig von der Nutzung, wiederum erfordern andere Systeme eine kommerzielle Lizenz zur Nutzung.
     Welche Lizenzbedingung oder Preise sind mit der Nutzung eines Systeme verbunden?
 \end{itemize}
 
@@ -665,7 +665,7 @@ Diese Einstellungen haben einen Einfluss auf die Qualität der generierten Bilde
 Eine Integration von Stable Diffusion ist durch eine offizielle REST (Representational State Transfer) \cite{rest} Schnittstelle möglich.
 %Stable Diffusion ist lizenziert unter der CreativeML Open RAIL++-M Lizenz.
 % Nur anmerken, dass es Schnittstelle gibt, oder noch OpenAPI anmerken?
-    
+
 \textbf{DALL·E 2} ist eine generative KI, die ebenfalls auf Grundlage einer Textbeschreibung Bilder erzeugen kann.
 \cref{sec2:sota:subsubsec:fz1:discussion:fig:venice-dall·e} zeigt ein Beispiel für ein von DALL·E 2 generiertes Bild.
 \begin{figure}[htb]
@@ -717,7 +717,7 @@ Da sich die PaLM Schnittstelle noch in einer Entwicklungsphase bzw. Vorschauphas
 Andernfalls steht die Ankündigung der Bepreisung der PaLM API durch Google noch aus \cite{google-palm-api-faq}.
 Folgender Textausschnitt zeigt die Antwort auf das oben genannte Beispiel.
 \begin{tcolorbox}
-    [enhanced, 
+    [enhanced,
      colback=white,
      colbacktitle=white,
      coltitle=black,
@@ -749,7 +749,7 @@ Heute wird die Redensart „tomber dans les pommes“ immer noch verwendet, um a
 GPT-4 stellt die neuste Version der GPT Modellreihe dar und soll laut OpenAI besseres Textverständnis und eine höhere Leistung als die Vorgängermodelle liefern \cite{openai-gpt-4-announcement}.
 Da OpenAI keine genauen Spezifikationen zu GPT-3.5 und GPT-4 veröffentlicht hat, ist die genaue Anzahl der Parameter in GPT-3.5 bzw. GPT-4 nicht bekannt, aber laut Gerüchten soll sich die Anzahl auf 175 Milliarden bzw. 1 Billion Parameter belaufen \cite{decoder-gpt-4-parameter-count}.
 Im Vergleich dazu umfasst das Vorgängermodell GPT-3, von welchem GPT-3.5 nur eine optimierte Version ist, nur 175 Milliarden Parameter \cite{gpt3-paper}.
-Eine der neusten Funktionen von GPT-4 ist die Eingabe und Verarbeitung von Bildern, anhand welcher es Erklärungen generieren können soll \cite{openai-gpt-4-announcement}. 
+Eine der neusten Funktionen von GPT-4 ist die Eingabe und Verarbeitung von Bildern, anhand welcher es Erklärungen generieren können soll \cite{openai-gpt-4-announcement}.
 Dies macht GPT-4 zu einem echten multimodalen Modell, welches mehrere Arten von Eingaben akzeptieren kann \cite{openai-gpt-4-announcement}.
 Bildeingaben sind aber nachwievor in einer begrenzten Alpha Testphase und nicht unmittelbar verfügbar \cite{openai-gpt-4-announcement}.
 OpenAI bietet über eine REST Schnittstelle einfachen Zugriff auf die Sprachmodelle, wie GPT-3.5 und GPT-4, sowie Derivate, wie z.B. GPT-3.5-Turbo-(4k/16k).
@@ -760,7 +760,7 @@ Seit dem 6. Juli 2023 erlaubt OpenAI den Zugriff auf das Sprachmodell GPT-4-8k f
 Die Bepreisung hängt dabei, sehr ähnlich zu PaLM 2, von der Anzahl an der in der Anfrage gesendeten Zeichen, sowie der in der Antwort enthaltenen Zeichen ab, und kann in \cite{openai-pricing} eingesehen werden.
 Folgender Textausschnitt zeigt die Antwort auf das oben genannte Beispiel.
 \begin{tcolorbox}
-    [enhanced, 
+    [enhanced,
      colback=white,
      colbacktitle=white,
      coltitle=black,
@@ -801,7 +801,7 @@ Ein grundlegendes Problem von Sprachmodellen ist, dass sie zu Halluzinationen ne
 Es ist wichtig zu verstehen, dass wenn große Sprachmodelle auf enormen Datenmengen trainiert werden, sie die in diesen Daten enthaltenen statistische Muster und Strukturen erlernen \cite{basel-ml-arch}.
 Als solches sind sie in der Lage Sätze oder Texte zu generieren, die kohärent wirken, ohne dabei wirklich ein wahres Verständnis des Textes oder ein Bewusstsein zu besitzen \cite{basel-ml-arch}.
 Dies kann zu faktisch falschen oder unsinnigen Texterzeugnissen, auch Halluzinationen genannt, führen und sind Resultat von mangelndem Kontext und Textverständnis. \cite{sabre-pc-ai-hallucinations}.
-Dieses Problem wird verstärkt durch veraltetes Wissen. 
+Dieses Problem wird verstärkt durch veraltetes Wissen.
 So gilt für die meisten Sprachmodelle von OpenAI, auch GPT-4, dass ihre Trainingsdaten respektive ihr Wissen nach September 2021 abrupt enden \cite{openai-gpt-sep-2021}.
 Dies ist für viele Anwendungsfälle dieser Sprachmodelle eine einschneidende Einschränkung, besonders für den Aspekt der Erklärbarkeit.
 Ungeachtet dessen sind alle vorgestellten Sprachmodelle nachwievor von Natur aus Black-Boxes und weisen somit nur bedingt Erklärbarkeit auf.
@@ -818,7 +818,7 @@ Diese Entscheidungen liegen in den folgenden Eigenschaften begründet:
 \begin{itemize}
     \item Einfache Integration durch die offiziell von OpenAI unterstützte Community Bibliothek \enquote{OpenAI-Java} \cite{dall-e-java-api} für Java.
     \item Beide Systeme, DALL·E 2 und die GPT-Sprachmodelle, werden bereitgestellt durch eine einzige Plattform: OpenAI.
-    \item Zahlung einfach und flexibel an einen einzigen Anbieter. 
+    \item Zahlung einfach und flexibel an einen einzigen Anbieter.
     Zudem muss nur für das gezahlt werden, was wirklich genutzt wird, \textit{Only pay for what you use}, anstatt einer monatlichen Fixzahlung.
 \end{itemize}
 Die Wahl der primären Systeme liegt somit bei den oben genannten Systemen, deren Einsatz im weiteren Verlauf dieser Arbeit verfolgt wird.
@@ -832,7 +832,7 @@ Dies führt zu einer weiteren, zweiten Herausforderung im Rahmen dieses Forschun
     \textbf{Offene Herausforderung OH 1.2 - Benutzerschnittstelle} \\
     Sollen diese Systeme im Rahmen des GMAF sinnvoll eingesetzt werden, um Erklärungen generieren zu können, so müssen Anwendern des GMAF durch eine Benutzerschnittstelle geeignete Interaktionsmöglichkeiten mit diesen Systemen geboten werden.
 \end{tcolorbox}
-Die offene Herausforderung \textbf{OH 1.2} wird im Rahmen einer Modellierung, sowie Implementierung ebenfalls in jeweils \hyperref[sec3:model:subsec:fz-explainability]{FZ 1.2/TB} und \hyperref[sec4:impl:subsec:fz-explainability]{FZ 1.3/I} angesprochen und untersucht. 
+Die offene Herausforderung \textbf{OH 1.2} wird im Rahmen einer Modellierung, sowie Implementierung ebenfalls in jeweils \hyperref[sec3:model:subsec:fz-explainability]{FZ 1.2/TB} und \hyperref[sec4:impl:subsec:fz-explainability]{FZ 1.3/I} angesprochen und untersucht.
 
 Im nächsten Abschnitt werden die im Rahmen dieses Forschungsziels identifizierten offenen Herausforderungen zusammengefasst.
 
@@ -912,7 +912,7 @@ Im Falle der Paare aus Schlüsseln und Werten stellen Schlüssel immer eine Zeic
 Die Elemente \enquote{dictionary} und \enquote{collectionElements} haben jeweils Arrays als Werte, in welchen eine Menge an Bezeichnern bzw. Graph Codes enthalten sein können.
 Da die gesamte Darstellung eines Graph Codes im JSON-Format wiederum ein Objekt ist, kann \enquote{collectionElements} eine Menge bzw. Sammlung an Darstellungen von Graph Codes enthalten.
 Auf diese Weise kann eine rekursive Darstellung von Graph Codes erreicht werden.
-Das Element \enquote{matrix} hat ebenfalls ein Array als Wert. 
+Das Element \enquote{matrix} hat ebenfalls ein Array als Wert.
 Da allerdings die Adjanzenzmatrix eine zweidimensional Matrix ist, sind die Werte im Array wiederum Arrays aus ganzen Zahlen mit einer Länge, die äquivalent zu Größe des Wörterbuchs ist.
 Das GMAF integriert bereits für die Verarbeitung und Operationen mit JSON die GSON \cite{gson} Bibliothek von Google ein.
 
@@ -922,7 +922,7 @@ Dies führt zu einer ersten offenen Herausforderung im Rahmen dieses Forschungsz
     \textbf{Offene Herausforderung OH 2.1 - Transformieren von Graph Codes} \\
     Umwandlung von Graph Codes in eine passende Eingabeform für Systeme generativer KI.
 \end{tcolorbox}
-Die offene Herausforderung \textbf{OH 2.1} wird im Rahmen einer Modellierung, sowie Implementierung in jeweils \hyperref[sec3:model:subsec:fz-integration]{FZ 2.2/TB} und \hyperref[sec4:impl:subsec:fz-integration]{FZ 2.3/I} angesprochen und untersucht. 
+Die offene Herausforderung \textbf{OH 2.1} wird im Rahmen einer Modellierung, sowie Implementierung in jeweils \hyperref[sec3:model:subsec:fz-integration]{FZ 2.2/TB} und \hyperref[sec4:impl:subsec:fz-integration]{FZ 2.3/I} angesprochen und untersucht.
 
 \subsubsection{Integrationsmöglichkeiten von Systemen generativer KI}
 \label{sec2:sota:subsubsec:genai-capabilities-integration}
@@ -996,7 +996,7 @@ Dies führt zu zweiten, offenen Herausforderung im Rahmen dieses Forschungsziels
     \textbf{Offene Herausforderung OH 2.2 - Integration generativer KI} \\
     Zum Zeitpunkt des Verfassens dieser Arbeit existiert keine Integration der von OpenAI angebotenen Systeme generativer KI im GMAF.
 \end{tcolorbox}
-Die offene Herausforderung \textbf{OH 2.1} wird im Rahmen einer Modellierung, sowie Implementierung ebenfalls in jeweils \hyperref[sec3:model:subsec:fz-integration]{FZ 2.2/TB} und \hyperref[sec4:impl:subsec:fz-integration]{FZ 2.3/I} angesprochen und untersucht. 
+Die offene Herausforderung \textbf{OH 2.1} wird im Rahmen einer Modellierung, sowie Implementierung ebenfalls in jeweils \hyperref[sec3:model:subsec:fz-integration]{FZ 2.2/TB} und \hyperref[sec4:impl:subsec:fz-integration]{FZ 2.3/I} angesprochen und untersucht.
 
 \paragraph{Tokenizer}
 \label{sec2:sota:par:tokenizer}
@@ -1025,7 +1025,7 @@ Diese Darstellungsform kann insbesondere von aktuellen Systemen generativer KI e
 
 In Bezug auf die Integrationsmöglichkeiten der von OpenAI entwickelten Systemen generativer KI konnte eine Übersicht über die von OpenAI bereitgestellte Schnittstelle gegeben werden.
 Diese Übersicht gibt auch Einblick über die verfügbaren Endpunkte und Einbindungsmöglichkeiten dieser Endpunkte über eine speziell für Java entwickelte Bibliothek bzw. SDK für eine einfache Integration in das GMAF.
-Des Weiteren wurde das Tool Tokenizer, welches im Umgang mit den Modellen eine wichtige Rolle spielen kann, genauer erklärt und in eine potentielle Nutzung eingeordnet. 
+Des Weiteren wurde das Tool Tokenizer, welches im Umgang mit den Modellen eine wichtige Rolle spielen kann, genauer erklärt und in eine potentielle Nutzung eingeordnet.
 
 \paragraph{Offene Herausforderungen}
 \label{sec2:sota:par:fz2:open-challenges}
@@ -1064,7 +1064,7 @@ Folgende Peer-Review-Verfahren sind in der Norm IEEE 1028-2008 definiert:
 \end{itemize}
 Im Folgenden werden diese einzelnen Verfahren kurz erläutert und ihre Verwendung, der Ablauf, sowie die Vor- und Nachteile näher beschrieben.
 
-\textbf{Informal Review} (z.Dt. informeller Review) ist ein einfaches und flexibles Verfahren, um in erster Instanz nach Defekten zu suchen und Rückmeldungen zu Software-Artifakten zu erhalten, ohne dabei aktiv Programmcode auszuführen. 
+\textbf{Informal Review} (z.Dt. informeller Review) ist ein einfaches und flexibles Verfahren, um in erster Instanz nach Defekten zu suchen und Rückmeldungen zu Software-Artifakten zu erhalten, ohne dabei aktiv Programmcode auszuführen.
 Es werden im Rahmen von informellen Reviews keine Dokumentationen angefertigt.
 %In informellen Reviews wird keine Dokumentation angefertigt.
 Der Ablauf eines informellen Reviews sieht es vor, dass Prüfer die Dokumentation der Software oder ihren Quellcode individuell untersuchen und anhand ihrer Erfahrungen und Expertise Rückmeldungen liefern.
@@ -1091,7 +1091,7 @@ Es wird somit die Gültigkeit des beschriebenen Ablaufs bzw. Lösungsvorschlags 
 Eine weit verbreitete Variante des Walkthroughs ist der \textbf{Cognitive Walkthrough}.
 Im Vergleich zu einem simplen Durchlauf ist ein Cognitive Walkthrough speziell auf die Bewertung der Benutzerfreundlichkeit und Benutzererfahrung ausgelegt.
 Ein simpler Durchlauf kann eher als allgemeines Verfahren zur Prüfung von Software verstanden werden, welches verschiedene Aspekte der Softwareentwicklung umfasst.
-An einem Cognitive Walkthroguh sind für gewöhnlich sogenannte \textbf{Usability-Experten} beteiligt. 
+An einem Cognitive Walkthroguh sind für gewöhnlich sogenannte \textbf{Usability-Experten} beteiligt.
 Aufgabe der Usability-Experten ist es, die Perspektive eines potentiellen Nutzers einzunehmen, während in einem simplen Durchlauf in der Regel nur Teammitglieder oder andere Interessensgruppen beteiligt sind, die anhand ihres Fachwissens Rückmeldungen und Erkenntnisse liefern.
 %Nachteilig an einem Cognitive Walkthrough ist, dass aufgrund mangelnder Struktur und Gründlichkeit potentielle Defekte unentdeckt bleiben können.
 
@@ -1111,7 +1111,7 @@ Der Vorteil an einem Audit ist, dass durch umfassende Bewertungen von Software-A
 
 Nachteile der genannten Peer-Review-Verfahren sind vor allem zumeist die Zuweisung von Ressourcen, wie z.B. von Zeit, der Definition des genauen Vorgehens, potentielle Voreingenommenheiten bzw. Dynamiken zwischen Prüfern und Teilnehmern, sofern sie aus einer Organsation kommen und nicht unabhängig voneinander arbeiten und begrenzter Fachkenntnisse und Expertise von Prüfern.
 
-Die in diesem Abschnitt vorgestellten Verfahren bzw. Methodiken bieten einen Überblick über eine Bandbreite an Möglichkeiten zur Evaluierung von Software. 
+Die in diesem Abschnitt vorgestellten Verfahren bzw. Methodiken bieten einen Überblick über eine Bandbreite an Möglichkeiten zur Evaluierung von Software.
 Eine Auswahl aus diesen Evaluierungsmethodiken wird am Anfang in Kapitel 5 vorgenommen.
 
 \clearpage
@@ -1145,9 +1145,8 @@ Im Rahmen des zweiten Forschungsziels wurden die Komponenten, die für die Techn
 Weitere Erkenntnisse umfassen die Dateiübertragungsform der Graph Codes.
 Es wurde festgestellt, dass obwohl aktuelle Modelle diese Dateiübertragungsform einlesen und analysieren können, es offen bleibt, wie Graph Codes in eine geeignete Eingabeform für diese Systeme überführt werden können.
 Dies führt zur ersten offenen Herausforderung \hyperref[sec2:sota:oi:2.1]{\textbf{OH 2.1}}.
-Eine genaue Beschreibung der angebotenen Schnittstelle
 Durch eine genaue Beschreibung der von OpenAI angebotenen Schnittstelle konnte Erkenntnis über die von dieser Schnittstelle bereitgestellten Endpunkte für entsprechende Modelle bzw. Systeme erlangt werden.
-Nach der Beschreibung der Funktionen dieser Endpunkte konnte festgestellt werden, dass das GMAF keine Funltionen dieser Systeme einbindet.
+Nach der Beschreibung der Funktionen dieser Endpunkte konnte festgestellt werden, dass das GMAF keine Funktionen dieser Systeme einbindet.
 Dies führt zur zweiten offenen Herausforderung \hyperref[sec2:sota:oi:2.2]{\textbf{OH 2.2}}.
 Des Weiteren konnte festgestellt werden, dass OpenAI eine Reihe an Tools, darunter auch das Tool \enquote{Tokenizer} anbietet, welches eine wichtige Rolle in der Verarbeitung spielen könnte.
 Erkenntnis hier ist, dass dieses Tool einen besseren Einblick bzw. mehr Informationen zur Verarbeitung von Tokens bietet.

@@ -33,6 +33,7 @@
 \usepackage{pgf}
 \usepackage{tocbibind}
 \usepackage{titlesec}
+\usepackage[inkscapeformat=png]{svg}
 \usepackage{lscape}
 %\usepackage{fontspec}
 %\usepackage{newtxtext,newtxmath} %Viel zu eng (To narrow)
@@ -239,6 +240,29 @@
 %% Listings
 \lstdefinestyle{grammar}{basicstyle=\itshape,literate={->}{$\rightarrow$}{2}}
 
+\lstdefinestyle{java-code}{
+    language=Java,
+    showspaces=false,
+    tabsize=1,
+    breaklines=true,
+    showstringspaces=false,
+    numbers=left,
+    stepnumber=1,
+    firstnumber=1,
+    numberfirstline=true,
+    extendedchars=true,
+    literate={ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {Ä}{{\"A}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1 {ß}{{\ss}}1,
+    captionpos=b,
+    frame=tb,
+    commentstyle=\color{pgreen},
+    keywordstyle=\color{pblue},
+    stringstyle=\color{pred},
+    basicstyle={\footnotesize\ttfamily},
+    moredelim=[il][\textcolor{pgrey}]{\$\$},
+    moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%},
+    escapechar=\%
+}
+
 \lstdefinelanguage{json}{
     basicstyle=\normalfont\ttfamily,
     numbers=left,
@@ -338,6 +362,11 @@
 \definecolor{tok3}{RGB}{246, 217, 171}
 \definecolor{tok4}{RGB}{244, 174, 177}
 \definecolor{tok5}{RGB}{164, 220, 243}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
 
 %% Cleveref
 \crefname{section}{Kapitel}{Kapitel}

@@ -17,11 +17,11 @@
         }
 
         % First Header
-        
-        \caption{Tabelle zur Übersicht des aktuellen Arbeitstands.} 
-        \label{sec3:model:subsec:summary:table:summary} 
+
+        \caption{Tabelle zur Übersicht des aktuellen Arbeitstands.}
+        \label{sec3:model:subsec:summary:table:summary}
         \\
-        
+
         \toprule
         \multicolumn{3}{
             >{
@@ -32,7 +32,7 @@
             \textbf{Forschungsziele}
         } \\ \midrule
         \textbf{FZ / OH} &  \textbf{Beschreibung} & \textbf{Referenz} \\ \midrule
-        
+
         \endfirsthead
 
         \toprule
@@ -47,7 +47,7 @@
         \textbf{FZ / OH} & \textbf{Beschreibung} & \textbf{Referenz} \\ \midrule
 
         \endhead
-        
+
         % Lower Rows
 
         \multicolumn{3}{
@@ -57,12 +57,12 @@
         }
         {
             \textbf{Erklärbarkeit von MMIR mittels generativer KI}
-        } 
-        \\ 
+        }
+        \\
         \midrule
 
-        FZ 1.1/O 
-        & 
+        FZ 1.1/O
+        &
         Recherche zur Erklärbarkeit von MMIR mittels generativer KI
         \\
 
@@ -71,7 +71,7 @@
         &
 
         \\
-        
+
         &
         \tabitem GMAF
         &
@@ -93,9 +93,9 @@
         % Offene Herausforderungen aus FZ1/O
 
         OH 1.1
-        &  
+        &
         Erste offene Herausforderung
-        & 
+        &
         \hyperref[sec2:sota:oi:1.1]{\textbf{OH 1.1}}
         \\
 
@@ -113,45 +113,87 @@
         \\
 
         OH 1.2
-        &  
+        &
         Zweite offene Herausforderung
-        & 
+        &
         \hyperref[sec2:sota:oi:2.1]{\textbf{OH 2.1}}
         \\
 
         \midrule
 
-        FZ 1.2/TB 
-        &  
+        FZ 1.2/TB
+        &
         Modellierung der Erklärbarkeit von MMIR mittels generativer KI
-        &  
-        
+        &
+
         \\
 
         &
+        Erklärbarkeit durch generative KI
+        &
+        \cref{sec3:model:subsubsec:explainability-through-genai}
+        \\
+
+        &
+        $\rightarrow$ Behandlung der ersten offenen Herausforderung \hyperref[sec2:sota:oi:1.1]{\textbf{OH 1.1}}
+        &
+        \\
+
+        &
+        Anwendungsfälle:
+        &
+        \cref{sec3:model:subsubsec:use-cases}
+        \\
+
+        &
+        \tabitem Textuelle Beschreibungen
+        &
+        %\cref{sec3:model:par:textual-desc-use-cases}
+        \\
+
+        &
+        \tabitem Wireframes
+        &
+        %\cref{sec3:model:par:wireframe}
+        \\
+
+        &
+        \tabitem Mechanismen
+        &
+        %\cref{sec3:model:par:mechanism-use-cases}
+        \\
+
+        &
+        \tabitem Sequenzdiagramme
+        &
+        %\cref{sec3:model:par:seq-use-cases}
+        \\
+
+        &
+        $\rightarrow$ Behandlung der zweiten offenen Herausforderung \hyperref[sec2:sota:oi:1.2]{\textbf{OH 1.2}}
         &
         \\
 
         \midrule
-        
-        FZ 1.3/I 
-        & 
+
+        FZ 1.3/I
+        &
         Implementierung der Erklärbarkeit von MMIR mittels generativer KI
-        & 
-        
+        &
+
         \\
 
         \midrule
-        
-        FZ 1.4/E 
-        & 
+
+        FZ 1.4/E
+        &
         Evaluierung der Erklärbarkeit von MMIR mittels generativer KI
-        & 
-        
+        &
+
         \\
 
         \midrule
-        
+
         \multicolumn{3}{
             >{
                     \hsize=\linewidth\centering\arraybackslash
@@ -159,18 +201,18 @@
         }
         {
             \textbf{Integration generativer KI in das GMAF}
-        } 
-        \\ 
+        }
+        \\
         \midrule
 
         FZ 2.1/O
         &
         Recherche zur Integration generativer KI in das GMAF
-        & 
-        
+        &
+
         \\
 
-        
+
         &
         Aufzeigen der Integrationsmöglichkeiten von:
         &
@@ -202,21 +244,58 @@
         \\
 
         \midrule
-        
-        FZ 2.2/TB 
+
+        FZ 2.2/TB
         &
         Modellierung der Integration generativer KI in das GMAF
-        & 
-        
+        &
+
+        \\
+
+        &
+        Transformation von Graph Codes
+        &
+        \cref{sec3:model:subsubsec:gc-transformation}
+        \\
+
+        &
+        \tabitem Transformation des Vokabulars
+        &
+        \\
+
+        &
+        \tabitem Transformation der Matrix
+        &
+        \\
+
+        &
+        \tabitem Anwendung von Graph Code Metriken
+        &
+        \\
+
+        &
+        $\rightarrow$ Behandlung der ersten offenen Herausforderung \hyperref[sec2:sota:oi:2.1]{\textbf{OH 2.1}}
+        &
+        \\
+
+        &
+        Einbindung generativer KI in das GMAF
+        &
+        \cref{sec3:model:subsubsec:genai-integration}
+        \\
+
+        &
+        $\rightarrow$ Behandlung der zweiten offenen Herausforderung \hyperref[sec2:sota:oi:2.2]{\textbf{OH 2.2}}
+        &
         \\
 
         \midrule
-        
+
         FZ 2.3/I
         &
         Implementierung der Integration generativer KI in das GMAF
-        & 
-        
+        &
+
         \\
 
         \midrule
@@ -224,10 +303,10 @@
         FZ 2.4/E
         &
         Evaluierung der Integration generativer KI in das GMAF
-        & 
-        
+        &
+
         \\
-        
-        \bottomrule 
+
+        \bottomrule
 \end{xltabular}
 \endgroup

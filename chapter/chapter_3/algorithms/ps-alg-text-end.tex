@@ -1,0 +1,13 @@
+\begin{algorithm}[htb]
+\caption{Anfrage an den Endpunkt Text (\textit{ChatCompletionRequest}).}
+\label{sec3:model:subsubsec:genai-integration:alg:text-end}
+\begin{algorithmic}[1]
+\Procedure{createRequest}{}
+  \State Service initialisieren... (\textit{OpenAiService})
+  \State Anfrage initialisieren... (\textit{ChatCompletionRequest})
+  \State Anfrage anpassen, Parameter setzen... (\textit{ChatCompletionRequestBuilder})
+  \State Anfrage an Schnittstelle senden (\textit{OpenAiService})
+  \State Ergebnis erhalten und entsprechend verwerten (\textit{ChatCompletionResult}, \textit{TextPanel})
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}

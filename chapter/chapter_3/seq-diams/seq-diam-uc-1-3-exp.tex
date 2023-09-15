@@ -3,7 +3,7 @@
     \resizebox{\textwidth}{!}{
         \begin{tikzpicture}
             \begin{umlseqdiag}
-                
+
                 \umlmlobject[x=0, fill=white]{gcs}{\shortstack[c]{Graph Code \\ SelectionListener}}
                 \umlmlobject[x=4, fill=white]{ep}{\shortstack[c]{Explanation \\ Panel}}
                 \umlmlobject[x=8, fill=white]{imgp}{\shortstack[c]{ImagePanel}}
@@ -12,11 +12,11 @@
                 % Calls
                 \begin{umlcall}[padding=0,dt=6,op={Setze Graph Code}]{gcs}{ep}
                     \begin{umlcall}[op={Setze Graph Code}]{ep}{imgp}
-                        \begin{umlcallself}[op={\shortstack[c]{Verarbeite\\GraphCode}}]{imgp}
+                        \begin{umlcallself}[op={\shortstack[c]{Verarbeite\\GraphCode\\(\textit{setUpPrompt})}}]{imgp}
                         \end{umlcallself}
                     \end{umlcall}
                     \begin{umlcall}[dt=4,op={Setze Graph Code}]{ep}{txtp}
-                        \begin{umlcallself}[op={\shortstack[c]{Verarbeite\\GraphCode}}]{txtp}
+                        \begin{umlcallself}[op={\shortstack[c]{Verarbeite\\GraphCode\\(\textit{setUpPrompt})}}]{txtp}
                         \end{umlcallself}
                     \end{umlcall}
                 \end{umlcall}

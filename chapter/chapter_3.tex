@@ -109,7 +109,7 @@ In diesem Abschnitt wird die zweite offene Herausforderung \hyperref[sec2:sota:o
 \end{figure}
 \noindent
 Diese identifizierten Anwendungsfälle stellen die Basis für weitere Modellierungsvorgehen dar und werden im Laufe dieses Abschnitts weiter ausgeführt.
-Weitere Ausführungen umfassen textuelle Beschreibungen, erste Wireframes, die das allgemeine Skelett der Anwendung darstellen sollen, Mechanismen, die die an Anwendungsfällen beteiligten Komponenten identifizieren, sowie Sequenzdiagramme um die Interaktion zwischen den Objekten bzw. Komponenten eiens Systems darzustellen.
+Weitere Ausführungen umfassen textuelle Beschreibungen, erste Wireframes, die das allgemeine Skelett der Anwendung darstellen sollen, Mechanismen, die die an Anwendungsfällen beteiligten Komponenten identifizieren, sowie Sequenzdiagramme, um die Interaktion zwischen den Objekten bzw. Komponenten eines Systems darzustellen.
 Anhand dieser Modellierungsvorgehen werden die Wireframes weiter ausgeführt bzw. ausgebaut.
 
 \paragraph{Textuelle Beschreibungen}
@@ -141,7 +141,7 @@ In dieser Abbildung sind drei Grundbereiche zu erkennen, die im Folgenden genaue
 \end{enumerate}
 Anhand der Anwendungsfälle \hyperref[sec3:model:uc-1.1]{UC-1.1} bis \hyperref[sec3:model:uc-1.5]{UC-1.5} können in der linken Arbeitsfläche, die der Bearbeitung von Graph Codes dienen soll, wichtige Komponenten in der Benutzerschnittstelle identifiziert werden.
 Analog können anhand der Anwendungsfälle \hyperref[sec3:model:uc-1.6]{UC-1.6} bis \hyperref[sec3:model:uc-1.8]{UC-1.8} in der rechten Arbeitsfläche, die sich der Erklärung von Graph Code Dateien widmet, weitere wichtige Komponenten in der Benutzerschnittstelle identifiziert werden.
-\cref{sec3:model:par:wireframe:fig:stage-2+3} zeigt die linke und rechte Arbeitsfläche mit diese neuen Komponenten in jeweils einem partiellen Wireframe.
+\cref{sec3:model:par:wireframe:fig:stage-2+3} zeigt die linke und rechte Arbeitsfläche mit diesen neuen Komponenten in jeweils einem partiellen Wireframe.
 
 \begin{figure}[htb]
     \centering
@@ -186,7 +186,7 @@ Aufbauend auf diesen Erkenntnissen wird weiter mittels Sequenzdiagrammen das Ver
 
 \paragraph{Mechanismen}
 \label{sec3:model:par:mechanism-use-cases}
-Ein Mechanismus ist ein partielles Klassendiagramm, das die Menge aller Klassen, von denen Instanzen in irgendeinem Objektdiaramm für einen Anwendungsfall vorkommen, darstellt.
+Ein Mechanismus ist ein partielles Klassendiagramm, das die Menge aller Klassen, von denen Instanzen in irgendeinem Objektdiagramm für einen Anwendungsfall vorkommen, darstellt.
 Mechanismen haben somit zum Ziel, die an einem Anwendungsfall beteiligten Objekte bzw. Klassen zu identifizieren und darzustellen.
 In einem Mechanismus wird der Anwendungsfall selbst gestrichelt dargestellt und die mit diesem Anwendungsfall assoziierten Klassen werden ebenfalls durch gestrichelte Linien mit dem Anwendungsfall verbunden.
 Im weiteren Verlauf dieses Kapitels werden die in Mechanismen identifizierten Klassen zusammen mit den in den Anwendungsfällen beschriebenen Abläufen die Basis für Sequenz- und Klassendiagramme bilden.
@@ -198,7 +198,7 @@ Im weiteren Verlauf dieses Abschnitts werden nun für ausgewählte Anwendungsfä
     \caption{Mechanismus für den Anwendungsfall \hyperref[sec3:model:uc-1.1]{UC-1.1}.}
     \label{sec3:model:par:mechanism-use-cases:fig:mech-uc-1.1}
 \end{figure}
-\cref{sec3:model:par:mechanism-use-cases:fig:mech-uc-1.1} zeigt den Mechanismus für den Anwendungsfall Anwendungsfall \hyperref[sec3:model:uc-1.1]{UC-1.1}.
+\cref{sec3:model:par:mechanism-use-cases:fig:mech-uc-1.1} zeigt den Mechanismus für den Anwendungsfall \hyperref[sec3:model:uc-1.1]{UC-1.1}.
 Sobald der Anwendungsfall \hyperref[sec3:model:uc-1.1]{UC-1.1} beginnt, benötigt es eine Komponente, die die in diesem Anwendungsfall enthaltenen Subaktionen steuert.
 Diese Aufgabe übernimmt die Komponente \textit{ImportGraphCodesController}.
 Da das Importieren von Graph Codes das Auswählen der jeweiligen Graph Code Datei(en) erfordert, benötigt es einen Auswahldialog \textit{JFileChooser}.
@@ -245,7 +245,7 @@ Dies beinhaltet auch das Differenzieren der in Anwendungsfall \hyperref[sec3:mod
 Diese Operation kann die \textit{Vereinigung (Union)}, \textit{relative Differenz / Unterschied bzw. Subtraktion}, \textit{Gemeinsamkeiten (Similarities)} oder \textit{Unterschiede (Differences) }zwischen mehreren Graph Codes sein.
 Besonders hierbei ist die \textit{Subtraktion}, die nur auf zwei Graph Codes angewandt werden kann.
 Die Algorithmen zur Berechnung der Operationen der \textit{Vereinigung} von mehreren Graph Codes, sowie der \textit{Subtraktion} zweier Graph Codes werden bereits durch die Komponente \textit{GraphCodeCollection} bereitgestellt.
-Im Folgenden werden Konzepte für die weiteren Operationen \textit{Gemeinsamkeiten} und \textit{Unterschiede} in Form von Pseudoalgorithmen vorgestellt, und die an diesen Operationen beteiligten Komponenten, ihre Aufgaben, sowie durchzuführende Schritte beschrieben.
+Im Folgenden werden Konzepte für die weiteren Operationen \textit{Gemeinsamkeiten} und \textit{Unterschiede} in Form von Pseudoalgorithmen vorgestellt, und es werden die an diesen Operationen beteiligten Komponenten, ihre Aufgaben, sowie durchzuführende Schritte beschrieben.
 
 \input{chapter/chapter_3/algorithms/ps-alg-similarities}
 
@@ -263,6 +263,15 @@ Der dritte Bereich \textit{Verwertung} umfasst die übrigen Zeilen 7 bis 14.
 Dem Objekte sim, welches das Ergebnis repräsentiert, wird das Vokabular unionDic gesetzt.
 Im weiteren Verlauf wird für jeden Graph Code zeilen- und spaltenweise der Wert für ein Paar aus Merkmalen in der Adjanzenzmatrix bestimmt und dieser Wert in der Matrix des Ergebnisses eingetragen.
 Schlussendlich wird das Ergebnis als Ausgabe zurückgegeben.
+% comment-soigner u. csm katze allein lassen
+In \cref{sec3:model:par:mechanism-use-cases:fig:gc1-2-similarities} wird die beispielhafte Berechnung der Gemeinsamkeiten zweier Graph Codes dargestellt.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics{chapter/chapter_3/algorithms/gc1-2-similarities-ex}
+  \caption{Beispielhafte Visualisierung für die Berechnung der Gemeinsamkeiten zweier Graph Codes $GC_1$ und $GC_2$.}
+  \label{sec3:model:par:mechanism-use-cases:fig:gc1-2-similarities}
+\end{figure}
 
 \input{chapter/chapter_3/algorithms/ps-alg-differences}
 
@@ -271,13 +280,18 @@ Dieser Algorithmus ist sehr ähnlich zum \cref{sec3:model:par:mechanism-use-case
 Zudem kann dieser Algorithmus ebenfalls in die gleichen Bereiche unterteilt werden.
 Mehr noch sind die Bereiche \textit{Vorbereitung} (Zeile 2 bis 4) und \textit{Verwertung} (Zeile 10 bis 15) identisch und Unterschiede in den Algorithmen bestehen nur im Bereich \textit{Berechnung} (Zeile 6 - 7).
 Genauer besteht der einzige Unterschied im Vergleich zum \cref{sec3:model:par:mechanism-use-cases:alg:sim}, dass unterschiedliche Merkmale in mehreren Graph Codes das Gegenteil der gemeinsamen Merkmale in mehreren Graph Codes ist.
+In \cref{sec3:model:par:mechanism-use-cases:fig:gc1-2-differences} wird die beispielhafte Berechnung der Unterschiede zweier Graph Codes dargestellt.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics{chapter/chapter_3/algorithms/gc1-2-differences-ex}
+  \caption{Beispielhafte Visualisierung für die Berechnung der symmetrische Differenz bzw. Unterschiede zweier Graph Codes $GC_1$ und $GC_2$.}
+  \label{sec3:model:par:mechanism-use-cases:fig:gc1-2-differences}
+\end{figure}
 
 Zusammengefasst und einfacher ausgedrückt wird in der Operation \textit{Gemeinsamkeiten} die Schnittmenge aller Vokabulare von Graph Codes, welche wiederum nur Mengen von Merkmalen sind, gebildet.
 Analog wird in der Operation \textit{Unterschiede} die symmetrische Differenz aller Vokabular von Graph Codes gebildet, welches dem Gegenteil der Schnittmenge aller Vokabulare von Graph Codes entspricht.
-Dies unterscheidet die Operation \textit{Unterschiede} von der durch die Komponente bereitgestellten Operation \textit{Subtraktion}, welche nur die relative Differenz zweier Graph Codes bildet.
-%Da die Adjanzenzmatrix eines Graph Codes eine zweidimensionale, quadratische Matrix ist, wird im Allgemeinen zuerst die Matrix zeilenweise (s) und dann spaltenweise (t) durchlaufen und für den Eintrag des Merkmalspaares (s,t) in der Matrix der Wert in jedem Graph Code aus der Eingabe bestimmt und in der Matrix des Ergebnisses eingetragen.
-
-%Die in \cref{sec3:model:par:mechanism-use-cases:alg:sim,sec3:model:par:mechanism-use-cases:alg:dif} beschriebenen Algorithmen würden, wie auch die Operationen \textit{Vereinigung} und \textit{Subtraktion} durch die Komponente \textit{GraphCodeCollection} bereitgestellt werden. mit in die Komponente \textit{GraphCodeCollection} aufgenommen werden.
+Dies unterscheidet die Operation \textit{Unterschiede} von der durch die Komponente \textit{GraphCodeCollection} bereitgestellten Operation \textit{Subtraktion}, welche nur die relative Differenz zweier Graph Codes bildet.
 
 \FloatBarrier
 
@@ -287,7 +301,7 @@ Sequenzdiagramme modellieren den konkreten zeitlichen Verlauf von mitunter kompl
 Die in einer Operation beteiligten Objekte werden dabei am oberen Rand des Diagramms als ein Rechteck mit einer gestrichelten vertikalen Linie dargestellt.
 Diese gestrichelte vertikale Linie wird als \textit{Lebenslinie} bezeichnet und symbolisiert die Lebenszeit eines Objektes, welche von oben nach unter voranschreitet.
 Interaktionen zwischen Objekten, wie z.B. dem Aufrufen einer Operation eines Objektes durch ein anderes Objekt, geschehen durch das Senden von Nachrichten zwischen diesen.
-Die gängisten Formen von Nachrichten sind:
+Die gängigsten Formen von Nachrichten sind:
 
 \input{chapter/chapter_3/seq-messages}
 
@@ -372,13 +386,36 @@ Bevor allerdings mit dem eigentlichen Konzipieren der Transformation von Graph C
 Von besonderer Relevanz für eine Erklärung sind in erster Linie die Merkmale bzw. das Vokabular, gespeichert im Wörterbuch eines Graph Codes, sowie die Informationen über bestehende Beziehungen zwischen diesen Merkmalen, gespeichert in einer zweidimensionalen, quadratischen Matrix.
 Daher werden in diesem Abschnitt erst Konzepte für die Grundlagen von Graph Codes entwickelt.
 Im Anschluss werden dann Konzepte für die mit Graph Codes assoziierten Informationen besprochen.
+Die in den folgenden Abschnitten genannten Beispiele werden auf dem in \cref{sec3:model:subsubsec:gc-transformation:tab:gc-trans-ex} dargestellten Graph Code basieren.
+% Beispiel eines Graph Codes für die Transformation (nur Matrix).
+
+\begin{table}[htb]
+  \begin{tabular}{rcccccc}
+    &  \begin{turn}{90}root-image\end{turn}
+    & \begin{turn}{90}cloud\end{turn}
+    & \begin{turn}{90}water\end{turn}
+    & \begin{turn}{90}sky\end{turn}
+    & \begin{turn}{90}lake\end{turn}
+    & \begin{turn}{90}dusk\end{turn} \\
+    \hline
+
+    root-image   & 1 & 1 & 1 & 1 & 1 & 1 \\
+    cloud        & 0 & 2 & 0 & 3 & 0 & 0 \\
+    water        & 0 & 0 & 2 & 0 & 3 & 0 \\
+    sky          & 0 & 0 & 0 & 2 & 0 & 0 \\
+    lake         & 0 & 0 & 4 & 0 & 2 & 0 \\
+    dusk         & 0 & 0 & 0 & 0 & 0 & 2
+  \end{tabular}
+  \caption{Graph Code zum Beispiel der folgenden Transformationen.}
+  \label{sec3:model:subsubsec:gc-transformation:tab:gc-trans-ex}
+\end{table}
 
 \paragraph{Transformation des Vokabulars}
 Das Vokabular eines Graph Codes ist eine Menge aus Merkmalen, welche wiederum beliebig lange Zeichenketten sein können.
 Eine einfache Art das Vokabular eines Graph Codes in eine Prompt zu überführen, ist somit einfach die Merkmale in Textform aufzuzählen.
 Zusätzlich wird dem System durch eine in der Prompt vorangestellte Instruktion erklärt, welche Bedeutung die Elemente in der Aufzählung besitzen.
-Ein Beispiel hierfür wäre folgende Prompt: \enquote{The elements in the following list represent feature vocabulary terms and describe features extracted from multimedia files: root-image, cloud, water, sky, lake, dusk}.
-Eine solche Transformation des Vokabulars würde in der entsprechenden Komponente des Erklärungstyps \textit{ImagePanel} oder \textit{TextPanel} durch eine Funktion \textit{setUpPrompt} umgesetzt werden.
+Ein entsprechendes Beispiel nach \cref{sec3:model:subsubsec:gc-transformation:tab:gc-trans-ex} hierfür wäre folgende Prompt: \enquote{The elements in the following list represent feature vocabulary terms and describe features extracted from multimedia files: root-image, cloud, water, sky, lake, dusk}.
+Eine solche Transformation des Vokabulars wird durch die Komponente \textit{GraphCode} ermöglicht und kann in der entsprechenden Komponente des Erklärungstyps \textit{ImagePanel} oder \textit{TextPanel} durch eine Funktion \textit{setUpPrompt} eingesetzt werden.
 \cref{sec3:model:subsubsec:gc-transformation:fig:set-up-prompt} zeigt ein einfaches Klassendiagramm mit den Komponenten \textit{ImagePanel}, \textit{TextPanel} und der Funktion \textit{setUpPrompt}.
 
 \input{chapter/chapter_3/class-diams/img-txt-panel-prompt}
@@ -397,16 +434,16 @@ Eine einfache und naive Transformation kann bereits durch die Funktion \textit{t
 Diese Funktion überführt die Informationen eines Graph Codes in das JSON-Format.
 Ein Beispiel für so ein JSON-Format kann in \cref{sec2:sota:subsec:fz2:lst:gc-ex-json} eingesehen werden.
 Die Tatsache, dass die GPT-Modelle in der Lage sind dieses Format zu analysieren und zu verarbeiten, begünstigt diese Herangehensweise.
-Ein Beispiel hierfür kann folgende Prompt sein: \enquote{The following JSON string represents a matrix. The matrix is a square twodimensional matrix where each element represents the relationship between two words: \{"matrix":[[1,1,1,1,1,1],[0,2,0,0,0,0],[0,0,2,0,0,0],[0,0,0,2,0,0],[0,0,0,0,2,0],[0,0,0,0,0,2]]\}}.
+Ein Beispiel nach \cref{sec3:model:subsubsec:gc-transformation:tab:gc-trans-ex} hierfür kann folgende Prompt sein: \enquote{The following JSON string represents a matrix. The matrix is a square twodimensional matrix where each element represents the relationship between two words: \{"matrix":\newline[[1,1,1,1,1,1],[0,2,0,0,0,0],[0,0,2,0,0,0],[0,0,0,2,0,0],[0,0,0,0,2,0],[0,0,0,0,0,2]]\}}.
 
 Die Umsetzung dieser Transformation findet in der Funktion \textit{toString} in der Komponente \textit{GraphCode} statt und kann in der entsprechenden Komponente des Erklärungstypes \textit{ImagePanel} oder \textit{TextPanel} in der Funktion \textit{setUpPrompt} eingesetzt werden.
 
 Ein Nachteil an dieser Herangehensweise ist das Verhältnis zum Platzverbrauch im Zeichenformat.
-Aufgrund der quadratischen Natur der Adjazenzmatrix wird überproportional viel Platz verbraucht, was inbesondere anhand des immer weiter steigenden Detaillierungsgrades (LOD) problematisch ist.
+Aufgrund der quadratischen Natur der Adjazenzmatrix wird überproportional viel Platz verbraucht, was inbesondere anhand des immer weiter steigenden Detaillierungsgrades (LOD) als problematisch betrachtet werden muss.
 Dies führt auch zu einem zunehmenden Tokenverbrauch, was in Bezug auf einige Modelle, wie z.B. Dall-E 2, die Zeichen- bzw. Tokenbeschränkungen besitzen, ebenfalls ein Problem darstellen könnte.
 Eine Möglichkeit diesem Problem zu begegnen, wäre durch das Prüfen der Tokenlänge in der entstandenen Prompt.
 Das Werkzeug \textit{Tokenizer}, vorgestellt in \cref{sec2:sota:par:tokenizer}, kann hierfür beim Zusammensetzen der Prompt verwendet werden.
-Da hierdurch das Problem allerdings nicht gelöst wird, wird im Folgenden eine verbesserte Herangehensweise zum Transformieren der Informationen eines Graph Codes vorgestellt.
+Da hierdurch das Problem zwar erkannt, allerdings nicht gelöst wird, wird im Folgenden eine verbesserte Herangehensweise zum Transformieren der Informationen eines Graph Codes vorgestellt.
 
 Die verbesserte Herangehensweise zur Überführung der Informationen eines Graph Codes reduziert die zu transformierenden Informationen auf ein Minimum.
 Anders ausgedrückt, werden in dieser Herangehensweise nur die Informationen betrachtet und transformiert, die von Interesse sind.
@@ -416,7 +453,7 @@ Der Bezeichner $i_{t}$ im Format bezeichnet den Index eines Merkmals $t$ im Voka
 Effektiv sagt dieses Format aus, dass das Merkmal $t$ mit den anderen Merkmalen $t_1,...,t_n$ verbunden ist.
 Durch das Abbilden des Merkmals auf den entsprechenden Index im Vokabular kann ein Optimierungspotenzial in Bezug auf die Tokenlänge ausgeschöpft werden.
 Dies ist möglich, da die Merkmale in einem Vokabular in einer fest definierten Reihenfolge geordnet sind.
-Ein Beispiel für so ein Format kann sein: \enquote{Some of the dictionary terms are connected through a relationship. These relationships will be noted as $<i_{t}> - <i_{t_{1}},...,i_{t_{n}}>$, where $i_{t}$ denotes the index of a feature vocabulary term: $<1> - <1,2,3,4,5,6>$.}.
+Ein entsprechendes Beispiel nach \cref{sec3:model:subsubsec:gc-transformation:tab:gc-trans-ex} für so ein Format kann sein: \enquote{Some of the dictionary terms are connected through a relationship. These relationships will be noted as $<i_{t}> - <i_{t_{1}},...,i_{t_{n}}>$, where $i_{t}$ denotes the index of a feature vocabulary term: $<1> - <1,2,3,4,5,6>$.}.
 
 Dieses Format trifft allerdings nur Aussagen darüber, ob eine Beziehung zwischen diesen Merkmalen vorhanden ist, oder nicht.
 Aussagen über den Typ einer Beziehung erfolgen über die Kodierung bzw. den spezifischen Wert des Eintrages.
@@ -428,23 +465,27 @@ In diesem Beispiel symbolisiert der Wert 3 die Beziehung \enquote{ist Teil von}.
 Auf diese Weise kann für jeden Beziehungstyp ein Format erstellt und in die Prompt eingefügt werden.
 Zusätzlich gilt es im Kontext eines wertespezifischen Formats dem System generativer KI klarzumachen, welche Bedeutung dem Wert $k$ beigemessen wird.
 Dies kann durch eine Erweiterung der Instruktionen erfolgen.
-Ein Beispiel hierfür ist: \enquote{Some of the dictionary terms are connected through a relationship. These relationships will be noted as $<i_{t}> - <i_{t_{1}},...,i_{t_{n}}>$ or $<i_{t}> k <i_{t_{1}},...,i_{t_{n}}>$, where $i_{t}$ denotes the index of a feature vocabulary term. Additionally $-$ represents an undefined relationship, while $k$ represents a specific relationship. A value of 3 represents the relationship 'is part of'. 4 represents the relationship 'consists of'. The relationships are as follows: $<1> - <1,2,3,4,5,6>, <2> 3 <4>, <3> 3 <5>, <5> 4 <3>$.}.
+Ein entsprechendes Beispiel nach \cref{sec3:model:subsubsec:gc-transformation:tab:gc-trans-ex} hierfür ist: \enquote{Some of the dictionary terms are connected through a relationship. These relationships will be noted as $<i_{t}> - <i_{t_{1}},...,i_{t_{n}}>$ or $<i_{t}> k <i_{t_{1}},...,i_{t_{n}}>$, where $i_{t}$ denotes the index of a feature vocabulary term. Additionally $-$ represents an undefined relationship, while $k$ represents a specific relationship. A value of 3 represents the relationship 'is part of' and 4 represents the relationship 'consists of'. The relationships are as follows: $<1> - <1,2,3,4,5,6>, <2> 3 <4>, <3> 3 <5>, <5> 4 <3>$.}.
 
 Zusammengefasst sieht der gesamte Ablauf vor, dass zuerst die Werte für die Beziehungstypen aus der Adjanzenzmatrix gefiltert werden und für die Merkmale, die über diese Beziehung mit anderen Merkmalen verbunden sind, jeweils ein Format erzeugt und in die Prompt integriert wird.
 Mitsamt Instruktionen kann auf die Weise eine umfassende Prompt erzeugt werden, die die Essenz von Graph Codes erfasst und dem System generativer KI zum Zweck der Generierung einer Erklärung vermittelt.
 
-% Hier darauf eingehen, wo in der Modellierung diese Transformation stattfinden würde... (GraphCode-Klasse bzw. Komponente... und setUpPrompt-Methode in Image/Text-Panel.)
+Die Transformation der in diesem Abschnitt beschriebenen Herangehensweisen erfolgt in der Komponente \textit{GraphCode}.
+Zu den für die Transformation erforderlichen Schritten, die durch diese Komponente angeboten und durchgeführt werden, gehört das Aufzählen der Wörter aus dem Vokabular, das Filtern der Werte für die Beziehungstypen aus der Adjanzenzmatrix und das Überführen dieser in ein entsprechendes, oben aufgeführtes Format.
+Das Verwerten und Zusammenführen dieser transformierten Informationen geschieht dann in der entsprechenden Komponente des Erklärungstypes \textit{ImagePanel} oder \textit{TextPanel} in der Funktion \textit{setUpPrompt}.
 
-%Im nächsten Abschnitt wird ein Konzept zur Transformierung der Metriken von Graph Codes beschrieben.
+% Hier darauf eingehen, wo in der Modellierung diese Transformation stattfinden würde... (GraphCode-Klasse bzw. Komponente... und setUpPrompt-Methode in Image/Text-Panel.)
 
 \paragraph{Anwendung der Graph Code Metriken}
 Metriken von Graph Codes sind mit Graph Codes assoziierte Informationen, die in Abhängigkeit ihrer Aufgabe Aussagen über Graph Codes in Form von Gleitkommawerten in einem Wertebereich, der meistens zwischen 0 und 1 liegt, ermöglichen. In \cref{sec2:sota:par:gc-similiarity} wurde bereits die Ähnlichkeitsmetrik vorgestellt, die Aussagen über die Ähnlichkeit zwischen zwei Graph Codes ermöglicht.
+Diese Metrik ist selbst wieder ein Tripel aus Metriken bezüglich der Merkmale $M_F$, der Merkmalsbeziehungen $M_{FR}$ und den Beziehungstypen $M_{RT}$.
 % Hervorheben welchen Nutzen so eine Metrik haben könnte...
-Im Folgenden wird aufgezählt, welchen Nutzen diese Metrik beim Erreichen des Ziels eine Erklärung zu Graph Codes zu erzielen, beitragen könnte und wie so eine Nutzung bzw. Anwendung dieser Metrik aussehen könnte:
+Im Folgenden wird aufgezählt, welchen Nutzen diese Metriken beim Erreichen des Ziels eine Erklärung zu Graph Codes zu erzielen, beitragen könnten und wie so eine Nutzung bzw. Anwendung dieser Metriken aussehen könnte:
 \begin{itemize}
     \item \textbf{Kontrollfluss}: Metriken könnten im Kontrollfluss des Programms verwendet werden, um Fallunterscheidungen zu ermöglichen.
-    In Bezug auf die in Anwendunsfall UC-1.4 genannten Operationen könnten die Metriken genutzt werden, um bei der Verarbeitung
-    % Hier auf die Verarbeitung im Kontrollfluss eingehen...
+    In Bezug auf die in Anwendungsfall \hyperref[sec3:model:uc-1.4]{UC-1.4} genannten Operationen könnten die Metriken in der Komponente \textit{GraphCodeCalculationController} genutzt werden, um vor der Verarbeitung von Graph Codes Prüfungen vorzunehmen.
+    Ein Beispiel für so eine Überprüfung könnte vor der Operation \enquote{Subtraktion} sein, in welcher mit der Merkmalsmetrik $M_F$ geprüft wird, ob die zu verarbeitenden Graph Codes identisch sind.
+    Sind die zu verarbeitenden Graph Codes identisch, müsste die Operation nicht durchgeführt werden, da das Ergebnis eine leere Menge darstellen würde.
     \item \textbf{Prompt / Instruktion}: Die Werte von Metriken könnten, erweitert um Instruktionen, in eine Prompt transformiert bzw. integriert werden, um die Aussagekraft von Graph Codes bzw. in ihnen enthaltenen Merkmalen zu verstärken oder zu gewichten.
 \end{itemize}
 
@@ -455,37 +496,7 @@ Im Folgenden wird aufgezählt, welchen Nutzen diese Metrik beim Erreichen des Zi
 
 Die in diesem Abschnitt konzipierten Herangehensweisen werden im Rahmen einer Implementierung durch das FZ 2.3/I genauer untersucht.
 
-\paragraph{Transformation der Graph Code Metriken}
-%Anmerken dass Metrik assoziierten Information ist...
-
-Metrik zur Ähnlichkeit ist nur ein Tripel aus Metriken.
-Nichtsdestotrotz sind auch diese Metriken auf mehrere Graph Codes angewiesen...
-
-Grundlegender Startpunkt ist nur ein Graph Code... Dieser Graph Code enthält das Element CollectionElements... Dieses Element ist ein Array aus Darstellungen von Graph Codes als Json Objekt bzw. Element (rekursive Struktur)
-Könnte man anhand dieser Graph Codes in CollectionElements Metriken berechnen?
-
-Wie kann die Info zu einer Metrik mit in die Erklärung integriert werden? (Benötigt offensichtlich Berechnung der Metrik)
-
-Wie kann generative Ki genutzt werden um Metriken zu (generieren?)? erweitern?
-
-Idee: Sentimentalitätsmetrik - Analyse...
-Idee: Individuelle Metriken (wie zur Sentimentalität) können angefragt und dann durch einen Funktionsaufruf ins Programm übernommen werden... (Um diesen Ansatz zu verfolgen wäre auch eine zweite, kleine Erweiterung des Kap.2 FZ2 eventuell sinnvoll? ansprechen der Funktionen und Aufrufe
-
-Das Verwenden der bestehend(en) Metriken ist nur im Anwendungsfall "Operation ausführen" sinnvoll und dort auch nur für die Operation Subtraktion...
-Hier dann begründen? Anhand Implementierung begründen? Oder anhand Definition? Eher Definition...
-Andere Operationen berechnen anhand mehrerer Graph Codes, was hier für diese Metrik kein Sinn ergibt... Metrik der Ähnlichkeit nur zwischen zwei Graph Codes...
-Hier muss auch nochmal überprüft werden, wie denn überhaupt für diese Operation die Berechnung dieser Metriken zustande kommen würde... (Aber eher unwahrscheinlich... Hier in der Modellierung nur die Idee hervorheben... Umsetzbarkeit wird in der Implementierung untersucht...)
-
-Allgemein Vorstellen wie (sofern berechnet) die Metrik transformiert werden könnte und integriert werden könnte... (Erklärung der Metrik + Instruktion)
-
-Erweiterung der bestehenden Metriken...
-
-Neuer Anwendungsfall... (Graph Codes vergleichen)
-
-Allgemein nur kurz über die Möglichkeiten der Transformation von Metriken sprechen...
-Wo und wie könnten diese Metriken eingesetzt werden?
-
-Wie könnten Metriken von Graph Codes allgemein durch generative KI erweitert werden? + Beispiel: Sentimentalität
+% Metrik zur Ähnlichkeit ist nur ein Tripel aus Metriken. Nichtsdestotrotz sind auch diese Metriken auf mehrere Graph Codes angewiesen... Grundlegender Startpunkt ist nur ein Graph Code... Dieser Graph Code enthält das Element CollectionElements... Dieses Element ist ein Array aus Darstellungen von Graph Codes als Json Objekt bzw. Element (rekursive Struktur) Könnte man anhand dieser Graph Codes in CollectionElements Metriken berechnen? Wie kann die Info zu einer Metrik mit in die Erklärung integriert werden? (Benötigt offensichtlich Berechnung der Metrik) Wie kann generative Ki genutzt werden um Metriken zu (generieren?)? erweitern? Idee: Sentimentalitätsmetrik - Analyse... Idee: Individuelle Metriken (wie zur Sentimentalität) können angefragt und dann durch einen Funktionsaufruf ins Programm übernommen werden... (Um diesen Ansatz zu verfolgen wäre auch eine zweite, kleine Erweiterung des Kap.2 FZ2 eventuell sinnvoll? ansprechen der Funktionen und Aufrufe Das Verwenden der bestehend(en) Metriken ist nur im Anwendungsfall "Operation ausführen" sinnvoll und dort auch nur für die Operation Subtraktion... Hier dann begründen? Anhand Implementierung begründen? Oder anhand Definition? Eher Definition... Andere Operationen berechnen anhand mehrerer Graph Codes, was hier für diese Metrik kein Sinn ergibt... Metrik der Ähnlichkeit nur zwischen zwei Graph Codes... Hier muss auch nochmal überprüft werden, wie denn überhaupt für diese Operation die Berechnung dieser Metriken zustande kommen würde... (Aber eher unwahrscheinlich... Hier in der Modellierung nur die Idee hervorheben... Umsetzbarkeit wird in der Implementierung untersucht...) Allgemein Vorstellen wie (sofern berechnet) die Metrik transformiert werden könnte und integriert werden könnte... (Erklärung der Metrik + Instruktion) Erweiterung der bestehenden Metriken... Neuer Anwendungsfall... (Graph Codes vergleichen) Allgemein nur kurz über die Möglichkeiten der Transformation von Metriken sprechen... Wo und wie könnten diese Metriken eingesetzt werden? Wie könnten Metriken von Graph Codes allgemein durch generative KI erweitert werden? + Beispiel: Sentimentalität
 
 
 
@@ -545,26 +556,57 @@ Weitere Komponenten sind \textit{ChatCompletionRequest} und \textit{CreateImageR
 Die Anfragen müssen dann noch über die Komponente \textit{OpenAiService} an die Schnittstelle gesendet werden.
 Analog zu den Anfragen sind die Komponenten \textit{ChatCompletionResult} und \textit{ImageResult} Container, die die Ergebnisse der Anfragen an die jeweiligen Endpunkte speichern.
 Folglich bestehen diese Komponenten wiederum aus kleinen weiteren Komponenten, die die jeweiligen Informationen speichern.
-Die Komponenten \textit{ChatCompletionRequstBuilder} und \textit{CreateImageRequestBuilder} sind jeweils die Komponenten, die die Parameter der Anfrage spezifizieren.
+Die Komponenten \textit{ChatCompletionRequestBuilder} und \textit{CreateImageRequestBuilder} sind jeweils die Komponenten, die die Parameter der Anfrage spezifizieren.
 Inbesondere ist in Bezug auf die Anfragen zur Generierung von Text die Komponente \textit{ChatMessage} von Bedeutung.
 Während bei normalen Anfragen, wie z.B. der Anfrage zur Generierung von Bildern nur einfache Texteingaben benötigt werden, wird bei der Anfrage von Text eine Reihe an Textnachrichten (\textit{ChatMessage}) benötigt, die einen Dialog zwischen mehreren Parteien darstellen.
 Eine Textnachricht erwartet als Eingabe eine Rolle im Dialog, sowie den Inhalt dieser Partei im Dialog.
 
 Die genannten Komponenten stellen die Grundlage zum Erstellen einer Anfrage an die Endpunkte der Schnittstelle von OpenAI dar.
 Im Folgenden ist es nun von Interesse herauszufinden, welche Informationen für das Erstellen einer effektiven und sinnvollen Anfrage an einen Endpunkt der Schnittstelle notwendig sind, und welche Komponenten am Erzeugen dieser Informationen beteiligt sind.
-Speziell für die Textgenerierung bestehen die Informationen für den Dialog, der durch eine Reihe an Textnachrichten \textit{ChatMessage} dargestellt wird, zumeist aus Instruktionen (siehe z.B. \cref{sec3:model:subsubsec:explainability-through-genai}), sowie den in Textformat transformierten Informationen aus einem Graph Code.
+Speziell für die Textgenerierung bestehen die Informationen für den Dialog, der durch eine Reihe an Textnachrichten \textit{ChatMessage} dargestellt wird, zumeist aus Instruktionen (siehe z.B. \cref{sec3:model:subsubsec:explainability-through-genai}), sowie den in Textformat transformierten Informationen aus einem Graph Code (siehe \cref{sec3:model:subsubsec:gc-transformation}).
 
 Der Prozess der Verarbeitung der Informationen eines Graph Codes wird, wie bereits durch das Sequenzdiagramm für den Anwendungsfall \hyperref[sec3:model:uc-1.3]{UC-1.3} dargestellt, von einem Benutzer durch die Auswahl eines Graph Codes initiiert.
 Schlussendlich wird dann der Komponente \textit{ExplanationPanel} ein Graph Code übergeben, welche diesen Graph Code dann an die spezifischen Komponenten \textit{ImagePanel} und \textit{TextPanel} der Erklärungstypen \textit{Image} oder \textit{Text} delegiert.
-Die Verarbeitung der Informationen kann dann gesondert und abhängig vom Erklärungstyp durch die Komponenten \textit{TextPanel} oder \textit{ImagePanel} erfolgen.
+Die Verarbeitung der Informationen erfolgt dann gesondert und abhängig vom Erklärungstyp durch die Komponenten \textit{TextPanel} oder \textit{ImagePanel} in der Methode \textit{setUpPrompt}.
+Ein Beispiel für die Zusammenstellung der durch die Transformation generierten Informationen in der Methode \textit{setUpPrompt} kann in folgendem Beispiel eingesehen werden:
+
+\begin{tcolorbox}[enhanced, colback=white,segmentation style={solid}, breakable]
+  \textbf{System}: \enquote{You are an assistant, who is able to generate cohesive textual explanations based on a collection of words.}
+  \tcbline
+  \textbf{Assistant}: \enquote{The collection of words represents a dictionary. The dictionary contains so-called feature vocabulary terms. Some of the dictionary terms are connected through a relationship. These relationships will be noted as $<i_{t}> - <i_{t_{1}},...,i_{t_{n}}>$ or $<i_{t}> k <i_{t_{1}},...,i_{t_{n}}>$, where $i_{t}$ denotes the index of a feature vocabulary term. Additionally $-$ represents an undefined relationship, while $k$ represents a specific relationship.}.
+  \tcbline
+  \textbf{User}: \enquote{The collections of words is as follows: <\textit{Liste der Merkmale aus dem Wörterbuch eines Graph Codes}>. The relationships are as follows: <\textit{Generierte Formate der Beziehungen durch einen Graph Code}>. Generate a coherent textual explanation containing the terms of the dictionary. An example for such an explanation could be: <\textit{Beispiel zur Verdeutlichung...}>.}.
+  \tcbline
+  \textbf{Assistant}: \enquote{Based on the dictionary, here is a cohesive textual explanation containing the terms of the dictionary:}.
+\end{tcolorbox}
+
+Die Verarbeitung der durch die Transformation generierten Informationen und in einer Prompt zusammengetragenen Informationen wird im Folgenden durch einen allgemeinen \cref{sec3:model:subsubsec:genai-integration:alg:text-end} beschrieben, der die Sequenz der notwendigen Schritte und Aktionen hervorhebt, um eine Anfrage an den Endpunkt Text (\textit{ChatCompletionRequest}) zur Generierung von Text zu erstellen.
+
+% <Pseudoalgorithmus>
+\input{chapter/chapter_3/algorithms/ps-alg-text-end}
+
+Bezüglich der Erstellung einer Anfrage an den Endpunkt Bild (\textit{ImageRequest}) zum Generieren eines Bildes besteht allerdings das Problem der Tokenbegrenzung von Dall-E 2.
+Im Folgenden wird ein Konzept entwickelt, um diesem Problem zu begegnen.
+Dieses Konzept sieht das In-Reihe-Schalten der Endpunkte vor.
+Genauer wird zuerst eine Anfrage an den Endpunkt Text zum Generieren von Text erstellt und gesendet, um darauffolgend mit dem daraus resultierenden Ergebnis die Eingabe für eine Anfrage an den Endpunkt Bild zu speisen.
+Dies ist möglich, da die Anfrage an den Endpunkt Text spezifisch dazu parametrisiert werden kann, dass das Ergebnis dieser Anfrage nur eine maximale Länge an Zeichen umfassen darf/soll.
+Des Weiteren können die Instruktionen der Prompt zur Generierung von Text so angepasst werden, dass dem System generativer KI vermittelt wird, dass das erzeugte Ergebnis dieser Anfrage wiederum als Eingabe für ein Bilderzeugungsprogramm verwendet werden soll (siehe \cref{sec3:model:subsubsec:explainability-through-genai}, \enquote{Create a visual explanation / description.}).
+Das Erzeugen einer Anfrage an den Endpunkt Bild verhält sich analog zum Endpunkt Text.
+
+% Beschreibung der Erweiterung...
+
+% Hier wäre es dann vermutlich noch sinnvoll auf die Zusammenstellung der in \cref{sec3:model:subsubsec:gc-transformation} generierten Informationen zu sprechen... Dies würde dann in erster Linie ein Pseudoalgorithmus für die Erstellung einer Anfrage an den Endpunkt Text (ChatCompletionRequest) sein... Gesondert wird dann noch darüber gesprochen, wie das Problem mit der Tokenbegrenzung für den Endpunkt Bild (ImageRequest) gehandhabt werden kann -> Erst Textanfrage mit spezifischen Anfrageparametern (geringe Tokenzahl der Antwort...), dann Bildanfrage (also in Reihe geschalten) (hierfür dann eventuell eine Erweiterung des Pseudoalgorithmus oder nur eine detaillierte Beschreibung des Ablaufs) -> nur eine detaillierte Beschreibung
+
+% Zusammenstellung der generierten Informationen aus der Transformation ansprechen...
+% Dies wird in erster Linie ein Pseudoalg für die Erstellung einer Anfrage an den Endpunkt Text sein (ChatCompletionRequest)
+% Gesondert sollte dann darüber gesprochen werden, wie das Problem mit der Tokenbegrenzung für den Endpunkt Bild gehandhabt werden kann...
+% In Reihe schalten (Text, dann Bild) mit einer spezifischen Textanfrage und passenden Anfrageparametern (geringe Tokenanzahl)
+% Nur Beschreibung des Vorgehens für eine Bildanfrage (also Erweiterung nur textuell beschreiben, kein eigener Pseudoalg).
 
 Mit diesen neuen Informationen kann eine Erweiterung bzw. Ergänzung des Sequenzdiagramms für den Anwendungsfall \hyperref[sec3:model:uc-1.3]{UC-1.3} vorgenommen werden.
 \cref{sec3:model:par:seq-use-cases:fig:seq-diag-uc-1.3-exp} zeigt die Erweiterung des Sequenzdiagramms um die neuen Abläufe der Verarbeitung von Graph Codes in den Komponenten \textit{ImagePanel} und \textit{TextPanel}.
 
 \input{chapter/chapter_3/seq-diams/seq-diam-uc-1-3-exp}
-
-% Des Weiteren Erweiterung / Ergänzung zu Seq UC-1.3 (auch durch neue Informationen (voriger Abschnitt)).
-% Erklärung zu Seq.
 
 Weitere Parameter zum Anpassen einer Anfrage an einen Endpunkt der Schnittstelle können durch die Benutzerschnittstellen, dargestellt in \cref{sec3:model:par:wireframe:fig:stage-2+3}, generiert werden.
 Genauer würden die Spezifikationen der Anfragen an die Endpunkte der Schnittstelle durch die gewählten Einstellungen im Rahmen des Anwendungsfall \hyperref[sec3:model:uc-1.7]{UC-1.7} in den erweiterten Optionen (siehe \cref{sec3:model:par:wireframe:fig:stage-2+3} \circitem{9}) zustande kommen.
@@ -611,16 +653,32 @@ In \cref{sec3:model:subsubsec:summary-findings} werden die in diesem Kapitel gew
 
 \subsubsection{Gewonnene Erkenntnisse}
 \label{sec3:model:subsubsec:summary-findings}
+In diesem Abschnitt werden die Erkenntnisse aus den Forschungszielen \enquote{FZ 1.2/TB Erklärbarkeit von MMIR mittels generativer KI} und \enquote{FZ 2.2/TB Integration generativer KI in das GMAF} zusammengefasst.
 
-\input{chapter/chapter_3/tables/table-summary-mappings}
+Im ersten Forschungsziel wurde angesprochen, wie Erklärbarkeit durch generative KI erreicht werden kann.
+Darüber hinaus wurden in Bezug auf das GMAF eine Reihe an benutzerorientierten Anwendungsfällen identifiziert und textuell beschrieben.
+Anhand dieser Anwendungsfälle wurden schrittweise Benutzerschnittstellen mit geeigneten Interaktionsmöglichkeiten konzipiert.
+Des Weiteren wurden mit Hilfe von Mechanismen, die an Anwendungsfällen beteiligten Komponenten identifiziert, anhand derer wiederum Sequenz- bzw. Interaktionsdiagramme und Pseudoalgorithmen erstellt werden konnten.
 
-Die in den \cref{sec3:model:subsec:fz-explainability,sec3:model:subsec:fz-integration} gewonnenen Erkenntnisse münden in folgendem Klassendiagramm, in welchem die identifizierten und für die Modellierung wichtigen Klassen, sowie die Beziehungen in denen sie zueinander stehen übersichtlich dargestellt werden.
+Im zweiten Forschungsziel wurde die Transformation der in Graph Codes gespeicherten, sowie der mit Graph Codes assoziierten Informationen behandelt und es wurden Konzepte zur Überführung dieser Informationen in eine geeignete Form, den Prompts, in Systeme generativer KI entwickelt.
+Zusätzlich wurde die Einbindung der Systeme generativer KI in das GMAF behandelt und Konzepte zur Integration dieser in das GMAF entwickelt.
 
-%\paragraph{Getroffene Entscheidungen}
+Die in den \cref{sec3:model:subsec:fz-explainability,sec3:model:subsec:fz-integration} gewonnenen Erkenntnisse münden in folgendem Klassendiagramm (siehe \cref{sec3:model:subsec:summary:fig:class-diagram}), in welchem die identifizierten und für die Modellierung wichtigen Klassen, sowie die Beziehungen in denen sie zueinander stehen übersichtlich dargestellt werden.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{chapter/chapter_3/class.eps}
+  \caption{Klassendiagramm.}
+  \label{sec3:model:subsec:summary:fig:class-diagram}
+\end{figure}
+
+\FloatBarrier
 
 \subsubsection{Weiteres Vorgehen}
 \label{sec3:model:subsubsec:futher-approach}
-Im folgenden Kapitel werden die in diesem Kapitel entwickelten Konzepte im Rahmen einer Implementierung durch entsprechende Forschungsziele untersucht.
+Im folgenden Kapitel werden die in diesem Kapitel entwickelten Konzepte im Rahmen einer Implementierung durch ihre entsprechenden Forschungsziele untersucht.
 Genauer werden in \cref{sec4:impl} in FZ 1.3/I Benutzerschnittstellen und Funktionen implementiert und in FZ 2.3/I die Integration der Systeme generativer KI, sowie die Überführung der Informationen von und um Graph Codes zur Generierung von Erklärungen umgesetzt.
+
+Die nachfolgende Tabelle stellt eine Erweiterung der \cref{sec2:sota:subsec:summary:table:summary} dar und gibt eine Übersicht über den aktuellen Arbeitsstand nach Abschluss dieses Kapitels.
 
 \input{chapter/chapter_3/tables/table-summary}

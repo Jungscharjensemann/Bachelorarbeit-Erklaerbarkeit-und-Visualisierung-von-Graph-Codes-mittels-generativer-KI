@@ -1,0 +1,47 @@
+<dependency>
+  <groupId>com.theokanning.openai-gpt3-java</groupId>
+	<artifactId>service</artifactId>
+	<version>0.13.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.knuddels</groupId>
+  <artifactId>jtokkit</artifactId>
+  <version>0.6.1</version>
+</dependency>
+
+
+
+<!-- https://mvnrepository.com/artifact/org.swinglabs/jxlayer -->
+<dependency>
+  <groupId>org.swinglabs</groupId>
+  <artifactId>jxlayer</artifactId>
+  <version>3.0.4</version>
+</dependency>
+
+<dependency>
+  <groupId>org.swinglabs.swingx</groupId>
+  <artifactId>swingx-all</artifactId>
+  <version>1.6.5</version>
+</dependency>
+
+<dependency>
+  <groupId>com.miglayout</groupId>
+  <artifactId>miglayout</artifactId>
+  <version>3.7.4</version>
+</dependency>
+
+<dependency>
+  <groupId>com.fifesoft</groupId>
+  <artifactId>rsyntaxtextarea</artifactId>
+  <version>3.3.1</version>
+</dependency>
+
+
+
+<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+<dependency>
+  <groupId>com.google.guava</groupId>
+  <artifactId>guava</artifactId>
+  <version>32.1.2-jre</version>
+</dependency>
