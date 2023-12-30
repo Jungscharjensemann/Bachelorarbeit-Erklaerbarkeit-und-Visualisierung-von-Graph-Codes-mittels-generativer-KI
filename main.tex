@@ -16,6 +16,8 @@
 \usepackage[ngerman]{babel} % ngerman - Deutsche Sprache.
 \usepackage{ragged2e} % Alignment.
 \usepackage{parskip}
+\usepackage{contour}
+\usepackage[normalem]{ulem}
 \usepackage[singlespacing]{setspace}
 %\usepackage{mathptmx}
 \usepackage{scripts/tikz-uml-gpt}
@@ -31,9 +33,10 @@
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
 \usepackage{pgf}
+\usepackage{afterpage}
 \usepackage{tocbibind}
 \usepackage{titlesec}
-\usepackage[inkscapeformat=png]{svg}
+%\usepackage[inkscapeformat=png]{svg}
 \usepackage{lscape}
 %\usepackage{fontspec}
 %\usepackage{newtxtext,newtxmath} %Viel zu eng (To narrow)
@@ -83,7 +86,7 @@
 ]{biblatex}
 %\usepackage[table]{xcolor}
 %\usepackage{url}
-\usepackage{hyperref} % Hyperref als (letztes) Paket, aber cleveref baut auf hyperref auf.
+\usepackage[pdftex,pdfauthor={Jens Andress}]{hyperref} % Hyperref als (letztes) Paket, aber cleveref baut auf hyperref auf.
 \usepackage[german]{cleveref}
 
 %\setromanfont{Times New Roman}
@@ -106,6 +109,11 @@
 \fancyhf{}
 \fancyfoot[R]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
+
+% Ulem
+
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
 
 %% Biblatex - Optionen
 
@@ -178,6 +186,9 @@
 %% TColorBox
 \tcbuselibrary{skins, many, hooks, breakable}
 
+\newtcolorbox[auto counter, number within=section, crefname={Dialog}{Dialoge}]%
+{messages}[2][]{colback=white, fonttitle=\bfseries, #1, center title, title=#2}
+
 %% Tikz
 \usetikzlibrary{babel, pgfplots.dateplot, positioning, shapes.misc, intersections, backgrounds, angles, arrows.meta, shapes.geometric, fit, math, spy}
 
@@ -236,6 +247,11 @@
 }
 
 \renewcommand{\thesubfigure}{\roman{subfigure}}
+
+\newcommand{\undline}[1]{%
+    \uline{\phantom{#1}}%
+    \llap{\contour{white}{#1}}%
+}
 
 %% Listings
 \lstdefinestyle{grammar}{basicstyle=\itshape,literate={->}{$\rightarrow$}{2}}
@@ -375,8 +391,12 @@
 \crefname{figure}{Abb.}{Abbldg.}
 \crefname{table}{Tab.}{Tabln.}
 
+\renewcommand{\listalgorithmname}{Algorithmenverzeichnis}
+\renewcommand{\lstlistlistingname}{Listingsverzeichnis}
+
 %% Globale Variablen
 \setitemize{itemsep=0pt}
+\setlength{\overfullrule}{5pt}
 
 \input{chapter/glossary/glossary}
 
@@ -397,6 +417,8 @@
 %\counterwithin{equation}{subsection}
 
 % Inhaltsverzeichnis
+\phantomsection
+
 \tableofcontents
 
 \clearpage
@@ -404,6 +426,10 @@
 \listoffigures
 
 \listoftables
+
+\listofalgorithms
+
+\lstlistoflistings
 
 %\printglossaries
 
@@ -421,11 +447,11 @@
 
 \include{chapter/chapter_5}
 
-%\include{chapter/chapter_6}
+\include{chapter/chapter_6}
 
-\appendix
+%\appendix
 
-\include{chapter/appendix/appendix}
+%\include{chapter/appendix/appendix}
 
 \setcounter{biburllcpenalty}{7000}
 \setcounter{biburlucpenalty}{8000}

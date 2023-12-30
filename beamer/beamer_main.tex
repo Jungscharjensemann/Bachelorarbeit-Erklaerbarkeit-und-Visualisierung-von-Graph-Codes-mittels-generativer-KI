@@ -1,0 +1,74 @@
+\documentclass{beamer}
+% Theme
+\usetheme{metropolis}
+
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\definecolor{feublue}{rgb}{0,0.356,0.639}
+
+% Informationen
+\title{Kolloquiumsvortrag zur Bachelorarbeit - Erklärbarkeit und Visualisierung von Graph Codes mittels generativer KI}
+\author{Jens Andress}
+\date{\today}
+
+% Commands
+\renewcommand{\insertframenumber}{\arabic{framenumber}}
+\newcounter{numberofframes}
+
+\setbeamertemplate{itemize item}{--}
+
+\setbeamertemplate{headline}{%
+  \vspace*{0mm}
+  \leavevmode
+  \hspace*{0mm}
+  % picture
+  \resizebox*{\paperwidth-2mm}{!}{%
+    \begin{tikzpicture}
+      \node[] (logo) { \includegraphics[scale=0.3]{../resources/images/hagen.png}};
+
+      \draw[-, feublue] ([xshift=-1.1cm, yshift=-3mm]logo.center) -- ++(10,0);
+    \end{tikzpicture}
+  }
+  \hspace*{0mm}
+}
+
+\setbeamertemplate{frametitle}{}
+
+\setbeamertemplate{sidebar canvas}{}
+
+\begin{document}
+
+\setcounter{numberofframes}{\inserttotalframenumber}
+\setbeamertemplate{footline}{\insertframenumber/\roman{numberofframes}}
+
+\setbeamertemplate{footline}
+{
+  \hbox{
+    \begin{beamercolorbox}[wd=1\paperwidth,ht=2.25ex,dp=1ex,left]{framenumber}%
+      \usebeamerfont{framenumber} Folie  \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+    \end{beamercolorbox}
+  }%
+  \vskip0pt%
+}
+
+\maketitle
+
+\begin{frame}{Erstes Frame}
+  Dies ist ein Test!
+  \begin{itemize}
+    \item I
+    \item I
+    \item I
+    \item I
+    \item I
+    \item I
+    \item I
+    \item I
+    \item I
+    \item I
+  \end{itemize}
+\end{frame}
+
+\end{document}

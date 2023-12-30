@@ -1,0 +1,130 @@
+In diesem Abschnitt wird die prototypische Proof-of-Concept Implementierung der \enquote{Integration der Endpunkte in das GMAF} beschrieben und behandelt.
+In \cref{sec3:model} wurden Konzepte entwickelt und vorgestellt, die mögliche Vorgehensweisen zur Transformation von Graph Codes und Integration der Endpunkte der Schnittstelle von OpenAI beschreiben.
+Die Beschreibung der Implementierung der Transformation von Graph Codes in eine Prompt wird im Folgenden in \cref{sec4:impl:subsubsec:gc-transformation} vorgenommen.
+Des Weiteren wird in \cref{sec4:impl:subsubsec:endpoint-integration} die Integration und Interaktion mit den Endpunkten der Schnittstelle von OpenAI zum Erstellen von Erklärungen behandelt und beschrieben.
+
+\subsubsection{Transformation von Graph Codes}
+\label{sec4:impl:subsubsec:gc-transformation}
+In diesem Abschnitt wird die Implementierung der Transformation der in Graph Codes gespeicherten Informationen beschrieben.
+Im Folgenden zeigt \cref{sec3:model:subsubsec:gc-transformation:fig:set-up-prompt} die Methode \textit{setUpPrompt}, welche bereits in \cref{sec4:impl:par:ui-elements:lst:text-panel-p3,sec4:impl:par:ui-elements:lst:image-panel} angedeutet wurde und welche die Transformation von Graph Codes umsetzt und die zur Erstellung von Anfragen notwendige Prompt aufbereitet bzw. erstellt.
+
+\lstinputlisting[style=java-code, caption={Quellcode für Methode \textit{setUpPrompt}.}, label={sec4:impl:subsubsec:gc-transformation:lst:set-up-prompt}, firstnumber=1]{chapter/chapter_4/java/methods/setUpPrompt.java}
+
+Die für eine Anfrage notwendige Prompt wird durch einen Dialog dargestellt, der aus einer Reihe an Textnachricht besteht.
+Innerhalb der Methode \textit{setUpPrompt} werden nun eine Reihe an Textnachrichten, die diesen Dialog erzeugen sollen, zusammengefügt.
+Hierbei inkorporieren einige dieser Textnachrichten in einem geeigneten Textformat Informationen des entsprechenden Graph Codes.
+Diese Informationen werden durch die Methoden \textit{listTerms} und \textit{getFormattedTerms} in ein geeignetes Textformat überführt und in die Textnachrichten eingebunden.
+\cref{sec4:impl:subsubsec:gc-transformation:tcb:messages} zeigt diese Reihe an Textnachrichten.
+
+\begin{messages}[breakable,colbacktitle=white, coltitle=black,label={sec4:impl:subsubsec:gc-transformation:tcb:messages}]{Textnachrichten für die Prompt}
+  \textbf{System:} You are an assistant, who is able to generate cohesive textual explanations based on a collection of words.
+  \tcbline
+  \textbf{System:} The collection of words represents a dictionary.
+  The dictionary contains so-called feature vocabulary terms.
+  Additionally some of these terms are connected through a relationship.
+  These relationships will be noted as $<i_t> - <i_{t_1},...,i_{t_n}>$, where $i_t$ denotes the index of a feature vocabulary term in the given collection.
+  \tcbline
+  \textbf{System:} Using these terms, we can create a coherent explanation that accurately describes the terms and its relations.
+  \med
+  An example could be: The image shows water, the sky, and clouds.
+  We can imagine a scene with clouds floating in the sky above.
+  \tcbline
+  \textbf{User:} The collections of words is as follows: $<\textbf{terms}>$.
+  Only respect these terms and its relations: $<\textbf{formats}>$, and ignore all others.
+  Do not create an explanation regarding the dictionary.
+  Only generate a text containing the terms of the dictionary like in the example above.
+  \tcbline
+  \textbf{Assistant:} Based on the dictionary, here is a cohesive text containing the terms from the dictionary:
+\end{messages}
+
+Die drei Parteien \textit{System}, \textit{Assistant} und \textit{User} sind Teil des Dialogs.
+Die ersten drei Nachrichten stammen von der Partei \textit{System} und vermitteln dem GPT-Modell, wie es sich zu verhalten und zu antworten hat.
+Darüber hinaus erhalten diese Nachrichten wichtige Informationen über die Struktur und Logik von Graph Codes mit, sowie die Form bzw. das Format in welchem diese Informationen dem Modell mitgeteilt werden.
+Die vierte Nachricht stammt von der Partei \textit{User} und teilt dem Modell die spezifischen Informationen eines Graph Codes mit.
+Diese Informationen sind eine Aufzählung der Merkmale im Wörterbuch eines Graph Codes, generiert durch die Methode \textit{listTerms}, sowie die Beziehungen zwischen den Merkmalen in Form eines geeigneten Textformats, generiert durch die Methode \textit{getFormattedTerms}.
+Diese beiden Methoden werden durch die Klasse \textit{GraphCode} bereitgestellt und sind somit dem Bereich \textit{Model} zuzuweisen.
+Die Methode \textit{listTerms} fusioniert die Merkmale des Wörterbuchs Mithilfe der Methode \textit{join} der String-Klasse (\textit{String.join(",", dictionary)}).
+Die Methode \textit{getFormattedTerms} ist hingegen wesentlich komplexer und kann in \cref{sec4:impl:subsubsec:gc-transformation:lst:formatted-terms} eingesehen werden.
+Die letzte Nachricht stammt von der Partei \textit{Assistant} und stellt einen unvollständigen Satz dar.
+Die Aufgabe des Assistenten ist es auf den Nutzer zu antworten.
+Durch die ersten Mitteilungen zum System weiß das Modell wie und auf welche Art es dem Nutzer zu antworten hat.
+Der Assistent antwortet dabei auf die vom Nutzer eingegebenen Informationen in vom System vorgegebener Art und vervollständigt den unvollständigen Satz mit einer Erklärung in Abhängigkeit der vom Nutzer angegebenen Informationen.
+
+\lstinputlisting[style=java-code, caption={Quellcode für Methode \textit{getFormattedTerms}.}, label={sec4:impl:subsubsec:gc-transformation:lst:formatted-terms}, firstnumber=1]{chapter/chapter_4/java/methods/formatted-terms.java}
+
+Um die Beziehungen zwischen Merkmalen in einem Graph Code geeignet darzustellen, werden mit dem Algorithmus \textit{getFormattedTerms} Textformate generiert.
+Hierfür durchläuft der Algorithmus einzeln die Reihen der zweidimensionalen, quadratischen Matrix und sammelt für jeden einzigartigen Wert eine Reihe an Merkmalen.
+Hierbei werden allerdings diagonale Einträge und Einträge mit dem Wert null ausgelassen.
+Dies bedeutet, dass jeder einzigartige Wert in einer Reihe mit mehreren Merkmalen assoziiert sein kann.
+Zu diesem Zweck wird die Klasse \textit{MultiMap} der Abhängigkeit \textit{Guava} verwendet.
+Diese hält für einen jeweiligen Schlüssel, welcher ein einzigartiger Wert sein wird, eine Kollektion an Elementen, in diesem Fall Merkmale.
+Die Schlüssel werden numerisch sortiert (\textit{treeKeys}) und die in die Kollektion hinzugefügten Merkmale werden nach Reihenfolge ihres Hinzufügens sortiert (\textit{arrayListValues}).
+Abschließend werden die Einträge in der \textit{MultiMap} durchlaufen und es werden Textformate generiert, indem die Werte in einem Format (\textit{String.format()}) zusammengefügt werden.
+Anstatt allerdings die Merkmale zu fusionieren, werden nur die Indizes der Merkmale im Wörterbuch ermittelt und zusammengefügt und dann dem Format beigefügt.
+Ergebnis ist eine Menge an Formaten für eine Reihe in der Matrix, die dann am Ende fusioniert werden.
+Schlussendlich werden alle fusionierten Formate in einem einzigen Text zusammengefügt und als Ergebnis ausgegeben.
+Die Implementierung der Transformation der in der Matrix enthaltenen Informationen entspricht somit dem in der Modellierung in \cref{sec3:model:subsubsec:gc-transformation} entwickelten Konzept zur Transformation der Matrix.
+
+Folgendes Beispiel zeigt die transformierten Informationen für einen echten Graph Code:
+Die Aufzählung des Vokabular lautet: \enquote{root-image, water, sky, cloud, building, skyscraper, dusk, body of water, lake, atmospheric phenomenon, horizon}.
+Die in Textformat überführten Einträge der Matrix des Graph Codes lauten: $<1> - <2,3,4,5,6,7,8,9,10,11>$.
+Eingefügt in \cref{sec4:impl:subsubsec:gc-transformation:tcb:messages} und als Anfrage an den Endpunkt Text gesendet, ergibt sich folgender Text als Antwort bzw. Erklärung:
+
+\textit{The root-image captures a breathtaking view at dusk. The horizon is beautifully painted with hues of the setting sun, creating an atmospheric phenomenon that is a sight to behold. Dominating the scene are a skyscraper and other buildings, their silhouettes stark against the sky. Below, a body of water, perhaps a lake, mirrors the sky. The water, calm and serene, adds a sense of tranquility to the scene. Floating above are clouds, their edges tinged with the colors of dusk, adding depth to the sky.}
+
+Weitere Beispiele für Graph Codes, transformierte Informationen und daraus generierten Erklärungen können in \cref{sec4:impl:subsec:summary} \enquote{Zusammenfassung} eingesehen werden.
+
+\subsubsection{Integration der Endpunkte}
+\label{sec4:impl:subsubsec:endpoint-integration}
+In diesem Abschnitt wird die Implementierung der Integration der Endpunkte, sowie die Interaktion zur Erstellung einer Anfrage an diese Endpunkte behandelt.
+Der Ablauf der Erklärung der Integration und Interaktion mit den Endpunkten der Schnittstelle entspricht dabei dem Ablauf der Modellierung und Implementierung, da für die Anfrage an den Endpunkt Bild zuerst eine Anfrage an den Endpunkt Text notwendig ist.
+
+Im Folgenden zeigt \cref{sec4:impl:subsubsec:gc-transformation:lst:text-action} die Methode \textit{actionPerformed}, die Teil der Klasse \textit{TextPanel} ist und mit Anwendungsfall \hyperref[sec3:model:uc-1.8]{UC-1.8} assoziiert ist.
+Diese Methode realisiert die Interaktion und damit auch die Integration der notwendigen Komponenten zum Erstellen einer Anfrage an den Endpunkt Text.
+
+\lstinputlisting[style=java-code, caption={Anfrage an den Endpunkt Text.}, label={sec4:impl:subsubsec:gc-transformation:lst:text-action}, firstnumber=1]{chapter/chapter_4/java/methods/text-action.java}
+
+In Zeile 3 wird eine Instanz der Schnittstelle \textit{OpenAiService} initialisiert und mit der Variable \textit{service} eingeführt.
+Für die Initialisierung ist ein gültiger API-Schlüssel notwendig.
+Des Weiteren wird ein Zeitüberschreitung von 60 Sekunden eingestellt.
+In Zeile 4 wird dann ein ExecutorService zum Ausführen eines Tasks bzw. einer Aufgabe initialisiert und mit der Variable \textit{executor} eingeführt.
+Die Aufgabe wird das Erstellen einer Anfrage an den Endpunkt Text sein und wird hierfür durch einen Thread dargestellt.
+Die erste Aktion in diesem Thread ist das Erstellen der Komponente \textit{ChatCompletionRequest}, welche eine Anfrage zur Chatvervollständigung darstellt und mit der Variable \textit{chatComplReq} eingeführt wird.
+Das Erstellen dieser Komponente erfolgt über die Komponente \textit{ChatCompletionRequestBuilder}, mit welcher eine Anfrage zur Chatvervollständigung Stück für Stück aufgebaut, parametrisiert und finalisiert werden kann.
+Die Variable \textit{chatComplReq} enthält alle wichtigen Informationen zur Anfrage und kann im Weiteren über \textit{service} an den Endpunkt Text gesendet werden.
+Das Ergebnis dieser Anfrage ist die Komponente \textit{ChatCompletionResult}, welche die Antwort des Endpunktes an die Anfrage darstellt und mit der Variable \textit{chatComplRes} eingeführt wird.
+\textit{chatComplRes} wirkt somit als Container für die Antwortinformationen der Anfrage.
+Diese Informationen, im Folgenden einfach nur die textuelle Erklärung, kann dann aus diesem Container entnommen und im Weiteren in einem Textfeld angezeigt werden.
+Schlussendlich wird durch \textit{executor} die Aufgabe bzw. der Thread ausgeführt und nach Ausführung beendet.
+
+\lstinputlisting[style=java-code, caption={Anfrage an den Endpunkt Bild.}, label={sec4:impl:subsubsec:gc-transformation:lst:image-action}, firstnumber=1]{chapter/chapter_4/java/methods/image-action.java}
+
+\cref{sec4:impl:subsubsec:gc-transformation:lst:image-action} zeigt das Erstellen einer Anfrage an den Endpunkt Bild.
+Für das Erstellen einer Anfrage an diesen Endpunkt ist zuerst eine Anfrage an den Endpunkt Text notwendig, um eine textuelle Erklärung, die als Bildbeschreibung für die visuelle Erklärung bzw. das zu erzeugende Bild fungieren soll, zu erzeugen.
+Die Implementierung dieser Anfrage verhält sich analog zu der in \cref{sec4:impl:subsubsec:gc-transformation:lst:text-action}.
+Allerdings bedarf es einer passenden Parametrisierung dieser Anfrage, da der Endpunkt Bild nur eine maximale Anzahl von 1000 Zeichen akzeptiert.
+Durch diese Parametrisierung kann sichergestellt werden, dass die Antwort der ersten Anfrage an den Endpunkt Text eine maximale Länge von ~75 Token beträgt.
+Im nächsten Schritt erfolgt das Erstellen einer Anfrage \textit{CreateImageRequest} durch die Komponente \textit{CreateImageRequestBuilder} und wird mit der Variable \textit{imgReq} eingeführt.
+Die Antwort der vorherigen Anfrage ist dabei Teil der Parametrisierung dieser Anfrage.
+Im nächsten Schritt wird die Anfrage über \textit{service} an den Endpunkt Bild gesendet.
+Das Ergebnis dieser Anfrage ist die Komponente \textit{ImageResult}, welche als Container für die Antwortinformationen wirkt.
+Eine dieser Information ist eine URL, die zum erzeugten Bild führt und in einem JLabel als Icon angezeigt werden kann.
+Schlussendlich wird durch \textit{executor} die Aufgabe bzw. der Thread ausgeführt und nach Ausführung beendet.
+
+In Bezug auf die \cref{sec4:impl:subsubsec:gc-transformation:lst:text-action,sec4:impl:subsubsec:gc-transformation:lst:image-action} kann festgehalten werden, dass die in der Implementierung der Interaktion und Integration der Endpunkte Text und Bild verwendeten Komponenten den im Mechanismus (siehe \cref{sec3:model:par:mechanism-use-cases:fig:mech-uc-1.8}) identifizierten Komponenten entsprechen.
+Ebenso entspricht der Ablauf der Aktionen in der umgesetzten Interaktion dem im Sequenzdiagramm (siehe \cref{sec3:model:par:seq-use-cases:fig:seq-diag-uc-1.8}) beschriebenem Ablauf.
+
+\subsubsection{Diskussion}
+\label{sec4:impl:subsubsec:fz2:discussion}
+Im ersten Forschungsziel wurden bereits beim Beschreiben der Implementierung die Funktionen \textit{setUpPrompt} und \textit{actionPerformed} der Klasse \textit{TextPanel} bzw. \textit{ImagePanel} angedeutet, aber aus Gründen der Zuordnung nicht näher beschrieben.
+In diesem FZ wurde die Implementierung dieser Methoden, wie auch im Rahmen der Modellierung in den \cref{sec3:model:subsubsec:gc-transformation,sec3:model:subsubsec:genai-integration} vorgesehen, genauer beschrieben.
+
+In \cref{sec4:impl:subsubsec:gc-transformation} wurde dabei die Implementierung der Transformation von Informationen in Graph Codes genauer beschrieben.
+Dies umfasst eine Zusammenstellung von Textnachrichten in einem Dialog, die die Prompt bzw. die Eingabe in den Endpunkt Text darstellen, sowie die Methoden \textit{listTerms} und \textit{getFormattedTerms} zum Transformieren der in Graph Codes enthaltenen Informationen.
+Die Implementierung dieser Methoden wurde dabei mit kompaktem Quellcode dokumentiert und beschrieben, sowie durch Beispiele verdeutlicht.
+In \cref{sec4:impl:subsubsec:gc-transformation} wurde somit der Bereich \textit{Model} behandelt.
+
+Des Weiteren wurde in \cref{sec4:impl:subsubsec:endpoint-integration} die Implementierung der Interaktion und damit auch die Integration der Endpunkte Text und Bild der Schnittstelle von OpenAI genauer beschrieben.
+Dies umfasst das Initialisieren der Schnittstelle, das Erstellen und Parametrisieren der notwendigen Komponenten einer Anfrage, sowie das Senden und Verarbeiten der Anfrage an die Schnittstelle.
+Hierfür wurden die Methoden mit kompaktem Quellcode dokumentiert und beschrieben.
+In \cref{sec4:impl:subsubsec:endpoint-integration} wurde somit der verbleibende Teil des Bereichs \textit{Controller} behandelt.

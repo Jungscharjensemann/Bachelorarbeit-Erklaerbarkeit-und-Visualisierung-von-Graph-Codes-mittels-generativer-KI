@@ -10,7 +10,7 @@ In diesem Kapitel wird, den Forschungszielen der Beobachtungsphase entsprechend,
 Die in diesem Kapitel dargestellten Informationen wurden im Rahmen einer Literaturrecherche, speziell Publikationen, bezogen auf das GMAF und seine Technologien, sowie durch eine extensive Internetrecherche mit entsprechenden Stichworten zusammengetragen.
 Das Bezugssystem für diese Arbeit stellt das \gmaf{} dar.
 Die für diese Arbeit relevanten Konzepte werden detailliert beschrieben, um so eine konkrete Vorlage, ein starkes Fundament, sowie eine scharfe Trennung zu den Phasen Modellierung, Implementierung und Experiment zu schaffen, die im weiteren Verlauf dieser Arbeit in den nachfolgenden Kapiteln Modellierung, Implementierung und Evaluierung folgen werden.
-Somit enthält dieses Kapitel alle nötigen Rechercheergebnisse, Beobachtungsergebnisse und damit Erkentnisse, die der Beantwortung der Forschungsfragen laut Ansatz dienlich sein sollen.
+Somit enthält dieses Kapitel alle nötigen Rechercheergebnisse, Beobachtungsergebnisse und damit Erkenntnisse, die der Beantwortung der Forschungsfragen laut Ansatz dienlich sein sollen.
 Der Methodik nach Nunamaker \cite{nunamaker} folgend, behandelt dieses Kapitel alle Forschungsziele vom Typ Beobachtung, entsprechend der identifizierten Problembeschreibungen aus dem \cref{sec1:intro:subsec:problems}.
 In \cref{sec2:sota:subsec:fz-explainability} wird auf die Erklärbarkeit von MMIR mittels generativer KI eingegangen, welches vorhandene Technologien im Bereich MMIR, sowie generativer KI beinhaltet.
 In \cref{sec2:sota:subsec:fz-integration} wird auf die Integration von generativer KI in das GMAF eingegangen, welches Technologien und technische Aspekte zur Integration beinhaltet.
@@ -33,7 +33,7 @@ Im weiteren Verlauf wird dann auf generative KI eingegangen, Grundlagen werden e
 Das Generic Multimedia Analysis Framework (GMAF) \cite{gmaf_github} ist ein Framework, welches ausgewählte Technologien zum Verarbeiten verschiedener multimedialer Inhalte, wie Bilder, Videos oder Text nutzt und miteinander kombiniert \cite{ai-based-sem-ind-retr-soc, exp-mmfg}.
 Beispiele für solche Technologien sind Verarbeitungssysteme zur Merkmalserkennung in Bildern (z.B zur Objekterkennung oder Erkennung von räumlichen Beziehungen mittels maschinellen Lernens).
 Das GMAF bietet eine flexible und erweiterbare Architektur, mit welcher auf einfache Art und Weise neue Algorithmen oder Schnittstellen zur Merkmalserkennung im Form von Plugins in das GMAF integriert werden können \cite{exp-mmfg}.
-Die von den Plugins extrahierten Merkmalen werden vom GMAF in einer zentralen Datenstrukturen zusammengefasst und vereint \cite{ai-based-sem-ind-retr-soc, jour-smmir}. \cref{sec2:sota:subsec:fz-explainability:fig:gmaf-overview} zeigt eine vereinfachte Übersicht der Architektur des GMAFs und die grundlegenden Komponenten.
+Die von den Plugins extrahierten Merkmalen werden vom GMAF in einer zentralen Datenstruktur zusammengefasst und vereint \cite{ai-based-sem-ind-retr-soc, jour-smmir}. \cref{sec2:sota:subsec:fz-explainability:fig:gmaf-overview} zeigt eine vereinfachte Übersicht der Architektur des GMAFs und die grundlegenden Komponenten.
 \input{chapter/chapter_2/gmaf-overview}
 Die Plugins im GMAF können als ein Zusammenschluss aus Anbietern von semantischen Informationen betrachtet werden \cite{ai-based-sem-ind-retr-soc}.
 Dieser Zusammenschluss produziert alle Daten, die notwendig sind, um ein Verzeichnis bzw. einen Index aus den semantischen Informationen zu generieren \cite{ai-based-sem-ind-retr-soc}.
@@ -51,7 +51,7 @@ Darauffolgend wird in \cref{sec2:sota:par:processing-of-mmfgs} die Verarbeitung 
 \label{sec2:sota:subsubsec:mmfg}
 Der Multimedia Feature Graph (MMFG) ist ein Resultat des GMAFs und stellt für Prozesse innerhalb des GMAFs eine zentrale gemeinsame Ressource dar \cite{ai-based-sem-ind-retr-soc}.
 Das grundlegende Konzept der MMFGs ist dabei eng verknüpft mit der Graphentheorie \cite{ai-based-sem-ind-retr-soc}.
-Genauer lässt sich ein MMFG als ein gewichteter und gerichteter Graph mit attributierten Knoten und Kanten verstehen, der die aus Plugins identifizierten und extrahierten Merkmale multimedialer Inhalte in einer Graphenstruktur repräsentiert bzw. abbildet \cite{ai-based-sem-ind-retr-soc}.
+Genauer lässt sich ein MMFG als ein gewichteter und gerichteter Graph mit attribuierten Knoten und Kanten verstehen, der die aus Plugins identifizierten und extrahierten Merkmale multimedialer Inhalte in einer Graphenstruktur repräsentiert bzw. abbildet \cite{ai-based-sem-ind-retr-soc}.
 Des Weiteren ist ein MMFG in der Lage Verbindungen zu Teilen anderer MMFGs aufzubauen, wodurch eine rekursive Struktur aus MMFGs entsteht, die Schleifen und Teilgraphen besitzen kann \cite{ai-based-sem-ind-retr-soc}.
 Ein MMFG kann wie folgt definiert werden:
 \begin{equation*}
@@ -59,7 +59,7 @@ Ein MMFG kann wie folgt definiert werden:
 \end{equation*}
 Die Menge $V$ repräsentiert die Knoten in einem MMFG und stellt die identifizierten Merkmale dar.
 Die Menge $E$ stellt wiederum die Verbindungen bzw. Beziehungen zwischen den Knoten bzw. Merkmalen dar.
-Beide Mengen können anhand ihrer Attributierung in Unterklassen aufgeteilt werden.
+Beide Mengen können anhand ihrer Attribuierung in Unterklassen aufgeteilt werden.
 Die Knotenmenge $V$ besteht aus folgenden Unterklassen: $V \in \{n,r,e,w,cn,t,m,s,l,p\}$.
 %Die Bedeutung dieser Unterklassen wird im Folgenden genauer erläutert \cite{ai-based-sem-ind-retr-soc}:
 Die folgende Aufzählung wurde aus \cite{ai-based-sem-ind-retr-soc} entnommen und erläutert die Bedeutung dieser Unterklassen:
@@ -100,7 +100,7 @@ Die folgende Aufzählung wurde aus \cite{ai-based-sem-ind-retr-soc} entnommen un
 \end{itemize}
 \cref{sec2:sota:subsec:fz-explainability:fig:mmfg-real-example} zeigt die Visualisierung eines MMFGs durch yEd.
 Dieser MMFG besitzt 185 Knoten und 222 Kanten.
-Aufgrund des steigenden Level Of Detail (LOD) vieler multimedialer Inhalte, wie z.B. durch höhere Auflösung von Bildern, steigt die Anzahl der Knoten und Kanten in MMFGs drastisch \cite{ai-based-sem-ind-retr-soc}.
+Aufgrund des steigenden Levels Of Details (LOD) vieler multimedialer Inhalte, wie z.B. durch höhere Auflösung von Bildern, steigt die Anzahl der Knoten und Kanten in MMFGs drastisch \cite{ai-based-sem-ind-retr-soc}.
 In der Praxis können MMFGs tausende Knoten und Kanten aufweisen \cite{jour-smmir}.
 In diesen Maßstäben ist eine Visualisierung eines MMFGs auf sinnvolle Weise kaum noch möglich.
 Das Hauptaugenmerk der MMFGs liegt nicht darauf für Menschen lesbar, darstellbar oder verständlich zu sein, sondern anhand ihrer Graphenstruktur geeignete Verarbeitung der Merkmale zu ermöglichen \cite{ai-based-sem-ind-retr-soc}.
@@ -111,13 +111,14 @@ Das Hauptaugenmerk der MMFGs liegt nicht darauf für Menschen lesbar, darstellba
     \caption{Visualisierung eines MMFGs durch yEd.}
     \label{sec2:sota:subsec:fz-explainability:fig:mmfg-real-example}
 \end{figure}
+
 \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-example} zeigt einen simplen $MMFG_{ex}$.
-Die Knoten \textit{Person, Body, Arm, Watch} repräsentieren identifizierte Merkmale, \textit{Clock} ist ein Synonym für \textit{Watch} und \textit{attached to} verweist auf eine Beziehung zwischen \textit{Arm} und \textit{Watch}.
+Die Knoten \textit{Person}, \textit{Body}, \textit{Arm} und \textit{Watch} repräsentieren identifizierte Merkmale, \textit{Clock} ist ein Synonym für \textit{Watch} und \textit{attached} \textit{to} verweist auf eine Beziehung zwischen \textit{Arm} und \textit{Watch}.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{chapter/chapter_2/mmfg-ex.eps}
-    \caption{Beispiel für einen $MMFG_{ex}$.}
+    \caption{Beispiel für den Multimedia Feature Graphen $MMFG_{ex}$.}
     \label{sec2:sota:subsec:fz-explainablity:fig:mmfg-example}
 \end{figure}
 
@@ -125,7 +126,7 @@ Die Knoten \textit{Person, Body, Arm, Watch} repräsentieren identifizierte Merk
 \label{sec2:sota:par:explainability-of-mmfgs}
 Um Erklärbarkeit von MMFGs zu erreichen, muss die technische Darstellung der Merkmale in eine für Menschen verständliche Bedeutung überführt werden.
 Das Überbrücken dieser Lücke ist nicht in einem einzigen Schritt machbar.
-Es benötigt mehrere Schritte um diese Lücke zu schließen.
+Es benötigt mehrere Schritte, um diese Lücke zu schließen.
 In einem ersten Zwischenschritt muss die Lücke zwischen der technischen Darstellung der Merkmale und ihrer semantischen Darstellung überbrückt werden.
 Hierzu wird ein formaler und für Maschinen lesbarer Ansatz zur Erweiterung von MMFGs benötigt \cite{towards_auto_sem_expl_mmfg}.
 In verwandten Arbeiten, wie \cite{towards_auto_sem_expl_mmfg}, wurden umfangreiche Konzepte entwickelt und beschrieben, die in der Lage sind durch Erweiterungen von MMFGs Erklärbarkeit zu erreichen.
@@ -154,10 +155,10 @@ Ein höherer Detaillierungsgrad und eine höhere Anzahl an Elementen in einem MM
 Diese Eigenschaft von MMFGs birgt eine Reihe von Problemen.
 Zum einen ist die Umsetzung aktueller Algorithmen, wie z.B. zur Bestimmung der Ähnlichkeit von MMFGs, auf rechenschwachen Systemen, wie z.B Smartphones, mit dieser Anzahl an Knoten und Kanten aufgrund Speicherplatz und Laufzeitbegrenzungen nicht einfach zu handhaben und zum anderen sind aktuelle Algorithmen, die auf dem Durchlaufen eines Graphen basieren, wie z.B die Bestimmung der Ähnlichkeit zweier MMFGs, bei solch einer Anzahl an Knoten und Kanten nicht mehr effizient und zudem sehr rechenaufwendig \cite{fast-effec-retr-large-collec}.
 
-Mathematisch betrachtet können Graphen durch ihre Adjanzenzmatrix dargestellt werden \cite{fast-effec-retr-large-collec}.
-Basierend auf einer Adjanzenzmatrix können weitere Umformungen und Berechnungen durchgeführt werden \cite{fast-effec-retr-large-collec}. Ein Beispiel hierfür ist die Umwandlung eines Graphen in einen n-dimensionalen Vektorraum. Auf diesem Vektorraum können dann wiederum weitere Berechnungen durchgeführt werden.
+Mathematisch betrachtet können Graphen durch ihre Adjazenzmatrix dargestellt werden \cite{fast-effec-retr-large-collec}.
+Basierend auf einer Adjazenzmatrix können weitere Umformungen und Berechnungen durchgeführt werden \cite{fast-effec-retr-large-collec}. Ein Beispiel hierfür ist die Umwandlung eines Graphen in einen n-dimensionalen Vektorraum. Auf diesem Vektorraum können dann wiederum weitere Berechnungen durchgeführt werden.
 Speziell für gewichtete Graphen, zu welchen auch per Definition MMFGs zählen, werden in der Regel Matrizen angewandt \cite{fast-effec-retr-large-collec}.
-Diese Matrizen erweitern eine Adjanzenzmatrix um die Gewichtung der Kanten.
+Diese Matrizen erweitern eine Adjazenzmatrix um die Gewichtung der Kanten.
 Im weiteren Verlauf dieser Arbeit werden diese Matrizen auch Wertungsmatrizen (engl. valuation matrices) genannt.
 Basierend auf diesen Darstellungen können mathematische Konzepte angewandt werden.
 Ein Beispiel für so ein mathematisches Konzept ist die Anwendung der Eigenwert-Methode, durch welche eine auf Merkmale bezogene Ähnlichkeitsberechnung von Adjanzenzmatrizen durchgeführt werden kann \cite{fast-effec-retr-large-collec}.
@@ -179,7 +180,7 @@ Diese Grundlagen umfassen des Weiteren die in \cref{sec2:sota:par:gc-encoding} b
 In \cref{sec2:sota:par:gc-similiarity} wird dann die Ähnlichkeit von Graph Codes behandelt.
 
 Graph Codes sind eine Projektion eines MMFG in einen zweidimensionalen Raum \cite{gc-2d-proj-mmfg}.
-Dabei basieren Graph Codes auf Operationen auf der Adjanzenzmatrix eines Graphen und können allgemein, per Prinzip, auf jede Art von Graphen angewendet werden.
+Dabei basieren Graph Codes auf Operationen auf der Adjazenzmatrix eines Graphen und können allgemein, per Prinzip, auf jede Art von Graphen angewendet werden.
 Allerdings wurden Graph Codes spezifisch für MMIR entwickelt.
 Graph Codes werden eingesetzt, um MMFGs zu transformieren und in einer Form darzustellen, die schnelleres und effizienteres MMIR ermöglicht \cite{fast-effec-retr-large-collec}.
 Grundlage dieser Umformung ist ein Algorithmus zur Codierung eines MMFG.
@@ -189,7 +190,7 @@ Eine Wertungsmatrix enthält jeweils eine Zeile und Spalte für einen Knoten in 
 Aufgrund dessen ist eine Wertungsmatrix auch eine quadratische Matrix.
 Eine gerichtete Kante zwischen zwei Knoten $n_1$ und $n_2$ wird in der Wertungsmatrix durch ihre Gewichtung oder durch den Wert 1 im Eintrag $(n_1,n_2)$ der Wertungsmatrix $WM$ dargestellt.
 
-Die Knoten \textit{Person, Body, Arm, Watch, Clock, attached to} des Beispiels $MMFG_{ex}$ werden in der Diagnonalen der Wertungsmatrix ebenfalls durch den Wert 1 dargestellt.
+Die Knoten \textit{Person, Body, Arm, Watch, Clock, attached to} des Beispiels $MMFG_{ex}$ werden in der Diagonalen der Wertungsmatrix ebenfalls durch den Wert 1 dargestellt.
 Dies führt zu der in \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-valuation-matrix} dargestellten Wertungsmatrix.
 
 %\input{chapter/chapter_2/valuation-matrix}
@@ -206,12 +207,12 @@ Graph Codes wenden eine Funktion $f_{enc}$ zur Codierung von Informationen in ei
 Diese Funktion codiert die Informationen zu den Typen der Knoten oder Kanten und ihren entsprechenden Attributen.
 Hierzu werden für alle Einträge bzw. Felder in der Wertungsmatrix $WM$, die nicht null sind, numerische Werte berechnet.
 Die Funktion $f_{enc}$ zur Codierung dieser Informationen kann von Applikationen je nach ihren jeweiligen Anforderungen angepasst werden \cite{gc-2d-proj-mmfg}.
-Eine beispielhafte Codierung kann wie folgt lauten: Knoten = 1, Blatt = 2, Kindsbeziehung = 3, Synonymbeziehung = 4, Beziehung = 5, Knoten (räumliche Beziehung) = 6, Knoten (Synonym) = 7.
+Eine beispielhafte Codierung kann wie folgt lauten: Knoten = 1, Blatt = 2, Kindbeziehung = 3, Synonymbeziehung = 4, Beziehung = 5, Knoten (räumliche Beziehung) = 6, Knoten (Synonym) = 7.
 Angewandt auf das Beispiel $MMFG_{ex}$ führt diese Codierung zu folgender in \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-valuation-matrix-enc} a-b) dargestellten codierten Wertungsmatrix $WM_{enc}$ bzw. Graph Code $GC_{ex}$.
 Die Farben der Einträge in \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-valuation-matrix-enc} entsprechen der Färbung der Knoten aus \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-example}.
 Die dazugehörigen Beziehungen sind ebenfalls entsprechend gefärbt.
 \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-valuation-matrix-enc} c) hingegen zeigt den durch das GMAF generierten Graph Code $GC_{ex}$ des Beispiels $MMFG_{ex}$.
-Es sei angemerkt, dass die Unterschiede zwischen dem Graph Code $GC_{ex}$ aus \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-valuation-matrix-enc} a-b) und \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-valuation-matrix-enc} c) durch die vom GMAF eigens definierte Fuktion $f_{enc}$ zu Stande kommen.
+Es sei angemerkt, dass die Unterschiede zwischen dem Graph Code $GC_{ex}$ aus \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-valuation-matrix-enc} a-b) und \cref{sec2:sota:subsec:fz-explainablity:fig:mmfg-valuation-matrix-enc} c) durch die vom GMAF eigens definierte Funktion $f_{enc}$ zustande kommen.
 Des Weiteren inkludiert das GMAF die Synonym-Knoten $Clock$ und $attached~to$ nicht in seiner Abbildung.
 Die Beziehung $attached~to$ wird im GMAF durch den Eintrag $(Arm,Watch)$ im Graph Code $GC_{ex}$ dargestellt.
 Hier wird eine feinere Differenzierung der räumlichen Beziehung vorgenommen und durch den Wert 17 dargestellt.
@@ -326,7 +327,7 @@ Es ist wichtig anzumerken, dass diese Metrik nur Knoten bzw. Merkmale betrachtet
 Die \textbf{Metrik für Merkmalsbeziehungen} $M_{FR}$ ist die Grudlage für die Berechnung der Ähnlichkeit von Beziehungen zwischen Merkmalen.
 Beziehungen in einem Graph Code werden durch Einträge dargestellt, die nicht in der Diagonalen der Matrix vorkommen und deren Wert größer null ist.
 Dabei bezieht die Berechnung dieser Metrik nur Einträge aus der Schnittmenge $M_{\cap}$ der Matrizen ein, die Beziehungen mit demselben Ausgang- und Zielknoten darstellen.
-Die Berechnung dieser Metrik basiert auf den nicht in der Diagonalen vorkommenden Einträgen der Adjanzenzmatrix $AM(M_{\cap})$.
+Die Berechnung dieser Metrik basiert auf den nicht in der Diagonalen vorkommenden Einträgen der Adjazenzmatrix $AM(M_{\cap})$.
 Die Metrik $M_{FR}$ ist definiert als das Verhältnis zwischen der Summe aller nicht in der Diagonalen vorkommenden Einträge und der Kardinalität aller nicht in der Diagonalen vorkommenden Einträge.
 Die Formel für diese Metrik lautet $M_{FR}(GC_i, GC_j) = \frac{\Sigma AM(M_{i~\cap~j}) -n}{\abs{AM(M_{\cap~i})} - n}$.
 Die Metrik $M_{FR}$ stellt somit das Verhältnis zwischen der Zahl der Einträge, die Beziehungen darstellen und der Anzahl der äquivalenten und in der Schnittmenge vorkommenden Einträge, die Beziehungen darstellen, von Graph Codes.
@@ -337,11 +338,11 @@ Die Äquivalenz der Typen von Beziehungen wird von der nächsten Metrik, der Met
 Die \textbf{Metrik für Beziehungstypen} $M_{RT}$ basiert auf der Metrik für Merkmalsbeziehungen.
 Die Codierungsfunktion $f_{enc}$ codiert für verschiedene Typen von Beziehungen unterschiedliche Werte.
 Eine Ähnlichkeit von Typen von Beziehungen setzt aber voraus, dass die Einträge, die die Beziehungen darstellen, vom selben Typ sind, damit sie verglichen werden können.
-Diese Metrik führt die Berechnungen nicht mehr anhand der Adjanzenzmatrix der zu vergleichenden Graph Codes aus, sondern anhand der Schnittmenge $M_{\cap}$ der codierten Wertungsmatrizen.
+Diese Metrik führt die Berechnungen nicht mehr anhand der Adjazenzmatrix der zu vergleichenden Graph Codes aus, sondern anhand der Schnittmenge $M_{\cap}$ der codierten Wertungsmatrizen.
 Bei dieser Berechnung wird die Subtraktion auf äquivalenten Einträgen der zu vergleichenden Graph Codes durchgeführt.
 Ist das Ergebnis dieser Subtraktion gleich null, so ist der Typ der Beziehung äquivalent.
 Sind alle äquivalenten Einträge gleich, so ist die Summe der Subtraktionen dieser Einträge zueinander gleich null.
-Im Vergleich zur Metrik $M_{FR}$, die nur Berechnungen anhand einer Adjanzenzmatrix durchführt, verwendet diese Metrik zusätzlich den Wert der Codierung, welche den Typ der Beziehung darstellt, um festzustellen, ob die verglichenen Typen äquivalent sind.
+Im Vergleich zur Metrik $M_{FR}$, die nur Berechnungen anhand einer Adjazenzmatrix durchführt, verwendet diese Metrik zusätzlich den Wert der Codierung, welche den Typ der Beziehung darstellt, um festzustellen, ob die verglichenen Typen äquivalent sind.
 Die Metrik $M_{RT}$ ist definiert als das Verhältnis zwischen der Summe aller nicht in der Diagonalen vorkommenden Einträge und der Kardinalität dieser Einträge.
 Die Formel für diese Metrik lautet $M_{RT}(GC_i,GC_j) = \frac{\Sigma^{n,i \neq j}_{i,j}(\abs{M_{\cap i} - M_{\cap j}})}{\abs{M_{\cap i} - n}}$ \cite{gc-2d-proj-mmfg}.
 
@@ -355,14 +356,20 @@ Analog zu MMFGs können auch für Graph Codes, durch das Definieren und Anwenden
 Die Erweiterung von Graph Codes um eine formale kontextfreie Grammatik führt zu Erklärbaren Semantischen Graph Codes (ESGCs) \cite{exp-mmfg}.
 
 In Bezug auf Graph Codes ist wichtig anzumerken, dass Graph Codes nicht einen allgemeinen Ersatz bzw. eine allgemeine Alternative zu MMFGs darstellen und nur in bestimmten Fällen, wie z.B. beim Vergleich von MMFGs zur Bestimmung der Ähnlichkeit, eine Verbesserung bieten \cite{gc-2d-proj-mmfg}.
-Des Weiteren werden Erklärungen von Graph Codes bislang nur anhand statistischer und rein mathematischer Vorangehensweisen erzeugt.
+Des Weiteren werden Erklärungen von Graph Codes bislang nur anhand statistischer und rein mathematischer Vorgehensweisen erzeugt.
 Es existiert keine Möglichkeit oder Untersuchung Systeme generativer KI zur Erklärbarkeit von Graph Codes zu nutzen.
 Dies führt zur ersten offenen Herausforderung.
 
 \begin{tcolorbox}[minipage, colback=white, colframe=black, arc=0pt, outer arc=0pt]
     \textbf{Offene Herausforderung OH 1.1 - Erklärbarkeit durch generative KI} \\
-    Einsatz von generativer KI als Ersatz bzw. Alternative zur statistischen und rein mathematischen Vorgehensweise um Erklärungen zu generieren.
+    Einsatz von generativer KI als Ersatz bzw. Alternative zur statistischen und rein mathematischen Vorgehensweise, um Erklärungen zu generieren.
+    % Einsatz von generativer KI als Ersatz zur statistischen und rein mathematischen Vorgehensweise, um Erklärungen für Graph Codes zu generieren.
 \end{tcolorbox}
+
+Die offene Herausforderung \openissue{sec2:sota:oi:1.1}{OH 1.1} hat in Bezug auf dieses Forschungsziel einen konkretisierenden Charakter.
+Das Forschungsziel bezieht sich in erster Linie auf Erklärbarkeit von MMIR im Allgemeinen und untersucht hierfür bereits bestehende Verfahren, mit welchen Erklärungen zu Datenstrukturen, wie den MMFGs oder Graph Codes, erzeugt werden können.
+Die offene Herausforderung bezieht sich hingegen direkt auf die Datenstruktur der Graph Codes und verdeutlicht, dass es keine Möglichkeit gibt, mittels generativer KI Erklärungen für Graph Codes zu erzeugen.
+
 Die offene Herausforderung \textbf{OH 1.1} wird im Rahmen einer Modellierung, sowie Implementierung in jeweils \hyperref[sec3:model:subsec:fz-explainability]{FZ 1.2/TB} und \hyperref[sec4:impl:subsec:fz-explainability]{FZ 1.3/I} angesprochen und untersucht.
 
 \subsubsection{Generative KI}
@@ -370,7 +377,7 @@ Die offene Herausforderung \textbf{OH 1.1} wird im Rahmen einer Modellierung, so
 Generative künstliche Intelligenz (GenKI, engl. generative AI (GenAI)) ist ein Typ künstlicher Intelligenz, die es ermöglicht, anhand vorhandener Informationen und Vorgaben, eine große Vielfalt an neuen Inhalten zu erstellen.
 Beispiele für diese Inhalte können Bilder, Videos, Audiodateien, Texte oder anderweitige synthetische Daten sein \cite{gen-ai-tech-target}.
 Synthetische Daten bezeichnet Daten, die nicht auf natürliche, sondern auf künstliche Art und Weise durch eine KI erstellt wurden, um echte Daten zu erweitern, oder zu ersetzen \cite{synt-data-ibm}.
-Damit eine generative KI synthetische Daten erzeugen kann, wird das Modell der KI mit Hilfe eines Algorithmus anhand echter Daten so trainiert, dass es in der Lage ist, die ursprüngliche Struktur und die Eigenschaften, wie Muster, Zusammenhänge und statistische Merkmale, der echten Daten zu reproduzieren \cite{synth-data-eu, synth-mostlyai}.
+Damit eine generative KI synthetische Daten erzeugen kann, wird das Modell der KI mithilfe eines Algorithmus anhand echter Daten so trainiert, dass es in der Lage ist, die ursprüngliche Struktur und die Eigenschaften, wie Muster, Zusammenhänge und statistische Merkmale, der echten Daten zu reproduzieren \cite{synth-data-eu, synth-mostlyai}.
 Generative KI wird daher als generativ bezeichnet, da sie auf Grundlage bereits vorhandener Datensätze etwas Neues bzw. etwas bisher nicht Dagewesenes erzeugt.
 Diese Eigenschaft hebt generative KI wesentlich von diskriminativer KI ab, welche einzig und allein zwischen verschiedenen Eingaben differenzieren kann \cite{computer-woche-genai}.
 
@@ -388,7 +395,7 @@ Im Vergleich dazu benötigt das Training eines generativen Modells für gewöhnl
 Das Training auf einem mit Bezeichnungen versehenen Datensatz ist damit allerdings nicht ausgeschlossen und kann auch Verwendung finden \cite{orlly-deep-gen-learning}.
 
 Es ist wichtig anzumerken, dass generative KI, die auf der Methode des Deep Learnings aufbaut, nicht neu ist und bereits in den 60ern in Form von Chatbots vorgestellt wurde \cite{gen-ai-tech-target}.
-Die erste Instanz eines solchen Chatbots hieß \enquote{ELIZA} \cite{eliza} und wurde 1966 am MIT entwickelt und hatte zur Aufgabe Gespräche mit einem Pyschotherapeuten zu simulieren \cite{computer-woche-genai}.
+Die erste Instanz eines solchen Chatbots hieß \enquote{ELIZA} \cite{eliza} und wurde 1966 am MIT entwickelt und hatte zur Aufgabe Gespräche mit einem Psychotherapeuten zu simulieren \cite{computer-woche-genai}.
 Durch das Aufkommen von künstlichen neuronalen Netzwerken (engl. articial neural networks (ANN)) und entsprechender Algorithmen in den 80ern und 90ern, sowie durch bessere Datenlage und Rechenkapazitäten wurde die Methode des Deep Learning praxistauglicher.
 Die in 2014 von Ian Goodfellow vorgestellte Technik der generativen gegnerischen Netzwerke (engl. generative adversarial networks (GAN)) führte zu einem Durchbruch und ermöglichte es generativer KI überzeugend wirkende neuartige Inhalte zu generieren \cite{medium-genai-history}.
 
@@ -403,7 +410,7 @@ Die in diesem Abschnitt vorgestellten Techniken bzw. Technologien sind dabei so 
 Maschinelles Lernen ermöglicht es Systemen, Muster und Zusammenhänge automatisch und selbstständig aus Daten und Erfahrungen zu erlernen und zu verbessern, ohne dabei explizit programmiert zu sein \cite{machine-learning-data-absolut}.
 Damit Machine Learning funktioniert und Muster und Zusammenhänge erlernt werden können, muss ein Datensatz zum Training vorhanden sein \cite{machine-learning-data-absolut}.
 Im Bereich der KI spielen \textbf{(un)-supervised machine learning} (z.Dt. (un)-überwachtes maschinelles Lernen) eine zentrale Rolle \cite{machine-learning-big-data-insider}.
-Überwachtes Lernen zeichnet sich dadurch aus, dass Algorithmen mit Hilfe von Daten trainiert werden, die im Trainingsdatensatz manuell mit Bezeichnungen versehen wurden \cite{machine-learning-data-absolut}.
+Überwachtes Lernen zeichnet sich dadurch aus, dass Algorithmen mithilfe von Daten trainiert werden, die im Trainingsdatensatz manuell mit Bezeichnungen versehen wurden \cite{machine-learning-data-absolut}.
 Daher ist überwachtes Lernen mit einem relativ hohen menschlichen Aufwand verbunden \cite{machine-learning-data-absolut}.
 Weit verbreitete Problemstellungen bzw. Aufgaben, in denen überwachtes Lernen eingesetzt werden, sind die Klassifikation und Regression \cite{machine-learning-algorithms-quick-review}.
 Unüberwachtes Lernen zeichnet sich hingegen dadurch aus, dass es ohne die Einflussnahme von Menschen Gemeinsamkeiten, Unterschiede, Gruppen und Muster in Daten erkennen kann \cite{machine-learning-data-absolut}.
@@ -434,7 +441,7 @@ Als solches erlernen LLMs die Muster der Statistiken und Wahrscheinlichkeitsvert
 Anwendungsfälle von Transformern sind vielfältig und können das z.B. Erzeugen, Übersetzen oder Zusammenfassen von Text umfassen \cite{nvidia-llm}.
 
 \textbf{Explainable AI (xAI)} (z.Dt. erklärbare KI) befasst sich mit der Erklärbarkeit von KI.
-Erklärbare KI beschäftigt sich u.a. mit der Frage \enquote{Wie kommt eine KI zu einem Ergebnis} und versucht die inneren Abläufe in einer KI zu beleuchten \cite{explainable-ai-kobold}.
+Erklärbare KI beschäftigt sich u. a. mit der Frage \enquote{Wie kommt eine KI zu einem Ergebnis} und versucht die inneren Abläufe in einer KI zu beleuchten \cite{explainable-ai-kobold}.
 Das generelle Problem mit KI ist, dass die Algorithmen wie neuronale Netzwerke und tiefes Lernen sogenannte \enquote{Black-Boxes} sind \cite{explainable-ai-kobold}.
 Zwar ist die Funktionsweise dieser Algorithmen, sowie das finale Ergebnis bekannt, aber es ist nicht erkenntlich wie die KI dieses Ergebnis erreicht hat \cite{explainable-ai-kobold}.
 Ziel von erklärbarer KI soll also sein, dass ein Mensch nachvollziehen kann, wie ein Algorithmus ein Ergebnis erreicht \cite{explainable-ai-kobold}.
@@ -550,7 +557,7 @@ In der Kategorie der Programme zur Videoerzeugung sind bekannte Systeme, wie die
 Anwendungsfälle für diese Art von Systemen können schnelle Videoerzeugung, Videobearbeitung, vor allem im Bereich Marketing oder Nachrichtensendungen sein.
 
 Die nachfolgende \cref{sec2:sota:subsec:fz-explainablity:fig:generative-ai-landscape} zeigt eine Zusammenfassung und kurze Übersicht über ausgewählte aktuelle Systeme generativer KI zusammen mit ihren entsprechenden Anwendungsmöglichkeiten.
-Es ist wichtig zu betonen, dass diese Übersicht keinen Anspruch auf Vollständigkeit erhebt, da sich diese Landschaft rapide verändert und ständig neue Techniken, Technologien und Systeme entwickelt werden.
+Es ist wichtig zu betonen, dass diese Übersicht in keinster Weise Anspruch auf Vollständigkeit erhebt, da sich diese Landschaft rapide verändert und ständig neue Techniken, Technologien und Systeme entwickelt werden.
 
 \begin{figure}[htb]
     \centering
@@ -559,7 +566,7 @@ Es ist wichtig zu betonen, dass diese Übersicht keinen Anspruch auf Vollständi
     \label{sec2:sota:subsec:fz-explainablity:fig:generative-ai-landscape}
 \end{figure}
 
-\FloatBarrier
+% \FloatBarrier
 
 \paragraph{Einschränkungen}
 Systeme generativer KI, wie z.B. das große Sprachmodell GPT-3 von OpenAI, sind bereits in der Lage realistische und höchst überzeugende Inhalte zu erzeugen.
@@ -570,8 +577,8 @@ Einige der wichtigsten Einschränkungen von Systemen generativer KI sind:
     Aufgrund dieser mangelnder Transparenz ist es nicht ersichtlich, wie ein Modell zu einer Entscheidung und zu einem Ergebnis kommt \cite{explainable-ai-kobold}.
     Resultat ist eine eingeschränkte Erklärbarkeit von Modellen.
 
-    \item \textbf{Abhängigkeit von Traingsdaten und ethische Bedenken}: Modelle generativer KI sind Produkte ihrer Trainingsdaten und daher stark von ihnen abhängig \cite{klinkhammer-genai}.
-    Aufgrund dieser Abhängigkeit können sich Ungenauigkeiten aus den Trainingsdaten in den generierten Ergebnissen wiederspiegeln \cite{klinkhammer-genai}.
+    \item \textbf{Abhängigkeit von Trainingsdaten und ethische Bedenken}: Modelle generativer KI sind Produkte ihrer Trainingsdaten und daher stark von ihnen abhängig \cite{klinkhammer-genai}.
+    Aufgrund dieser Abhängigkeit können sich Ungenauigkeiten aus den Trainingsdaten in den generierten Ergebnissen widerspiegeln \cite{klinkhammer-genai}.
     Des Weiteren sind diese Modelle zumeist speziell auf Bereiche angepasst und lassen sich nur schwer auf andere Bereiche anwenden, die nicht von den Trainingsdaten vorgesehen sind \cite{klinkhammer-genai}.
     Ein weiteres Problem generativer KI sind ethische Bedenken \cite{klinkhammer-genai}.
     Durch Voreingenommenheiten in den Trainingsdaten können Modelle selbst voreingenommene oder gar schädliche Inhalte erzeugen \cite{klinkhammer-genai}.
@@ -585,7 +592,7 @@ Einige der wichtigsten Einschränkungen von Systemen generativer KI sind:
     \item \textbf{Mangelndes Verständnis des Kontextes}:
     Die Länge des Kontextfensters eines Modells begrenzt die Menge an vorausgehendem Text, welches ein Modell bei der Generierung einer Antwort auf eine Eingabeaufforderung berücksichtigt \cite{v7labs-llm-limitations}.
     Informationen, die außerhalb dieses Kontextfensters liegen, werden unter Umständen nicht mehr berücksichtigt und können zu einem unvollständigen Verständnis des Textes oder zu kontextuell verfälschten Antworten führen \cite{v7labs-llm-limitations}.
-    In Kombination mit den ausgewählten Trainingsdaten beeinflusst die Länge des Kontextfensters somit maßgeblich die Fähigkeiten des Modells den Kontext zu verstehen, langfristige Abhängigkeiten zu erfassen und kohärnte Texte zu generieren \cite{v7labs-llm-limitations}.
+    In Kombination mit den ausgewählten Trainingsdaten beeinflusst die Länge des Kontextfensters somit maßgeblich die Fähigkeiten des Modells den Kontext zu verstehen, langfristige Abhängigkeiten zu erfassen und kohärente Texte zu generieren \cite{v7labs-llm-limitations}.
 \end{enumerate}
 
 Trotz der bemerkenswerten Fähigkeit ansprechende und überzeugende Inhalte zu generieren, ist es wichtig die Einschränkungen und Grenzen generativer KI im Blick zu behalten, um so einen effektiven, verantwortungsbewussten und informierten Einsatz von generativer KI garantieren zu können.
@@ -600,8 +607,8 @@ Weiter wurden in \cref{sec2:sota:subsubsec:genai} grundlegende Techniken und Kon
 Im Rahmen der Diskussion dieses Forschungsziels werden die Anwendungsmöglichkeiten der in \cref{sec2:sota:par:genai-systems} vorgestellten Systeme in Bezug auf das GMAF diskutiert.
 Anhand dieser Diskussion wird dann eine fundierte Entscheidung getroffen, welche Systeme generativer KI für die Umgebung \enquote{Erklärbarkeit von MMIR mittels generativer KI} am besten geeignet sind.
 
-Damit eine fundierte und informierte Entscheidung für die Auswahl von Systemen generativer KI getroffen werden kann, gilt es einige Kritieren zur Auswahl von Systemen zu beachten.
-Wichtige Kritieren zur Auswahl eines Systems sind:
+Damit eine fundierte und informierte Entscheidung für die Auswahl von Systemen generativer KI getroffen werden kann, gilt es einige Kriterien zur Auswahl von Systemen zu beachten.
+Wichtige Kriterien zur Auswahl eines Systems sind:
 \begin{itemize}
     \item \textbf{Anpassungsmöglichkeiten}: Wie flexibel ist ein System?
     Ermöglicht es die Anpassung anhand Anforderungen besonderer Anwendungsfälle?
@@ -611,7 +618,7 @@ Wichtige Kritieren zur Auswahl eines Systems sind:
     \item \textbf{Skalierbarkeit und Leistung}: Ist das System in der Lage größere Datenmengen zu verarbeiten?
     Kann es auf Anfrage zeitnah Ergebnisse generieren?
     \item \textbf{Kosten und Lizenzierung}: Einige Systeme bieten kostenfreie Nutzung oder berechnen die Kosten abhängig von der Nutzung, wiederum erfordern andere Systeme eine kommerzielle Lizenz zur Nutzung.
-    Welche Lizenzbedingung oder Preise sind mit der Nutzung eines Systeme verbunden?
+    Welche Lizenzbedingung oder Preise sind mit der Nutzung eines Systems verbunden?
 \end{itemize}
 
 Das Berücksichtigen dieser Kriterien in der Auswahl eines Systems generativer KI ermöglicht eine wohl informierte und fundierte Entscheidung über die Integration eines Systems in das GMAF und legt das Fundament für das Erreichen von Anforderungen und Zielen.
@@ -685,10 +692,10 @@ Auch die Dokumentation zur Anbindung der Schnittstelle in Java unterstützt eine
 
 Alle drei vorgestellten Systeme ermöglichen das Erzeugen von qualitativ hochwertigen Bildern.
 Hinter allen drei Systemen stehen in Bezug auf die Bepreisung der Generation von Bildern sogenannte Credits.
-Dabei bieten alle drei Systeme am Anfang eine gewissen Zahl an freien Credits.
+Dabei bieten alle drei Systeme am Anfang eine gewisse Zahl an freien Credits.
 Midjourney und Stable Diffusion vergeben beim Erstellen eines Kontos eine endliche Anzahl an Credits.
 OpenAI hingegen vergibt ein anfängliches Guthaben von 5 Dollar und monatlich eine freie Anzahl an Credits, die jeden Monat zurückgesetzt werden.
-Credits gelten allerdings nicht für die Schnittstelle von OpenAI und werden seperat berechnet \cite{openai-dall-e-seperate-billing}.
+Credits gelten allerdings nicht für die Schnittstelle von OpenAI und werden separat berechnet \cite{openai-dall-e-seperate-billing}.
 Die Anzahl der Credits sind im Rahmen von OpenAI somit nicht von Belang.
 Die Berechnung der Preise geschehen im Fall der Schnittstelle von OpenAI nutzungsbasiert und werden am Ende des Monats abgerechnet, anstatt einer monatlichen Zahlung wie im Fall von Midjourney.
 Die Tatsache, dass Midjoruney keine Schnittstelle anbietet, disqualifiziert Midjourney für die Auswahl eines Systems zur Bildgenerierung im Rahmen dieser Arbeit.
@@ -700,14 +707,14 @@ Im Rahmen dieser Arbeit wird für die folgende Modellierung und Implementierung 
 
 \paragraph{Ausgewählte Systeme zur Textgenerierung}
 Zur Auswahl eines Systems zur Textgenerierung stehen OpenAIs Sprachmodelle, wie GPT-3.5 und GPT-4, sowie Googles PaLM 2.
-Die Anwendung der Systeme zur Textgenerierung werden an folgendem Beispiel demonstriert: \enquote{Auf meiner Reise durch die Städte Frankreichs ist mir in einem kleinen Dorf in einem Dialog mit einer Bewohnerin ein Satz aufgefallen, dessen Sinn sich mir nicht erschließen will. Sie sagte: "Tomber dans les pommes". Wollte sie mir Pommes zum Essen anbieten?}
+Die Anwendung der Systeme zur Textgenerierung werden an folgendem Beispiel demonstriert: \enquote{Auf meiner Reise durch die Städte Frankreichs ist mir in einem kleinen Dorf in einem Dialog mit einer Bewohnerin ein Satz aufgefallen, dessen Sinn sich mir nicht erschließen will. Sie sagte: \enquote{Tomber dans les pommes}. Wollte sie mir Pommes zum Essen anbieten?}
 
 \textbf{Pathway Language Model 2 (PaLM 2)} \cite{google-blog-io-23} ist ein von Google entwickeltes und auf enormen Datenmengen trainiertes großes Sprachmodell \cite{google-palm2-techreport}.
 PaLM 2 zeichnet sich durch Fähigkeiten, wie das Verstehen, Erzeugen und Übersetzen von natürlicher Sprache, das Erzeugen von Code, sowie aber auch durch logisches Denken aus \cite{google-blog-io-23,google-palm2-techreport}.
-Einige der wichtigsten Merkmale von PaLM 2 ist das verbesserte Verarbeiten von Daten, das Unterstützen vieler Sprachen und verbessertes logisches Denken im Vorgleich zum Vorgänger PaLM \cite{google-palm2-techreport}.
+Einige der wichtigsten Merkmale von PaLM 2 ist das verbesserte Verarbeiten von Daten, das Unterstützen vieler Sprachen und verbessertes logisches Denken im Vergleich zum Vorgänger PaLM \cite{google-palm2-techreport}.
 Ungeachtet dessen kann PaLM 2 von Zeit zu Zeit unvollständige oder gar fälschliche Erklärungen bereitstellen \cite{google-bard-faq}.
 Die PaLM 2 Familie besteht aus vier verschiedenen Modellen, die sich jeweils in aufsteigender Größe voneinander unterscheiden: \textit{Gecko, Otter, Bison, Unicorn} \cite{google-blog-io-23}.
-Die unterschiedlichen Größen ermöglichen einen große Bandbreite an Anwendungsmöglichkeiten \cite{google-blog-io-23}.
+Die unterschiedlichen Größen ermöglichen eine große Bandbreite an Anwendungsmöglichkeiten \cite{google-blog-io-23}.
 Kleinere Modelle, wie Gecko könnten z.B. in mobilen Endgeräten Anwendung finden \cite{google-blog-io-23}.
 PaLM 2 befindet sich noch in der Entwicklung und Google bietet zum Zeitpunkt des Verfassens dieser Arbeit keine offizielle öffentliche Schnittstelle für PaLM 2 an \cite{google-palm-api-announcement}.
 Eine Möglichkeit dennoch Zugriff auf PaLM 2 zu erhalten, ist über Vertex AI oder über eine Warteliste \cite{google-palm-api-vertex-ai-waitlist}.
@@ -740,7 +747,7 @@ Die Redensart hat ihren Ursprung im 18. Jahrhundert und leitet sich von dem fran
 
 Heute wird die Redensart „tomber dans les pommes“ immer noch verwendet, um auszudrücken, dass jemand sich sehr schlecht fühlt und sich übergeben muss. Es ist eine gängige Redensart in Frankreich und wird auch in anderen französischensprachigen Ländern verwendet.
 \end{tcolorbox}
-
+\medbreak
 
 % Hier dann OpenAIs Sprachmodelle ansprechen und Eigenschaften nennen.
 
@@ -751,7 +758,7 @@ Da OpenAI keine genauen Spezifikationen zu GPT-3.5 und GPT-4 veröffentlicht hat
 Im Vergleich dazu umfasst das Vorgängermodell GPT-3, von welchem GPT-3.5 nur eine optimierte Version ist, nur 175 Milliarden Parameter \cite{gpt3-paper}.
 Eine der neusten Funktionen von GPT-4 ist die Eingabe und Verarbeitung von Bildern, anhand welcher es Erklärungen generieren können soll \cite{openai-gpt-4-announcement}.
 Dies macht GPT-4 zu einem echten multimodalen Modell, welches mehrere Arten von Eingaben akzeptieren kann \cite{openai-gpt-4-announcement}.
-Bildeingaben sind aber nachwievor in einer begrenzten Alpha Testphase und nicht unmittelbar verfügbar \cite{openai-gpt-4-announcement}.
+Bildeingaben sind aber nach wie vor in einer begrenzten Alpha Testphase und nicht unmittelbar verfügbar \cite{openai-gpt-4-announcement}.
 OpenAI bietet über eine REST Schnittstelle einfachen Zugriff auf die Sprachmodelle, wie GPT-3.5 und GPT-4, sowie Derivate, wie z.B. GPT-3.5-Turbo-(4k/16k).
 Unterschiede in diesen Derivaten liegen in der Größe des Kontextes, also der Länge an Textzeichen, die ein Modell bei der Generierung berücksichtigt.
 Die für die Sprachmodelle angebotene Schnittstelle ist die gleiche Schnittstelle wie die für DALL·E 2 und bietet ebenfalls eine umfassende Dokumentation (siehe \cite{openai-api-doc}).
@@ -795,7 +802,7 @@ Diese Redewendung wird umgangssprachlich verwendet und ist im Französischen seh
 \end{tcolorbox}
 
 Verglichen mit GPT-3.5 bietet GPT-4 grundlegend verbesserte Funktionen und Fähigkeiten \cite{openai-gpt-4-announcement}.
-Eine weiterer Vergleich verbleibt somit zwischen OpenAIs Sprachmodellen GPT-3.5 und GPT-4, sowie Googles PaLM 2.
+Ein weiterer Vergleich verbleibt somit zwischen OpenAIs Sprachmodellen GPT-3.5 und GPT-4, sowie Googles PaLM 2.
 
 Ein grundlegendes Problem von Sprachmodellen ist, dass sie zu Halluzinationen neigen.
 Es ist wichtig zu verstehen, dass wenn große Sprachmodelle auf enormen Datenmengen trainiert werden, sie die in diesen Daten enthaltenen statistische Muster und Strukturen erlernen \cite{basel-ml-arch}.
@@ -804,9 +811,9 @@ Dies kann zu faktisch falschen oder unsinnigen Texterzeugnissen, auch Halluzinat
 Dieses Problem wird verstärkt durch veraltetes Wissen.
 So gilt für die meisten Sprachmodelle von OpenAI, auch GPT-4, dass ihre Trainingsdaten respektive ihr Wissen nach September 2021 abrupt enden \cite{openai-gpt-sep-2021}.
 Dies ist für viele Anwendungsfälle dieser Sprachmodelle eine einschneidende Einschränkung, besonders für den Aspekt der Erklärbarkeit.
-Ungeachtet dessen sind alle vorgestellten Sprachmodelle nachwievor von Natur aus Black-Boxes und weisen somit nur bedingt Erklärbarkeit auf.
+Ungeachtet dessen sind alle vorgestellten Sprachmodelle nach wie vor von Natur aus Black-Boxes und weisen somit nur bedingt Erklärbarkeit auf.
 Ein Argument für GPT-4 oder PaLM 2 ist, dass sie im Vergleich zu ihren Vorgängern jeweils eine wesentliche Verbesserung darstellen.
-Eine besonders interessante Eigenschaft von PaLM 2 ist der Fokus auf Multilingualität, d.h. PaLM 2 wurde mit Daten in vielen Sprachen trainert \cite{google-palm2-techreport}.
+Eine besonders interessante Eigenschaft von PaLM 2 ist der Fokus auf Multilingualität, d.h. PaLM 2 wurde mit Daten in vielen Sprachen trainiert \cite{google-palm2-techreport}.
 Jedoch ist ihr Zugang entweder zur Zeit nicht vorhanden oder kann nur über eine Warteliste angefragt werden.
 Seit dem 6. Juli 2023 erlaubt OpenAI den Zugriff auf das Sprachmodell GPT-4-8k für alle Anwender der Schnittstelle, die einen Verlauf erfolgreich abgeschlossener Zahlungen aufweisen \cite{openai-gpt4-access}.
 Ein Argument für GPT-3.5 ist hingegen die Schnelligkeit im Vergleich zu GPT-4 und ein weitaus einfacher Zugriff über die Schnittstelle, die bereits über eine Anbindung für Java verfügt.
@@ -824,14 +831,19 @@ Diese Entscheidungen liegen in den folgenden Eigenschaften begründet:
 Die Wahl der primären Systeme liegt somit bei den oben genannten Systemen, deren Einsatz im weiteren Verlauf dieser Arbeit verfolgt wird.
 Unabhängig von der Wahl der primären Systeme verbleiben die Systeme PaLM 2 oder Stable Diffusion weiterhin als optionale Kandidaten, die ebenfalls integriert werden könnten.
 
-Die vorgestellten und ausgewählten Systeme bieten umfassende Möglichkeiten zur Bild- und Textgenerierung.
-Jedoch existiert keine Benutzerschnittstelle im GMAF, die geeignete Interaktionsmöglichkeiten für Systeme generativer KI ermöglicht.
+Die ausgewählten Systeme bieten umfassende Möglichkeiten zur Bild- und Textgenerierung.
+Jedoch existiert keine Benutzungsschnittstelle im GMAF, die geeignete Interaktionsmöglichkeiten für Systeme generativer KI ermöglicht.
 Dies führt zu einer weiteren, zweiten Herausforderung im Rahmen dieses Forschungsziels.
 
-\begin{tcolorbox}[minipage, colback=white, colframe=black, arc=0pt, outer arc=0pt]
-    \textbf{Offene Herausforderung OH 1.2 - Benutzerschnittstelle} \\
-    Sollen diese Systeme im Rahmen des GMAF sinnvoll eingesetzt werden, um Erklärungen generieren zu können, so müssen Anwendern des GMAF durch eine Benutzerschnittstelle geeignete Interaktionsmöglichkeiten mit diesen Systemen geboten werden.
+\begin{tcolorbox}[minipage, breakable, colback=white, arc=0pt, outer arc=0pt]
+    \textbf{Offene Herausforderung OH 1.2 - Benutzungsschnittstelle} \\
+    Sollen diese Systeme im Rahmen des GMAF sinnvoll eingesetzt werden, um Erklärungen generieren zu können, so müssen Anwendern des GMAF durch eine Benutzungsschnittstelle geeignete Interaktionsmöglichkeiten mit diesen Systemen geboten werden.
 \end{tcolorbox}
+
+Die offene Herausforderung \openissue{sec2:sota:oi:1.2}{OH 1.2} hat in Bezug auf dieses Forschungsziel einen einschränkenden Charakter.
+Das Forschungsziel bezieht sich in erster Linie auf Erklärbarkeit von MMIR im Allgemeinen und hat hierfür eine Reihe an existierenden Systemen generativer KI untersucht und vorgestellt.
+Die offene Herausforderung begrenzt hingegen das Augenmerk auf die Problematik, dass Anwender des GMAF die ausgewählten Systeme generativer KI sinnvoll nutzen sollen, hierfür im GMAF aber keine Benutzungsschnittstelle mit geeigneten Interaktionsmöglichkeiten besteht.
+
 Die offene Herausforderung \textbf{OH 1.2} wird im Rahmen einer Modellierung, sowie Implementierung ebenfalls in jeweils \hyperref[sec3:model:subsec:fz-explainability]{FZ 1.2/TB} und \hyperref[sec4:impl:subsec:fz-explainability]{FZ 1.3/I} angesprochen und untersucht.
 
 Im nächsten Abschnitt werden die im Rahmen dieses Forschungsziels identifizierten offenen Herausforderungen zusammengefasst.
@@ -848,9 +860,9 @@ Es gilt daher im Rahmen der Umgebung \enquote{Erklärbarkeit von MMIR mittels ge
 Im weiteren Verlauf wurden im \cref{sec2:sota:subsubsec:genai} grundlegende Technologien, Techniken und Eigenschaften beschrieben und eine Reihe an Systemen generativer KI vorgestellt.
 Aus dieser Reihe an Systemen wurde in \cref{sec2:sota:subsubsec:fz1:discussion} eine Auswahl an Systemen getroffen, deren Einsatz im weiteren Verlauf dieser Arbeit verfolgt werden.
 Die in diesem Abschnitt vorgestellten und ausgewählten Systeme bieten umfassende Möglichkeiten zur Bild- und Textgenerierung.
-Sollen diese Systeme im Rahmen des GMAF sinnvoll eingesetzt werden, um Graph Codes erklärbar zu machen, so müssen Anwendern des GMAF durch eine Benutzerschnittstelle geeignete Interaktionsmöglichkeiten mit diesen Systemen geboten werden.
+Sollen diese Systeme im Rahmen des GMAF sinnvoll eingesetzt werden, um Graph Codes erklärbar zu machen, so müssen Anwendern des GMAF durch eine Benutzungsschnittstelle geeignete Interaktionsmöglichkeiten mit diesen Systemen geboten werden.
 Es konnte festgestellt werden, dass das GMAF für seine Anwender keine Interaktionsmöglichkeiten mit Systemen generativer KI bietet.
-Dies führt zur zweiten offenen Herausforderung \textbf{OH 1.2} und der Frage \enquote{Wie muss eine Benutzerschnittstelle beschaffen sein, um geeignete Interaktionsmöglichkeiten mit Systemen generativer KI zu ermöglichen?}.
+Dies führt zur zweiten offenen Herausforderung \textbf{OH 1.2} und der Frage \enquote{Wie muss eine Benutzungsschnittstelle beschaffen sein, um geeignete Interaktionsmöglichkeiten mit Systemen generativer KI zu ermöglichen?}.
 %Es gilt daher die Funktionen dieser Systeme für die Umgebung \enquote{Erklärbarkeit von MMIR mittels generativer KI} im Rahmen des GMAF und in einem eigens dafür bestimmten Programm oder als Erweiterung in das GMAF anhand von Anwendungsfällen zu integrieren.
 Es gilt daher anhand von Anwendungsfällen geeignete Schnittstellen zur Interaktion mit den in diesem Abschnitt vorgestellten Systemen generativer KI für die Umgebung \enquote{Erklärbarkeit von MMIR mittels generativer KI} im Rahmen des GMAF in einem eigens dafür bestimmten Programm oder als Erweiterung in das GMAF umzusetzen.
 
@@ -913,7 +925,7 @@ Die Elemente \enquote{dictionary} und \enquote{collectionElements} haben jeweils
 Da die gesamte Darstellung eines Graph Codes im JSON-Format wiederum ein Objekt ist, kann \enquote{collectionElements} eine Menge bzw. Sammlung an Darstellungen von Graph Codes enthalten.
 Auf diese Weise kann eine rekursive Darstellung von Graph Codes erreicht werden.
 Das Element \enquote{matrix} hat ebenfalls ein Array als Wert.
-Da allerdings die Adjanzenzmatrix eine zweidimensional Matrix ist, sind die Werte im Array wiederum Arrays aus ganzen Zahlen mit einer Länge, die äquivalent zu Größe des Wörterbuchs ist.
+Da allerdings die Adjazenzmatrix eine zweidimensional Matrix ist, sind die Werte im Array wiederum Arrays aus ganzen Zahlen mit einer Länge, die äquivalent zu Größe des Wörterbuchs ist.
 Das GMAF integriert bereits für die Verarbeitung und Operationen mit JSON die GSON \cite{gson} Bibliothek von Google ein.
 
 Auch wenn Systeme wie GPT-3.5 oder GPT-4 und PaLM 2 in der Lage sind Daten im JSON-Format in Textform zu verarbeiten, so bleibt jedoch offen, wie die Informationen aus einem Graph Code und die damit assoziierten Informationen in die Eingabe für ein System generativer KI überführt werden kann, und welche Eigenheiten berücksichtigt werden müssen.
@@ -922,6 +934,11 @@ Dies führt zu einer ersten offenen Herausforderung im Rahmen dieses Forschungsz
     \textbf{Offene Herausforderung OH 2.1 - Transformieren von Graph Codes} \\
     Umwandlung von Graph Codes in eine passende Eingabeform für Systeme generativer KI.
 \end{tcolorbox}
+
+Die offene Herausforderung \openissue{sec2:sota:oi:2.1}{OH 2.1} hat in Bezug auf dieses Forschungsziel einen einschränkenden Charakter.
+Das Forschungsziel bezieht sich auf die Integrationsmöglichkeiten von Graph Codes und stellt eine Reihe an Komponenten vor, die mit Graph Codes assoziiert sind und im GMAF implementiert sind.
+Die offene Herausforderung begrenzt hingegen das Augenmerk auf die Problematik, dass die vorgestellten und bereits im GMAF implementierten Komponenten, keine Möglichkeiten zur Transformation der in Graph Codes gespeicherten Informationen in eine passende Eingabeform für Systeme generativer KI bieten.
+
 Die offene Herausforderung \textbf{OH 2.1} wird im Rahmen einer Modellierung, sowie Implementierung in jeweils \hyperref[sec3:model:subsec:fz-integration]{FZ 2.2/TB} und \hyperref[sec4:impl:subsec:fz-integration]{FZ 2.3/I} angesprochen und untersucht.
 
 \subsubsection{Integrationsmöglichkeiten von Systemen generativer KI}
@@ -933,7 +950,7 @@ Diese Plattform umfasst neben den Produkten auch Anleitungen, Beispiele und Tipp
 Diese Integrationsmöglichkeiten umfassen:
 \begin{itemize}
     \item Eine Schnittstelle (API), die es Entwicklern ermöglicht Modelle in ihre eigene entwickelte Software zu integrieren und aufzurufen.
-    \item Unterstützte Systeme zur Softwareentwicklung (SDKs) in vielen Programmiersprachen, die u.a von OpenAI bereitgestellt werden, oder von Mitgliedern der Community in anderen, nicht offiziell von OpenAI unterstützten Programmiersprachen entwickelt wurden \cite{openai-community-library}.
+    \item Unterstützte Systeme zur Softwareentwicklung (SDKs) in vielen Programmiersprachen, die u. a. von OpenAI bereitgestellt werden, oder von Mitgliedern der Community in anderen, nicht offiziell von OpenAI unterstützten Programmiersprachen entwickelt wurden \cite{openai-community-library}.
     \item Online-Dienste, die es Entwicklern ermöglichen Modelle ohne eigens entwickelte Software zu verwenden.
     Beispiele für diese Online-Dienste sind ChatGPT, Dall-E, Tokenizer oder ein Textklassifikator für KI.
     % https://platform.openai.com/tokenizer
@@ -958,7 +975,7 @@ Die Schnittstelle von OpenAI wird durch eine RESTful (Representational State Tra
 REST-Schnittstellen sind eine der prominenteste Arten von APIs \cite{postman-state-of-api-2023}, die eine Reihe an Konventionen verwenden, um die Verarbeitung und Übertragung von Informationen zu gewährleisten.
 Diese RESTful Schnittstelle wird spezifiziert über eine OpenAPI Spezifikationen \cite{openai-openapi-spec}, die die Funktionen der OpenAI Schnittstelle genaustens dokumentiert.
 OpenAPI ist eine auf dem Architekturstil REST basierende Spezifikationssprache für die Beschreibung der Struktur, der Reihenfolge und des Verhaltens von APIs.
-Diese Spezifikation wird für gewöhnlich in YAML oder JSON geschrieben und kann, neben der Dokumentation einer API, auch dazu verwendet werden, um mit spezialisierten Programmen, wie z.B. Swagger Codegen, automatisch Quellcode in einer spezifischen Programmiersprache zu generieren.
+Diese Spezifikation wird für gewöhnlich in YAML oder JSON geschrieben und kann, neben der Dokumentation einer API, auch dazu verwendet werden, um mit spezialisierten Programmen, wie z.B. Swagger Codegen \cite{swagger}, automatisch Quellcode in einer spezifischen Programmiersprache zu generieren.
 % https://swagger.io/tools/swagger-codegen/
 Für die Programmiersprache Java wird diese Spezifikation bereits durch die SDK bzw. Bibliothek OpenAI-Java \cite{dall-e-java-api} abgedeckt.
 
@@ -996,6 +1013,11 @@ Dies führt zu zweiten, offenen Herausforderung im Rahmen dieses Forschungsziels
     \textbf{Offene Herausforderung OH 2.2 - Integration generativer KI} \\
     Zum Zeitpunkt des Verfassens dieser Arbeit existiert keine Integration der von OpenAI angebotenen Systeme generativer KI im GMAF.
 \end{tcolorbox}
+
+Die offene Herausforderung \openissue{sec2:sota:oi:2.2}{OH 2.2} hat in Bezug auf dieses Forschungsziel einen konkretisierenden Charakter.
+Das Forschungsziel bezieht sich auf die Integration von Systemen generativer KI und stellt hierfür die Schnittstelle und die darin spezifizierten Endpunkte genauer vor.
+Die offene Herausforderung bezieht sich auf die Integration und Interaktion mit dieser Schnittstelle und ihren Endpunkten und verdeutlicht, dass es im GMAF keine Integration dieser Systeme existiert.
+
 Die offene Herausforderung \textbf{OH 2.1} wird im Rahmen einer Modellierung, sowie Implementierung ebenfalls in jeweils \hyperref[sec3:model:subsec:fz-integration]{FZ 2.2/TB} und \hyperref[sec4:impl:subsec:fz-integration]{FZ 2.3/I} angesprochen und untersucht.
 
 \paragraph{Tokenizer}
@@ -1048,7 +1070,7 @@ Forschungsziel 2.4/E wird sich der Evaluierung der in diesen Kapiteln erlangten 
 \label{sec2:sota:subsec:eval-methodology}
 Die Evaluierung ist ein entscheidender Teil im Zyklus der Softwareentwicklung und dient der Beurteilung der Qualität, Korrektheit und Einhaltung von Standards und Vorschriften.
 In diesem Abschnitt werden eine Reihe bekannter Evaluierungsmethodiken zur systematischen Evaluierung in der Softwareentwicklung vorgestellt.
-Mit Hilfe dieser Evaluierungsmethodiken lassen sich besagte Bewertungen der im Rahmen dieser Arbeit implementierten prototypischen Software vornehmen.
+Mithilfe dieser Evaluierungsmethodiken lassen sich besagte Bewertungen der im Rahmen dieser Arbeit implementierten prototypischen Software vornehmen.
 
 Das IEEE \cite{ieee} bietet mit der Norm IEEE 1028-2008 \cite{ieee-1028-2008} Richtlinien zur Durchführung von Softwareüberprüfungen.
 Diese Softwareüberprüfungen sind, formal betrachtet, Evaluierungen von in der Entwicklungen entstandenen Software-Artifakten, um Defekte festzustellen, die Qualität zu verbessern und sicherzustellen, dass alle Vorschriften eingehalten werden.
@@ -1123,7 +1145,7 @@ In \cref{sec2:sota:subsubsec:summary-remaining-open-challenges} werden die noch 
 Weiter werden in \cref{sec2:sota:subsubsec:summary-findings} die wesentlichen Ergebnisse und Erkenntnisse dieser Recherche nach den Forschungszielen der Beobachtungsphase, wie nach der Methodik von Nunamaker vorgesehen, aufgeschlüsselt und kurz zusammengefasst.
 In \cref{sec2:sota:subsubsec:summary-decisions} werden die Entscheidungen der Diskussionen der behandelten Forschungsziele aufgezählt.
 Schlussendlich wird in \cref{sec2:sota:subsubsec:summary-handling-open-challenges} die Behandlung der noch offenen Herausforderungen angesprochen.
-Schlussendlich gibt \cref{sec2:sota:subsec:summary:table:summary} eien Gesamtübersicht über den aktuellen Stand der Arbeit.
+Schlussendlich gibt \cref{sec2:sota:subsec:summary:table:summary} eine Gesamtübersicht über den aktuellen Stand der Arbeit.
 
 \subsubsection{Welche offenen Herausforderungen (OH) verbleiben?}
 \label{sec2:sota:subsubsec:summary-remaining-open-challenges}
@@ -1173,6 +1195,6 @@ Die erste offene Herausforderung \textbf{OH 2.1} wird im Rahmen des Forschungszi
 Schlussendlich werden in der nachfolgenden Tabelle die Erkenntnisse dieses Kapitels in den aktuellen Stand der Arbeit eingeordnet.
 Diese Tabelle ist als eine Checkliste zu verstehen, die sich im weiteren Verlauf dieser Arbeit, schrittweise, Kapitel für Kapitel, füllt und den Fortschritt der Arbeit wiederspiegelt.
 
-\clearpage
+% \clearpage
 
 \input{chapter/chapter_2/tables/table-summary}

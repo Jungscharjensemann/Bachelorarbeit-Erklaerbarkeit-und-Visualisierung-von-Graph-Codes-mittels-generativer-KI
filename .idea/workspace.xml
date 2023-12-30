@@ -2,10 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08618830-f318-4b59-9777-4ba681f4d29b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/chapter/appendix/appendix.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/appendix/appendix.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_1/gen_ai_mmir_example1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_1/gen_ai_mmir_example1.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_1_v3.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_1_v3.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_1_v4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_1_v4.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_1_v5.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_1_v5.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_2.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_2/tables/table-summary-open-issues.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_2/tables/table-summary-open-issues.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_2/tables/table-summary.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_2/tables/table-summary.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapter/chapter_3.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_3.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_3/chapter3-structuring.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_3/chapter3-structuring.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_3/seq-diams/seq-diam-uc-1-1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_3/seq-diams/seq-diam-uc-1-1.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_3/seq-diams/seq-diam-uc-1-2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_3/seq-diams/seq-diam-uc-1-2.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_3/seq-diams/seq-diam-uc-1-3-exp.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_3/seq-diams/seq-diam-uc-1-3-exp.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_3/seq-diams/seq-diam-uc-1-3.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_3/seq-diams/seq-diam-uc-1-3.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_3/seq-diams/seq-diam-uc-1-5.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_3/seq-diams/seq-diam-uc-1-5.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_3/seq-diams/seq-diam-uc-1-8.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_3/seq-diams/seq-diam-uc-1-8.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_3/tables/table-summary-mappings.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_3/tables/table-summary-mappings.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_3/tables/table-summary.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_3/tables/table-summary.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_3/use-cases.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_3/use-cases.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/chapter4-structuring.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/chapter4-structuring.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/chapter_4_fz1_v1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/chapter_4_fz1_v1.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/chapter_4_fz1_v2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/chapter_4_fz1_v2.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/java/EditorGraphCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/java/EditorGraphCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/java/ExplainerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/java/ExplainerFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/java/egc/EditorGraphCode-P1.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/java/egc/EditorGraphCode-P1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/java/egc/EditorGraphCode-P2.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/java/egc/EditorGraphCode-P2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/java/egc/EditorGraphCode-P3.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/java/egc/EditorGraphCode-P3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/java/egc/EditorGraphCode-P4.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/java/egc/EditorGraphCode-P4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/java/exc/ExplainerConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/java/exc/ExplainerConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/java/exp/ExplanationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/java/exp/ExplanationPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/java/exp/img/ImagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/java/exp/img/ImagePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/java/gcle/GraphCodeListElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/java/gcle/GraphCodeListElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/java/gct/GraphCodeTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/java/gct/GraphCodeTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/java/interaction/GraphCodeCalculationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/java/interaction/GraphCodeCalculationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/java/interaction/GraphCodeListMouseAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/java/interaction/GraphCodeListMouseAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/java/interaction/GraphCodeSelectionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/java/interaction/GraphCodeSelectionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/java/interaction/ImportGraphCodesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/java/interaction/ImportGraphCodesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/java/interaction/RemoveSelectedGraphCodesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/java/interaction/RemoveSelectedGraphCodesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_4/tables/table-summary.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_4/tables/table-summary.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_5.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_5.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter/chapter_6.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/chapter_6.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapter/cover/coverpage.tex" beforeDir="false" afterPath="$PROJECT_DIR$/chapter/cover/coverpage.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/literature/article.bib" beforeDir="false" afterPath="$PROJECT_DIR$/literature/article.bib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/literature/book.bib" beforeDir="false" afterPath="$PROJECT_DIR$/literature/book.bib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/literature/inproceedings.bib" beforeDir="false" afterPath="$PROJECT_DIR$/literature/inproceedings.bib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/literature/literature.bib" beforeDir="false" afterPath="$PROJECT_DIR$/literature/literature.bib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/literature/misc.bib" beforeDir="false" afterPath="$PROJECT_DIR$/literature/misc.bib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/literature/online.bib" beforeDir="false" afterPath="$PROJECT_DIR$/literature/online.bib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.aux" beforeDir="false" afterPath="$PROJECT_DIR$/main.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.bcf" beforeDir="false" afterPath="$PROJECT_DIR$/main.bcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.log" beforeDir="false" afterPath="$PROJECT_DIR$/main.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/main.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/main.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.synctex(busy)" beforeDir="false" afterPath="$PROJECT_DIR$/main.synctex(busy)" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/main.tex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +69,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
   <component name="ProjectId" id="2UcLzYqTbxWEFzUqpbl8nJ3FBPn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -68,8 +122,8 @@
         <compiler-path />
         <compiler-arguments />
         <envs />
-        <main-file />
-        <aux-dir />
+        <main-file>$APPLICATION_HOME_DIR$/jbr/bin</main-file>
+        <aux-dir>$APPLICATION_HOME_DIR$/jbr/bin</aux-dir>
       </texify-bibtex>
       <method v="2" />
     </configuration>
@@ -80,7 +134,7 @@
         <compiler-arguments />
         <envs />
         <main-file>$PROJECT_DIR$/main.tex</main-file>
-        <aux-dir>$PROJECT_DIR$/auxil</aux-dir>
+        <aux-dir />
       </texify-bibtex>
       <method v="2" />
     </configuration>
@@ -119,7 +173,7 @@
         <program>MAKEGLOSSARIESLITE</program>
         <main-file>$PROJECT_DIR$/chapter/chapter_3.tex</main-file>
         <command-line-args />
-        <work-dir>$PROJECT_DIR$/auxil</work-dir>
+        <work-dir />
       </texify-makeindex>
       <method v="2" />
     </configuration>
@@ -128,7 +182,7 @@
         <program>MAKEGLOSSARIESLITE</program>
         <main-file>$PROJECT_DIR$/main.tex</main-file>
         <command-line-args />
-        <work-dir>$PROJECT_DIR$/auxil</work-dir>
+        <work-dir />
       </texify-makeindex>
       <method v="2" />
     </configuration>

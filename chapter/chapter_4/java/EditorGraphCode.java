@@ -28,7 +28,7 @@ public class EditorGraphCode extends JPanel {
       graphCodeTable = new GraphCodeTable();
 
       // Anwendungsfall %\hyperref[sec3:model:uc-1.1]{UC-1.1}%
-      JButton openGraphCodeChooserButton = new JButton("Select Graph Code(s)");
+      JButton openGraphCodeChooserButton = new JButton("Import Graph Code(s)");
       // Auf Interaktion verweisen...
       openGraphCodeChooserButton.addActionListener(new ImportGraphCodesController(this));
       // Anwendungsfall %\hyperref[sec3:model:uc-1.2]{UC-1.2}%

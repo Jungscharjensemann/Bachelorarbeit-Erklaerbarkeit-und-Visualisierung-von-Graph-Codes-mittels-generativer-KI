@@ -1,2 +1,127 @@
-\section{Diskussion}
+\section{Zusammenfassung und Diskussion}
 \label{sec6:disc}
+In den letzten {\crefname{section}{Kapitel}{Kapiteln}\cref{sec2:sota,sec3:model,sec4:impl,sec5:eval}} wurden, aufeinander aufbauend und der Methodik nach Nunamaker folgend, in entsprechenden Forschungszielen, Lösungen für die in \cref{sec1:intro} \enquote{Einleitung} identifizierten Probleme erarbeitet.
+In \cref{sec2:sota} wurden in einer ausführlichen und gründlichen Recherche bereits bestehende Konzepte und Softwarelösungen, denen für die Lösung der identifizierten Probleme Relevanz beigemessen wird, beschrieben und untersucht.
+In \cref{sec3:model} wurden dann Konzepte, Modelle und Vorgehensweisen zur weiteren Verwendung und Einbettung der in \cref{sec2:sota} recherchierten Konzepte und Softwarelösungen modelliert.
+% Dies umfasst...
+In \cref{sec4:impl} wurde dann die in \cref{sec3:model} entwickelten Konzepte, Modelle und Vorgehensweisen in einer prototypischen Proof-of-Concept Implementierung umgesetzt und beschrieben.
+In \cref{sec5:eval} wurden dann abschließend die Funktionen der in \cref{sec4:impl} entwickelten prototypischen Proof-of-Concept Implementierung in einer Reihe an Experimenten getestet und validiert.
+Mit dem Abschluss des fünften Kapitels ist die in den letzten Kapiteln angewandte Methodik nach Nunamaker nun formal abgeschlossen.
+
+% Was ist nun das Ziel dieses Kapitels...?
+% Ziel erklären und dabei Forschungsfragen referenzieren
+% Genauer einen Rückblick auf die in der Einleitung identifizierten Probleme beziehen...
+
+Das Ziel dieses Kapitels ist es nun, die gesamte Arbeit abzurunden, d.h. die Ergebnisse der gesamten Arbeit kompakt darzustellen und diese mit den in der Einleitung angesprochenen Problembereichen und ihren entsprechend identifizierten Problemen in Beziehung zueinander zu setzen, sowie die in dieser Arbeit erlangten Erkenntnisse in den übergeordneten Themenbereich des MMIR einzuordnen. % Bezug zum übergeordneten Themenbereich MMIR
+
+% Dann strukturelle Einleitung, in der erklärt wird in welchen Abschnitten ich was mache...
+
+Im Verlauf dieses Kapitels wird in \cref{sec6:disc:subsec:categ-findings} die Einordnung der Arbeitsergebnisse vorgenommen.
+In \cref{sec6:disc:subsec:open-issues-future-work} werden verbleibende Herausforderungen angemerkt und Aspekte der Verarbeitung dieser Herausforderungen in zukünftige Arbeit, auch als \textit{Future Work} bezeichnet, eingeordnet.
+Schlussendlich wird in \cref{sec6:disc:subsec:personal-thesis} die Bearbeitung dieser Bachelorarbeit aus der Perspektive des Autors beschrieben.
+
+% Am Ende werden noch verbleibende Herausforderungen in Bezug auf das gesamte Thema (Erklärbarkeit durch generative KI) besprochen und eingeordnet (future work)...
+
+\subsection{Einordnung der Arbeitsergebnisse}
+\label{sec6:disc:subsec:categ-findings}
+% Was bedeuten nun im Umkehrschluss die Arbeit bzw. ihre Ergebnisse für diese identifizierten Probleme...
+% Konnte eine Anwendung entwickelt werden, die alle Problembereiche zufriedenstellend beantwortet? -> Ja.
+% Hierfür einzeln auf die Problembereiche punktuell eingehen und dann die obigen Fragen beantworten...
+
+In diesem Abschnitt werden die in dieser Arbeit gewonnenen Erkenntnisse in kompakter Darstellung in Beziehung zu den in der Einleitung angesprochenen Problembereichen und ihren entsprechend identifizierten Problemen gesetzt.
+Darüber hinaus wird diskutiert, ob das in \cref{sec1:intro:subsec:objective} definierte Ziel für diese Arbeit erfolgreich abgedeckt werden konnte.
+Schlussendlich werden die in dieser Arbeit gewonnenen Erkenntnisse in den übergeordneten Themenbereich des MMIR eingeordnet und es wird in den nächsten \cref{sec6:disc:subsec:open-issues-future-work} übergeleitet.
+
+% PB1: Generative KI ist aktuell nicht für die Erklärbarkeit von MMIR-Prozessen nutzbar...
+Der erste Problembereich, angesprochen in \cref{sec1:intro:subsec:problems:pb:explain}, beschreibt Probleme in Beziehung auf die Erklärbarkeit im GMAF.
+Die in diesem Problembereich beschriebenen Probleme werden im Folgenden noch einmal kurz beschrieben, bevor diese dann in Beziehung zu den gewonnenen Erkenntnisse gesetzt werden und erklärt wird, wie diese Probleme durch die Arbeit angesprochen und behandelt wurden.
+\begin{enumerate}
+  \item Auch wenn das GMAF bereits Verfahren zur Erklärbarkeit von Prozessen des MMIR bietet, so basieren diese auf statischen und rein mathematischen Ansätzen.
+
+  Im Rahmen dieser Arbeit konnte die Erkenntnis erlangt werden, dass durch den Einsatz generativer KI die statischen und rein mathematischen Ansätze zur Erklärbarkeit von Prozessen des MMIR durch dynamischere Verfahren ersetzt werden können.
+  Die entwickelte Anwendung bietet eine Lösung für dieses Problems, indem durch den Einsatz der von OpenAI entwickelten Systeme generativer KI Benutzern die Möglichkeit geboten wird Erklärungen für Prozesse des MMIR, genauer Graph Codes, auf dynamische Art und Weise zu generieren.
+
+  \item Die einzige Form von Erklärungen, die das GMAF bietet, sind (eingeschränkte) textuelle Erklärungen, obwohl auch andere Formen von Erklärungen, wie z.B. in Form von kurzen prägnanten Bildern, infrage kämen.
+
+  % Die entwickelte Anwendung bietet in ihrer Benutzungsschnittstelle eine Arbeitsfläche, in welcher zwischen den Formen der Erklärung bzw. den Erklärungstypen hin- und hergeschalten werden kann.
+  % Diese Formen umfassen die textuelle Form, also Erklärungen im Textformat und die visuelle Form, also Erklärungen in Form eines ähnlichen Bildes.
+
+  Im Rahmen dieser Arbeit konnte die Erkenntnis erlangt werden, dass durch eine geeignete Benutzungsschnittstelle auch andere Formen der Erklärung möglich sind.
+  Die entwickelte Anwendung bietet in ihrer Benutzungsschnittstelle eine Lösung für dieses Problem in Form einer Arbeitsfläche, in welcher zwischen den Formen der Erklärung bzw. den Erklärungstypen hin- und hergeschaltet werden kann.
+  Diese Formen umfassen die textuelle Form, also Erklärungen im Textformat und die visuelle Form, also Erklärungen in Form eines Bildes.
+  Auf diese Weise sind Benutzer in der Lage originelle und qualitativ hochwertige Texte und Bilder als Erklärungen zu erzeugen.
+
+  \item Das GMAF bietet keine Möglichkeit, mit welcher Benutzer unterschiedliche Anwendungsfälle, wie z.B. Gemeinsamkeiten oder Differenzen zwischen Graph Codes, in Bezug auf Erklärungen abdecken können.
+
+  Im Rahmen dieser Arbeit konnte die Erkenntnis erlangt werden, dass durch eine geeignete Benutzungsschnittstelle den Benutzern der Anwendung Berechnungen auf Graph Codes zugänglich gemacht werden können, um verschiedenste Anwendungsfälle in Bezug auf Erklärungen abdecken zu können.
+  Die entwickelte Anwendung bietet in ihrer Benutzungsschnittstelle eine Lösung für dieses Problem in Form einer listen artigen Arbeitsfläche, in welcher eine Reihe an Graph Codes ausgewählt und eine Reihe an Aktionen und Operationen auf diesen ausgeführt werden können.
+
+  \item Das GMAF bietet nur grobe Möglichkeiten zur Anpassung der generierten Erklärungen, obwohl Anforderungen an Erklärungen je nach Anwendungsbereich erheblich variieren können.
+
+  Im Rahmen dieser Arbeit konnte die Erkenntnis erlangt werden, dass durch eine geeignete Benutzungsschnittstelle umfassende Möglichkeiten zur Anpassung von generierten Erklärungen möglich sind.
+  Die entwickelte Anwendung bietet in ihrer Benutzungsschnittstelle durch ihre Elemente \enquote{Erweiterte Optionen} umfassende Möglichkeiten die Anfragen zur Generierung von Erklärungen an die Endpunkte der Systeme generativer KI von OpenAI so zu parametrisieren, dass diese eine Breite an Anforderungen für verschiedenste Anwendungsbereiche abdecken.
+\end{enumerate}
+
+% PB2: Das GMAF bietet keine Integration generativer KI.
+Der zweite Problembereich, angesprochen in \cref{sec1:intro:subsec:problems:pb:integration}, beschreibt Probleme in Beziehung auf die Integration generativer KI in das GMAF.
+Die in diesem Problembereich beschriebenen Probleme werden im Folgenden noch einmal kurz beschrieben, bevor diese dann in Beziehung zu den gewonnenen Erkenntnisse gesetzt werden und erklärt wird, wie diese Probleme durch die Arbeit angesprochen und behandelt wurden.
+\begin{enumerate}
+  \item Das GMAF besitzt keine Anbindung von Systemen generativer KI.
+
+  % API leicht und flexibel integrierbar ist...
+  Im Rahmen dieser Arbeit wurde die Erkenntnis erlangt, dass eine einfache und flexible Integration der von OpenAI angebotenen Systeme generativer KI und ihrer Endpunkte möglich ist.
+  Die entwickelte Anwendung löst dieses Problem durch die Integration der von OpenAI entwickelten Systeme generativer KI und ihrer Endpunkte zu den GPT-Modellen und Dall-E 2.
+  %Die entwickelte Anwendug integriert die Endpunkte der von OpenAI entwickelten Systeme generativer KI.
+
+  \item Das GMAF besitzt keine Möglichkeit die in MMIR-Prozessen identifizierten Merkmale in gültige und geeignete Eingabedaten für Systeme generativer KI zu überführen.
+
+  % Erkenntnis: Systeme generativer KI benötigen als Eingabe eine Prompt. Eine Prompt besteht nur aus ein oder mehreren Textnachrichten.
+  % Erkenntnis: Informationen können nicht einfach stumpf und unstrukturiert übertragen werden, sondern müssen logisch geordnet und dem System generativer KI möglichst detailliert erklärt werden (Struktur und Ablauf der Informationen muss dem System erklärt werden...).
+  Im Rahmen dieser Arbeit wurde die Erkenntnis erlangt, dass die integrierten Systeme generativer KI als Eingabe eine Prompt benötigen.
+  Eine Prompt besteht dabei aus ein oder mehreren Textnachrichten.
+  Es wurde zudem die Erkenntnis erlangt, dass die in Graph Codes gespeicherten Informationen nicht stumpf und unstrukturiert in die Eingabe überführt werden können, sondern diese in einer logischen Abfolge geordnet übertragen und dem System generativer KI möglichst detailliert erklärt werden müssen.
+  Die entwickelte Anwendung bietet eine Lösung für dieses Problem, indem das Datenmodell für Graph Codes so erweitert wird, dass die in Graph Codes gespeicherten Informationen in Textformat abgerufen werden können.
+\end{enumerate}
+
+Das Ziel für diese Arbeit lautete: \textit{Die im \gmaf{} implementierten Konzepte zur Erklärung von \mmir{}-Prozessen sollen durch \textbf{generative KI} abgelöst werden, um \textbf{bessere Erklärungen}, sowie \textbf{andere Formen von Erklärungen} zu ermöglichen.}
+
+Das Ziel für diese Arbeit konnte erfolgreich erfüllt werden, da die entwickelte Anwendung das GMAF durch die Integration generativer KI erweitert, bereichert und zugleich die statischen und rein mathematischen Verfahren im GMAF ablöst.
+Des Weiteren konnten durch die Integration generativer KI auch andere Formen von Erklärungen in das GMAF eingebunden werden.
+
+% Schlussendlich werden die in dieser Arbeit gewonnenen Erkenntnisse in den übergeordneten Themenbereich des MMIR eingeordnet
+
+Es kann festgehalten werden, dass die im Rahmen dieser Arbeit entwickelte Anwendung in dieser Form und ihrem Umfang bislang im Themenbereich des MMIR noch nicht entwickelt oder vorgestellt wurde und somit einen wichtigen Beitrag im Themenbereich MMIR leisten kann.
+% Zu dieser Erkenntnis kommt auch der für diese Arbeit zuständige Betreuer / Erstprüfer und im Themenfeld MMIR befindliche Experte Prof. Dr.-Ing. Stefan Wagenpfeil.
+
+Im nachfolgenden Abschnitt werden abschließend Aspekte beschrieben, die im Rahmen dieser Arbeit nicht abgedeckt werden konnten, oder die sich im Rahmen dieser Arbeit ergeben haben und folglich als Herausforderung verbleiben und im Rahmen zukünftiger Arbeiten / Projekte behandelt werden könnten.
+
+\subsection{Verbleibende Herausforderungen und \enquote{Future Work}}
+\label{sec6:disc:subsec:open-issues-future-work}
+% Was verbleibt noch? Welche Herausforderungen gibt es noch? -> Future Work...
+Drei verbleibende Herausforderungen können formuliert werden, die im Rahmen zukünftiger Arbeiten behandelt werden könnten:
+\begin{itemize}
+  \item Optimierung der Prompt, z.B. Testen und Evaluierung von Variationen an Instruktionen.
+  \item Andere Formen von Erklärungstypen in die Benutzungsschnittstelle einbinden.
+  Dies würde die Integration von anderen Systemen generativer KI voraussetzen und führt zum nächsten Punkt.
+  \item GPT-Modelle unterstützten bislang nur eine Eingabemodalität: Text \cite{openai-gpt-4-vision-doc}.
+  Dadurch ist die Breite an potentiellen Anwendungsfällen dieser Modelle begrenzt \cite{openai-gpt-4-vision-doc}.
+  OpenAI hat in einem Update (siehe \cite{openai-new-update-6_11_23}) ein Derivat des GPT-4 Modells, GPT-4V(ision) bzw. GPT-4-Vision-Preview, vorgestellt, welches in der Lage sein soll auch Bilder als Eingabemodalität zu unterstützen \cite{openai-gpt-4-vision-doc,openai-new-update-6_11_23}.
+  Auf diese Weise soll dieses neue Modell in der Lage sein echte Bilder zu verstehen, zu beschreiben und Bildunterschriften zu erzeugen \cite{openai-new-update-6_11_23}.
+  Dies verspricht eine Vielzahl von neuen Anwendungsmöglichkeiten in Bezug auf das GMAF.
+  Dieses Modell zu integrieren und seine Funktionen im Kontext des MMIR voll auszuspielen, kann Gegenstand zukünftiger Arbeiten sein.
+  \item Ein weiterer interessanter Punkt im Rahmen zukünftiger Arbeiten und/oder der Forschung wäre das Integrieren und Testen anderer Systeme generativer KI, welche nicht zwangsläufig von OpenAI entwickelt wurden oder angeboten werden.
+  Wie bereits in \cref{sec2:sota:par:genai-systems} angemerkt wurde, gibt es viele Systeme generativer KI und die Landschaft dieser Systeme ändert sich rapide.
+\end{itemize}
+
+Die aufgezählten verbleibenden Herausforderung zeigen nur einen Ausschnitt an möglichen Herausforderungen, demonstrieren aber auch klar und deutlich den Umfang der in dieser Arbeit behandelten Aspekte, sowie ihre Relevanz für weitere zukünftige Forschung und Entwicklung im Bereich des MMIR.
+
+\subsection{Persönliches Fazit}
+\label{sec6:disc:subsec:personal-thesis}
+Bereits im Wintersemester WS 22/23 hatte ich große Freude an der Bearbeitung des Kurses \enquote{01519 Fachpraktikum Multimedia Information Retrieval} im Lehrgebiet Multimedia und Internetanwendungen.
+In diesem Fachpraktikum lernte ich das erste Mal die Methodik nach Nunamaker kennen und anwenden, die auch in dieser Arbeit zur Anwendung kam und eine große Hilfe beim Problemverständnis und der Problemlösung darstellte.
+Die Methodik ermöglichte mir durch das direkte Vorgeben der Struktur eine optimale Vorgehensweise zur Problemlösung, mit welcher ich meine Ideen für die Arbeit frei, aber gezielt ausführen und entfalten konnte.
+Gekoppelt mit einer gewissen Programmieraffinität hatte ich ebenfalls große Freude und keine Probleme bei der Entwicklung der prototypischen Proof-of-Concept Implementierung.
+
+% Charakter der Arbeit bzw. Vorgehensweise herausarbeiten...? -> wie mich diese Vorgehensweise unterstützt hat und meine eigenen Stärken geboostet hat...
+% Ohne Nunamaker hätte ich wahrscheinlich wesentlich mehr Probleme und daraus resultierend Stress gehabt...
+% Zudem gute Betreuung ...

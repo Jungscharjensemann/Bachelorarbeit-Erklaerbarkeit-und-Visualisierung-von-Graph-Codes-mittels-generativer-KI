@@ -1,7 +1,7 @@
 \begin{usecase}{UC-1.1 Graph Code(s) importieren}
 \label{sec3:model:uc-1.1}
     \desc{
-        Benutzer klicken in der Arbeitsfläche einen Knopf \enquote{Select Graph Code(s)}.
+        Benutzer klicken in der Arbeitsfläche einen Knopf \enquote{Import Graph Code(s)}.
         Daraufhin öffnet sich ein Filechooser, in welchem Benutzer eine Auswahl von einem oder mehrerer Graph Code Datei(en) treffen können.
         Die ausgewählten Graph Code Datei(en) werden einer Liste in der Arbeitsfläche hinzugefügt und angezeigt.
     }
@@ -12,7 +12,7 @@
     \tcbline
     \mainflow{
         \item System zeigt eine Liste in der Arbeitsfläche an.
-        \item Benutzer klickt Knopf \enquote{Select Graph Code(s).}
+        \item Benutzer klickt Knopf \enquote{Import Graph Code(s).}
         \item System zeigt Filechooser an.
         \item Benutzer wählt ein oder mehrere Graph Code Datei(en) aus.
         \item System fügt Graph Code Datei(en) der Liste in der Arbeitsfläche zu.
@@ -115,7 +115,7 @@
 \label{sec3:model:uc-1.6}
     \desc{
         Benutzer wählen in der Arbeitsfläche über Knöpfe \enquote{Image} oder \enquote{Text} den Typ der Erklärung aus.
-        Anhand der ausgewählten Erklärung wird die Benutzerschnittstelle in der Arbeitsfläche für den jeweiligen Erklärungstyp umgeschaltet.
+        Anhand der ausgewählten Erklärung wird die Benutzungsschnittstelle in der Arbeitsfläche für den jeweiligen Erklärungstyp umgeschaltet.
     }
     \tcbline
     \actors{Benutzer, System}
@@ -124,10 +124,10 @@
     \tcbline
     \mainflow{
         \item Benutzer wählen über die Knöpfe \enquote{Image} oder \enquote{Text} den Typ der Erklärung aus.
-        \item System schaltet auf für Typ spezifische Benutzerschnittstelle um.
+        \item System schaltet auf für Typ spezifische Benutzungsschnittstelle um.
     }
     \tcbline
-    \post{Benutzerschnittstelle für spezifischen Erklärungstyp umgeschaltet.}
+    \post{Benutzungsschnittstelle für spezifischen Erklärungstyp umgeschaltet.}
 \end{usecase}
 
 \begin{usecase}{UC-1.7 Erweiterte Optionen anpassen}
@@ -163,7 +163,7 @@
     \mainflow{
         \item Benutzer klickt auf Knopf \enquote{Generate ...}
         \item System lässt durch Endpunkt Erklärung generieren.
-        \item System zeigt Erklärung in einem dafür vorgesehenen Bereich der Benuzterschnittstelle an.
+        \item System zeigt Erklärung in einem dafür vorgesehenen Bereich der Benutzungsschnittstelle an.
     }
     \tcbline
     \post{Keine.}

@@ -17,18 +17,18 @@ Dies umfasst die Transformation von Graph Codes und die Integration der Schnitts
 In diesem Abschnitt werden die Grundlagen für die in diesem Kapitel beschriebene prototypische Proof-of-Concept Implementierung festgehalten.
 Dies umfasst die allgemeine Architektur, ihr zugrunde liegendes Prinzip, ihr hierarchischer Aufbau, sowie die Abhängigkeiten zu Drittanbieter-Bibliotheken.
 
-\paragraph{Architekturmuster}
-Die Implementierung der Software folgt dem Muster des \textit{Model-View-Controller}-Prinzips und teilt die Architektur der Software in drei seperate Bereiche: \textit{Model} für die Datenstrukturen, \textit{View} für das Frontend bzw. die Benutzerschnittstellen und \textit{Controller} zum Handhaben von Ereignissen und Interaktionen zwischen den Bereichen \textit{Model} und \textit{View}.
+\subsubsection{Architekturmuster}
+Die Implementierung der Software folgt dem Muster des \textit{Model-View-Controller}-Prinzips und teilt die Architektur der Software in drei separate Bereiche: \textit{Model} für die Datenstrukturen, \textit{View} für das Frontend bzw. die Benutzungsschnittstellen und \textit{Controller} zum Handhaben von Ereignissen und Interaktionen zwischen den Bereichen \textit{Model} und \textit{View}.
 Ziel dieser Architektur ist durch das gezielte Trennen dieser Bereiche die Eigenschaften wie Wiederverwendbarkeit, Wartbarkeit und Robustheit der Software zu erhöhen und zu stärken.
 
-Das erste Forschungsziel \hyperref[sec4:impl:subsec:fz-explainability]{FZ 1.3/I} widmet sich der Benutzerschnittstelle, ihren Elementen und der Interaktion mit diesen und deckt somit die Bereiche \textit{View, Controller} ab.
-Das zweite Forschungsziel \hyperref[sec4:impl:subsec:fz-integration]{FZ 2.3/I} widmet sich der Transformation von Graph Codes und der Integration der Schnittstelle und ihren Endpunkten und deckt somit den Bereich \textit{Model} ab.
+Das erste Forschungsziel \hyperref[sec4:impl:subsec:fz-explainability]{FZ 1.3/I} widmet sich der Benutzungsschnittstelle, ihren Elementen und der Interaktion mit diesen und behandelt somit die Bereiche \textit{View} und \textit{Controller}.
+Das zweite Forschungsziel \hyperref[sec4:impl:subsec:fz-integration]{FZ 2.3/I} widmet sich der Transformation von Graph Codes, sowie der Integration der Schnittstelle von OpenAI, ihrer Endpunkte und dem Erstellen von Anfragen an diese Endpunkte und behandelt somit die Bereiche \textit{Controller} und \textit{Model}.
 
 \cref{sec4:impl:subsec:basiscs:fig:hierarchy} zeigt die Hierarchie des Quellcodes, der in diesem Kapitel beschriebenen prototypischen Proof-of-Concept Implementierung.
 
 \input{chapter/chapter_4/arch-struct}
 
-\paragraph{Abhängigkeiten (Maven)}
+\subsubsection{Abhängigkeiten (Maven)}
 Für die prototypische Proof-of-Concept Implementierung der in \cref{sec3:model} vorgestellten konzeptuellen Modellierung wird die Programmiersprache Java \cite{java} ausgewählt.
 Der in diesem Kapitel vorgestellte Quellcode ist auf GitHub verfügbar.
 Die Implementierung in Java baut hierbei auf Maven \cite{maven}, einem Build-Tool der Apache Software Foundation für die Projektverwaltung und Management von Abhängigkeiten, auf.
@@ -38,36 +38,100 @@ Im Folgenden werden die in diesem Projekt verwendet Abhängigkeiten aufgezählt 
 
 \clearpage
 
-\subsection[FZ 1.3/I Erklärbarkeit von MMIR mittels generativer KI]{\texorpdfstring{FZ 1.2/TB Erklärbarkeit von MMIR mittels \\ generativer KI}{FZ 1.3/I Erklärbarkeit von MMIR mittels generativer KI}}
+\subsection[FZ 1.3/I Erklärbarkeit von MMIR mittels generativer KI]{\texorpdfstring{FZ 1.3/I Erklärbarkeit von MMIR mittels \\ generativer KI}{FZ 1.3/I Erklärbarkeit von MMIR mittels generativer KI}}
 \label{sec4:impl:subsec:fz-explainability}
 
 \input{chapter/chapter_4/chapter_4_fz1_v1}
 
+\clearpage
+
 \subsection{FZ 2.3/I Integration generativer KI in das GMAF}
 \label{sec4:impl:subsec:fz-integration}
-% Einleitung in FZ 2.3/I +
-% Strukturelle Einleitung...
 
-\subsubsection{Umsetzung der Transformation von Graph Codes}
-\label{sec4:impl:subsubsec:gc-transformation}
-
-\subsubsection{Integration der Endpunkte}
-\label{sec4:impl:par:endpoint-integration}
+\input{chapter/chapter_4/chapter_4_fz2_v1}
 
 \clearpage
 
 \subsection{Zusammenfassung}
 \label{sec4:impl:subsec:summary}
-% Einleitung zur Zusammenfassung
-In diesem Kapitel wurde die Implementierung behandelt.
-Im Folgenden werden die wesentlichen Ergebnisse und Erkenntnisse der Implementierung nach den Forschungszielen der Implementierungsphase, wie nach der Methodik nach Nunamaker vorgesehen, aufgeschlüsselt und in \cref{sec4:impl:subsubsec:summary-findings} in ... kurz zusammengefasst.
+In diesem Kapitel wurde die Implementierung behandelt und es wurde in \cref{sec4:impl:subsec:fz-explainability} die prototypische Implementierung einer Benutzungsschnittstelle mit geeigneten Interaktionsmöglichkeiten zur Verarbeitung von Graph Codes und zur Erzeugung von textuellen und visuellen Erklärungen vorgestellt und beschrieben, sowie in \cref{sec4:impl:subsec:fz-integration} die prototypische Proof-of-Concept Implementierung von Funktionen zur Transformation von Graph Codes, sowie zur Interaktion und Integration der Endpunkte der Schnittstelle von OpenAI zur Erzeugung von textuellen und visuellen Erklärungen vorgestellt und beschrieben.
+Im Folgenden werden die wesentlichen Ergebnisse und Erkenntnisse der Implementierung nach den Forschungszielen der Implementierungsphase, wie nach der Methodik nach Nunamaker vorgesehen, aufgeschlüsselt und in \cref{sec4:impl:subsubsec:summary-findings} kurz zusammengefasst.
+Des Weiteren wird in \cref{sec4:impl:subsubsec:further-approach} das weitere Vorgehen festgehalten und schlussendlich in \cref{sec4:impl:subsec:summary:table:summary} eine Übersicht des aktuellen Arbeitsstands in einer Tabelle dargestellt.
 
 \subsubsection{Gewonnene Erkenntnisse}
 \label{sec4:impl:subsubsec:summary-findings}
-% Abbildungen und Screenshots zeigen das Ergebnis der Proof-of-Concept Implementierung. Screenshots werden beschrieben und erklärt.
-% In ... (Tab) werden dann die Ergebnisse aufgeschlüsselt und in Tabelle zusammengefasst.
+In diesem Abschnitt werden die Erkenntnisse aus den Forschungszielen \enquote{FZ 1.3/I Erklärbarkeit von MMIR mittels generativer KI} und \enquote{FZ 2.3/I Integration generativer KI in das GMAF} zusammengefasst.
+
+Im ersten Forschungsziel \enquote{FZ 1.3/I Erklärbarkeit von MMIR mittels generativer KI} wurde eine prototypische Proof-of-Concept Implementierung der in \cref{sec3:model} im Rahmen der Modellierung entwickelten Konzepte zur Erklärbarkeit von MMIR mittels generativer KI beschrieben.
+Dies umfasst eine Beschreibung des Aufbaus der Benutzeroberfläche und der in ihr verbauten Komponenten.
+Des Weiteren wurde die Interaktion zwischen Benutzern des GMAF und diesen Komponenten, sowie die Interaktion zwischen diesen Komponenten thematisiert.
+
+Im zweiten Forschungsziel \enquote{FZ 2.3/I Integration generativer KI in das GMAF} wurde eine prototypische Proof-of-Concept Implementierung der in \cref{sec3:model} im Rahmen der Modellierung entwickelten Konzepte zur Integration generativer KI in das GMAF beschrieben.
+Dies umfasst eine Beschreibung der Funktionen zur Transformation der in Graph Codes gespeicherten Informationen, sowie eine Beschreibung der Interaktion mit und Integration von Endpunkten der Schnittstelle.
+
+Die folgenden \cref{sec4:impl:subsubsec:summary-findings:fig:ui-ex-1,sec4:impl:subsubsec:summary-findings:fig:ui-ex-2,sec4:impl:subsubsec:summary-findings:fig:ui-ex-3,sec4:impl:subsubsec:summary-findings:fig:ui-ex-4,sec4:impl:subsubsec:summary-findings:fig:ui-ex-5} verdeutlichen die Erkenntnisse bzw. Ergebnisse der prototypischen Proof-of-Concept Implementierung anhand Screenshots.
+\cref{sec4:impl:subsubsec:summary-findings:fig:ui-ex-1,sec4:impl:subsubsec:summary-findings:fig:ui-ex-2} zeigen dabei den Ausgangspunkt des Programms zur Erklärung von Graph Codes.
+\cref{sec4:impl:subsubsec:summary-findings:fig:ui-ex-1} zeigt hierbei in der rechten Arbeitsfläche \textit{ExplanationPanel} die Schnittstelle zur Erzeugung von visuellen Erklärungen bzw. Bildern für Graph Codes und \cref{sec4:impl:subsubsec:summary-findings:fig:ui-ex-2} entsprechend die Schnittstelle zur Erzeugung von textuellen Erklärungen.
+In keiner der beiden Abbildungen wurde zuvor ein Graph Code ausgewählt, wie es auch anhand des Platzhalters \enquote{No GraphCode selected!} im rechten Teil der linken Arbeitsfläche bzw. dem \textit{GraphCodeTable} erkennbar ist.
+
+% In \cref{sec4:impl:subsubsec:summary-findings:fig:ui-ex-3} wurden in die Liste in der linken Arbeitsfläche eine Reihe an Graph Codes importiert. \cref{sec4:impl:subsubsec:summary-findings:fig:ui-ex-4} zeigt daraufhin die Auswahl eines Graph Codes aus der Liste, den Einfluss, die diese Auswahl auf die anderen Komponenten, sowie eine durch die Schnittstelle generierte, visuelle Erklärung bzw. Bild zum ausgewählten Graph Code. Besonders beeinflusst wird die Komponente \textit{GraphCodeTable}, in welcher der ausgewählte Graph Code in Tabellenform dargestellt wird und die Komponente \textit{ExplanationPanel}, in welcher die aus den Informationen des Graph Codes erzeugte Prompt in einem Textfeld \enquote{Prompt} dargestellt wird. Das mit dieser Prompt generierte Bild ist im unteren Teil von \textit{ExplanationPanel} dargestellt. Analog zeigt \cref{sec4:impl:subsubsec:summary-findings:fig:ui-ex-5} die Auswahl eines anderen Graph Codes aus der Liste und eine in \textit{ExplanationPanel} generierte, textuelle Erklärung.
+
+\cref{sec4:impl:subsubsec:summary-findings:fig:ui-ex-4,sec4:impl:subsubsec:summary-findings:fig:ui-ex-5} zeigen daraufhin jeweils die Auswahl eines Graph Codes aus der Liste und wie diese Auswahl die anderen Komponenten der Schnittstelle beeinflusst, sowie eine für den entsprechend gewählten Erklärungstypen generierte Erklärung.
+Die beeinflussten Komponenten sind dabei \textit{GraphCodeTable}, in welcher der ausgewählte Graph Code in Tabellenform dargestellt wird und \textit{ExplanationPanel}, in welcher die aus den Informationen des Graph Codes erzeugte Prompt in einem Textfeld \enquote{Prompt} dargestellt wird.
+Die aus dieser Prompt generierte Erklärung ist ensprechend im unteren Teil von \textit{ExplanationPanel} in entweder einem Textfeld für die textuelle Erklärung, oder in einem Bild für die visuelle Erklärung dargestellt.
+
+% Weiter auf die Screenshots eingehen...
+% Zu Anfang jeder Beschreibung einfach beschreiben was es im Screenshot zu sehen gibt.
+% Dann eventuell auch recht detailliert beschreiben, in welchem Zustand die Komponenten (Liste, Table, ExplanationPanel) jeweils sind.
+
+\begin{landscape}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{chapter/chapter_4/ui-ex-1}
+    \caption{Benutzungsschnittstelle zum Generieren einer visuellen Erklärung.}
+    \label{sec4:impl:subsubsec:summary-findings:fig:ui-ex-1}
+  \end{figure}
+\end{landscape}
+
+\begin{landscape}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{chapter/chapter_4/ui-ex-2}
+    \caption{Benutzungsschnittstelle zum Generieren einer textuellen Erklärung.}
+    \label{sec4:impl:subsubsec:summary-findings:fig:ui-ex-2}
+  \end{figure}
+\end{landscape}
+
+\begin{landscape}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{chapter/chapter_4/ui-ex-3}
+    \caption{Liste mit einer Reihe an importieren Graph Codes.}
+    \label{sec4:impl:subsubsec:summary-findings:fig:ui-ex-3}
+  \end{figure}
+\end{landscape}
+
+\begin{landscape}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{chapter/chapter_4/ui-ex-4}
+    \caption{Auswahl eines Graph Codes und eine generierte, visuellen Erklärung bzw. ein Bild.}
+    \label{sec4:impl:subsubsec:summary-findings:fig:ui-ex-4}
+  \end{figure}
+\end{landscape}
+
+\begin{landscape}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{chapter/chapter_4/ui-ex-5}
+    \caption{Auswahl eines Graph Codes und eine generierte, textuelle Erklärung.}
+    \label{sec4:impl:subsubsec:summary-findings:fig:ui-ex-5}
+  \end{figure}
+\end{landscape}
+
+\FloatBarrier
 
 \subsubsection{Weiteres Vorgehen}
 \label{sec4:impl:subsubsec:further-approach}
+Im nachfolgenden Kapitel wird die Evaluierung der in diesem Kapitel beschriebenen, prototypischen Proof-of-Concept Implementierung vorgenommen.
+Genauer wird in \cref{sec5:eval} in \hyperref[sec5:eval:subsec:fz-explainability]{FZ 1.4/E} eine Evaluierung, der im Rahmen der prototypischen Proof-of-Concept Implementierung umgesetzten Benutzungsschnittstelle und der Interaktion mit dieser, vorgenommen.
+In \hyperref[sec5:eval:subsec:fz-integration]{FZ 2.4/E} wird dann eine Evaluierung, der im Rahmen der prototypischen Proof-of-Concept Implementierung umgesetzten Funktionen zur Transformation der in Graph Codes enthaltenen Informationen, vorgenommen.
+
+Die nachfolgende Tabelle stellt eine Erweiterung der \cref{sec3:model:subsec:summary:table:summary} dar und gibt eine Übersicht über den aktuellen Arbeitsstand nach Abschluss dieses Kapitels.
 
 \input{chapter/chapter_4/tables/table-summary}
